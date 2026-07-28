@@ -1,0 +1,1 @@
+![Сертификат Skillbox — Никита Осипов](./6NQ298aPsOhZ15iOfk4V3t8JGE5kDa5f.png)
