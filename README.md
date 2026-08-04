@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center"> 
 
 # 📊 Data Scientist с нуля до PRO
  
