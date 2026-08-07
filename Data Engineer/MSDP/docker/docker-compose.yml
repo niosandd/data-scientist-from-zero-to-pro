@@ -44,6 +44,91 @@ services:
       - elk
     restart: unless-stopped
 
+  # ====================== HADOOP (профиль hadoop) ======================
+
+  namenode:
+    image: bde2020/hadoop-namenode:2.0.0-hadoop3.2.1-java8
+    container_name: msdp-namenode
+    environment:
+      - CLUSTER_NAME=msdp
+    env_file:
+      - ../hadoop/hadoop.env
+    ports:
+      - "9870:9870"
+    volumes:
+      - hadoop_namenode:/hadoop/dfs/name
+      - ../hadoop/data:/data
+      - ../hadoop/streaming:/streaming
+    networks:
+      - msdp-net
+    profiles:
+      - hadoop
+    restart: unless-stopped
+
+  datanode:
+    image: bde2020/hadoop-datanode:2.0.0-hadoop3.2.1-java8
+    container_name: msdp-datanode
+    env_file:
+      - ../hadoop/hadoop.env
+    volumes:
+      - hadoop_datanode:/hadoop/dfs/data
+    depends_on:
+      - namenode
+    networks:
+      - msdp-net
+    profiles:
+      - hadoop
+    restart: unless-stopped
+
+  resourcemanager:
+    image: bde2020/hadoop-resourcemanager:2.0.0-hadoop3.2.1-java8
+    container_name: msdp-resourcemanager
+    env_file:
+      - ../hadoop/hadoop.env
+    ports:
+      - "18088:8088"
+    depends_on:
+      - namenode
+      - datanode
+    networks:
+      - msdp-net
+    profiles:
+      - hadoop
+    restart: unless-stopped
+
+  nodemanager:
+    image: bde2020/hadoop-nodemanager:2.0.0-hadoop3.2.1-java8
+    container_name: msdp-nodemanager
+    env_file:
+      - ../hadoop/hadoop.env
+    depends_on:
+      - namenode
+      - datanode
+      - resourcemanager
+    networks:
+      - msdp-net
+    profiles:
+      - hadoop
+    restart: unless-stopped
+
+  historyserver:
+    image: bde2020/hadoop-historyserver:2.0.0-hadoop3.2.1-java8
+    container_name: msdp-historyserver
+    env_file:
+      - ../hadoop/hadoop.env
+    ports:
+      - "8188:8188"
+    volumes:
+      - hadoop_history:/hadoop/yarn/timeline
+    depends_on:
+      - namenode
+      - resourcemanager
+    networks:
+      - msdp-net
+    profiles:
+      - hadoop
+    restart: unless-stopped
+
   fluentd:
     image: fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
     container_name: msdp-fluentd
@@ -374,6 +459,9 @@ volumes:
   nifi_registry_data:
   nifi_registry_flow_storage:
   elasticsearch_data:
+  hadoop_namenode:
+  hadoop_datanode:
+  hadoop_history:
 
 networks:
   msdp-net:

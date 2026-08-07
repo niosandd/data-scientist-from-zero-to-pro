@@ -9,7 +9,7 @@ Ingestion-платформа: несколько источников → Kafka 
 ## Что понадобится
 
 - Docker Desktop (WSL2 backend на Windows)
-- **минимум 8 GB RAM** под Docker (NiFi и Elasticsearch жрут много)
+- **минимум 8 GB RAM** под Docker (NiFi, Elasticsearch и Hadoop жрут много)
 - 10+ GB свободного места
 - Git, если клонируешь репозиторий
 
@@ -42,6 +42,12 @@ docker compose ps
 docker compose --profile elk up -d
 ```
 
+Опционально Hadoop (HDFS + YARN, single-node):
+
+```bash
+docker compose --profile hadoop up -d
+```
+
 ---
 
 ## Куда стучаться
@@ -57,8 +63,11 @@ docker compose --profile elk up -d
 | Alertmanager | http://localhost:9095 | — |
 | Kibana (profile `elk`) | http://localhost:5601 | — |
 | Elasticsearch (profile `elk`) | http://localhost:9200 | — |
+| HDFS NameNode (profile `hadoop`) | http://localhost:9870 | — |
+| YARN ResourceManager (profile `hadoop`) | http://localhost:18088 | — |
+| MapReduce History (profile `hadoop`) | http://localhost:8188 | — |
 
-Порты сдвинуты (3001, 9091, 9095, 8088…), чтобы меньше конфликтовать с тем, что уже занято на машине.
+Порты сдвинуты (3001, 9091, 9095, 8088, 18088…), чтобы меньше конфликтовать с тем, что уже занято на машине.
 
 ---
 
@@ -129,6 +138,23 @@ JSON-логи в stdout.
 Loguru → файл → Fluentd → Elasticsearch → Kibana.
 
 ![Kibana Discover](docs/screenshots/kibana-discover.png)
+
+### Hadoop (профиль `hadoop`)
+
+HDFS NameNode и YARN ResourceManager (single-node: 1 NN + 1 DN + YARN).
+
+![HDFS](docs/screenshots/hadoop-hdfs.png)
+
+![YARN](docs/screenshots/hadoop-yarn.png)
+
+```bash
+docker compose --profile hadoop up -d
+# HDFS:  http://localhost:9870
+# YARN:  http://localhost:18088
+```
+
+Практика: WordCount через MapReduce Streaming (Python). Скрипты — `hadoop/streaming/wordcount/`, данные — `hadoop/data/`.
+
 ---
 
 ## Что уже работает после `up -d`
@@ -203,6 +229,43 @@ Flows на canvas:
 FTP: `localhost:21`, пользователь `msdp` / `msdp_secret`.  
 Тестовые файлы — в `storage/ftp_inbox/`.
 
+### Hadoop WordCount (профиль `hadoop`)
+
+```bash
+docker compose --profile hadoop up -d
+```
+
+Python 3 в namenode (один раз, образ на EOL Stretch):
+
+```bash
+docker compose exec namenode bash -c "echo 'deb http://archive.debian.org/debian stretch main' > /etc/apt/sources.list && echo 'deb http://archive.debian.org/debian-security stretch/updates main' >> /etc/apt/sources.list && apt-get -o Acquire::Check-Valid-Until=false update && apt-get -o Acquire::Check-Valid-Until=false install -y python3"
+```
+
+Job:
+
+```bash
+docker compose exec namenode bash -c "\
+  cp /streaming/wordcount/mapper.py /tmp/mapper.py && \
+  cp /streaming/wordcount/reducer.py /tmp/reducer.py && \
+  sed -i 's/\r$//' /tmp/mapper.py /tmp/reducer.py && \
+  hdfs dfs -mkdir -p /wordcount/input && \
+  hdfs dfs -put -f /data/wordcount.txt /wordcount/input/ && \
+  hdfs dfs -rm -r -f /wordcount/output && \
+  mapred streaming \
+    -files /tmp/mapper.py,/tmp/reducer.py \
+    -input /wordcount/input \
+    -output /wordcount/output \
+    -mapper 'python3 mapper.py' \
+    -reducer 'python3 reducer.py' && \
+  hdfs dfs -cat /wordcount/output/part-00000"
+```
+
+Остановить Hadoop:
+
+```bash
+docker compose --profile hadoop stop
+```
+
 ---
 
 ## Логирование
@@ -254,7 +317,7 @@ rate(container_cpu_usage_seconds_total{id="/docker"}[1m])
 **Порт занят**
 
 ```bash
-netstat -an | findstr "3001 9091 9092 8080 5601 9200"
+netstat -an | findstr "3001 9091 9092 8080 5601 9200 9870 18088"
 ```
 
 Поменяй проброс в `docker-compose.yml`.
@@ -271,9 +334,12 @@ netstat -an | findstr "3001 9091 9092 8080 5601 9200"
 ```bash
 docker compose stop nifi nifi-registry
 docker compose --profile elk stop
+docker compose --profile hadoop stop
 ```
 
 **SSL / InfoWatch** при сборке образов или gem/pip — типично для корп. сети; используй `--trusted-host` / готовые image с плагинами.
+
+**Hadoop Streaming и Windows volumes** — копируй mapper/reducer во `/tmp` внутри namenode перед `-files` (см. команду WordCount выше).
 
 ---
 
@@ -282,7 +348,8 @@ docker compose --profile elk stop
 ```bash
 cd docker
 docker compose down
-docker compose --profile elk down   # если поднимал EFK
+docker compose --profile elk down      # если поднимал EFK
+docker compose --profile hadoop down   # если поднимал Hadoop
 ```
 
 С данными volumes:
@@ -307,6 +374,10 @@ MSDP/
 │       └── cdc_to_kafka.py
 ├── databases/postgres/init/
 ├── docker/docker-compose.yml
+├── hadoop/
+│   ├── hadoop.env
+│   ├── data/                     # wordcount.txt, csv
+│   └── streaming/                # mapper/reducer
 ├── monitoring/
 │   ├── prometheus/
 │   ├── grafana/
