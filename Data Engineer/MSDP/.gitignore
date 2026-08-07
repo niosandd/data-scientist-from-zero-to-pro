@@ -1,0 +1,11 @@
+.env
+.venv/
+__pycache__/
+storage/bronze/**
+storage/silver/**
+storage/gold/**
+storage/ftp_inbox/**
+!storage/**/.gitkeep
+*.log
+.idea/
+.vscode/
