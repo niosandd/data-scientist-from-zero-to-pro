@@ -39,6 +39,8 @@ docker compose ps
 
 ## Куда стучаться
 
+> Логины ниже — демо для локального запуска. В проде смени через `.env`.
+
 | Что | Адрес | Логин |
 |-----|-------|-------|
 | Grafana | http://localhost:3001 | admin / admin |
@@ -48,6 +50,34 @@ docker compose ps
 | Alertmanager | http://localhost:9095 | — |
 
 Порты сдвинуты (3001, 9091, 9095, 8088), чтобы не конфликтовать с тем, что уже занято на машине.
+
+---
+
+## Как выглядит
+
+### Grafana — обзор стека
+
+CPU, память Docker, статус сервисов, логи.
+
+![Grafana overview](docs/screenshots/grafana-overview.png)
+
+### Kafka — топики и consumer lag
+
+Видно `iss-position`, `cdc-events`, `nifi-events`.
+
+![Kafka metrics](docs/screenshots/grafana-kafka.png)
+
+### NiFi — ingestion flows
+
+HTTP API, ExecuteSQL, FTP → файл / Kafka.
+
+![NiFi canvas](docs/screenshots/nifi-canvas.png)
+
+### Prometheus — targets
+
+cAdvisor и Kafka Exporter в статусе UP.
+
+![Prometheus targets](docs/screenshots/prometheus-targets.png)
 
 ---
 
@@ -202,7 +232,10 @@ MSDP/
 ├── docker/docker-compose.yml
 ├── monitoring/                  # prometheus, grafana, loki, alertmanager
 ├── storage/bronze/              # сюда пишутся Parquet/JSON
-└── docs/architecture.md         # как устроены потоки
+├── docs/
+│   ├── architecture.md
+│   └── screenshots/             # скрины для README
+└── README.md
 ```
 
 Подробнее про потоки данных — в [docs/architecture.md](docs/architecture.md).
