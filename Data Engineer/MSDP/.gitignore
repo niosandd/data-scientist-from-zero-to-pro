@@ -7,6 +7,7 @@ storage/silver/**
 storage/gold/**
 storage/ftp_inbox/**
 !storage/**/.gitkeep
+monitoring/alertmanager/pagerduty_key
 *.log
 .idea/
 .vscode/

@@ -1,14 +1,13 @@
 """
 ISS Position Consumer
 Читает данные из Kafka и:
-1. Пишет в MongoDB (real-time / operational store)
-2. Периодически сохраняет батч в Parquet через PyArrow (Bronze layer)
+1. Пишет в MongoDB
+2. Периодически сохраняет батч в Parquet (Bronze)
 
-Темы курса: Kafka Consumer, NoSQL (MongoDB), PyArrow, форматы файлов
+Темы: Kafka Consumer, MongoDB, PyArrow, structlog
 """
 
 import json
-import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -16,6 +15,10 @@ from kafka import KafkaConsumer
 from pymongo import MongoClient
 import pyarrow as pa
 import pyarrow.parquet as pq
+
+from apps.logging_setup import setup_logging
+
+log = setup_logging("iss-consumer")
 
 # ================== НАСТРОЙКИ ==================
 KAFKA_BOOTSTRAP = "kafka:9092"
@@ -28,12 +31,6 @@ MONGO_COLLECTION = "iss_positions"
 
 PARQUET_DIR = Path("/app/storage/bronze/iss")
 BATCH_SIZE = 5
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s"
-)
-logger = logging.getLogger("iss-consumer")
 
 
 def get_mongo_collection():
@@ -53,7 +50,11 @@ def save_batch_to_parquet(records: list[dict], output_dir: Path):
     table = pa.Table.from_pylist(records)
     pq.write_table(table, file_path, compression="snappy")
 
-    logger.info("Saved %d records → %s", len(records), file_path)
+    log.info(
+        "parquet_written",
+        path=str(file_path),
+        rows=len(records),
+    )
 
 
 def main():
@@ -64,30 +65,29 @@ def main():
         auto_offset_reset="earliest",
         enable_auto_commit=True,
         value_deserializer=lambda m: json.loads(m.decode("utf-8")),
-        consumer_timeout_ms=1000,   # чтобы цикл не блокировался навечно
+        consumer_timeout_ms=1000,
     )
 
     collection = get_mongo_collection()
     buffer: list[dict] = []
 
-    logger.info("Consumer started. Listening topic: %s", TOPIC)
+    log.info("consumer_started", topic=TOPIC)
 
     try:
         while True:
             for message in consumer:
                 data = message.value
-                logger.info(
-                    "Received → lat=%.4f lon=%.4f | offset=%s",
-                    data.get("latitude"),
-                    data.get("longitude"),
-                    message.offset,
+
+                log.info(
+                    "iss_position_received",
+                    lat=data.get("latitude"),
+                    lon=data.get("longitude"),
+                    offset=message.offset,
                 )
 
-                # 1. Пишем в MongoDB
                 collection.insert_one(data)
+                log.info("mongo_written", collection=MONGO_COLLECTION)
 
-                # 2. Копим для Parquet
-                # Убираем ObjectId-подобные поля, если вдруг появятся
                 clean = {k: v for k, v in data.items() if k != "_id"}
                 buffer.append(clean)
 
@@ -96,13 +96,12 @@ def main():
                     buffer.clear()
 
     except KeyboardInterrupt:
-        logger.info("Stopping consumer...")
+        log.info("consumer_stopping")
     finally:
-        # Дописываем остаток
         if buffer:
             save_batch_to_parquet(buffer, PARQUET_DIR)
         consumer.close()
-        logger.info("Consumer stopped.")
+        log.info("consumer_stopped")
 
 
 if __name__ == "__main__":

@@ -9,6 +9,63 @@ x-logging: &default-logging
 services:
   # ====================== INFRASTRUCTURE ======================
 
+  # ====================== EFK (профиль elk) ======================
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.3
+    container_name: msdp-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.http.ssl.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - msdp-net
+    profiles:
+      - elk
+    restart: unless-stopped
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.3
+    container_name: msdp-kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - msdp-net
+    profiles:
+      - elk
+    restart: unless-stopped
+
+  fluentd:
+    image: fluent/fluentd-kubernetes-daemonset:v1-debian-elasticsearch
+    container_name: msdp-fluentd
+    volumes:
+      - ../monitoring/fluentd/fluent.conf:/fluentd/etc/fluent.conf:ro
+      - ../storage/logs:/var/log/msdp
+    environment:
+      - FLUENTD_CONF=fluent.conf
+      # этот image по умолчанию ждёт K8s; отключим лишнее, если мешает
+      - FLUENT_ELASTICSEARCH_HOST=elasticsearch
+      - FLUENT_ELASTICSEARCH_PORT=9200
+      - FLUENT_ELASTICSEARCH_SCHEME=http
+      - FLUENT_ELASTICSEARCH_SSL_VERIFY=false
+    depends_on:
+      - elasticsearch
+    networks:
+      - msdp-net
+    profiles:
+      - elk
+    restart: unless-stopped
+    command: fluentd -c /fluentd/etc/fluent.conf -v
+
   zookeeper:
     image: confluentinc/cp-zookeeper:7.6.1
     container_name: msdp-zookeeper
@@ -275,9 +332,10 @@ services:
     image: prom/alertmanager:v0.27.0
     container_name: msdp-alertmanager
     ports:
-      - "9095:9093"          # поменяли 9094 → 9095
+      - "9095:9093"
     volumes:
       - ../monitoring/alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - ../monitoring/alertmanager/pagerduty_key:/etc/alertmanager/pagerduty_key:ro
     command:
       - '--config.file=/etc/alertmanager/alertmanager.yml'
     networks:
@@ -315,6 +373,7 @@ volumes:
   loki_data:
   nifi_registry_data:
   nifi_registry_flow_storage:
+  elasticsearch_data:
 
 networks:
   msdp-net:

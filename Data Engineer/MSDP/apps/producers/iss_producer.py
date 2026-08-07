@@ -1,28 +1,26 @@
 """
 ISS Position Producer
-Отправляет координаты Международной космической станции в Kafka каждые N секунд.
-Тема курса: API + Kafka Producer + потоковые данные
+Координаты МКС → Kafka каждые N секунд.
+
+Темы: API, Kafka Producer, structlog
 """
 
 import json
 import time
-import logging
 from datetime import datetime, timezone
 
 import requests
 from kafka import KafkaProducer
+
+from apps.logging_setup import setup_logging
+
+log = setup_logging("iss-producer")
 
 # ================== НАСТРОЙКИ ==================
 KAFKA_BOOTSTRAP = "kafka:9092"
 TOPIC = "iss-position"
 API_URL = "http://api.open-notify.org/iss-now.json"
 INTERVAL_SEC = 10
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s"
-)
-logger = logging.getLogger("iss-producer")
 
 
 def create_producer() -> KafkaProducer:
@@ -40,7 +38,6 @@ def fetch_iss_position() -> dict:
     response.raise_for_status()
     data = response.json()
 
-    # Нормализуем структуру
     return {
         "timestamp": data.get("timestamp"),
         "datetime_utc": datetime.fromtimestamp(
@@ -56,36 +53,35 @@ def fetch_iss_position() -> dict:
 
 def main():
     producer = create_producer()
-    logger.info("Producer started. Topic: %s", TOPIC)
+    log.info("producer_started", topic=TOPIC)
 
     try:
         while True:
             try:
                 position = fetch_iss_position()
-                # Ключ — timestamp, чтобы сообщения одного момента шли в одну партицию
                 key = str(position["timestamp"])
 
                 future = producer.send(TOPIC, key=key, value=position)
                 record = future.get(timeout=10)
 
-                logger.info(
-                    "Sent → lat=%.4f lon=%.4f | partition=%s offset=%s",
-                    position["latitude"],
-                    position["longitude"],
-                    record.partition,
-                    record.offset,
+                log.info(
+                    "iss_position_sent",
+                    lat=position["latitude"],
+                    lon=position["longitude"],
+                    partition=record.partition,
+                    offset=record.offset,
                 )
             except Exception as e:
-                logger.error("Error while producing: %s", e)
+                log.error("produce_failed", error=str(e))
 
             time.sleep(INTERVAL_SEC)
 
     except KeyboardInterrupt:
-        logger.info("Stopping producer...")
+        log.info("producer_stopping")
     finally:
         producer.flush()
         producer.close()
-        logger.info("Producer stopped.")
+        log.info("producer_stopped")
 
 
 if __name__ == "__main__":
