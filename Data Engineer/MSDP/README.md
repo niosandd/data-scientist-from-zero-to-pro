@@ -1,4 +1,4 @@
-# MSDP
+# MSDP 
 
 Ingestion-платформа: несколько источников → Kafka / NiFi → MongoDB + Parquet, плюс мониторинг и логирование.
 
