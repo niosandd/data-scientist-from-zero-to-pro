@@ -1,0 +1,667 @@
+Order ID,Product,Quantity Ordered,Price Each,Order Date,Purchase Address,Month
+145235,LG Washing Machine,1,600.0,2019-01-09 13:59:00,"341 13th St, New York City, NY 10001",January
+142714,LG Washing Machine,1,600.0,2019-01-01 13:15:00,"972 12th St, San Francisco, CA 94016",January
+143612,LG Washing Machine,1,600.0,2019-01-07 17:53:00,"35 Elm St, Austin, TX 73301",January
+150895,LG Washing Machine,1,600.0,2019-02-18 21:37:00,"405 11th St, Dallas, TX 75001",February
+161891,LG Washing Machine,1,600.0,2019-02-03 14:16:00,"397 Jackson St, San Francisco, CA 94016",February
+154919,LG Washing Machine,1,600.0,2019-02-01 21:26:00,"588 Lincoln St, New York City, NY 10001",February
+158938,LG Washing Machine,1,600.0,2019-02-04 00:23:00,"481 Adams St, Los Angeles, CA 90001",February
+159164,LG Washing Machine,1,600.0,2019-02-27 18:01:00,"692 Meadow St, New York City, NY 10001",February
+161278,LG Washing Machine,1,600.0,2019-02-26 19:11:00,"950 2nd St, Los Angeles, CA 90001",February
+164329,LG Washing Machine,1,600.0,2019-03-17 16:20:00,"387 Ridge St, Boston, MA 02215",March
+174719,LG Washing Machine,1,600.0,2019-03-14 15:01:00,"147 5th St, San Francisco, CA 94016",March
+174195,LG Washing Machine,1,600.0,2019-03-23 16:41:00,"442 Madison St, San Francisco, CA 94016",March
+167869,LG Washing Machine,1,600.0,2019-03-29 20:44:00,"811 13th St, San Francisco, CA 94016",March
+169949,LG Washing Machine,1,600.0,2019-03-30 14:28:00,"856 Spruce St, Boston, MA 02215",March
+165460,LG Washing Machine,1,600.0,2019-03-06 11:38:00,"814 Lincoln St, Los Angeles, CA 90001",March
+169922,LG Washing Machine,1,600.0,2019-03-08 12:41:00,"309 Maple St, Dallas, TX 75001",March
+174451,LG Washing Machine,1,600.0,2019-03-02 09:48:00,"412 4th St, Austin, TX 73301",March
+176825,LG Washing Machine,1,600.0,2019-04-13 22:31:00,"338 6th St, San Francisco, CA 94016",April
+177814,LG Washing Machine,1,600.0,2019-04-11 16:04:00,"79 Johnson St, Atlanta, GA 30301",April
+177665,LG Washing Machine,1,600.0,2019-04-25 18:08:00,"842 Center St, San Francisco, CA 94016",April
+189003,LG Washing Machine,1,600.0,2019-04-26 17:12:00,"358 Main St, San Francisco, CA 94016",April
+187185,LG Washing Machine,1,600.0,2019-04-08 14:05:00,"321 South St, Los Angeles, CA 90001",April
+178345,LG Washing Machine,1,600.0,2019-04-04 15:16:00,"545 12th St, Atlanta, GA 30301",April
+185658,LG Washing Machine,1,600.0,2019-04-24 13:22:00,"744 Park St, Seattle, WA 98101",April
+190130,LG Washing Machine,1,600.0,2019-04-21 18:04:00,"183 Lake St, Dallas, TX 75001",April
+198126,LG Washing Machine,1,600.0,2019-05-15 01:53:00,"811 11th St, Los Angeles, CA 90001",May
+204986,LG Washing Machine,1,600.0,2019-05-17 12:25:00,"82 Highland St, Portland, OR 97035",May
+200894,LG Washing Machine,1,600.0,2019-05-06 10:45:00,"923 Dogwood St, New York City, NY 10001",May
+199676,LG Washing Machine,1,600.0,2019-05-06 23:10:00,"389 North St, San Francisco, CA 94016",May
+201079,LG Washing Machine,1,600.0,2019-05-10 00:37:00,"593 West St, Seattle, WA 98101",May
+202869,LG Washing Machine,1,600.0,2019-05-30 19:58:00,"997 Meadow St, Dallas, TX 75001",May
+195477,LG Washing Machine,1,600.0,2019-05-24 19:55:00,"474 13th St, Dallas, TX 75001",May
+194555,LG Washing Machine,1,600.0,2019-05-06 10:31:00,"583 South St, San Francisco, CA 94016",May
+204124,LG Washing Machine,1,600.0,2019-05-15 10:44:00,"847 Ridge St, New York City, NY 10001",May
+205624,LG Washing Machine,1,600.0,2019-05-03 21:07:00,"580 Wilson St, San Francisco, CA 94016",May
+222835,LG Washing Machine,1,600.0,2019-06-22 09:46:00,"473 Lincoln St, Atlanta, GA 30301",June
+216804,LG Washing Machine,1,600.0,2019-06-14 20:20:00,"660 Cedar St, Boston, MA 02215",June
+215330,LG Washing Machine,1,600.0,2019-06-04 21:45:00,"792 Walnut St, Dallas, TX 75001",June
+215964,LG Washing Machine,1,600.0,2019-06-19 07:05:00,"23 Johnson St, San Francisco, CA 94016",June
+214413,LG Washing Machine,1,600.0,2019-06-25 10:28:00,"977 Pine St, Boston, MA 02215",June
+221021,LG Washing Machine,1,600.0,2019-06-16 18:11:00,"630 9th St, Los Angeles, CA 90001",June
+222839,LG Washing Machine,1,600.0,2019-06-29 09:27:00,"592 8th St, Atlanta, GA 30301",June
+212016,LG Washing Machine,1,600.0,2019-06-14 20:20:00,"894 Chestnut St, New York City, NY 10001",June
+226216,LG Washing Machine,1,600.0,2019-07-09 12:48:00,"63 Hickory St, Los Angeles, CA 90001",July
+233575,LG Washing Machine,1,600.0,2019-07-08 16:57:00,"582 Highland St, San Francisco, CA 94016",July
+233916,LG Washing Machine,1,600.0,2019-07-09 09:19:00,"429 1st St, San Francisco, CA 94016",July
+230236,LG Washing Machine,1,600.0,2019-07-08 23:50:00,"142 Sunset St, Seattle, WA 98101",July
+228987,LG Washing Machine,1,600.0,2019-07-29 10:31:00,"60 South St, Los Angeles, CA 90001",July
+231004,LG Washing Machine,1,600.0,2019-07-12 12:12:00,"451 Jefferson St, Portland, OR 97035",July
+236215,LG Washing Machine,1,600.0,2019-07-04 18:02:00,"3 North St, New York City, NY 10001",July
+241107,LG Washing Machine,1,600.0,2019-08-08 16:56:00,"860 Willow St, San Francisco, CA 94016",August
+244252,LG Washing Machine,1,600.0,2019-08-13 13:23:00,"305 Main St, San Francisco, CA 94016",August
+237734,LG Washing Machine,1,600.0,2019-08-12 16:40:00,"98 10th St, Los Angeles, CA 90001",August
+237786,LG Washing Machine,1,600.0,2019-08-08 21:04:00,"604 10th St, Portland, OR 97035",August
+237312,LG Washing Machine,1,600.0,2019-08-16 07:38:00,"767 5th St, Boston, MA 02215",August
+244636,LG Washing Machine,1,600.0,2019-08-02 11:27:00,"205 Ridge St, Seattle, WA 98101",August
+237702,LG Washing Machine,1,600.0,2019-08-02 16:48:00,"3 Meadow St, San Francisco, CA 94016",August
+247009,LG Washing Machine,1,600.0,2019-08-19 11:41:00,"137 Johnson St, Austin, TX 73301",August
+240806,LG Washing Machine,1,600.0,2019-08-13 19:20:00,"979 1st St, Portland, ME 04101",August
+241531,LG Washing Machine,1,600.0,2019-08-08 19:09:00,"774 Willow St, Austin, TX 73301",August
+250854,LG Washing Machine,1,600.0,2019-09-29 16:59:00,"47 7th St, San Francisco, CA 94016",September
+250955,LG Washing Machine,1,600.0,2019-09-15 17:55:00,"633 7th St, San Francisco, CA 94016",September
+258402,LG Washing Machine,1,600.0,2019-09-20 22:31:00,"991 Willow St, Dallas, TX 75001",September
+254818,LG Washing Machine,1,600.0,2019-09-13 19:53:00,"110 Church St, Dallas, TX 75001",September
+249327,LG Washing Machine,1,600.0,2019-09-26 15:44:00,"556 Lakeview St, New York City, NY 10001",September
+256620,LG Washing Machine,1,600.0,2019-09-02 14:03:00,"906 Center St, Los Angeles, CA 90001",September
+248765,LG Washing Machine,1,600.0,2019-09-16 19:06:00,"255 West St, New York City, NY 10001",September
+264057,LG Washing Machine,1,600.0,2019-10-07 07:50:00,"456 8th St, Seattle, WA 98101",October
+273704,LG Washing Machine,1,600.0,2019-10-12 21:18:00,"998 11th St, Boston, MA 02215",October
+264298,LG Washing Machine,1,600.0,2019-10-08 15:29:00,"850 10th St, Seattle, WA 98101",October
+263331,LG Washing Machine,1,600.0,2019-10-13 14:47:00,"174 Maple St, Portland, OR 97035",October
+274237,LG Washing Machine,1,600.0,2019-10-13 13:48:00,"886 South St, New York City, NY 10001",October
+268335,LG Washing Machine,1,600.0,2019-10-15 12:47:00,"391 1st St, San Francisco, CA 94016",October
+268337,LG Washing Machine,1,600.0,2019-10-09 21:20:00,"28 7th St, Los Angeles, CA 90001",October
+269213,LG Washing Machine,1,600.0,2019-10-15 18:04:00,"244 Dogwood St, Seattle, WA 98101",October
+278728,LG Washing Machine,1,600.0,2019-10-13 00:09:00,"541 14th St, San Francisco, CA 94016",October
+276129,LG Washing Machine,1,600.0,2019-10-15 08:55:00,"863 Adams St, Los Angeles, CA 90001",October
+279912,LG Washing Machine,1,600.0,2019-11-27 08:45:00,"886 14th St, Portland, ME 04101",November
+280337,LG Washing Machine,1,600.0,2019-11-30 13:38:00,"98 Park St, Los Angeles, CA 90001",November
+293601,LG Washing Machine,1,600.0,2019-11-22 17:34:00,"383 Spruce St, San Francisco, CA 94016",November
+293772,LG Washing Machine,1,600.0,2019-11-04 09:09:00,"175 Madison St, San Francisco, CA 94016",November
+279260,LG Washing Machine,1,600.0,2019-11-19 20:04:00,"514 Church St, Los Angeles, CA 90001",November
+286443,LG Washing Machine,1,600.0,2019-11-10 21:34:00,"533 Madison St, Seattle, WA 98101",November
+291987,LG Washing Machine,1,600.0,2019-11-09 08:59:00,"236 1st St, San Francisco, CA 94016",November
+284563,LG Washing Machine,1,600.0,2019-11-07 15:30:00,"663 Church St, Seattle, WA 98101",November
+286548,LG Washing Machine,1,600.0,2019-11-29 13:17:00,"606 Hill St, Dallas, TX 75001",November
+286129,LG Washing Machine,1,600.0,2019-11-19 19:31:00,"781 5th St, Los Angeles, CA 90001",November
+304753,LG Washing Machine,1,600.0,2019-12-30 22:48:00,"358 Forest St, San Francisco, CA 94016",December
+298258,LG Washing Machine,1,600.0,2019-12-29 16:05:00,"929 11th St, San Francisco, CA 94016",December
+308334,LG Washing Machine,1,600.0,2019-12-21 18:29:00,"379 North St, New York City, NY 10001",December
+318332,LG Washing Machine,1,600.0,2019-12-20 14:52:00,"807 14th St, San Francisco, CA 94016",December
+318208,LG Washing Machine,1,600.0,2019-12-05 12:43:00,"399 Wilson St, San Francisco, CA 94016",December
+311593,LG Washing Machine,1,600.0,2019-12-08 21:15:00,"725 11th St, Portland, ME 04101",December
+304370,LG Washing Machine,1,600.0,2019-12-05 20:38:00,"363 14th St, New York City, NY 10001",December
+298665,LG Washing Machine,1,600.0,2019-12-20 18:16:00,"450 11th St, Seattle, WA 98101",December
+314368,LG Washing Machine,1,600.0,2019-12-07 11:32:00,"356 Wilson St, Atlanta, GA 30301",December
+296845,LG Washing Machine,1,600.0,2019-12-17 16:38:00,"930 River St, Atlanta, GA 30301",December
+295666,LG Washing Machine,1,600.0,2019-12-29 07:03:00,"562 2nd St, New York City, NY 10001",December
+303951,LG Washing Machine,1,600.0,2019-12-22 15:00:00,"356 South St, San Francisco, CA 94016",December
+296975,LG Washing Machine,1,600.0,2019-12-14 16:39:00,"643 Forest St, San Francisco, CA 94016",December
+300023,LG Washing Machine,1,600.0,2019-12-28 15:32:00,"890 Ridge St, San Francisco, CA 94016",December
+318295,LG Washing Machine,1,600.0,2019-12-24 19:11:00,"226 Johnson St, Los Angeles, CA 90001",December
+314169,LG Washing Machine,1,600.0,2019-12-02 16:58:00,"64 Meadow St, Atlanta, GA 30301",December
+310466,LG Washing Machine,1,600.0,2019-12-17 17:52:00,"420 Church St, Los Angeles, CA 90001",December
+315095,LG Washing Machine,1,600.0,2019-12-11 08:39:00,"522 12th St, Portland, OR 97035",December
+297469,LG Washing Machine,1,600.0,2019-12-28 17:06:00,"26 Dogwood St, Los Angeles, CA 90001",December
+304179,LG Washing Machine,1,600.0,2019-12-04 12:59:00,"462 Lincoln St, San Francisco, CA 94016",December
+307808,LG Washing Machine,1,600.0,2019-12-14 16:27:00,"85 1st St, Atlanta, GA 30301",December
+143691,LG Washing Machine,1,600.0,2019-01-29 09:30:00,"24 Lakeview St, Los Angeles, CA 90001",January
+141516,LG Washing Machine,1,600.0,2019-01-17 19:53:00,"382 Main St, Seattle, WA 98101",January
+148797,LG Washing Machine,1,600.0,2019-01-18 21:44:00,"586 North St, San Francisco, CA 94016",January
+143096,LG Washing Machine,1,600.0,2019-01-19 18:33:00,"89 Center St, Seattle, WA 98101",January
+150358,LG Washing Machine,1,600.0,2019-01-22 13:18:00,"569 10th St, New York City, NY 10001",January
+147612,LG Washing Machine,1,600.0,2019-01-08 17:38:00,"435 Sunset St, Boston, MA 02215",January
+143605,LG Washing Machine,1,600.0,2019-01-22 14:37:00,"48 Lake St, Los Angeles, CA 90001",January
+144069,LG Washing Machine,1,600.0,2019-01-24 20:23:00,"992 North St, New York City, NY 10001",January
+152245,LG Washing Machine,1,600.0,2019-02-05 09:42:00,"790 Adams St, Portland, ME 04101",February
+155180,LG Washing Machine,1,600.0,2019-02-24 15:48:00,"3 6th St, New York City, NY 10001",February
+158974,LG Washing Machine,1,600.0,2019-02-05 11:52:00,"864 Jackson St, New York City, NY 10001",February
+151270,LG Washing Machine,1,600.0,2019-02-20 15:29:00,"634 Walnut St, Dallas, TX 75001",February
+155630,LG Washing Machine,1,600.0,2019-02-05 20:58:00,"827 Center St, San Francisco, CA 94016",February
+151665,LG Washing Machine,1,600.0,2019-02-10 09:04:00,"240 13th St, Portland, OR 97035",February
+158608,LG Washing Machine,1,600.0,2019-02-11 09:29:00,"131 Highland St, Boston, MA 02215",February
+161747,LG Washing Machine,1,600.0,2019-02-22 22:59:00,"609 Madison St, San Francisco, CA 94016",February
+172600,LG Washing Machine,1,600.0,2019-03-24 14:42:00,"448 Lakeview St, Austin, TX 73301",March
+171935,LG Washing Machine,1,600.0,2019-03-14 16:42:00,"871 South St, Los Angeles, CA 90001",March
+171124,LG Washing Machine,1,600.0,2019-03-22 22:45:00,"425 Center St, Atlanta, GA 30301",March
+173561,LG Washing Machine,1,600.0,2019-03-21 10:54:00,"284 Dogwood St, Los Angeles, CA 90001",March
+174320,LG Washing Machine,1,600.0,2019-03-22 15:07:00,"376 River St, New York City, NY 10001",March
+165894,LG Washing Machine,1,600.0,2019-03-22 15:12:00,"272 11th St, New York City, NY 10001",March
+163609,LG Washing Machine,1,600.0,2019-03-25 10:30:00,"64 Elm St, Los Angeles, CA 90001",March
+171040,LG Washing Machine,1,600.0,2019-03-27 19:48:00,"170 14th St, Los Angeles, CA 90001",March
+175784,LG Washing Machine,1,600.0,2019-03-31 16:27:00,"293 14th St, San Francisco, CA 94016",March
+186250,LG Washing Machine,1,600.0,2019-04-16 11:14:00,"276 Maple St, Portland, OR 97035",April
+179435,LG Washing Machine,1,600.0,2019-04-21 16:50:00,"398 Sunset St, Los Angeles, CA 90001",April
+191659,LG Washing Machine,1,600.0,2019-04-12 11:37:00,"3 Pine St, Dallas, TX 75001",April
+178906,LG Washing Machine,1,600.0,2019-04-07 11:01:00,"994 Chestnut St, San Francisco, CA 94016",April
+179325,LG Washing Machine,1,600.0,2019-04-17 13:09:00,"314 Jefferson St, Atlanta, GA 30301",April
+189073,LG Washing Machine,1,600.0,2019-04-02 19:11:00,"819 14th St, Boston, MA 02215",April
+185236,LG Washing Machine,1,600.0,2019-04-17 21:31:00,"475 13th St, San Francisco, CA 94016",April
+203353,LG Washing Machine,1,600.0,2019-05-11 14:06:00,"516 Washington St, Los Angeles, CA 90001",May
+200430,LG Washing Machine,1,600.0,2019-05-03 11:38:00,"906 Hickory St, Los Angeles, CA 90001",May
+196375,LG Washing Machine,1,600.0,2019-05-28 07:12:00,"400 Ridge St, Los Angeles, CA 90001",May
+197509,LG Washing Machine,1,600.0,2019-05-26 14:36:00,"185 Main St, San Francisco, CA 94016",May
+194673,LG Washing Machine,1,600.0,2019-05-12 12:50:00,"963 Maple St, Seattle, WA 98101",May
+205614,LG Washing Machine,1,600.0,2019-05-04 00:53:00,"748 North St, San Francisco, CA 94016",May
+196628,LG Washing Machine,1,600.0,2019-05-08 08:56:00,"990 5th St, Atlanta, GA 30301",May
+197485,LG Washing Machine,1,600.0,2019-05-11 19:34:00,"199 Cedar St, Portland, ME 04101",May
+197969,LG Washing Machine,1,600.0,2019-05-03 21:24:00,"623 Lake St, Seattle, WA 98101",May
+204754,LG Washing Machine,1,600.0,2019-05-12 11:04:00,"313 Meadow St, San Francisco, CA 94016",May
+208736,LG Washing Machine,1,600.0,2019-05-02 14:56:00,"477 Hill St, San Francisco, CA 94016",May
+218931,LG Washing Machine,1,600.0,2019-06-03 02:16:00,"742 Johnson St, San Francisco, CA 94016",June
+211207,LG Washing Machine,1,600.0,2019-06-07 15:14:00,"65 Pine St, Seattle, WA 98101",June
+211750,LG Washing Machine,1,600.0,2019-06-04 21:17:00,"925 Cedar St, Los Angeles, CA 90001",June
+213759,LG Washing Machine,1,600.0,2019-06-13 15:03:00,"259 5th St, Boston, MA 02215",June
+212937,LG Washing Machine,1,600.0,2019-06-18 09:18:00,"712 Cedar St, Portland, OR 97035",June
+212120,LG Washing Machine,1,600.0,2019-06-05 07:35:00,"200 11th St, San Francisco, CA 94016",June
+213431,LG Washing Machine,1,600.0,2019-06-10 13:07:00,"643 Pine St, Seattle, WA 98101",June
+213978,LG Washing Machine,1,600.0,2019-06-26 09:50:00,"986 7th St, Los Angeles, CA 90001",June
+210520,LG Washing Machine,1,600.0,2019-06-19 18:47:00,"908 Lincoln St, Portland, ME 04101",June
+213094,LG Washing Machine,1,600.0,2019-06-02 13:06:00,"269 Willow St, San Francisco, CA 94016",June
+226432,LG Washing Machine,1,600.0,2019-07-01 21:31:00,"422 Cedar St, Atlanta, GA 30301",July
+228334,LG Washing Machine,1,600.0,2019-07-25 09:48:00,"584 Meadow St, Los Angeles, CA 90001",July
+230292,LG Washing Machine,1,600.0,2019-07-17 17:44:00,"678 Jefferson St, New York City, NY 10001",July
+235923,LG Washing Machine,1,600.0,2019-07-23 16:12:00,"704 Willow St, Boston, MA 02215",July
+232140,LG Washing Machine,1,600.0,2019-07-17 20:08:00,"518 4th St, Atlanta, GA 30301",July
+236415,LG Washing Machine,1,600.0,2019-07-25 18:51:00,"633 10th St, Atlanta, GA 30301",July
+227312,LG Washing Machine,1,600.0,2019-07-02 18:38:00,"505 Jackson St, San Francisco, CA 94016",July
+234591,LG Washing Machine,1,600.0,2019-07-13 15:31:00,"380 Maple St, San Francisco, CA 94016",July
+232201,LG Washing Machine,1,600.0,2019-07-01 14:37:00,"789 9th St, Atlanta, GA 30301",July
+223458,LG Washing Machine,1,600.0,2019-07-04 13:25:00,"615 Wilson St, Atlanta, GA 30301",July
+227210,LG Washing Machine,1,600.0,2019-07-22 18:57:00,"420 Adams St, New York City, NY 10001",July
+223695,LG Washing Machine,1,600.0,2019-07-28 20:09:00,"460 Chestnut St, Seattle, WA 98101",July
+240536,LG Washing Machine,1,600.0,2019-08-02 16:38:00,"113 Lake St, Portland, OR 97035",August
+240708,LG Washing Machine,1,600.0,2019-08-31 19:26:00,"520 1st St, San Francisco, CA 94016",August
+239570,LG Washing Machine,1,600.0,2019-08-28 15:31:00,"270 Johnson St, Austin, TX 73301",August
+237269,LG Washing Machine,1,600.0,2019-08-04 13:22:00,"72 Lincoln St, Los Angeles, CA 90001",August
+244830,LG Washing Machine,1,600.0,2019-08-24 14:35:00,"582 14th St, Los Angeles, CA 90001",August
+255056,LG Washing Machine,1,600.0,2019-09-07 17:13:00,"861 13th St, Dallas, TX 75001",September
+256912,LG Washing Machine,1,600.0,2019-09-24 11:17:00,"695 Willow St, San Francisco, CA 94016",September
+254274,LG Washing Machine,1,600.0,2019-09-15 20:55:00,"648 Pine St, New York City, NY 10001",September
+255272,LG Washing Machine,1,600.0,2019-09-18 12:54:00,"216 2nd St, Seattle, WA 98101",September
+248831,LG Washing Machine,1,600.0,2019-09-30 14:10:00,"160 Hickory St, New York City, NY 10001",September
+250834,LG Washing Machine,1,600.0,2019-09-09 12:24:00,"263 Jefferson St, New York City, NY 10001",September
+274678,LG Washing Machine,1,600.0,2019-10-14 12:58:00,"327 Sunset St, New York City, NY 10001",October
+267284,LG Washing Machine,1,600.0,2019-10-24 06:42:00,"779 13th St, Atlanta, GA 30301",October
+273794,LG Washing Machine,1,600.0,2019-10-02 10:05:00,"473 Walnut St, Seattle, WA 98101",October
+274381,LG Washing Machine,1,600.0,2019-10-23 00:31:00,"211 Cedar St, Atlanta, GA 30301",October
+263378,LG Washing Machine,1,600.0,2019-10-15 10:01:00,"514 South St, Seattle, WA 98101",October
+269310,LG Washing Machine,1,600.0,2019-10-15 15:56:00,"599 13th St, Los Angeles, CA 90001",October
+277736,LG Washing Machine,1,600.0,2019-10-03 11:57:00,"22 11th St, Los Angeles, CA 90001",October
+259782,LG Washing Machine,1,600.0,2019-10-19 04:50:00,"145 14th St, Portland, OR 97035",October
+275908,LG Washing Machine,1,600.0,2019-10-23 23:03:00,"212 North St, San Francisco, CA 94016",October
+264207,LG Washing Machine,1,600.0,2019-10-25 15:51:00,"875 Pine St, Seattle, WA 98101",October
+267769,LG Washing Machine,1,600.0,2019-10-31 21:18:00,"431 10th St, Portland, OR 97035",October
+262112,LG Washing Machine,1,600.0,2019-10-19 11:26:00,"99 Cedar St, Los Angeles, CA 90001",October
+265419,LG Washing Machine,1,600.0,2019-10-26 12:43:00,"249 Pine St, San Francisco, CA 94016",October
+279473,LG Washing Machine,1,600.0,2019-11-10 23:15:00,"938 Meadow St, Los Angeles, CA 90001",November
+280838,LG Washing Machine,1,600.0,2019-11-16 07:02:00,"508 Pine St, Atlanta, GA 30301",November
+280973,LG Washing Machine,1,600.0,2019-11-30 21:46:00,"760 9th St, Seattle, WA 98101",November
+293604,LG Washing Machine,1,600.0,2019-11-24 18:40:00,"458 Madison St, San Francisco, CA 94016",November
+286031,LG Washing Machine,1,600.0,2019-11-27 12:30:00,"691 Lakeview St, New York City, NY 10001",November
+295542,LG Washing Machine,1,600.0,2019-11-25 13:47:00,"406 Pine St, San Francisco, CA 94016",November
+281905,LG Washing Machine,1,600.0,2019-11-03 20:03:00,"897 12th St, Los Angeles, CA 90001",November
+314941,LG Washing Machine,1,600.0,2019-12-19 16:49:00,"596 10th St, Boston, MA 02215",December
+317486,LG Washing Machine,1,600.0,2019-12-31 21:06:00,"127 14th St, Seattle, WA 98101",December
+300758,LG Washing Machine,1,600.0,2019-12-22 19:39:00,"287 Cherry St, San Francisco, CA 94016",December
+302116,LG Washing Machine,1,600.0,2019-12-08 20:08:00,"674 9th St, Los Angeles, CA 90001",December
+306438,LG Washing Machine,1,600.0,2019-12-17 19:21:00,"332 Walnut St, San Francisco, CA 94016",December
+308106,LG Washing Machine,1,600.0,2019-12-03 19:37:00,"830 Madison St, Dallas, TX 75001",December
+239645,LG Washing Machine,1,600.0,2019-08-06 20:54:00,"795 Dogwood St, San Francisco, CA 94016",August
+298737,LG Washing Machine,1,600.0,2019-12-02 17:08:00,"533 Jackson St, San Francisco, CA 94016",December
+295689,LG Washing Machine,1,600.0,2019-12-24 11:21:00,"173 Lake St, San Francisco, CA 94016",December
+307453,LG Washing Machine,1,600.0,2019-12-03 12:55:00,"681 Meadow St, San Francisco, CA 94016",December
+303736,LG Washing Machine,1,600.0,2019-12-01 23:15:00,"809 Hickory St, San Francisco, CA 94016",December
+302132,LG Washing Machine,1,600.0,2019-12-29 05:36:00,"158 Hill St, San Francisco, CA 94016",December
+147709,LG Washing Machine,1,600.0,2019-01-01 20:29:00,"666 8th St, Los Angeles, CA 90001",January
+142560,LG Washing Machine,1,600.0,2019-01-26 12:27:00,"433 Main St, Dallas, TX 75001",January
+147975,LG Washing Machine,1,600.0,2019-01-07 21:30:00,"284 Highland St, Seattle, WA 98101",January
+145233,LG Washing Machine,1,600.0,2019-01-24 09:14:00,"403 4th St, Los Angeles, CA 90001",January
+143403,LG Washing Machine,1,600.0,2019-01-18 14:10:00,"133 12th St, Seattle, WA 98101",January
+147682,LG Washing Machine,1,600.0,2019-01-06 11:12:00,"105 Lincoln St, New York City, NY 10001",January
+147411,LG Washing Machine,1,600.0,2019-01-07 14:24:00,"440 South St, Boston, MA 02215",January
+148097,LG Washing Machine,1,600.0,2019-01-18 18:39:00,"295 Maple St, New York City, NY 10001",January
+158672,LG Washing Machine,1,600.0,2019-02-18 18:03:00,"362 Washington St, Los Angeles, CA 90001",February
+157392,LG Washing Machine,1,600.0,2019-02-28 18:14:00,"113 Maple St, Atlanta, GA 30301",February
+158576,LG Washing Machine,1,600.0,2019-02-16 16:42:00,"208 4th St, Atlanta, GA 30301",February
+156459,LG Washing Machine,1,600.0,2019-02-27 09:56:00,"875 Spruce St, San Francisco, CA 94016",February
+154487,LG Washing Machine,1,600.0,2019-02-02 15:33:00,"781 4th St, Los Angeles, CA 90001",February
+151299,LG Washing Machine,1,600.0,2019-02-21 16:24:00,"532 Park St, Los Angeles, CA 90001",February
+156765,LG Washing Machine,1,600.0,2019-02-11 20:49:00,"626 Pine St, New York City, NY 10001",February
+159888,LG Washing Machine,1,600.0,2019-02-16 18:39:00,"614 Sunset St, San Francisco, CA 94016",February
+165041,LG Washing Machine,1,600.0,2019-03-18 09:31:00,"848 Elm St, Atlanta, GA 30301",March
+174601,LG Washing Machine,1,600.0,2019-03-08 12:54:00,"373 12th St, New York City, NY 10001",March
+174137,LG Washing Machine,1,600.0,2019-03-04 08:18:00,"78 Lake St, Seattle, WA 98101",March
+166968,LG Washing Machine,1,600.0,2019-03-27 22:16:00,"782 Lincoln St, Portland, OR 97035",March
+163095,LG Washing Machine,1,600.0,2019-03-01 17:20:00,"317 9th St, San Francisco, CA 94016",March
+162020,LG Washing Machine,1,600.0,2019-03-26 18:17:00,"616 Jackson St, Dallas, TX 75001",March
+191209,LG Washing Machine,1,600.0,2019-04-24 21:46:00,"48 Cedar St, Atlanta, GA 30301",April
+178879,LG Washing Machine,1,600.0,2019-04-16 15:33:00,"792 Maple St, Portland, OR 97035",April
+183420,LG Washing Machine,1,600.0,2019-04-27 18:54:00,"835 South St, Boston, MA 02215",April
+180659,LG Washing Machine,1,600.0,2019-04-25 14:35:00,"434 Cherry St, San Francisco, CA 94016",April
+187333,LG Washing Machine,1,600.0,2019-04-21 18:22:00,"18 Jefferson St, Los Angeles, CA 90001",April
+190982,LG Washing Machine,1,600.0,2019-04-02 14:17:00,"574 River St, San Francisco, CA 94016",April
+179595,LG Washing Machine,1,600.0,2019-04-13 19:35:00,"656 Chestnut St, Seattle, WA 98101",April
+193571,LG Washing Machine,1,600.0,2019-04-13 17:46:00,"143 Spruce St, Portland, OR 97035",April
+190239,LG Washing Machine,1,600.0,2019-04-12 21:17:00,"59 Hill St, San Francisco, CA 94016",April
+193660,LG Washing Machine,1,600.0,2019-04-07 16:01:00,"903 Main St, New York City, NY 10001",April
+189555,LG Washing Machine,1,600.0,2019-04-04 18:01:00,"729 Meadow St, Dallas, TX 75001",April
+197566,LG Washing Machine,1,600.0,2019-05-11 21:34:00,"710 Sunset St, Portland, OR 97035",May
+194982,LG Washing Machine,1,600.0,2019-05-16 13:09:00,"652 Meadow St, New York City, NY 10001",May
+194495,LG Washing Machine,1,600.0,2019-05-30 21:43:00,"911 South St, San Francisco, CA 94016",May
+204549,LG Washing Machine,1,600.0,2019-05-22 13:11:00,"182 Cedar St, Boston, MA 02215",May
+209209,LG Washing Machine,1,600.0,2019-05-24 18:58:00,"452 Adams St, New York City, NY 10001",May
+201870,LG Washing Machine,1,600.0,2019-05-29 13:00:00,"288 4th St, Boston, MA 02215",May
+196189,LG Washing Machine,1,600.0,2019-05-30 13:48:00,"894 10th St, Los Angeles, CA 90001",May
+194321,LG Washing Machine,1,600.0,2019-05-14 06:59:00,"761 Lakeview St, Portland, OR 97035",May
+221418,LG Washing Machine,1,600.0,2019-06-04 21:17:00,"729 Dogwood St, Los Angeles, CA 90001",June
+211169,LG Washing Machine,1,600.0,2019-06-15 10:52:00,"297 2nd St, Boston, MA 02215",June
+219544,LG Washing Machine,1,600.0,2019-06-10 07:29:00,"894 10th St, Atlanta, GA 30301",June
+212423,LG Washing Machine,1,600.0,2019-06-25 18:22:00,"343 Dogwood St, Boston, MA 02215",June
+226891,LG Washing Machine,1,600.0,2019-07-04 17:33:00,"145 Dogwood St, New York City, NY 10001",July
+230700,LG Washing Machine,1,600.0,2019-07-16 09:33:00,"50 5th St, Seattle, WA 98101",July
+226362,LG Washing Machine,1,600.0,2019-07-20 19:06:00,"780 6th St, Portland, OR 97035",July
+230800,LG Washing Machine,1,600.0,2019-07-10 14:46:00,"692 13th St, Seattle, WA 98101",July
+226734,LG Washing Machine,1,600.0,2019-07-15 11:04:00,"358 South St, Boston, MA 02215",July
+230725,LG Washing Machine,1,600.0,2019-07-14 15:27:00,"146 Jackson St, Austin, TX 73301",July
+235917,LG Washing Machine,1,600.0,2019-07-11 20:05:00,"59 12th St, New York City, NY 10001",July
+224056,LG Washing Machine,1,600.0,2019-07-18 23:25:00,"389 North St, Atlanta, GA 30301",July
+227995,LG Washing Machine,1,600.0,2019-07-12 06:31:00,"482 Meadow St, Seattle, WA 98101",July
+248044,LG Washing Machine,1,600.0,2019-08-07 17:54:00,"812 Park St, Los Angeles, CA 90001",August
+245524,LG Washing Machine,1,600.0,2019-08-28 14:27:00,"214 7th St, Boston, MA 02215",August
+243274,LG Washing Machine,1,600.0,2019-08-27 19:48:00,"386 6th St, Los Angeles, CA 90001",August
+243300,LG Washing Machine,1,600.0,2019-08-16 18:57:00,"604 Ridge St, San Francisco, CA 94016",August
+241171,LG Washing Machine,1,600.0,2019-08-20 18:16:00,"42 Hill St, New York City, NY 10001",August
+245834,LG Washing Machine,1,600.0,2019-08-05 21:47:00,"540 Dogwood St, Boston, MA 02215",August
+250524,LG Washing Machine,1,600.0,2019-09-14 16:04:00,"591 Pine St, Atlanta, GA 30301",September
+253938,LG Washing Machine,1,600.0,2019-09-06 08:36:00,"533 West St, New York City, NY 10001",September
+252298,LG Washing Machine,1,600.0,2019-09-28 08:15:00,"697 Dogwood St, Dallas, TX 75001",September
+255137,LG Washing Machine,1,600.0,2019-09-09 14:20:00,"44 Ridge St, San Francisco, CA 94016",September
+253899,LG Washing Machine,1,600.0,2019-09-18 15:47:00,"435 13th St, Boston, MA 02215",September
+249115,LG Washing Machine,1,600.0,2019-09-15 13:06:00,"988 10th St, New York City, NY 10001",September
+249206,LG Washing Machine,1,600.0,2019-09-14 11:46:00,"63 Hickory St, San Francisco, CA 94016",September
+251600,LG Washing Machine,1,600.0,2019-09-07 17:30:00,"181 10th St, Los Angeles, CA 90001",September
+252376,LG Washing Machine,1,600.0,2019-09-17 13:35:00,"384 7th St, Portland, OR 97035",September
+275197,LG Washing Machine,1,600.0,2019-10-23 22:52:00,"899 11th St, New York City, NY 10001",October
+265507,LG Washing Machine,1,600.0,2019-10-25 13:03:00,"273 Dogwood St, San Francisco, CA 94016",October
+274256,LG Washing Machine,1,600.0,2019-10-13 09:39:00,"138 Park St, Boston, MA 02215",October
+267862,LG Washing Machine,1,600.0,2019-10-18 21:49:00,"760 Cherry St, Austin, TX 73301",October
+274353,LG Washing Machine,1,600.0,2019-10-25 00:18:00,"463 River St, Seattle, WA 98101",October
+269743,LG Washing Machine,1,600.0,2019-10-12 22:30:00,"34 Dogwood St, San Francisco, CA 94016",October
+272535,LG Washing Machine,1,600.0,2019-10-27 13:24:00,"748 Highland St, Los Angeles, CA 90001",October
+271476,LG Washing Machine,1,600.0,2019-10-16 21:22:00,"259 13th St, San Francisco, CA 94016",October
+261904,LG Washing Machine,1,600.0,2019-10-15 11:54:00,"694 4th St, San Francisco, CA 94016",October
+262173,LG Washing Machine,1,600.0,2019-10-13 08:20:00,"621 Lakeview St, Seattle, WA 98101",October
+271592,LG Washing Machine,1,600.0,2019-10-05 09:33:00,"719 Adams St, Boston, MA 02215",October
+279626,LG Washing Machine,1,600.0,2019-11-23 21:14:00,"877 14th St, New York City, NY 10001",November
+289028,LG Washing Machine,1,600.0,2019-11-05 13:29:00,"839 Jefferson St, Seattle, WA 98101",November
+280086,LG Washing Machine,1,600.0,2019-11-15 11:51:00,"592 2nd St, Boston, MA 02215",November
+284692,LG Washing Machine,1,600.0,2019-11-20 20:25:00,"318 8th St, Dallas, TX 75001",November
+286333,LG Washing Machine,1,600.0,2019-11-06 18:09:00,"686 River St, San Francisco, CA 94016",November
+287511,LG Washing Machine,1,600.0,2019-11-26 21:28:00,"38 7th St, Dallas, TX 75001",November
+286630,LG Washing Machine,1,600.0,2019-11-02 08:35:00,"852 14th St, New York City, NY 10001",November
+279516,LG Washing Machine,1,600.0,2019-11-27 19:53:00,"748 4th St, San Francisco, CA 94016",November
+294106,LG Washing Machine,1,600.0,2019-11-23 19:14:00,"867 Spruce St, Dallas, TX 75001",November
+294987,LG Washing Machine,1,600.0,2019-11-15 10:39:00,"248 Adams St, Portland, OR 97035",November
+308092,LG Washing Machine,1,600.0,2019-12-09 16:41:00,"86 Walnut St, San Francisco, CA 94016",December
+303076,LG Washing Machine,1,600.0,2019-12-02 21:36:00,"821 Forest St, Dallas, TX 75001",December
+302371,LG Washing Machine,1,600.0,2019-12-04 11:25:00,"798 10th St, Seattle, WA 98101",December
+319364,LG Washing Machine,1,600.0,2019-12-03 19:35:00,"695 Pine St, Seattle, WA 98101",December
+305594,LG Washing Machine,1,600.0,2019-12-17 13:29:00,"739 Jefferson St, San Francisco, CA 94016",December
+204914,LG Washing Machine,1,600.0,2019-05-25 20:49:00,"649 Lakeview St, Dallas, TX 75001",May
+304834,LG Washing Machine,1,600.0,2019-12-24 00:52:00,"919 Sunset St, Atlanta, GA 30301",December
+308817,LG Washing Machine,1,600.0,2019-12-23 14:34:00,"710 Dogwood St, Dallas, TX 75001",December
+305860,LG Washing Machine,1,600.0,2019-12-31 19:05:00,"882 Johnson St, Los Angeles, CA 90001",December
+313963,LG Washing Machine,1,600.0,2019-12-19 01:22:00,"60 9th St, San Francisco, CA 94016",December
+301397,LG Washing Machine,1,600.0,2019-12-30 13:57:00,"369 Ridge St, Boston, MA 02215",December
+306933,LG Washing Machine,1,600.0,2019-12-08 16:29:00,"643 Lakeview St, Boston, MA 02215",December
+144229,LG Washing Machine,1,600.0,2019-01-28 18:32:00,"505 8th St, Atlanta, GA 30301",January
+145890,LG Washing Machine,1,600.0,2019-01-28 23:05:00,"697 Chestnut St, Seattle, WA 98101",January
+145126,LG Washing Machine,1,600.0,2019-01-03 00:06:00,"946 Walnut St, San Francisco, CA 94016",January
+148146,LG Washing Machine,1,600.0,2019-01-30 21:44:00,"115 Adams St, New York City, NY 10001",January
+148308,LG Washing Machine,1,600.0,2019-01-02 20:18:00,"871 Chestnut St, New York City, NY 10001",January
+144103,LG Washing Machine,1,600.0,2019-01-30 16:15:00,"766 Dogwood St, Atlanta, GA 30301",January
+156886,LG Washing Machine,1,600.0,2019-02-02 16:36:00,"599 Lakeview St, Dallas, TX 75001",February
+152213,LG Washing Machine,1,600.0,2019-02-20 18:15:00,"286 Cedar St, New York City, NY 10001",February
+161912,LG Washing Machine,1,600.0,2019-02-04 19:21:00,"141 South St, Atlanta, GA 30301",February
+153103,LG Washing Machine,1,600.0,2019-02-08 13:11:00,"937 Wilson St, Los Angeles, CA 90001",February
+161758,LG Washing Machine,1,600.0,2019-02-06 17:02:00,"986 6th St, San Francisco, CA 94016",February
+176514,LG Washing Machine,1,600.0,2019-03-13 19:35:00,"567 Main St, New York City, NY 10001",March
+167126,LG Washing Machine,1,600.0,2019-03-13 12:58:00,"628 North St, Seattle, WA 98101",March
+163040,LG Washing Machine,1,600.0,2019-03-27 16:01:00,"86 Madison St, Los Angeles, CA 90001",March
+170196,LG Washing Machine,1,600.0,2019-03-23 17:20:00,"67 Church St, Seattle, WA 98101",March
+169223,LG Washing Machine,1,600.0,2019-03-21 16:26:00,"164 8th St, San Francisco, CA 94016",March
+171287,LG Washing Machine,1,600.0,2019-03-30 22:33:00,"181 Lakeview St, San Francisco, CA 94016",March
+163834,LG Washing Machine,1,600.0,2019-03-04 18:54:00,"336 South St, Atlanta, GA 30301",March
+167485,LG Washing Machine,1,600.0,2019-03-31 23:28:00,"549 Ridge St, San Francisco, CA 94016",March
+166045,LG Washing Machine,1,600.0,2019-03-15 19:56:00,"425 7th St, Los Angeles, CA 90001",March
+176104,LG Washing Machine,1,600.0,2019-03-12 10:54:00,"297 River St, Boston, MA 02215",March
+164968,LG Washing Machine,1,600.0,2019-03-07 10:00:00,"627 Pine St, Atlanta, GA 30301",March
+164866,LG Washing Machine,1,600.0,2019-03-07 20:51:00,"849 4th St, Austin, TX 73301",March
+176301,LG Washing Machine,1,600.0,2019-03-12 19:28:00,"863 Lincoln St, Boston, MA 02215",March
+189926,LG Washing Machine,1,600.0,2019-04-10 14:15:00,"569 Main St, Atlanta, GA 30301",April
+185572,LG Washing Machine,1,600.0,2019-04-22 09:12:00,"9 Lincoln St, San Francisco, CA 94016",April
+180127,LG Washing Machine,1,600.0,2019-04-23 09:34:00,"927 Jackson St, Los Angeles, CA 90001",April
+183111,LG Washing Machine,1,600.0,2019-04-19 22:03:00,"308 12th St, Dallas, TX 75001",April
+183838,LG Washing Machine,1,600.0,2019-04-24 19:57:00,"210 Church St, Austin, TX 73301",April
+187053,LG Washing Machine,1,600.0,2019-04-26 20:32:00,"564 Sunset St, New York City, NY 10001",April
+191364,LG Washing Machine,1,600.0,2019-04-24 16:56:00,"274 Lake St, San Francisco, CA 94016",April
+177130,LG Washing Machine,1,600.0,2019-04-01 08:43:00,"777 Center St, Los Angeles, CA 90001",April
+177145,LG Washing Machine,1,600.0,2019-04-25 09:50:00,"790 Walnut St, San Francisco, CA 94016",April
+185282,LG Washing Machine,1,600.0,2019-04-12 23:10:00,"827 Lincoln St, Austin, TX 73301",April
+193777,LG Washing Machine,1,600.0,2019-04-08 10:51:00,"94 Sunset St, New York City, NY 10001",April
+186509,LG Washing Machine,1,600.0,2019-04-27 11:49:00,"428 Dogwood St, Los Angeles, CA 90001",April
+176652,LG Washing Machine,1,600.0,2019-04-09 20:04:00,"502 14th St, New York City, NY 10001",April
+193465,LG Washing Machine,1,600.0,2019-04-15 16:10:00,"974 Lake St, Los Angeles, CA 90001",April
+209506,LG Washing Machine,1,600.0,2019-05-11 22:06:00,"992 Ridge St, Austin, TX 73301",May
+208731,LG Washing Machine,1,600.0,2019-05-08 08:53:00,"464 Church St, New York City, NY 10001",May
+196752,LG Washing Machine,1,600.0,2019-05-06 20:21:00,"728 10th St, Boston, MA 02215",May
+194873,LG Washing Machine,1,600.0,2019-05-29 13:44:00,"56 5th St, Atlanta, GA 30301",May
+208775,LG Washing Machine,1,600.0,2019-05-11 11:19:00,"725 Madison St, Dallas, TX 75001",May
+202242,LG Washing Machine,1,600.0,2019-05-22 09:37:00,"31 Willow St, Dallas, TX 75001",May
+208797,LG Washing Machine,1,600.0,2019-05-25 09:32:00,"265 4th St, San Francisco, CA 94016",May
+208060,LG Washing Machine,1,600.0,2019-05-28 15:52:00,"473 Madison St, San Francisco, CA 94016",May
+204387,LG Washing Machine,1,600.0,2019-05-16 13:06:00,"721 1st St, Los Angeles, CA 90001",May
+197880,LG Washing Machine,1,600.0,2019-05-31 17:08:00,"114 Ridge St, San Francisco, CA 94016",May
+197282,LG Washing Machine,1,600.0,2019-05-23 20:42:00,"775 North St, Los Angeles, CA 90001",May
+209852,LG Washing Machine,1,600.0,2019-05-25 11:01:00,"60 9th St, Austin, TX 73301",May
+201826,LG Washing Machine,1,600.0,2019-05-18 10:04:00,"504 6th St, San Francisco, CA 94016",May
+215697,LG Washing Machine,1,600.0,2019-06-17 12:02:00,"753 Walnut St, Atlanta, GA 30301",June
+211525,LG Washing Machine,1,600.0,2019-06-07 21:33:00,"837 Maple St, Seattle, WA 98101",June
+215877,LG Washing Machine,1,600.0,2019-06-25 18:28:00,"878 Washington St, San Francisco, CA 94016",June
+218429,LG Washing Machine,1,600.0,2019-06-17 10:11:00,"759 10th St, San Francisco, CA 94016",June
+213916,LG Washing Machine,1,600.0,2019-06-25 16:00:00,"961 Ridge St, Portland, ME 04101",June
+213535,LG Washing Machine,1,600.0,2019-06-16 16:59:00,"166 Ridge St, San Francisco, CA 94016",June
+215157,LG Washing Machine,1,600.0,2019-06-05 10:19:00,"211 Lake St, Atlanta, GA 30301",June
+215142,LG Washing Machine,1,600.0,2019-06-16 13:35:00,"207 13th St, San Francisco, CA 94016",June
+211011,LG Washing Machine,1,600.0,2019-06-16 13:47:00,"175 Highland St, Los Angeles, CA 90001",June
+222398,LG Washing Machine,1,600.0,2019-06-18 20:41:00,"705 Wilson St, Los Angeles, CA 90001",June
+225613,LG Washing Machine,1,600.0,2019-07-16 12:54:00,"830 1st St, San Francisco, CA 94016",July
+223490,LG Washing Machine,1,600.0,2019-07-29 11:56:00,"947 Lakeview St, New York City, NY 10001",July
+225246,LG Washing Machine,1,600.0,2019-07-13 19:48:00,"905 Sunset St, San Francisco, CA 94016",July
+234115,LG Washing Machine,1,600.0,2019-07-26 09:51:00,"958 Jefferson St, New York City, NY 10001",July
+224903,LG Washing Machine,1,600.0,2019-07-26 01:32:00,"224 Jackson St, Portland, OR 97035",July
+224681,LG Washing Machine,1,600.0,2019-07-23 19:18:00,"184 Main St, Dallas, TX 75001",July
+223310,LG Washing Machine,1,600.0,2019-07-26 19:55:00,"853 Sunset St, San Francisco, CA 94016",July
+244203,LG Washing Machine,1,600.0,2019-08-20 08:33:00,"193 Washington St, Seattle, WA 98101",August
+248135,LG Washing Machine,1,600.0,2019-08-14 11:44:00,"429 11th St, New York City, NY 10001",August
+247522,LG Washing Machine,1,600.0,2019-08-16 11:24:00,"746 Highland St, San Francisco, CA 94016",August
+244544,LG Washing Machine,1,600.0,2019-08-17 15:26:00,"533 South St, Dallas, TX 75001",August
+244554,LG Washing Machine,1,600.0,2019-08-20 14:25:00,"550 4th St, Portland, ME 04101",August
+244852,LG Washing Machine,1,600.0,2019-08-25 10:25:00,"105 2nd St, Los Angeles, CA 90001",August
+246489,LG Washing Machine,1,600.0,2019-08-26 18:08:00,"402 Cherry St, Boston, MA 02215",August
+257585,LG Washing Machine,1,600.0,2019-09-05 13:10:00,"2 8th St, Austin, TX 73301",September
+252565,LG Washing Machine,1,600.0,2019-09-04 10:22:00,"642 13th St, Austin, TX 73301",September
+252807,LG Washing Machine,1,600.0,2019-09-10 09:21:00,"363 14th St, San Francisco, CA 94016",September
+257000,LG Washing Machine,1,600.0,2019-09-08 09:19:00,"334 River St, Austin, TX 73301",September
+252217,LG Washing Machine,1,600.0,2019-09-04 21:53:00,"693 Chestnut St, Boston, MA 02215",September
+257039,LG Washing Machine,1,600.0,2019-09-10 22:15:00,"634 5th St, Boston, MA 02215",September
+249214,LG Washing Machine,1,600.0,2019-09-12 23:14:00,"441 Pine St, Austin, TX 73301",September
+250223,LG Washing Machine,1,600.0,2019-09-26 21:33:00,"382 1st St, New York City, NY 10001",September
+253836,LG Washing Machine,1,600.0,2019-09-29 17:16:00,"424 2nd St, Dallas, TX 75001",September
+270622,LG Washing Machine,1,600.0,2019-10-11 10:00:00,"771 Park St, New York City, NY 10001",October
+263052,LG Washing Machine,1,600.0,2019-10-13 06:47:00,"613 5th St, Los Angeles, CA 90001",October
+272577,LG Washing Machine,1,600.0,2019-10-26 00:09:00,"41 Madison St, San Francisco, CA 94016",October
+275471,LG Washing Machine,1,600.0,2019-10-09 09:35:00,"962 Chestnut St, Boston, MA 02215",October
+281890,LG Washing Machine,1,600.0,2019-11-16 01:01:00,"46 Center St, Austin, TX 73301",November
+280434,LG Washing Machine,1,600.0,2019-11-13 06:06:00,"655 River St, Atlanta, GA 30301",November
+295114,LG Washing Machine,1,600.0,2019-11-09 17:31:00,"760 2nd St, Dallas, TX 75001",November
+294386,LG Washing Machine,1,600.0,2019-11-27 18:59:00,"603 5th St, New York City, NY 10001",November
+288319,LG Washing Machine,1,600.0,2019-11-05 23:02:00,"756 Lakeview St, New York City, NY 10001",November
+282823,LG Washing Machine,1,600.0,2019-11-11 17:35:00,"37 Lakeview St, Boston, MA 02215",November
+286622,LG Washing Machine,1,600.0,2019-11-12 08:12:00,"203 Chestnut St, New York City, NY 10001",November
+318990,LG Washing Machine,1,600.0,2019-12-19 19:20:00,"671 10th St, Austin, TX 73301",December
+313887,LG Washing Machine,1,600.0,2019-12-05 19:37:00,"23 10th St, Seattle, WA 98101",December
+318074,LG Washing Machine,1,600.0,2019-12-05 03:10:00,"823 Hill St, San Francisco, CA 94016",December
+310070,LG Washing Machine,1,600.0,2019-12-04 18:21:00,"696 Cherry St, Dallas, TX 75001",December
+303345,LG Washing Machine,1,600.0,2019-12-10 19:03:00,"197 2nd St, Dallas, TX 75001",December
+317145,LG Washing Machine,1,600.0,2019-12-31 20:02:00,"22 Lincoln St, San Francisco, CA 94016",December
+310356,LG Washing Machine,1,600.0,2019-12-18 08:53:00,"834 Center St, New York City, NY 10001",December
+312836,LG Washing Machine,1,600.0,2019-12-31 11:25:00,"696 Forest St, San Francisco, CA 94016",December
+301633,LG Washing Machine,1,600.0,2019-12-17 11:28:00,"462 Elm St, Los Angeles, CA 90001",December
+300694,LG Washing Machine,1,600.0,2019-12-15 02:08:00,"157 14th St, Los Angeles, CA 90001",December
+209690,LG Washing Machine,1,600.0,2019-05-11 05:35:00,"284 9th St, Boston, MA 02215",May
+318248,LG Washing Machine,1,600.0,2019-12-26 13:51:00,"721 Hickory St, Atlanta, GA 30301",December
+313631,LG Washing Machine,1,600.0,2019-12-31 14:07:00,"18 Washington St, San Francisco, CA 94016",December
+299088,LG Washing Machine,1,600.0,2019-12-30 15:21:00,"804 10th St, Dallas, TX 75001",December
+312667,LG Washing Machine,1,600.0,2019-12-15 11:17:00,"924 Ridge St, Boston, MA 02215",December
+316311,LG Washing Machine,1,600.0,2019-12-16 12:44:00,"477 Cedar St, New York City, NY 10001",December
+145437,LG Washing Machine,1,600.0,2019-01-29 09:50:00,"717 6th St, San Francisco, CA 94016",January
+144957,LG Washing Machine,1,600.0,2019-01-04 22:50:00,"144 Church St, San Francisco, CA 94016",January
+150426,LG Washing Machine,1,600.0,2019-01-29 19:31:00,"533 Hill St, San Francisco, CA 94016",January
+146389,LG Washing Machine,1,600.0,2019-01-11 13:18:00,"212 6th St, Seattle, WA 98101",January
+149786,LG Washing Machine,1,600.0,2019-01-31 12:01:00,"454 13th St, Seattle, WA 98101",January
+142939,LG Washing Machine,1,600.0,2019-01-25 12:35:00,"5 Spruce St, San Francisco, CA 94016",January
+141766,LG Washing Machine,1,600.0,2019-01-16 21:08:00,"530 Jackson St, Dallas, TX 75001",January
+158703,LG Washing Machine,1,600.0,2019-02-01 06:50:00,"937 Adams St, Boston, MA 02215",February
+150902,LG Washing Machine,1,600.0,2019-02-22 14:15:00,"863 Hickory St, San Francisco, CA 94016",February
+157033,LG Washing Machine,1,600.0,2019-02-17 14:08:00,"620 North St, Austin, TX 73301",February
+159621,LG Washing Machine,1,600.0,2019-02-25 13:05:00,"371 Chestnut St, San Francisco, CA 94016",February
+161471,LG Washing Machine,1,600.0,2019-02-09 09:35:00,"592 Madison St, Dallas, TX 75001",February
+164479,LG Washing Machine,1,600.0,2019-03-10 10:26:00,"855 13th St, San Francisco, CA 94016",March
+166709,LG Washing Machine,1,600.0,2019-03-23 21:04:00,"271 Ridge St, New York City, NY 10001",March
+176551,LG Washing Machine,1,600.0,2019-03-20 23:49:00,"567 River St, San Francisco, CA 94016",March
+174152,LG Washing Machine,1,600.0,2019-03-16 13:02:00,"904 Church St, Los Angeles, CA 90001",March
+169610,LG Washing Machine,1,600.0,2019-03-13 11:43:00,"101 Madison St, San Francisco, CA 94016",March
+170815,LG Washing Machine,1,600.0,2019-03-23 15:40:00,"743 Hickory St, San Francisco, CA 94016",March
+164962,LG Washing Machine,1,600.0,2019-03-26 21:04:00,"817 Washington St, Seattle, WA 98101",March
+170027,LG Washing Machine,1,600.0,2019-03-26 09:47:00,"924 Adams St, Los Angeles, CA 90001",March
+163619,LG Washing Machine,1,600.0,2019-03-18 20:18:00,"470 12th St, Atlanta, GA 30301",March
+167019,LG Washing Machine,1,600.0,2019-03-06 22:51:00,"203 9th St, New York City, NY 10001",March
+167873,LG Washing Machine,1,600.0,2019-03-31 12:56:00,"761 Forest St, San Francisco, CA 94016",March
+168036,LG Washing Machine,1,600.0,2019-03-02 10:44:00,"123 6th St, Los Angeles, CA 90001",March
+166017,LG Washing Machine,1,600.0,2019-03-18 06:16:00,"459 Spruce St, New York City, NY 10001",March
+166268,LG Washing Machine,1,600.0,2019-03-23 12:52:00,"807 12th St, Seattle, WA 98101",March
+168857,LG Washing Machine,1,600.0,2019-03-07 18:15:00,"118 North St, Portland, ME 04101",March
+168780,LG Washing Machine,1,600.0,2019-03-08 12:16:00,"766 Pine St, Portland, OR 97035",March
+180391,LG Washing Machine,1,600.0,2019-04-06 14:11:00,"979 Lakeview St, San Francisco, CA 94016",April
+179174,LG Washing Machine,1,600.0,2019-04-04 15:12:00,"201 Ridge St, Los Angeles, CA 90001",April
+179608,LG Washing Machine,1,600.0,2019-04-13 14:16:00,"970 Dogwood St, Los Angeles, CA 90001",April
+184169,LG Washing Machine,1,600.0,2019-04-27 20:14:00,"37 Church St, Los Angeles, CA 90001",April
+188095,LG Washing Machine,1,600.0,2019-04-05 09:26:00,"590 1st St, Boston, MA 02215",April
+188548,LG Washing Machine,1,600.0,2019-04-22 14:29:00,"704 Jefferson St, Los Angeles, CA 90001",April
+190359,LG Washing Machine,1,600.0,2019-04-04 19:15:00,"588 Washington St, New York City, NY 10001",April
+198012,LG Washing Machine,1,600.0,2019-05-16 05:41:00,"805 6th St, San Francisco, CA 94016",May
+203500,LG Washing Machine,1,600.0,2019-05-25 19:12:00,"229 Washington St, San Francisco, CA 94016",May
+199007,LG Washing Machine,1,600.0,2019-05-02 20:47:00,"967 Walnut St, San Francisco, CA 94016",May
+202136,LG Washing Machine,1,600.0,2019-05-01 19:25:00,"850 12th St, Boston, MA 02215",May
+199504,LG Washing Machine,1,600.0,2019-05-19 08:16:00,"654 12th St, Boston, MA 02215",May
+203264,LG Washing Machine,1,600.0,2019-05-18 14:19:00,"816 Ridge St, Portland, OR 97035",May
+197009,LG Washing Machine,1,600.0,2019-05-04 19:08:00,"152 River St, Austin, TX 73301",May
+199871,LG Washing Machine,1,600.0,2019-05-10 15:11:00,"721 Hickory St, Portland, OR 97035",May
+207318,LG Washing Machine,1,600.0,2019-05-03 11:39:00,"95 Highland St, New York City, NY 10001",May
+205455,LG Washing Machine,1,600.0,2019-05-31 19:42:00,"383 Meadow St, Dallas, TX 75001",May
+200073,LG Washing Machine,1,600.0,2019-05-03 19:03:00,"794 13th St, New York City, NY 10001",May
+210210,LG Washing Machine,1,600.0,2019-06-26 19:07:00,"948 Maple St, Boston, MA 02215",June
+217063,LG Washing Machine,1,600.0,2019-06-19 08:35:00,"705 6th St, Los Angeles, CA 90001",June
+215400,LG Washing Machine,1,600.0,2019-06-01 14:34:00,"772 Walnut St, Los Angeles, CA 90001",June
+213689,LG Washing Machine,1,600.0,2019-06-16 05:48:00,"621 Chestnut St, Seattle, WA 98101",June
+219465,LG Washing Machine,1,600.0,2019-06-11 14:34:00,"272 Spruce St, New York City, NY 10001",June
+222559,LG Washing Machine,1,600.0,2019-06-04 18:59:00,"468 Madison St, San Francisco, CA 94016",June
+213196,LG Washing Machine,1,600.0,2019-06-08 17:59:00,"592 Hickory St, Atlanta, GA 30301",June
+211338,LG Washing Machine,1,600.0,2019-06-27 10:45:00,"4 Adams St, San Francisco, CA 94016",June
+216093,LG Washing Machine,1,600.0,2019-06-12 08:40:00,"918 Forest St, Atlanta, GA 30301",June
+236128,LG Washing Machine,1,600.0,2019-07-26 12:27:00,"85 Park St, New York City, NY 10001",July
+234218,LG Washing Machine,1,600.0,2019-07-24 21:57:00,"872 Walnut St, Los Angeles, CA 90001",July
+235776,LG Washing Machine,1,600.0,2019-07-23 23:44:00,"135 River St, San Francisco, CA 94016",July
+233026,LG Washing Machine,1,600.0,2019-07-08 21:49:00,"280 Washington St, New York City, NY 10001",July
+230010,LG Washing Machine,1,600.0,2019-07-15 21:13:00,"495 8th St, Seattle, WA 98101",July
+229346,LG Washing Machine,1,600.0,2019-07-12 22:00:00,"793 Jefferson St, San Francisco, CA 94016",July
+230812,LG Washing Machine,1,600.0,2019-07-14 05:43:00,"220 Washington St, Dallas, TX 75001",July
+233449,LG Washing Machine,1,600.0,2019-07-27 13:10:00,"777 Cedar St, New York City, NY 10001",July
+227853,LG Washing Machine,1,600.0,2019-07-27 13:15:00,"420 2nd St, Los Angeles, CA 90001",July
+229135,LG Washing Machine,1,600.0,2019-07-05 08:28:00,"388 Highland St, Seattle, WA 98101",July
+227140,LG Washing Machine,1,600.0,2019-07-06 15:12:00,"389 8th St, San Francisco, CA 94016",July
+243468,LG Washing Machine,1,600.0,2019-08-04 14:32:00,"195 Dogwood St, New York City, NY 10001",August
+247248,LG Washing Machine,1,600.0,2019-08-18 15:20:00,"253 7th St, San Francisco, CA 94016",August
+238241,LG Washing Machine,1,600.0,2019-08-04 12:15:00,"865 Chestnut St, New York City, NY 10001",August
+243935,LG Washing Machine,1,600.0,2019-08-08 15:03:00,"749 Walnut St, Los Angeles, CA 90001",August
+238008,LG Washing Machine,1,600.0,2019-08-15 15:11:00,"622 2nd St, Boston, MA 02215",August
+246587,LG Washing Machine,1,600.0,2019-08-11 23:24:00,"842 Jefferson St, Dallas, TX 75001",August
+239707,LG Washing Machine,1,600.0,2019-08-10 22:55:00,"330 Willow St, Portland, OR 97035",August
+240828,LG Washing Machine,1,600.0,2019-08-28 18:49:00,"756 10th St, Dallas, TX 75001",August
+239633,LG Washing Machine,1,600.0,2019-08-16 18:41:00,"542 12th St, Seattle, WA 98101",August
+237121,LG Washing Machine,1,600.0,2019-08-16 15:38:00,"573 Adams St, Los Angeles, CA 90001",August
+240130,LG Washing Machine,1,600.0,2019-08-25 16:54:00,"273 6th St, San Francisco, CA 94016",August
+256369,LG Washing Machine,1,600.0,2019-09-12 15:25:00,"811 Johnson St, San Francisco, CA 94016",September
+258902,LG Washing Machine,1,600.0,2019-09-18 17:32:00,"925 Forest St, San Francisco, CA 94016",September
+250689,LG Washing Machine,1,600.0,2019-09-19 15:46:00,"824 Washington St, Los Angeles, CA 90001",September
+254260,LG Washing Machine,1,600.0,2019-09-06 19:23:00,"562 Cherry St, Los Angeles, CA 90001",September
+252794,LG Washing Machine,1,600.0,2019-09-19 13:52:00,"36 North St, Boston, MA 02215",September
+257432,LG Washing Machine,1,600.0,2019-09-11 16:32:00,"802 Willow St, Atlanta, GA 30301",September
+255473,LG Washing Machine,1,600.0,2019-09-12 18:00:00,"19 Hickory St, Boston, MA 02215",September
+274020,LG Washing Machine,1,600.0,2019-10-08 07:56:00,"884 Jackson St, Seattle, WA 98101",October
+263996,LG Washing Machine,1,600.0,2019-10-25 13:46:00,"547 13th St, Boston, MA 02215",October
+260620,LG Washing Machine,1,600.0,2019-10-04 17:16:00,"103 Jefferson St, San Francisco, CA 94016",October
+266531,LG Washing Machine,1,600.0,2019-10-28 16:04:00,"121 Lincoln St, Boston, MA 02215",October
+277073,LG Washing Machine,1,600.0,2019-10-19 12:39:00,"39 2nd St, Los Angeles, CA 90001",October
+277968,LG Washing Machine,1,600.0,2019-10-30 11:35:00,"167 Washington St, Los Angeles, CA 90001",October
+264768,LG Washing Machine,1,600.0,2019-10-06 16:44:00,"276 Lincoln St, Dallas, TX 75001",October
+269185,LG Washing Machine,1,600.0,2019-10-09 10:24:00,"777 Cedar St, San Francisco, CA 94016",October
+275005,LG Washing Machine,1,600.0,2019-10-17 18:21:00,"943 12th St, New York City, NY 10001",October
+264329,LG Washing Machine,1,600.0,2019-10-13 20:09:00,"34 13th St, San Francisco, CA 94016",October
+261058,LG Washing Machine,1,600.0,2019-10-13 13:26:00,"419 9th St, Boston, MA 02215",October
+267344,LG Washing Machine,1,600.0,2019-10-09 19:09:00,"634 Cherry St, Dallas, TX 75001",October
+270311,LG Washing Machine,1,600.0,2019-10-22 17:23:00,"963 14th St, New York City, NY 10001",October
+290866,LG Washing Machine,1,600.0,2019-11-30 13:57:00,"596 Madison St, San Francisco, CA 94016",November
+280990,LG Washing Machine,1,600.0,2019-11-26 17:17:00,"127 11th St, Boston, MA 02215",November
+287128,LG Washing Machine,1,600.0,2019-11-11 00:57:00,"245 11th St, Boston, MA 02215",November
+287463,LG Washing Machine,1,600.0,2019-11-20 15:12:00,"443 Jackson St, New York City, NY 10001",November
+279561,LG Washing Machine,1,600.0,2019-11-01 12:31:00,"206 Meadow St, Boston, MA 02215",November
+288323,LG Washing Machine,1,600.0,2019-11-27 23:11:00,"992 Lincoln St, Los Angeles, CA 90001",November
+287680,LG Washing Machine,1,600.0,2019-11-09 13:26:00,"113 Chestnut St, Atlanta, GA 30301",November
+292575,LG Washing Machine,1,600.0,2019-11-30 12:12:00,"706 Lakeview St, Atlanta, GA 30301",November
+293620,LG Washing Machine,1,600.0,2019-11-05 19:09:00,"432 Sunset St, Atlanta, GA 30301",November
+288479,LG Washing Machine,1,600.0,2019-11-14 16:06:00,"707 Highland St, San Francisco, CA 94016",November
+316254,LG Washing Machine,1,600.0,2019-12-24 23:41:00,"614 Johnson St, Boston, MA 02215",December
+313516,LG Washing Machine,1,600.0,2019-12-14 12:15:00,"414 1st St, Boston, MA 02215",December
+299081,LG Washing Machine,1,600.0,2019-12-29 11:42:00,"568 7th St, New York City, NY 10001",December
+275294,LG Washing Machine,1,600.0,2019-10-08 12:48:00,"257 12th St, San Francisco, CA 94016",October
+261678,LG Washing Machine,1,600.0,2019-10-04 11:44:00,"88 Spruce St, Boston, MA 02215",October
+317501,LG Washing Machine,1,600.0,2019-12-28 18:15:00,"844 Church St, Austin, TX 73301",December
+299532,LG Washing Machine,1,600.0,2019-12-05 11:10:00,"605 Church St, San Francisco, CA 94016",December
+307551,LG Washing Machine,1,600.0,2019-12-14 18:39:00,"934 Church St, New York City, NY 10001",December
+315351,LG Washing Machine,1,600.0,2019-12-24 18:25:00,"729 5th St, Boston, MA 02215",December
+306231,LG Washing Machine,1,600.0,2019-12-03 20:25:00,"503 Chestnut St, San Francisco, CA 94016",December
+144052,LG Washing Machine,1,600.0,2019-01-23 16:08:00,"748 North St, San Francisco, CA 94016",January
+144754,LG Washing Machine,1,600.0,2019-01-25 18:18:00,"388 11th St, Boston, MA 02215",January
+149146,LG Washing Machine,1,600.0,2019-01-26 14:44:00,"652 10th St, Los Angeles, CA 90001",January
+149508,LG Washing Machine,1,600.0,2019-01-15 15:47:00,"212 Meadow St, San Francisco, CA 94016",January
+145158,LG Washing Machine,1,600.0,2019-01-03 21:05:00,"317 Highland St, Seattle, WA 98101",January
+148988,LG Washing Machine,1,600.0,2019-01-20 09:14:00,"864 13th St, San Francisco, CA 94016",January
+143762,LG Washing Machine,1,600.0,2019-01-05 23:04:00,"331 14th St, San Francisco, CA 94016",January
+149997,LG Washing Machine,1,600.0,2019-01-03 16:25:00,"428 Lakeview St, Los Angeles, CA 90001",January
+143594,LG Washing Machine,1,600.0,2019-01-08 21:25:00,"113 West St, Boston, MA 02215",January
+148272,LG Washing Machine,1,600.0,2019-01-13 12:43:00,"594 9th St, Boston, MA 02215",January
+158970,LG Washing Machine,1,600.0,2019-02-03 13:16:00,"510 Forest St, San Francisco, CA 94016",February
+161773,LG Washing Machine,1,600.0,2019-02-14 16:56:00,"178 River St, San Francisco, CA 94016",February
+156812,LG Washing Machine,1,600.0,2019-02-13 20:59:00,"709 Cherry St, Atlanta, GA 30301",February
+156995,LG Washing Machine,1,600.0,2019-02-20 19:47:00,"553 Willow St, Austin, TX 73301",February
+160400,LG Washing Machine,1,600.0,2019-02-03 10:21:00,"609 Church St, Boston, MA 02215",February
+150937,LG Washing Machine,1,600.0,2019-02-25 19:21:00,"245 Chestnut St, San Francisco, CA 94016",February
+161251,LG Washing Machine,1,600.0,2019-02-08 14:38:00,"282 Cedar St, San Francisco, CA 94016",February
+151577,LG Washing Machine,1,600.0,2019-02-27 12:23:00,"731 Jackson St, Dallas, TX 75001",February
+166446,LG Washing Machine,1,600.0,2019-03-14 15:46:00,"142 Sunset St, San Francisco, CA 94016",March
+164272,LG Washing Machine,1,600.0,2019-03-20 12:51:00,"707 11th St, San Francisco, CA 94016",March
+167694,LG Washing Machine,1,600.0,2019-03-30 19:59:00,"893 Cedar St, Dallas, TX 75001",March
+172058,LG Washing Machine,1,600.0,2019-03-07 14:27:00,"923 6th St, Dallas, TX 75001",March
+175819,LG Washing Machine,1,600.0,2019-03-02 16:10:00,"918 13th St, Dallas, TX 75001",March
+169570,LG Washing Machine,1,600.0,2019-03-09 17:51:00,"535 Hickory St, Austin, TX 73301",March
+165005,LG Washing Machine,1,600.0,2019-03-25 16:22:00,"964 Willow St, Boston, MA 02215",March
+169954,LG Washing Machine,1,600.0,2019-03-03 20:53:00,"57 Ridge St, San Francisco, CA 94016",March
+162587,LG Washing Machine,1,600.0,2019-03-20 12:58:00,"66 Lakeview St, San Francisco, CA 94016",March
+169976,LG Washing Machine,1,600.0,2019-03-05 23:25:00,"486 2nd St, Los Angeles, CA 90001",March
+168239,LG Washing Machine,1,600.0,2019-03-07 19:00:00,"500 North St, Boston, MA 02215",March
+170349,LG Washing Machine,1,600.0,2019-03-30 12:29:00,"436 Johnson St, San Francisco, CA 94016",March
+183256,LG Washing Machine,1,600.0,2019-04-27 15:16:00,"17 Pine St, Dallas, TX 75001",April
+176923,LG Washing Machine,1,600.0,2019-04-26 12:48:00,"259 6th St, Los Angeles, CA 90001",April
+186674,LG Washing Machine,1,600.0,2019-04-19 17:52:00,"393 Hill St, Portland, OR 97035",April
+180663,LG Washing Machine,1,600.0,2019-04-12 09:37:00,"785 Park St, Los Angeles, CA 90001",April
+190769,LG Washing Machine,1,600.0,2019-04-07 19:12:00,"84 Hickory St, Seattle, WA 98101",April
+187330,LG Washing Machine,1,600.0,2019-04-28 16:46:00,"823 River St, San Francisco, CA 94016",April
+184844,LG Washing Machine,1,600.0,2019-04-05 18:57:00,"154 Jefferson St, Los Angeles, CA 90001",April
+185897,LG Washing Machine,1,600.0,2019-04-03 10:31:00,"842 Highland St, Austin, TX 73301",April
+188625,LG Washing Machine,1,600.0,2019-04-09 16:29:00,"886 Jackson St, San Francisco, CA 94016",April
+184140,LG Washing Machine,1,600.0,2019-04-09 22:00:00,"810 Walnut St, San Francisco, CA 94016",April
+179989,LG Washing Machine,1,600.0,2019-04-02 20:54:00,"889 Hickory St, Los Angeles, CA 90001",April
+180094,LG Washing Machine,1,600.0,2019-04-06 01:05:00,"470 Madison St, New York City, NY 10001",April
+184025,LG Washing Machine,1,600.0,2019-04-09 16:07:00,"986 Spruce St, Dallas, TX 75001",April
+194057,LG Washing Machine,1,600.0,2019-04-08 12:49:00,"967 Forest St, San Francisco, CA 94016",April
+206467,LG Washing Machine,1,600.0,2019-05-29 13:18:00,"978 Walnut St, Los Angeles, CA 90001",May
+208426,LG Washing Machine,1,600.0,2019-05-02 12:14:00,"519 8th St, San Francisco, CA 94016",May
+195424,LG Washing Machine,1,600.0,2019-05-05 17:56:00,"692 13th St, Atlanta, GA 30301",May
+209428,LG Washing Machine,1,600.0,2019-05-20 15:32:00,"330 Elm St, San Francisco, CA 94016",May
+198255,LG Washing Machine,1,600.0,2019-05-21 22:50:00,"239 Washington St, New York City, NY 10001",May
+197023,LG Washing Machine,1,600.0,2019-05-05 12:38:00,"783 2nd St, Los Angeles, CA 90001",May
+197269,LG Washing Machine,1,600.0,2019-05-08 20:55:00,"89 12th St, Los Angeles, CA 90001",May
+205413,LG Washing Machine,1,600.0,2019-05-02 21:35:00,"856 River St, Los Angeles, CA 90001",May
+194212,LG Washing Machine,1,600.0,2019-05-22 20:40:00,"665 2nd St, Portland, ME 04101",May
+210854,LG Washing Machine,1,600.0,2019-06-04 18:10:00,"671 Spruce St, San Francisco, CA 94016",June
+222876,LG Washing Machine,1,600.0,2019-06-08 12:31:00,"749 Madison St, San Francisco, CA 94016",June
+213805,LG Washing Machine,1,600.0,2019-06-23 16:52:00,"737 Spruce St, San Francisco, CA 94016",June
+221164,LG Washing Machine,1,600.0,2019-06-24 04:45:00,"550 Ridge St, Los Angeles, CA 90001",June
+221934,LG Washing Machine,1,600.0,2019-06-19 20:14:00,"7 Cedar St, Los Angeles, CA 90001",June
+222498,LG Washing Machine,1,600.0,2019-06-24 01:15:00,"949 Willow St, Atlanta, GA 30301",June
+219515,LG Washing Machine,1,600.0,2019-06-22 13:30:00,"566 5th St, Los Angeles, CA 90001",June
+210790,LG Washing Machine,1,600.0,2019-06-10 09:30:00,"820 Center St, Boston, MA 02215",June
+212541,LG Washing Machine,1,600.0,2019-06-12 10:38:00,"51 7th St, Atlanta, GA 30301",June
+217328,LG Washing Machine,1,600.0,2019-06-21 12:48:00,"136 8th St, New York City, NY 10001",June
+216285,LG Washing Machine,1,600.0,2019-06-20 22:55:00,"410 Spruce St, San Francisco, CA 94016",June
+217025,LG Washing Machine,1,600.0,2019-06-11 17:16:00,"652 Pine St, Atlanta, GA 30301",June
+220649,LG Washing Machine,1,600.0,2019-06-19 12:11:00,"490 Adams St, New York City, NY 10001",June
+214668,LG Washing Machine,1,600.0,2019-06-29 13:38:00,"579 Highland St, Seattle, WA 98101",June
+229342,LG Washing Machine,1,600.0,2019-07-06 20:05:00,"569 Maple St, San Francisco, CA 94016",July
+233361,LG Washing Machine,1,600.0,2019-07-07 22:10:00,"434 14th St, Los Angeles, CA 90001",July
+233919,LG Washing Machine,1,600.0,2019-07-02 04:46:00,"23 Elm St, Atlanta, GA 30301",July
+232034,LG Washing Machine,1,600.0,2019-07-17 19:51:00,"773 Meadow St, Dallas, TX 75001",July
+223438,LG Washing Machine,1,600.0,2019-07-17 01:27:00,"675 Chestnut St, Austin, TX 73301",July
+235752,LG Washing Machine,1,600.0,2019-07-03 11:55:00,"531 Spruce St, Boston, MA 02215",July
+240028,LG Washing Machine,1,600.0,2019-08-19 21:11:00,"426 Dogwood St, San Francisco, CA 94016",August
+244218,LG Washing Machine,1,600.0,2019-08-31 22:24:00,"833 Madison St, Los Angeles, CA 90001",August
+245258,LG Washing Machine,1,600.0,2019-08-14 17:53:00,"771 Maple St, New York City, NY 10001",August
+236680,LG Washing Machine,1,600.0,2019-08-09 19:38:00,"967 Willow St, San Francisco, CA 94016",August
+238886,LG Washing Machine,1,600.0,2019-08-13 16:44:00,"163 Park St, Atlanta, GA 30301",August
+237587,LG Washing Machine,1,600.0,2019-08-10 18:34:00,"289 Lincoln St, Boston, MA 02215",August
+239885,LG Washing Machine,1,600.0,2019-08-21 17:46:00,"159 West St, Boston, MA 02215",August
+243555,LG Washing Machine,1,600.0,2019-08-06 16:26:00,"294 Johnson St, Seattle, WA 98101",August
+255166,LG Washing Machine,1,600.0,2019-09-17 13:24:00,"562 Meadow St, Seattle, WA 98101",September
+253076,LG Washing Machine,1,600.0,2019-09-13 21:51:00,"301 Sunset St, San Francisco, CA 94016",September
+251079,LG Washing Machine,1,600.0,2019-09-19 09:22:00,"343 Adams St, San Francisco, CA 94016",September
+257535,LG Washing Machine,1,600.0,2019-09-03 16:29:00,"22 Forest St, San Francisco, CA 94016",September
+257419,LG Washing Machine,1,600.0,2019-09-18 22:12:00,"813 Chestnut St, San Francisco, CA 94016",September
+254531,LG Washing Machine,1,600.0,2019-09-10 10:05:00,"448 Elm St, New York City, NY 10001",September
+251428,LG Washing Machine,1,600.0,2019-09-17 02:08:00,"348 Hill St, San Francisco, CA 94016",September
+252843,LG Washing Machine,1,600.0,2019-09-28 16:18:00,"44 2nd St, New York City, NY 10001",September
+275592,LG Washing Machine,1,600.0,2019-10-31 19:36:00,"400 Sunset St, Los Angeles, CA 90001",October
+269199,LG Washing Machine,1,600.0,2019-10-01 15:13:00,"181 South St, Los Angeles, CA 90001",October
+272932,LG Washing Machine,1,600.0,2019-10-23 11:43:00,"962 Elm St, Boston, MA 02215",October
+278773,LG Washing Machine,1,600.0,2019-10-30 21:34:00,"843 North St, Boston, MA 02215",October
+263993,LG Washing Machine,1,600.0,2019-10-31 21:10:00,"237 North St, Seattle, WA 98101",October
+266674,LG Washing Machine,1,600.0,2019-10-27 18:14:00,"485 12th St, Portland, ME 04101",October
+261039,LG Washing Machine,1,600.0,2019-10-11 07:21:00,"910 Jackson St, Dallas, TX 75001",October
+263253,LG Washing Machine,1,600.0,2019-10-07 17:44:00,"274 River St, San Francisco, CA 94016",October
+282551,LG Washing Machine,1,600.0,2019-11-18 16:25:00,"218 Meadow St, Seattle, WA 98101",November
+294446,LG Washing Machine,1,600.0,2019-11-15 16:04:00,"304 Jefferson St, Boston, MA 02215",November
+288903,LG Washing Machine,1,600.0,2019-11-06 12:14:00,"630 13th St, San Francisco, CA 94016",November
+289200,LG Washing Machine,1,600.0,2019-11-27 13:29:00,"532 2nd St, Los Angeles, CA 90001",November
+278926,LG Washing Machine,1,600.0,2019-11-21 13:11:00,"772 Maple St, Boston, MA 02215",November
+288299,LG Washing Machine,1,600.0,2019-11-24 15:01:00,"265 Johnson St, San Francisco, CA 94016",November
+280162,LG Washing Machine,1,600.0,2019-11-22 13:38:00,"517 11th St, San Francisco, CA 94016",November
+280394,LG Washing Machine,1,600.0,2019-11-27 00:16:00,"543 Elm St, San Francisco, CA 94016",November
+283467,LG Washing Machine,1,600.0,2019-11-10 14:28:00,"371 Lakeview St, San Francisco, CA 94016",November
+313856,LG Washing Machine,1,600.0,2019-12-06 10:09:00,"482 Spruce St, Boston, MA 02215",December
+316976,LG Washing Machine,1,600.0,2019-12-09 14:45:00,"687 1st St, Boston, MA 02215",December
+315813,LG Washing Machine,1,600.0,2019-12-01 17:38:00,"947 Lincoln St, Dallas, TX 75001",December
+307647,LG Washing Machine,1,600.0,2019-12-23 21:08:00,"159 Lincoln St, New York City, NY 10001",December
+296329,LG Washing Machine,1,600.0,2019-12-01 11:49:00,"194 South St, San Francisco, CA 94016",December
+302413,LG Washing Machine,1,600.0,2019-12-20 22:25:00,"191 Hill St, New York City, NY 10001",December
+297265,LG Washing Machine,1,600.0,2019-12-11 20:36:00,"787 Ridge St, Los Angeles, CA 90001",December
+300663,LG Washing Machine,1,600.0,2019-12-17 01:49:00,"708 Church St, San Francisco, CA 94016",December
+301986,LG Washing Machine,1,600.0,2019-12-10 18:19:00,"547 Hill St, Seattle, WA 98101",December
+306160,LG Washing Machine,1,600.0,2019-12-02 04:34:00,"977 Willow St, San Francisco, CA 94016",December
+303072,LG Washing Machine,1,600.0,2019-12-14 17:30:00,"151 Elm St, San Francisco, CA 94016",December
+300177,LG Washing Machine,1,600.0,2019-12-17 19:17:00,"394 Sunset St, Boston, MA 02215",December
+316660,LG Washing Machine,1,600.0,2019-12-11 12:41:00,"797 6th St, Portland, OR 97035",December
+312223,LG Washing Machine,1,600.0,2019-12-18 20:19:00,"428 4th St, San Francisco, CA 94016",December
