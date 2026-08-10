@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .DS_Store
 Data Engineer/6. Настройка мониторинга/monitoring/
+.ipynb_checkpoints/
+*.exe
+Data Engineer/6. Настройка мониторинга/monitoring/
