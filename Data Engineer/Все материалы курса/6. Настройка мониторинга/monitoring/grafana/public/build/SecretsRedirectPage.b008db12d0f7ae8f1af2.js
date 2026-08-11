@@ -1,3 +1,0 @@
-"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[4211],{11348(o,a,e){e.r(a),e.d(a,{default:()=>n});var c=e(474848),t=e(754148),s=e(168459),r=e(408699);function n(){return s.TP.hasPermission(r.AccessControlAction.SecretSecureValuesRead)||s.TP.hasPermission(r.AccessControlAction.SecretSecureValuesCreate)?(0,c.jsx)(t.C5,{replace:!0,to:"/admin/secrets/secure-values"}):s.TP.hasPermission(r.AccessControlAction.SecretKeepersRead)||s.TP.hasPermission(r.AccessControlAction.SecretKeepersCreate)?(0,c.jsx)(t.C5,{replace:!0,to:"/admin/secrets/keepers"}):(0,c.jsx)(t.C5,{replace:!0,to:"/"})}}}]);
-
-//# sourceMappingURL=SecretsRedirectPage.b008db12d0f7ae8f1af2.js.map

@@ -1,3 +1,0 @@
-"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[6888],{576888(v,l,a){a.d(l,{LimitTransformerEditor:()=>d});var r=a(474848),n=a(296540),_=a(52358),E=a(606634),o=a(686979),s=a(575251);const d=({options:t,onChange:e})=>{const[u,g]=(0,n.useState)(!1),m=(0,n.useCallback)(i=>{g(!(0,s.N_)(i)),e({...t,limitField:i})},[e,t]);return(0,r.jsx)(r.Fragment,{children:(0,r.jsx)(E.C,{children:(0,r.jsx)(o.y,{invalid:u,error:"Value needs to be an integer or a variable",value:String(t.limitField),onChange:m,placeholder:(0,_.t)("transformers.limit-transformer-editor.placeholder-value-or-variable","Value or variable"),suggestions:(0,s.I9)()})})})}}}]);
-
-//# sourceMappingURL=6888.6db805a6ec29acea4fda.js.map

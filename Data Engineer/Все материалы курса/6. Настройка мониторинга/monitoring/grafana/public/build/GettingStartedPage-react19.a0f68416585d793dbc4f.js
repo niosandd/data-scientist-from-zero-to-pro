@@ -1,3 +1,0 @@
-"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[1037,2182],{313205(i,t,n){n.r(t),n.d(t,{default:()=>g});var a=n(514553),e=n(52358),s=n(79157),o=n(101130);function g({items:r}){return(0,a.jsx)(s.Y,{navId:"provisioning",subTitle:(0,e.t)("provisioning.getting-started-page.subtitle-provisioning-feature","View and manage your provisioning connections"),children:(0,a.jsx)(s.Y.Contents,{children:(0,a.jsx)(o.A,{items:r})})})}},588552(i,t,n){i.exports=n.p+"static/img/provisioning.d25529e1.svg"}}]);
-
-//# sourceMappingURL=GettingStartedPage-react19.a0f68416585d793dbc4f.js.map

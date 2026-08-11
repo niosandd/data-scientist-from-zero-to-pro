@@ -1,3 +1,0 @@
-"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[641],{738742(C,n,s){s.r(n),s.d(n,{ChangePasswordPage:()=>E,default:()=>d});var a=s(514553),_=s(672844),P=s(908041),o=s(184531);const E=g=>(0,a.jsx)(P.GU,{isChangingPassword:!0,children:(0,a.jsx)(P.qm,{children:(0,a.jsx)(_.A,{resetCode:g.queryParams.code,children:({changePassword:r})=>(0,a.jsx)(o.S,{onSubmit:r})})})}),d=E}}]);
-
-//# sourceMappingURL=ChangePasswordPage-react19.45c4d60eda0230c12adf.js.map

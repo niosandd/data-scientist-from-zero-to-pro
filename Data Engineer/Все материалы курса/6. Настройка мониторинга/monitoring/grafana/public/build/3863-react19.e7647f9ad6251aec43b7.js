@@ -1,3 +1,0 @@
-"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[3863],{533863(_,n,e){e.d(n,{MergeTransformerEditor:()=>f});var r=e(514553),a=e(52358),s=e(361191);const f=({input:t,options:o,onChange:g})=>t.length<=1?(0,r.jsx)(s.P,{children:(0,r.jsx)(a.x6,{i18nKey:"transformers.merge-transformer-editor.merge-effect-applied-single-frame",children:"Merge has no effect when applied on a single frame."})}):null}}]);
-
-//# sourceMappingURL=3863-react19.e7647f9ad6251aec43b7.js.map
