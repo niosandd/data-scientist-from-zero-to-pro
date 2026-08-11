@@ -7,3 +7,19 @@ Data Engineer/6. Настройка мониторинга/monitoring/
 *.exe
 Data Engineer/6. Настройка мониторинга/monitoring/
 Data Engineer/Все материалы курса/
+
+# Large Prometheus data (GitHub 100MB limit)
+**/prometheus*/data/
+**/chunks_head/
+
+# Runtime data
+**/storage/bronze/**
+**/storage/silver/**
+**/storage/gold/**
+!**/storage/**/.gitkeep
+
+# Python / IDE
+__pycache__/
+.venv/
+.idea/
+*.pyc
