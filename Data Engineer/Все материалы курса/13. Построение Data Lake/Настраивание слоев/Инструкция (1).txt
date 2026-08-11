@@ -1,0 +1,201 @@
+# Лабоарторная работа выполняется в Data Proc Spark Cluster
+# Разворачиваем кластер и запускаем pyspark
+
+
+
+# Создаем Бронзовый слой
+ingestion_df = (spark.read.text("s3://your_name_bucket/sensor-data/part_1.json"))
+
+# Проверяем схему, должно быть одно поле так как в процессе загрузки мы не парсим json, csv, xml, а просто читаем файлы как текстовые
+ingestion_df.printSchema()
+
+# output
+# >>> ingestion_df.printSchema()
+# root
+# |-- value: string (nullable = true)
+
+# Проверяем данные
+ingestion_df.show(5, truncate=False)
+# +-------------------------------------------------------------------------------------+
+# |value                                                                                |
+# +-------------------------------------------------------------------------------------+
+# |{"time":1577836800.0,"name":"Deborah Powell","device_id":0,"heartrate":52.8139067501}|
+# |{"time":1577840400.0,"name":"Deborah Powell","device_id":0,"heartrate":53.9078900098}|
+# |{"time":1577844000.0,"name":"Deborah Powell","device_id":0,"heartrate":52.7129593616}|
+# |{"time":1577847600.0,"name":"Deborah Powell","device_id":0,"heartrate":52.2880422685}|
+# |{"time":1577851200.0,"name":"Deborah Powell","device_id":0,"heartrate":52.5156095386}|
+# +-------------------------------------------------------------------------------------+
+# only showing top 5 rows
+
+ingestion_df.count()
+# 3720
+
+# Записываем данные без изменения в Data Lake в бронзовый слой в папку с датой
+import pyspark.sql.functions as F
+
+ingestion_df = ingestion_df.withColumn("date", F.date_sub(F.current_date(), 1))
+
+# Write the DataFrame to the specified path in append mode
+ingestion_df.write.partitionBy("date").mode("append").text("s3://your_name_bucket/bronze/sensor_data/")
+
+# Проверяем что записалось по количеству строк (приложить скриншот что assert прошел успешно)
+assert spark.read.text("s3://your_name_bucket/bronze/sensor_data/date=2023-12-19").count() == ingestion_df.count()
+
+
+
+# Создаем Серебряный слой
+
+# Читаем данные из бронзового слоя в формате json с авто определением схемы
+bronze_df = spark.read.option("inferSchema", "true").json("s3://your_name_bucket/bronze/sensor_data/").where("date = '2023-12-19'")
+
+# Проверяем схему
+bronze_df.printSchema()
+# root
+# |-- device_id: long (nullable = true)
+# |-- heartrate: double (nullable = true)
+# |-- name: string (nullable = true)
+# |-- time: double (nullable = true)
+# |-- date: date (nullable = true)
+
+
+# Проверяем данные
+bronze_df.show(5, truncate=False)
+# +---------+-------------+--------------+-----------+----------+
+# |device_id|    heartrate|          name|       time|      date|
+# +---------+-------------+--------------+-----------+----------+
+# |        0|52.8139067501|Deborah Powell|1.5778368E9|2023-12-19|
+# |        0|53.9078900098|Deborah Powell|1.5778404E9|2023-12-19|
+# |        0|52.7129593616|Deborah Powell| 1.577844E9|2023-12-19|
+# |        0|52.2880422685|Deborah Powell|1.5778476E9|2023-12-19|
+# |        0|52.5156095386|Deborah Powell|1.5778512E9|2023-12-19|
+# |        0|53.6280743846|Deborah Powell|1.5778548E9|2023-12-19|
+# |        0|52.1760037066|Deborah Powell|1.5778584E9|2023-12-19|
+# |        0|90.0456721836|Deborah Powell| 1.577862E9|2023-12-19|
+# |        0|89.4695644522|Deborah Powell|1.5778656E9|2023-12-19|
+# |        0|88.1490304138|Deborah Powell|1.5778692E9|2023-12-19|
+# |        0|86.3092976213|Deborah Powell|1.5778728E9|2023-12-19|
+# |        0|86.6672980008|Deborah Powell|1.5778764E9|2023-12-19|
+# |        0|89.2044154758|Deborah Powell|  1.57788E9|2023-12-19|
+# |        0|88.8691678316|Deborah Powell|1.5778836E9|2023-12-19|
+# |        0|87.7252170634|Deborah Powell|1.5778872E9|2023-12-19|
+# |        0|87.8357187561|Deborah Powell|1.5778908E9|2023-12-19|
+# |        0|87.1769562648|Deborah Powell|1.5778944E9|2023-12-19|
+# |        0|88.3403107931|Deborah Powell| 1.577898E9|2023-12-19|
+# |        0|88.9083484735|Deborah Powell|1.5779016E9|2023-12-19|
+# |        0| 87.921434203|Deborah Powell|1.5779052E9|2023-12-19|
+# +---------+-------------+--------------+-----------+----------+
+
+
+# Проверяем количество строк
+bronze_df.count()
+# 3720
+
+# Все строки валидные, невалидных нет и обработки не требуют
+
+# Анализируем данные
+bronze_df.describe().show()
+
+# Создаем схему для серебряного слоя
+spark.sql("CREATE DATABASE IF NOT EXISTS silver")
+
+# Записываем данные в серебряный слой с регистрацией таблицы
+bronze_df.write.partitionBy("date").mode("append").saveAsTable("silver.sensor_data")
+
+# Или без регистрации таблицы
+bronze_df.write.partitionBy("date").mode("append").parquet("s3://your_name_bucket/silver/sensor_data/")
+
+# регистрируем таблицу
+bronze_df.createOrReplaceTempView("bronze_sensor_data")
+
+# Проверяем что записалось по количеству строк
+assert spark.read.parquet("s3://your_name_bucket/silver/sensor_data/date=2023-12-19").count() == bronze_df.count()
+
+
+# Создаем Золотой слой
+
+#  Читаем данные из серебряного слоя из регистрированной таблицы
+silver_df = spark.sql("SELECT * FROM silver.sensor_data").where("date = '2023-12-19'")
+
+# Или читаем данные из серебряного слоя в формате parquet
+silver_df = spark.read.parquet("s3://your_name_bucket/silver/sensor_data/").where("date = '2023-12-19'")
+
+# Проверяем схему
+silver_df.printSchema()
+# root
+# |-- device_id: long (nullable = true)
+# |-- heartrate: double (nullable = true)
+# |-- name: string (nullable = true)
+# |-- time: double (nullable = true)
+# |-- date: date (nullable = true)
+
+
+# Проверяем данные
+silver_df.show(5, truncate=False)
+# >>> silver_df.show(5, truncate=False)
+# +---------+-------------+--------------+-----------+----------+
+# |device_id|heartrate    |name          |time       |date      |
+# +---------+-------------+--------------+-----------+----------+
+# |0        |52.8139067501|Deborah Powell|1.5778368E9|2023-12-19|
+# |0        |53.9078900098|Deborah Powell|1.5778404E9|2023-12-19|
+# |0        |52.7129593616|Deborah Powell|1.577844E9 |2023-12-19|
+# |0        |52.2880422685|Deborah Powell|1.5778476E9|2023-12-19|
+# |0        |52.5156095386|Deborah Powell|1.5778512E9|2023-12-19|
+# +---------+-------------+--------------+-----------+----------+
+# only showing top 5 rows
+
+
+# Проверяем количество строк
+silver_df.count()
+# 3720
+
+
+# Создаем агрегаты
+from pyspark.sql import functions as F
+
+silver_agg_df = silver_df.groupBy("device_id", "name", "date").agg(F.round(F.avg("heartrate"), 2).alias("avg_heartrate"), F.round(F.stddev("heartrate"), 2).alias("stddev_heartrate"), F.round(F.min("heartrate"), 2).alias("min_heartrate"), F.round(F.max("heartrate"), 2).alias("max_heartrate"))
+
+# Проверяем результат
+silver_agg_df.show(5, truncate=False)
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+# |device_id|name          |date      |avg_heartrate|stddev_heartrate|min_heartrate|max_heartrate|
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+# |2        |Sam Knopp     |2023-12-19|80.0         |31.41           |-209.29      |184.74       |
+# |1        |Kristin Vasser|2023-12-19|78.58        |31.62           |-211.18      |168.11       |
+# |0        |Deborah Powell|2023-12-19|81.21        |31.34           |-198.68      |186.48       |
+# |4        |James Hou     |2023-12-19|83.08        |34.16           |-188.13      |173.58       |
+# |3        |Minh Nguyen   |2023-12-19|82.65        |30.93           |-214.03      |171.84       |
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+
+# Записываем данные в золотой слой в схему с регистрацией таблицы
+silver_agg_df.write.partitionBy("date").mode("append").saveAsTable("gold.sensor_data")
+
+# Или Записываем данные в золотой слой в папку с датой в формате parquet
+silver_agg_df.write.partitionBy("date").mode("append").parquet("s3://your_name_bucket/gold/sensor_data/")
+
+
+# Проверяем что записалось
+spark.read.parquet("s3://your_name_bucket/gold/sensor_data/date=2023-12-19").show(5, truncate=False)
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+# |device_id|name          |date      |avg_heartrate|stddev_heartrate|min_heartrate|max_heartrate|
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+# |2        |Sam Knopp     |2023-12-19|80.0         |31.41           |-209.29      |184.74       |
+# |1        |Kristin Vasser|2023-12-19|78.58        |31.62           |-211.18      |168.11       |
+# |0        |Deborah Powell|2023-12-19|81.21        |31.34           |-198.68      |186.48       |
+# |4        |James Hou     |2023-12-19|83.08        |34.16           |-188.13      |173.58       |
+# |3        |Minh Nguyen   |2023-12-19|82.65        |30.93           |-214.03      |171.84       |
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+
+
+# Критерии проверки
+#  В результате записи бронзового слоя должен быть скрин что assert прошел успешно)
+#  В результате записи серебряного слоя должен быть скрин что assert прошел успешно)
+#  В результате записи золотого слоя должен быть скрин с выводом
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+# |device_id|name          |date      |avg_heartrate|stddev_heartrate|min_heartrate|max_heartrate|
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+
+# |2        |Sam Knopp     |2023-12-19|80.0         |31.41           |-209.29      |184.74       |
+# |1        |Kristin Vasser|2023-12-19|78.58        |31.62           |-211.18      |168.11       |
+# |0        |Deborah Powell|2023-12-19|81.21        |31.34           |-198.68      |186.48       |
+# |4        |James Hou     |2023-12-19|83.08        |34.16           |-188.13      |173.58       |
+# |3        |Minh Nguyen   |2023-12-19|82.65        |30.93           |-214.03      |171.84       |
+# +---------+--------------+----------+-------------+----------------+-------------+-------------+

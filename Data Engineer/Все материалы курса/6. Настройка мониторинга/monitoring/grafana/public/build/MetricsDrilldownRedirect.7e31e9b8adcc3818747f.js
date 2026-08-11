@@ -1,0 +1,3 @@
+"use strict";(self.webpackChunkgrafana=self.webpackChunkgrafana||[]).push([[8513],{872414(p,n,a){a.r(n),a.d(n,{default:()=>s});var r=a(474848),t=a(754148),o=a(650746);const s=()=>{const{"*":e}=(0,t.g)(),l=(0,t.zy)(),c=`${(0,o.v)("grafana-metricsdrilldown-app").path.replaceAll("*","")}${e}${l.search}`;return(0,r.jsx)(t.C5,{replace:!0,to:c})}}}]);
+
+//# sourceMappingURL=MetricsDrilldownRedirect.7e31e9b8adcc3818747f.js.map

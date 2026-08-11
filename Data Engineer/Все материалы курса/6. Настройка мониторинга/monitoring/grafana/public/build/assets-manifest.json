@@ -1,0 +1,128 @@
+{
+  "3776.201ca814683a8aa5fa85.js": {
+    "src": "public/build/3776.201ca814683a8aa5fa85.js",
+    "integrity": "sha384-2DHvvOjVHc4jnZ8LikzDsWZEW3PWkI7zZUtoS86OMy7YrQKBImlmedvkdMXXWGmb sha512-B6yxDJYh7TJwJhPuNG6IsQcnmLty4I8h+vzo6mfIuuRDoMBeHa3059tdRhXIKA3bPKpBulbayA05hYAOeKSN6w=="
+  },
+  "5371.d7bdb2fa9ea561eef4b8.js": {
+    "src": "public/build/5371.d7bdb2fa9ea561eef4b8.js",
+    "integrity": "sha384-U3xdWDVLp+kzQagAKhcD5TG5TYgqvuH/gLZ2ds9yX5MJWVo0492jFj8McR3GiUIZ sha512-eqzS2IKB2n9qdUlU/IBRW/OA84OsZAUx7LX8nEFrhIvvWqkCcljKOllvSWJweX3AagikOJ0ctjh6wrS2M3xwdw=="
+  },
+  "5573.57b80d431034aa1548c8.js": {
+    "src": "public/build/5573.57b80d431034aa1548c8.js",
+    "integrity": "sha384-/mZLgAkMFbSCfp99ZdW4kcfOT9CrOxOc7KSQGWjZ/IU9pKIIGECWzdM0AZQwedhX sha512-9TI/gSdsqNEgoVEG8CxCND0uPF4BTjgvBJ1lO+9appaZ/7XHZ4z7ZMzA+fmpKI/01VLvRoJYwpzKsDT5/3EesQ=="
+  },
+  "6029.b77a312771c786c00462.js": {
+    "src": "public/build/6029.b77a312771c786c00462.js",
+    "integrity": "sha384-rSDfPvgSPV2BDL6n94Q7UI5MCREhRr5XWALhDE1O3ssY/8HwujqmPu8u2SE2f25Z sha512-Ltr+BMNdK4CpriR7dLXPZ1J7bNurvvGE4etQvi+eKmEN1eDEfzS6+WCLLUj//3KGuIMnXDcJ3yRm8kQTfVvbEA=="
+  },
+  "6633.6ad1cc6fd6e68606565a.js": {
+    "src": "public/build/6633.6ad1cc6fd6e68606565a.js",
+    "integrity": "sha384-o7wLQ0IJGfcjQTPuh+DRioRLfoT3Urh+Ua2tKA3XXBKQMzTM4qSmx8jFwokrVTVF sha512-J8xNkt0+Tt2mfRGYl38qbhydsCWI6Rl+HdobE82gK7OGCfz6H1tqF2AzCOLfYUCmkUHDEp3iBqmqXqP4Zvc51A=="
+  },
+  "8661.20b7b07afcc5756387c9.js": {
+    "src": "public/build/8661.20b7b07afcc5756387c9.js",
+    "integrity": "sha384-LViCGCCd64VJs3Pi9urMNYT8e1dCIzCtZttvYYBRP4WRhYMmRaDToYEQxrEE9f4B sha512-pZe5H3+XjzOogR7m7ZRj6tRyQwYLaTrF1xx6LKl4ZUkjvAkSpsMobSzkEkEJPLiGulqdcO3UA3X/CJdsiyFM8A=="
+  },
+  "app.css": {
+    "src": "public/build/grafana.app.956286b013bf6a89b7b0.css",
+    "integrity": "sha384-W3K8N1VngYS0kPNnjbqaUgSGeodKO6QUDmzpcanueWnHjgvJaIGI3N02rFqJLFqT sha512-BGegWiriTcC8rhVN9w+YdVUWuE7u0ZsyB/bYqUbG44sqiTbN6ga299JGi3rNOLxwHYdOuHyc0flFq3HFfN1pyg=="
+  },
+  "app.js": {
+    "src": "public/build/app.f13060176d77a81a78fd.js",
+    "integrity": "sha384-vc65gfXAckLUyzbqEFTTkl+S0b+3WVRpYneO2mKZBrXss2oTxUQv34VLRRSjCwTx sha512-53u1Ii6NtBGVgwC99mD/vxJaanOEemPZIGrdcp6QT4edX3RsYWmIKBnwI2he7dDi5GzaTQII5A2W3dE16VZcKw=="
+  },
+  "boot.js": {
+    "src": "public/build/boot.js",
+    "integrity": "sha384-MqOR+Ib8rksUpa2Fpr/LcGVuVH3wDgob/CD4yGu/8IgjHVgjL/AXYnPaRkmhaT3U sha512-TpdjnKzVR1XGvqu3YJx3azvGubdTiq90HCTn9tugtatWALRGn42Tk6oFnBdSexMHKnU+Zc5xX4+flsASn8qLBQ=="
+  },
+  "dark.css": {
+    "src": "public/build/grafana.dark.f15eddd39193045180e3.css",
+    "integrity": "sha384-i7iveJfvXPDjUksBZqwgnBxy05SJMVXojrQ/5r0VF+psQyJLdmRaqBrdxB9q8mdB sha512-VO8iFK18YAGNq20otltRxi1zNmWiQVYm9oNbdQ24xyYgRQxwHwx4S5FI7/t0uFdnXV1dBpr3DXykEp+eqUkypg=="
+  },
+  "dark.js": {
+    "src": "public/build/dark.1d65a1f2ca62c67149b6.js",
+    "integrity": "sha384-wHzGDuDCJbiCOb79OUUTntjyAcW/7ZgKtR5J+XWDASdSpecDS8YoyrM2g9ydhmQL sha512-2gRXI+eZfrXjvbPVdICM+hw+MYViDT2CRYUuT9mXGCT3teclYGPNA4H7nyvRu3LUTHm9K+q7NL0pyW3O/s+mFQ=="
+  },
+  "light.css": {
+    "src": "public/build/grafana.light.e33f2d09dbf6fc5e0e3f.css",
+    "integrity": "sha384-XP1hjpMAQ3QyI16J47/hfgPqkLSJ4EVV29lQ7FdUtCdxqkFS0QdwzfWMdNvt8P7j sha512-ea7XK0D8vKolIF6ZI7MfU+nVHnFsKAABiE/oIbEJ0jkazao2PdDgUV3/42niOex57mW6Mc7LSmOeEuWjJ62AGg=="
+  },
+  "light.js": {
+    "src": "public/build/light.60f31044f77eb84a5cf9.js",
+    "integrity": "sha384-OpBEGDoo5ILlpVH3HI9fJu0k2tcoQtsYKq8xfypINl/x0kaQ+686EkwWfmm4W/Su sha512-GC8D5MerfcBmmNNTISCeGQZSdWXR+mDNZAXjrfM+sJN/7rupF6Arg7jHld0GLtDkGNIfStuZc6bN0tdCdJUH9Q=="
+  },
+  "runtime.js": {
+    "src": "public/build/runtime.6bef3fae9700264b9c2b.js",
+    "integrity": "sha384-44PVvtB6ndxUNCy5NQKn052NgzBY7ZGxGDmnAB/Rr2+bJueeK4oGJkiMTJL5V4pT sha512-xTeAlI0DR0mET/FT6NgaAIvU0F6ZY1wVvNLFNN9iiavFW4aQ0SQmtPJfop+6KMCdEYoEvOJaM+Y/pIowt7y9Ug=="
+  },
+  "swagger.css": {
+    "src": "public/build/grafana.swagger.1e30a363d4bd7a2f1229.css",
+    "integrity": "sha384-E0bcmTY2ivLkH0mM5jvNYjBISo7CGSp7XVkt4D9bALKu74k750krHZDd07Wvn4Q1 sha512-hwrDXG0wgOg93RnDSHq/zS7hLlgcSyEMxOmgPity5zvwNfbpQwHEoRBrmaiwtulr6dlAb77AAQqtUc4qSYEL0w=="
+  },
+  "swagger.js": {
+    "src": "public/build/swagger.5f0d9257d56a9f29eb55.js",
+    "integrity": "sha384-4VBfwVxlDvGGmJG4FAHzKatVlFJhstLe9jHZ4QkmITNejHvz41VjDYZ+g9S6pDT6 sha512-kqqob4HTCkFs9xCnT6LO/SzS2JPw/8VwU9RLU0ct4t3LgrHYkAEOS+NtKoQRDx/3WltM7x5K/+K6GBwdpAcRww=="
+  },
+  "entrypoints": {
+    "app": {
+      "assets": {
+        "js": [
+          "public/build/runtime.6bef3fae9700264b9c2b.js",
+          "public/build/6029.b77a312771c786c00462.js",
+          "public/build/8661.20b7b07afcc5756387c9.js",
+          "public/build/3776.201ca814683a8aa5fa85.js",
+          "public/build/5371.d7bdb2fa9ea561eef4b8.js",
+          "public/build/6633.6ad1cc6fd6e68606565a.js",
+          "public/build/app.f13060176d77a81a78fd.js"
+        ],
+        "css": [
+          "public/build/grafana.app.956286b013bf6a89b7b0.css"
+        ]
+      }
+    },
+    "swagger": {
+      "assets": {
+        "js": [
+          "public/build/runtime.6bef3fae9700264b9c2b.js",
+          "public/build/6029.b77a312771c786c00462.js",
+          "public/build/8661.20b7b07afcc5756387c9.js",
+          "public/build/5573.57b80d431034aa1548c8.js",
+          "public/build/5371.d7bdb2fa9ea561eef4b8.js",
+          "public/build/swagger.5f0d9257d56a9f29eb55.js"
+        ],
+        "css": [
+          "public/build/grafana.swagger.1e30a363d4bd7a2f1229.css"
+        ]
+      }
+    },
+    "boot": {
+      "assets": {
+        "js": [
+          "public/build/boot.js"
+        ]
+      }
+    },
+    "dark": {
+      "assets": {
+        "js": [
+          "public/build/runtime.6bef3fae9700264b9c2b.js",
+          "public/build/dark.1d65a1f2ca62c67149b6.js"
+        ],
+        "css": [
+          "public/build/grafana.dark.f15eddd39193045180e3.css"
+        ]
+      }
+    },
+    "light": {
+      "assets": {
+        "js": [
+          "public/build/runtime.6bef3fae9700264b9c2b.js",
+          "public/build/light.60f31044f77eb84a5cf9.js"
+        ],
+        "css": [
+          "public/build/grafana.light.e33f2d09dbf6fc5e0e3f.css"
+        ]
+      }
+    }
+  }
+}

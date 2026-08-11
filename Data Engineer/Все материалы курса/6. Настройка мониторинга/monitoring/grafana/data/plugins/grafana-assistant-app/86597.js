@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgrafana_assistant_app=self.webpackChunkgrafana_assistant_app||[]).push([[86597],{86597(a,s,e){e.d(s,{PdeLabHomePage:()=>r});var n=e(56308);function r(){return(0,n.jsxs)("div",{children:[(0,n.jsx)("h1",{children:"PDE Lab"}),(0,n.jsx)("p",{children:"Experimental PDE sandbox"})]})}}}]);

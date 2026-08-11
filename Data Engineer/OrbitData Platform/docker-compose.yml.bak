@@ -1,0 +1,271 @@
+name: orbitdata
+
+services:
+  # ======================
+  # INFRASTRUCTURE
+  # ======================
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.1
+    container_name: orbit-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+      - zookeeper_log:/var/lib/zookeeper/log
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: orbit-kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "19092:19092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:19092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  # ======================
+  # DATABASES
+  # ======================
+  postgres:
+    image: postgres:16-alpine
+    container_name: orbit-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-orbit}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-orbit_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-orbitdata}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./databases/postgres/init:/docker-entrypoint-initdb.d
+    networks:
+      - orbitnet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-orbit}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: orbit-mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER:-orbit}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-orbit_secret}
+      MONGO_INITDB_DATABASE: ${MONGO_DB:-orbitdata}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - orbitnet
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: orbit-clickhouse
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+      - ./databases/clickhouse/init:/docker-entrypoint-initdb.d
+    environment:
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER:-orbit}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-orbit_secret}
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB:-orbitdata}
+    networks:
+      - orbitnet
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+    restart: unless-stopped
+
+  # ======================
+  # INGESTION
+  # ======================
+  nifi:
+    image: apache/nifi:1.27.0
+    container_name: orbit-nifi
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      NIFI_WEB_HTTP_PORT: 8080
+      SINGLE_USER_CREDENTIALS_USERNAME: ${NIFI_USERNAME:-admin}
+      SINGLE_USER_CREDENTIALS_PASSWORD: ${NIFI_PASSWORD:-admin1234567890}
+    volumes:
+      - nifi_data:/opt/nifi/nifi-current
+      - ./nifi/flows:/opt/nifi/nifi-current/flows
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  nifi-registry:
+    image: apache/nifi-registry:1.27.0
+    container_name: orbit-nifi-registry
+    ports:
+      - "18081:18080"
+    volumes:
+      - nifi_registry_data:/opt/nifi-registry/nifi-registry-current
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  ftp:
+    image: stilliard/pure-ftpd:hardened
+    container_name: orbit-ftp
+    ports:
+      - "21:21"
+      - "30000-30009:30000-30009"
+    environment:
+      PUBLICHOST: localhost
+      FTP_USER_NAME: orbit
+      FTP_USER_PASS: orbit_secret
+      FTP_USER_HOME: /home/ftpuser
+    volumes:
+      - ./storage/bronze/ftp:/home/ftpuser
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  # ======================
+  # MONITORING
+  # ======================
+  prometheus:
+    image: prom/prometheus:v2.54.0
+    container_name: orbit-prometheus
+    ports:
+      - "9091:9090"
+    volumes:
+      - ./monitoring/prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.enable-lifecycle'
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    container_name: orbit-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  loki:
+    image: grafana/loki:3.1.0
+    container_name: orbit-loki
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./monitoring/loki:/etc/loki
+      - loki_data:/loki
+    command: -config.file=/etc/loki/loki-config.yml
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  promtail:
+    image: grafana/promtail:3.1.0
+    container_name: orbit-promtail
+    volumes:
+      - ./monitoring/promtail:/etc/promtail
+      - ./storage/logs:/var/log/orbit
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: -config.file=/etc/promtail/promtail-config.yml
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    container_name: orbit-alertmanager
+    ports:
+      - "9095:9093"
+    volumes:
+      - ./monitoring/alertmanager:/etc/alertmanager
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.49.1
+    container_name: orbit-cadvisor
+    ports:
+      - "8081:8080"
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+  kafka-exporter:
+    image: danielqsj/kafka-exporter:v1.7.0
+    container_name: orbit-kafka-exporter
+    ports:
+      - "9308:9308"
+    command:
+      - '--kafka.server=kafka:9092'
+    depends_on:
+      - kafka
+    networks:
+      - orbitnet
+    restart: unless-stopped
+
+volumes:
+  zookeeper_data:
+  zookeeper_log:
+  kafka_data:
+  postgres_data:
+  mongo_data:
+  clickhouse_data:
+  nifi_data:
+  nifi_registry_data:
+  prometheus_data:
+  grafana_data:
+  loki_data:
+
+networks:
+  orbitnet:
+    driver: bridge

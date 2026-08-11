@@ -1,0 +1,2161 @@
+{
+  "access-control": {
+    "permissions": {
+      "lbac-warning-basic-role": "",
+      "lbac-warning-rule": "Uyarı: Bu ekibin veri kaynağını sorgulama izni olmayabilir.",
+      "lbac-warning-team": "Uyarı: LBAC kuralları ayarlanmadıysa bu ekip tam veri erişimine sahiptir."
+    }
+  },
+  "admin": {
+    "role-filter": {
+      "admin-editor-option": "Yönetici/düzenleyici",
+      "multiselect-placeholder": "Lisanslı role göre filtrele",
+      "server-admin-option": "Sunucu yöneticisi",
+      "viewer-option": "Görüntüleyici"
+    }
+  },
+  "alert-enrichment": {
+    "error": "Uyarı zenginleştirmesi oluşturulamadı",
+    "metadata-error": "Geçersiz zenginleştirme meta verileri",
+    "success": "Uyarı zenginleştirmesi başarıyla oluşturuldu!",
+    "update-error": "Uyarı zenginleştirmesi güncellenemedi",
+    "update-success": "Uyarı zenginleştirmesi başarıyla güncellendi!"
+  },
+  "alert-enrichment-form": {
+    "actions": {
+      "cancel": "İptal et",
+      "save": "Zenginleştirmeyi Kaydet"
+    },
+    "assign-enricher": {
+      "add-annotation": "Açıklama ataması ekle",
+      "add-another-annotation": "Başka bir ek açıklama ataması ekle",
+      "annotation-name": "Anahtar",
+      "annotation-name-placeholder": "anahtar",
+      "annotation-value": "Değer",
+      "annotation-value-placeholder": "değer",
+      "remove-annotation-aria-label": "Açıklamayı kaldır",
+      "remove-annotation-tooltip": "Açıklamayı kaldır"
+    },
+    "basic-info": {
+      "description": "Açıklama (İsteğe Bağlı)",
+      "name": "Zenginleştirme Adı",
+      "name-placeholder": "benim-zenginleştirmem",
+      "name-required": "Ad gereklidir",
+      "timeout": "Zaman aşımı",
+      "timeout-description": "Bu zenginleştirme için izin verilen maksimum süre (ör. 30s, 1m)",
+      "timeout-placeholder": "30s"
+    },
+    "ds-type": {
+      "logs": "Günlükler",
+      "raw": "Ham"
+    },
+    "dsquery-enricher": {
+      "add-first-query": "İlk sorgunuzu ekleyin",
+      "add-query": "Sorgu ekle",
+      "no-datasource": "Veri kaynağı eksik",
+      "no-datasource-description": "Bu sorgu için bir veri kaynağı bulamadık. Veri kaynağı kaldırılmış veya kullanılamıyor",
+      "no-queries": "Henüz tanımlanmış sorgu yok",
+      "raw-queries-description": "Uyarılarınızı zenginleştirmek için yürütülecek sorguları tanımlayın. Sonuçlar zenginleştirme bağlamında kullanılabilir olacaktır.",
+      "remove-query": "Sorguyu kaldır"
+    },
+    "enricher-config": {
+      "llm-disabled": "LLM devre dışı",
+      "llm-disabled-description": "Zenginleştiriciyi açıklama, Grafana LLM eklentisinin etkinleştirilmesini gerektirir",
+      "type": "Zenginleştirici Türü",
+      "type-placeholder": "Zenginleştirici türünü seçin",
+      "type-required": "Zenginleştirici türü gereklidir"
+    },
+    "explain-enricher": {
+      "annotation-label": "Ek açıklama anahtarı",
+      "annotation-placeholder": "açıklama",
+      "annotation-required": "Zenginleştiriciyi açıklamak için ek açıklama anahtarı gereklidir",
+      "annotation-tooltip": "LLM tarafından oluşturulan açıklamanın saklanacağı ek açıklama anahtarı",
+      "description": "Açıklama zenginleştirici, uyarılar için açıklamalar oluşturmak üzere LLM kullanır. Açıklamanın saklanacağı ek açıklama anahtarını yapılandırın."
+    },
+    "external-enricher": {
+      "url-label": "Haricî Hizmet URL'si",
+      "url-placeholder": "https://api.example.com/enrich",
+      "url-required": "Haricî zenginleştirici için URL gereklidir"
+    },
+    "matcher": {
+      "add-button": "Ekle",
+      "name-label": "Ad",
+      "name-placeholder": "Ad",
+      "remove-aria-label": "Eşleştiriciyi kaldır",
+      "remove-tooltip": "Eşleştiriciyi kaldır",
+      "type-label": "Tür",
+      "type-placeholder": "Tür",
+      "value-label": "Değer",
+      "value-placeholder": "Değer"
+    },
+    "matcher-type": {
+      "equals": "Eşittir (=)",
+      "not-equals": "Eşit değildir (!=)",
+      "regex-match": "Düzenli İfade Eşleşiyor (=~)",
+      "regex-not-match": "Düzenli İfade Eşleşmiyor (!~)"
+    },
+    "scope": {
+      "annotation-scoped": "Açıklama kapsamı",
+      "description": "Hangi uyarıların zenginleştirilmesi gerektiğini tanımlayın",
+      "global-scoped": "Genel kapsamlı",
+      "label-scoped": "Etiket kapsamlı",
+      "rule-not-found": "Kural bulunamadı ({{ruleUid}})",
+      "rule-scoped-description": "Bu zenginleştirme aşağıdaki kurala uygulanacaktır:",
+      "rules-scoped-description": "Bu zenginleştirme aşağıdaki kurallara uygulanacaktır:",
+      "title": "Kapsam"
+    }
+  },
+  "alerting": {
+    "ai-feedback": {
+      "comment-description": "Neyin iyi çalıştığını veya neyin daha iyi olabileceğini paylaşarak gelişmemize yardımcı olun",
+      "comment-label": "Ek geri bildirim (isteğe bağlı)",
+      "comment-placeholder": "Yapay zekâ yanıtı hakkındaki düşüncelerinizi paylaşın...",
+      "comment-prompt": "Bize deneyiminizle ilgili daha fazla bilgi vermek ister misiniz?",
+      "helpful": "Evet, yardımcı oldu",
+      "not-helpful": "Hayır, yardımcı olmadı",
+      "question": "Bu yapay zekâ yanıtı yardımcı oldu mu?",
+      "skip": "Atla",
+      "submit": "Geri Bildirim Gönder",
+      "thank-you": "Geri bildiriminiz için teşekkür ederiz!"
+    },
+    "common": {
+      "cancel": "İptal"
+    },
+    "enrichment": {
+      "appliesTo": "Tüm uyarılar için geçerlidir",
+      "create-drawer": {
+        "change-type": "Zenginleştirme türünü değiştir",
+        "create": "Oluştur",
+        "creating": "Oluşturuluyor...",
+        "select-type-description": "Başlamak için bir zenginleştirme türü seçin.",
+        "step1-subtitle": "Bir zenginleştirme türü seçin",
+        "step2-title": "Yeni {{type}} zenginleştirmesi",
+        "title": "Zenginleştirme oluştur"
+      },
+      "delete": {
+        "body": "<strong>{{name}}</strong> uyarı zenginleştirmesini silmek istediğinizden emin misiniz?",
+        "confirm": "Sil",
+        "dismiss": "İptal et",
+        "title": "Uyarı zenginleştirmesini sil"
+      },
+      "delete-button": "Sil",
+      "delete-enrichment": "{{name}} zenginleştirmesini sil",
+      "drawer": {
+        "close": "Kapat",
+        "delete-aria-label": "Zenginleştirmeyi silin",
+        "delete-button": "Sil",
+        "edit-aria-label": "Zenginleştirmeyi düzenle",
+        "edit-button": "Düzenle",
+        "edit-section": "Zenginleştirmeyi düzenle",
+        "enrichments-title": "Zenginleştirmeler",
+        "global-empty-state": "Küresel zenginleştirme yok.\nKüresel zenginleştirmeler ayrı olarak yönetilir ve tüm uyarı kurallarına uygulanır.",
+        "global-enrichments": "Küresel zenginleştirmeler",
+        "global-enrichments-title": "Küresel Zenginleştirmeler",
+        "rule-empty-state": "Henüz yapılandırılmış zenginleştirme yok.\nİlk zenginleştirmenizi eklemek için yukarıdaki düğmeyi kullanın.",
+        "rule-enrichments": "Kural zenginleştirmeleri",
+        "rule-enrichments-title": "Kural Zenginleştirmeleri",
+        "save": "Kaydet",
+        "saving": "Kaydediliyor…",
+        "title": "Uyarı zenginleştirme",
+        "view-aria-label": "Zenginleştirmeyi görüntüleyin",
+        "view-button": "Göster",
+        "view-section": "Zenginleştirmeyi görüntüleyin"
+      },
+      "edit-button": "Düzenle",
+      "edit-enrichment": "{{name}} zenginleştirmesini düzenle",
+      "edit-title": "Zenginleştirmeyi düzenle",
+      "enrichments": "Zenginleştirmeler",
+      "expanded-row": {
+        "annotationMatchers": "<strong>Ek açıklama eşleştiricileri:</strong> <2></2>",
+        "asserts": "<strong>RCA Workbench</strong> zenginleştirmesi yapılandırıldı",
+        "assignments": "<strong>Atamalar:</strong> <2></2>",
+        "datasource": "<strong>Veri kaynağı:</strong> <2></2>",
+        "externalUrl": "<strong>URL:</strong> <2></2>",
+        "labelMatchers": "<strong>Etiket eşleştiricileri:</strong> <2></2>",
+        "sift": "<strong>Sift</strong> zenginleştirmesi yapılandırıldı",
+        "type": "Tür:"
+      },
+      "filter": {
+        "clear": "Filtreleri temizle",
+        "filtered-subtitle": "Filtrelenmiş zenginleştirmeler. Kural ve genel bölümlerini ayrı ayrı görmek için filtreleri temizleyin.",
+        "no-matches": "Geçerli filtrelerle eşleşen zenginleştirme yok.",
+        "no-matching-enrichments": "Eşleşen zenginleştirme bulunamadı.",
+        "scope": {
+          "all": "Tümü",
+          "annotation": "Ek açıklama",
+          "global": "Evrensel",
+          "label": "Etiket",
+          "rule": "Kural"
+        },
+        "scope-dropdown-label": "Kapsama göre filtrele",
+        "scope-label": "Kapsam",
+        "type": {
+          "all": "Tümü"
+        },
+        "type-label": "Türe göre filtrele"
+      },
+      "form": {
+        "more-options": "Diğer seçenekler"
+      },
+      "global-enrichment-subtitle": "Genel zenginleştirmeler tüm uyarı kurallarına uygulanır. Etiketler veya ek açıklamalar ile sınırlandırılmış diğer zenginleştirmeler de geçerli olabilir, tam listeyi Alerting > Ayarlar bölümünde görüntüleyin.",
+      "load-error": "Zenginleştirme yüklenemedi",
+      "loading": "Zenginleştirmeler yükleniyor...",
+      "loadMore": "Daha fazla yükleyin",
+      "new-alert": "Uyarı zenginleştirme",
+      "new-title": "Yeni zenginleştirme",
+      "noEnrichments": "Yapılandırılmış uyarı zenginleştirmesi yok",
+      "preview": {
+        "error-500": "Sunucu hatası (500). Lütfen daha sonra tekrar deneyin.",
+        "error-details": "Ayrıntılar",
+        "error-loading-unavailable": "Ön izleme kullanılamıyor. Bildirim geçmişi yüklenemedi.",
+        "error-title": "Ön izleme yapılamadı",
+        "loading-alerts": "Uyarı veri yükü yükleniyor...",
+        "loading-notifications": "Bildirimler yükleniyor...",
+        "no-matching-alerts": "Bu kural için eşleşen uyarı bulunamadı.",
+        "no-matching-alerts-title": "Eşleşen uyarı yok",
+        "no-notifications": "Bu kural için bildirim geçmişi yok. Kural tetiklendiğinde ön izleme kullanılabilecektir.",
+        "result-label": "Sonucu ön izle",
+        "run": "Zenginleştirmeyi ön izle"
+      },
+      "rule-enrichment-subtitle": "Bu uyarı kuralına özel ek zenginleştirmeler ekleyin.",
+      "search": {
+        "label": "Ara",
+        "placeholder": "Zenginleştirme adına göre ara..."
+      },
+      "tab": {
+        "description": "Ön analiz yaparak ve daha fazla bağlam ekleyerek uyarı bildirimlerinizi daha uygulanabilir hâle getirin."
+      },
+      "table": {
+        "actions": "İşlemler",
+        "annotationMatchers": "Ek açıklamalar",
+        "annotationMatchers-scoped": "Kapsamı belirleyen ",
+        "enrichment": "Zenginleştirme",
+        "labelMatchers": "Etiketler"
+      },
+      "tooltip": {
+        "asserts": "Uyarı bildirimlerine RCA Workbench'e giden bir bağlantı ekler",
+        "assign": {
+          "assignments": "Ek açıklamalar:",
+          "default": "Uyarılara ek açıklamalar atar",
+          "emptyValue": "(boş)",
+          "title": "Uyarılara ek açıklamalar atar"
+        },
+        "assistant": "Uyarılar için Asistan İncelemesini başlatır",
+        "default": "Uyarı zenginleştirmesi yapılandırıldı",
+        "dsquery": {
+          "datasourceType": "Veri kaynağı:",
+          "maxLines": "Maksimum Satır",
+          "queries": "Sorgular:",
+          "query": "Sorgu:",
+          "rawRequest": "Özel veri kaynağı isteği yapılandırıldı",
+          "refId": "Ref ID:",
+          "title": "Zenginleştirme için veri kaynağı sorguları",
+          "type": "Tür:"
+        },
+        "explain": {
+          "annotation": "Şurada depolar:",
+          "default": "Uyarı açıklamaları oluşturmak için LLM kullanır",
+          "title": "Uyarı açıklamaları oluşturmak için LLM kullanır"
+        },
+        "external": {
+          "default": "Zenginleştirme için haricî hizmet çağırır",
+          "title": "Zenginleştirme için haricî hizmet çağırır",
+          "url": "URL:"
+        },
+        "sift": "Uyarıları zenginleştirmek için elemeyi kullanır"
+      },
+      "unified": {
+        "description": "Ön analiz çalıştırarak ve daha fazla bağlam ekleyerek uyarı bildirimlerinizi geliştirin."
+      },
+      "view-button": "Göster",
+      "view-enrichment": "{{name}} zenginleştirmesini göster"
+    },
+    "generate-ai-rule": {
+      "button": "Yapay zekâ ile oluştur",
+      "modal": {
+        "error": "<0></0>",
+        "error-title": "Uyarı kuralı oluşturulurken hata oluştu",
+        "generate": "Kural Oluştur",
+        "generating": "Oluşturuluyor...",
+        "preview-contact-point": "İletişim Noktası:",
+        "preview-description": "Açıklama:",
+        "preview-name": "İsim:",
+        "preview-queries": "Sorgular:",
+        "preview-title": "Oluşturulan Uyarı Kuralı",
+        "prompt-description": "Neyi izlemek istediğinizi ve ne zaman uyarı almak istediğinizi açıklayın. Örneğin: \"CPU kullanımı 5 dakikadan fazla %80'in üzerinde olduğunda uyar\". Ayrıca mevcut iletişim noktaları veya veri kaynakları hakkında da soru sorabilirsiniz.",
+        "prompt-label": "Oluşturmak istediğiniz uyarı kuralını açıklayın",
+        "prompt-placeholder": "Disk kullanımı 5 dakikadan fazla %90'ın üzerinde olduğunda uyar ve Slack iletişim noktasına gönder...",
+        "title": "Yapay zekâ ile uyarı kuralı oluştur",
+        "use-rule": "Bu Kuralı Kullan"
+      }
+    },
+    "improve-ai-annotations": {
+      "button": "Yapay zekâ ile ek açıklamaları iyileştir",
+      "modal": {
+        "apply-improvements": "Ek açıklama iyileştirmelerini uygula",
+        "error": "<0></0>",
+        "error-title": "Hata",
+        "generate": "Ek Açıklamaları İyileştir",
+        "generating": "Oluşturuluyor...",
+        "preview-annotations": "İyileştirilmiş Ek Açıklamalar:",
+        "preview-title": "Yapay Zekâ Ek Açıklama İyileştirmeleri Ön İzlemesi",
+        "prompt-description": "Uyarı kuralı ek açıklamaları hakkında neleri iyileştirmek istediğinizi açıklayın. Örneğin: \"Özeti daha açıklayıcı hâle getirin\", \"Açıklamaya sorun giderme adımları ekleyin\" veya \"Runbook bağlantıları ekleyin\".",
+        "prompt-label": "Ek açıklamaları nasıl iyileştirmek istersiniz?",
+        "prompt-placeholder": "Özeti daha açıklayıcı hâle getirin ve açıklamaya sorun giderme adımları ekleyin...",
+        "title": "Yapay zekâ ile uyarı kuralı ek açıklamalarını iyileştir"
+      }
+    },
+    "improve-ai-labels": {
+      "button": "Yapay zekâ ile etiketleri iyileştirin",
+      "modal": {
+        "cancel": "İptal et",
+        "error": "<0></0>",
+        "error-title": "Hata",
+        "generate": "İyileştirmeler oluştur",
+        "generating": "Oluşturuluyor...",
+        "prompt-description": "Uyarı kuralı etiketleri hakkında neleri iyileştirmek istediğinizi açıklayın. Örneğin: \"Dinamik önem derecesi etiketleri ekleyin\", \"Ekip sahipliğini dâhil edin\" veya \"Ortam etiketleri ekleyin\".",
+        "prompt-label": "Etiketleri nasıl iyileştirmek istersiniz?",
+        "prompt-placeholder": "Eşik değerlerine göre dinamik önem derecesi etiketleri ekleyin ve ekip sahipliğini dâhil edin...",
+        "title": "Yapay zekâ ile Uyarı Kuralı etiketlerini iyileştir"
+      },
+      "preview": {
+        "apply": "İyileştirmeleri uygula",
+        "cancel": "İptal et",
+        "no-improvements": "İyileştirme bulunamadı",
+        "no-improvements-message": "Yapay zekâ, bu istek için herhangi bir etiket iyileştirmesi önermedi.",
+        "title": "Yapay zekâ tarafından önerilen etiket iyileştirmeleri:"
+      }
+    },
+    "settings": {
+      "tabs": {
+        "enrichment": {
+          "title": "Uyarı Zenginleştirme"
+        }
+      }
+    },
+    "template-form": {
+      "genai": {
+        "examples": {
+          "advanced-prompts": {
+            "category": "Gelişmiş/Birleşik İstemler",
+            "example1": "Bir e-posta gövdesi için şablon oluşturun. Tetiklenen uyarılar varsa her birini adı ve ek açıklamalarından alınan kısa bir özetle listeleyin. Tetikleme uyarısı yoksa \"Yeni uyarı yok\" yazan bir mesaj gösterin.",
+            "example2": "Bir web kancası için özel bir mesaj oluşturun. Mesajın başlığı \"[Durum] - Uyarı: UyarıAdı\" şeklinde olmalı ve gövdesinde ortak etiketler ve ek açıklamalar listelenmeli."
+          },
+          "basic-alert-info": {
+            "category": "Temel Uyarı Bilgileri",
+            "example1": "Uyarı etiketleri ve açıklamaları içeren Slack bildirimi. İnceleme için Grafana panosuna doğrudan bağlantı ekleyin.",
+            "example2": "\"🔥UYARI: [UyarıAdı] aktif\" mesajını, bir özet ve detayları görüntüleme bağlantısıyla gösteren Slack mesajı.",
+            "example3": "Şu şekilde bir mesaj üreten şablon:\n🔴 Uyarı: Yüksek CPU Kullanımı\nDurum: Aktif 🚨\nSunucu: web-server-01\nOrtam: Üretim\nTetiklenme zamanı: 2025-09-16 14:22 UTC\n\n"
+          },
+          "firing-resolved": {
+            "category": "Tetiklenen ve Çözülen Uyarıları İşleme",
+            "example1": "Çözümlenen uyarılar için yeşil onay işareti emojisi, aktif uyarılar için ise kırmızı çarpı emojisi içeren bir e-posta gövdesi yazın.",
+            "example2": "Tetiklenen uyarıları ve çözümlenen tüm uyarıları ayrı bölümlerde listeleyen bir şablon oluşturun."
+          },
+          "helper-templates": {
+            "category": "Yardımcı Şablonları Kullanma",
+            "example1": "\"Severity\" (önem derecesi) adlı etiketten bir önem düzeyi değeri alan ve bu değere uygun emojiyi göstermek için yardımcı bir şablon kullanan bir şablona ihtiyacım var."
+          },
+          "labels-annotations": {
+            "category": "Etiketleri ve Ek Açıklamaları İşleme",
+            "example1": "Bildirimdeki tüm uyarılarda ortak olan tüm etiketleri gösteren bir şablon oluşturun.",
+            "example2": "Ek açıklamaları ve değerlerini gösteren bir mesaj oluşturun."
+          },
+          "multiple-alerts": {
+            "category": "Birden Fazla Uyarıyı Listeleme",
+            "example1": "Bildirimdeki her bir uyarının özetini listeleyen özel bir bildirim mesajı oluşturun.",
+            "example2": "Her tetiklenen uyarı için uyarı adını ve değerini listeleyen bir Slack mesajı oluşturun."
+          }
+        },
+        "modal": {
+          "error": "<0></0>",
+          "error-title": "Hata",
+          "examples": {
+            "title": "Örnek İstemler (kopyalamak için tıklayın)"
+          },
+          "generate": "Şablon Oluştur",
+          "generating": "Oluşturuluyor...",
+          "prompt-description": {
+            "tip": "💡 İpucu: İsteminiz ne kadar net ve ayrıntılı olursa o kadar iyi sonuçlar alırsınız."
+          },
+          "prompt-label": "Bildiriminizin nasıl görünmesini istediğinizi açıklayın",
+          "prompt-placeholder": "Bir özet ve ayrıntıları görüntülemek için bir bağlantı içeren \"🔥UYARI: [AlertName] tetikleniyor\" ifadesini gösteren bir Slack mesajı...",
+          "title": "Yapay Zekâ ile Şablon Oluştur"
+        }
+      }
+    },
+    "templates": {
+      "editor": {
+        "generate-with-ai": "Yapay zekâ ile oluştur"
+      }
+    },
+    "triage-ai": {
+      "button": "Asistan ile analiz et"
+    }
+  },
+  "auth-config": {
+    "action-bar": {
+      "content-disable-button": "Devre dışı bırakıldığında Grafana'nın SAML kimlik doğrulamasını kullanması engellenir.",
+      "delete": "Sil",
+      "disable-button": "Devre dışı bırak",
+      "enabled-badge": "Etkin",
+      "more-actions-button": "Daha fazla işlem",
+      "not-enabled-badge": "Devre dışı",
+      "protocol": "Protokol",
+      "save-and-apply-button": "Kaydet ve uygula",
+      "save-and-enable-button": "Kaydet ve etkinleştir",
+      "save-button": "Kaydet",
+      "status": "Durum"
+    },
+    "assertion-mapping-unconnected": {
+      "aria-label-name-id-format": "nameIdFormat",
+      "assertionAttributeEmail-label-email-attribute": "E-posta özniteliği",
+      "assertionAttributeEmail-placeholder-mail": "posta",
+      "assertionAttributeExternalUid-label-external-uid": "Haricî UID özniteliği",
+      "assertionAttributeExternalUid-tooltip-external-uid": "Haricî UID eşlemesi, kimliğe bürünmeyi önleyen bir güvenlik mekanizmasıdır ve yalnızca SCIM sağlaması etkin olduğunda gereklidir. Sağlanan Haricî UID (kimlik sağlayıcı tarafından oluşturulan kullanıcı kimliği), kullanıcı giriş yaptığında SAML onaylama işleminde bulunmalıdır. Bu alan için varsayılan değer userUID'dir.",
+      "assertionAttributeGroups-label-groups-attribute": "Gruplar özniteliği",
+      "assertionAttributeLogin-label-login-attribute": "Giriş özniteliği",
+      "assertionAttributeLogin-placeholder-mail": "posta",
+      "assertionAttributeName-label-name-attribute": "Ad özniteliği",
+      "assertionAttributeName-placeholder-display-name": "Görünen ad",
+      "assertionAttributeOrg-label-org-attribute": "Kuruluş özniteliği",
+      "assertionAttributeRole-label-role-attribute": "Rol özniteliği",
+      "azure-ad-service-account-configuration": "Azure AD Hizmet Hesabı Yapılandırması",
+      "clientId-label-client-id": "İstemci kimliği",
+      "clientSecret-label-client-secret": "İstemci gizli anahtarı",
+      "description-allowed-organizations": "Virgül veya boşlukla ayrılmış SAML kuruluş adları listesi. Kullanıcının giriş yapabilmesi için en az bir grubun üyesi olması gerekir.",
+      "description-assertion-attributes-mapping": "SAML onaylama özniteliklerini Grafana kullanıcı öznitelikleriyle eşleyin. Onaylama öznitelikleri şablon eşlemelerini destekler. Gruplar özniteliği yapılandırılmışsa ekip senkronizasyonu kullanılabilir.",
+      "description-azure-ad-service-account-configuration": "Azure AD kuruluşunuzda 150'den fazla gruba üye kullanıcılarınız varsa tüm grupları Graph API aracılığıyla almak için Azure AD üzerinde bir hizmet hesabı ayarlamanız gerekir. Bu hizmet hesabı, kullanıcı için tüm grupları almak amacıyla kullanılacaktır. Azure AD hizmet hesabı yapılandırması hakkında daha fazla bilgiyi <1>belgelerden</1> okuyabilirsiniz.",
+      "description-force-use-graph-api": "Kullanıcının tüm gruplarını almak için Graph API kullanmaya zorlayın.",
+      "description-name-identifier-format": "Ad tanımlayıcı biçimleri, kimlik sağlayıcısındaki kullanıcıların Grafana kullanıcılarıyla nasıl eşleneceğini kontrol eder.",
+      "description-prevent-synchronizing-users-organization-roles": "SAML kullanıcıları kuruluş rollerinin IdP'den senkronize edilmesini önleyin.",
+      "label-allowed-organizations": "İzin verilen kuruluşlar",
+      "label-assertion-attributes-mapping": "Onaylama öznitelikleri eşlemeleri",
+      "label-force-use-graph-api": "Graph API'sini kullanmaya zorla",
+      "label-name-identifier-format": "Ad tanımlayıcı biçimi",
+      "label-org-mapping": "Kuruluş eşlemesi",
+      "label-role-mapping": "Rol eşlemesi",
+      "label-skip-organization-role-sync": "Kuruluş rolü eşitlemesini atla",
+      "label-user-mapping": "Kullanıcı eşlemesi",
+      "orgMapping-label-org-mapping": "Kuruluş eşlemesi",
+      "roleValuesAdmin-label-admin": "Yönetici",
+      "roleValuesEditor-label-editor": "Düzenleyici",
+      "roleValuesGrafanaAdmin-label-grafana-admin": "Grafana Yöneticisi",
+      "roleValuesNone-label-none": "Yok",
+      "roleValuesViewer-label-viewer": "Görüntüleyici",
+      "tokenUrl-label-access-token-url": "Erişim Belirteci URL'si",
+      "tooltip-assertion-attributes-mapping": "Grafana'daki onaylama öznitelikleri eşlemesi, SAML yanıtından kullanıcı bilgilerini alır ve bu bilgileri veritabanında bir kullanıcı oluşturmak veya güncellemek için kullanır. Onaylama içindeki öznitelikler (anahtar/değer çiftlerini) okur; bunlar arasında Ad, Giriş adı ve e-posta yer alır. Yapılandırmalar, anahtar seçimini değiştirmeye olanak tanır.",
+      "tooltip-org-mapping": "Kuruluş eşlemesi, kimlik sağlayıcısından elde edilen öznitelik değerine bağlı olarak kullanıcıları Grafana'daki belirli kuruluşlara atamanızı sağlar. Bu yapılandırmayı, kuruluşunuzdaki kullanıcıları Grafana kuruluşuna atamak için kullanın.",
+      "tooltip-role-mapping": "Rol eşlemesi, kimlik sağlayıcınızdaki kullanıcı rollerini Hiçbiri, Görüntüleyici, Düzenleyici, Yönetici ve Grafana Yöneticisi rolleri için rol özniteliklerini yapılandırarak Grafana ile senkronize eder. Eşleşme olmaması durumunda Grafana'daki varsayılan rol Görüntüleyici'dir."
+    },
+    "config-action": {
+      "confirm-modal-body": "Bu SAML yapılandırmasını kalıcı olarak silmek istediğinizden emin misiniz? Kullanıcı arayüzünde yapılan tüm değişiklikler kaldırılacak.",
+      "confirm-modal-confirm-text": "Yapılandırmayı sil",
+      "confirm-modal-confirmation-text": "sil",
+      "confirm-modal-dismiss-text": "Düzenlemeye geri dön",
+      "confirm-modal-title": "SAML yapılandırmasını sil"
+    },
+    "connect-to-idp-unconnected": {
+      "configure-assertions-group-mappings": "Bir sonraki adımda onayları, grubu, grup ve kuruluş eşlemelerini yapılandırın.",
+      "configure-idp-using-grafana-metadata": "Grafana meta verilerini kullanarak IdP'yi yapılandırın",
+      "copy": "Kopyala",
+      "description-assertion-consumer-service-url": "Onaylama tüketici hizmeti POST bağlama URL'si",
+      "description-idp-metadata": "Kurulumla aynı olmalı veya IdP tarafından gerekli kılınmalıdır.",
+      "description-metadata-url": "IdP meta verileri için URL",
+      "description-setup-idp": "Kimlik sağlayıcınızı (IdP) yapılandırmak için Grafana meta veri URL'sine ihtiyacınız olacaktır. Aşağıdaki tüm uç noktalar Kimlik Sağlayıcınız (IdP) tarafından erişilebilir olmalıdır.",
+      "description-setup-required": "IdP yapılandırma panelinize gidin, yeni bir uygulama ekleyin ve Grafana ile bağlantı kurmak için birinci adımdaki meta verileri kullanın. IdP'nizin meta verilerini kopyalamanız ve aşağıya girmeniz gerekecek. Bağlantıyı test edin ve onaylama etiketlerini/değerlerini kopyalayın.",
+      "description-slo-url": "Çıkış hizmeti yönlendirme bağlama URL'si/Çıkış hizmeti POST bağlama URL'si",
+      "description-sp-metadata-url-entity-id": "SP meta veri URL'si/SP varlık kimliği",
+      "description-test-connection": "IdP panelinizden bağlantıyı test etmek istiyorsanız IdP tarafından başlatılan giriş yapma işlemine izin verdiğinizden ve geçiş durumu bilgilerini sağladığınızdan emin olun.",
+      "finish-configuring-grafana-using-idp-data": "IdP verilerini kullanarak Grafana yapılandırmasını tamamlayın",
+      "label-assertion-consumer-service-url": "Onaylama Tüketici Hizmeti URL'si",
+      "label-baseencoded-idp-metadata": "Base64 ile şifrelenmiş IdP meta verileri",
+      "label-connect-grafana-with-identity-provider": "Grafana'yı Kimlik Sağlayıcı ile bağlayın",
+      "label-idp-metadata": "IdP'nin meta verileri ",
+      "label-metadata-url": "Meta veri URL'si",
+      "label-path-to-idp-metadata-file": "IdP meta veri dosyası yolu",
+      "label-slo-url": "SLO URL'si",
+      "label-sp-metadata-url-entity-id": "Meta veri URL'si",
+      "step-number-1": "1",
+      "step-number-2": "2",
+      "step-number-3": "3"
+    },
+    "general-unconnected": {
+      "description-allow-signup": "SAML giriş yoluyla yeni Grafana kullanıcılarının oluşturulmasına izin verilip verilmeyeceği. Etkinleştirilmezse yalnızca mevcut Grafana kullanıcıları SAML ile giriş yapabilir.",
+      "description-auto-login": "Giriş ekranını atlayarak SAML ile otomatik giriş yapmayı deneyin.",
+      "description-display-name-for-this-saml-integration": "Birden fazla SSO IdP sağlayıcısı veya protokolü kullanıyorsanız faydalıdır.",
+      "description-duration-grafana-metadata-valid": "Grafana meta verilerinin geçerli olduğu süre.",
+      "description-entity-id": "Varlık kimliği, hizmet sağlayıcı için küresel olarak benzersiz bir tanımlayıcıdır. Kimlik sağlayıcıya hizmet sağlayıcıyı tanıtmak için kullanılır. Varsayılan olarak Grafana örneğinin URL'sidir.",
+      "description-identity-provider-initiated-login": "Kullanıcıların doğrudan kimlik sağlayıcı üzerinden Grafana'ya giriş yapmasına izin verir.",
+      "description-max-issue-delay": "IdP'nin bir yanıt vermesinden itibaren geçen ve Grafana'nın bu yanıtı işleyebileceği süre.",
+      "description-relay-state": "Gerekli. IdP'de yapılandırılan geçiş durumu ile eşleşmelidir ve sonunda boşluk bırakılmalıdır.",
+      "description-single-logout": "Kullanıcıların, SAML ile kurulan geçerli IdP oturumuyla ilişkili IdP oturumundan ve uygulamalardan çıkış yapmasına izin verir.",
+      "displayName-placeholder-saml": "SAML",
+      "label-allow-signup": "Kaydolmaya izin ver",
+      "label-auto-login": "Otomatik giriş",
+      "label-display-name-for-this-saml-integration": "Bu SAML 2.0 entegrasyonu için görünen ad",
+      "label-entity-id": "Varlık kimliği",
+      "label-general-settings": "Genel ayarlar",
+      "label-identity-provider-initiated-login": "Kimlik sağlayıcı tarafından başlatılan giriş işlemi",
+      "label-max-issue-delay": "En fazla sorun gecikmesi",
+      "label-metadata-valid-duration": "Meta verilerin geçerlilik süresi",
+      "label-relay-state": "Geçiş durumu",
+      "label-single-logout": "Çoklu çıkış yapma"
+    },
+    "input-with-reset": {
+      "reset": "Sıfırla"
+    },
+    "key-cert-drawer-unconnected": {
+      "close": "Kapat",
+      "description-number-generated-certificate-valid": "Oluşturulan sertifikanın geçerli olduğu gün sayısı.",
+      "generate": "Oluştur",
+      "label-city": "Şehir",
+      "label-country-code": "Ülke kodu",
+      "label-state": "Durum",
+      "label-validity-days": "Geçerli olduğu gün sayısı",
+      "label-your-organization": "Kuruluşunuz",
+      "subtitle-saml-key-and-certificate": "Oluşturulan sertifikada aşağıdaki veriler yer alacak",
+      "title-saml-key-and-certificate": "SAML anahtarı ve sertifikası",
+      "tooltip-generate-the-certificate-and-private-key": "Sertifika ve özel anahtar oluştur"
+    },
+    "key-cert-unconnected": {
+      "description-baseencoded-grafana-x-certificate": "Base64 ile şifrelenmiş Grafana X.509 sertifikası",
+      "description-baseencoded-private-key": "Base64 ile şifrelenmiş özel anahtar",
+      "description-path-to-the-grafana-private-key": "Grafana özel anahtarının yolu",
+      "description-path-to-the-grafana-x-certificate": "Grafana X.509 sertifikasının yolu",
+      "description-sign-outgoing-requests-to-id-p": "IdP'ye giden istekleri imzalayın",
+      "description-signature-algorithm": "IdP'ye giden istekleri imzalamak için kullanılan imza algoritması. Kurulumla aynı olmalı veya IdP tarafından gerekli kılınmalıdır.",
+      "description-signing-and-encryption-key-certificate": "IdP ile Grafana arasında bilgi alışverişi yapmak için kullanılan sertifika ve özel anahtar. Özel anahtarın PKCS#8 biçiminde düzenlenmesi gerekir. Sertifika geçerli bir X.509 sertifikası olmalıdır.",
+      "generate-key-and-certificate": "Anahtar ve sertifika oluştur",
+      "label-certificate": "Sertifika",
+      "label-private-key": "Özel anahtar",
+      "label-sign-requests": "İstekleri imzala",
+      "label-signature-algorithm": "İmza algoritması",
+      "label-signing-and-encryption-key-certificate": "İmzalama ve şifreleme anahtarı ile sertifikası"
+    },
+    "page-banner": {
+      "aria-label-close-banner": "Banner'ı kapat",
+      "tooltip-close": "Kapat"
+    },
+    "SAML": {
+      "button-row-next": "Sonraki: {{name}}",
+      "button-row-previous": "Önceki: {{name}}"
+    },
+    "samlform": {
+      "text-saved": "Kaydedildi"
+    },
+    "save-and-test-unconnected": {
+      "button-save-and-enable": "Kaydet ve etkinleştir",
+      "label-test-and-enable": "Test et ve etkinleştir",
+      "text-save-and-enable": "SAML yapılandırmanızı uygulamaya hazırsanız \"Kaydet ve etkinleştir\" düğmesini kullanın. Yapılandırmayı devre dışı bırakabileceksiniz."
+    },
+    "save-samlsettings": {
+      "message": {
+        "cannot-save-settings": "Ayarlar kaydedilemiyor"
+      }
+    },
+    "text-input-with-reset": {
+      "reset": "Sıfırla"
+    }
+  },
+  "banner": {
+    "api": {
+      "result": {
+        "saved": "Banner ayarları kaydedildi"
+      }
+    },
+    "form": {
+      "button-save": "Kaydet",
+      "button-saving": "Kaydediliyor…",
+      "enabled": {
+        "label": "Etkin"
+      },
+      "end": {
+        "description": "Bitiş tarihi seçilmezse başlık süresiz olarak görüntülenir.",
+        "error": "Bitiş zamanı başlangıç zamanından sonra olmalıdır",
+        "label": "Bitiş zamanı:"
+      },
+      "message": {
+        "description": "Banner'ın metin içeriği. Markdown desteklenmektedir.",
+        "label": "Mesaj"
+      },
+      "options": {
+        "authenticated": "Kimliği doğrulanmış kullanıcılar",
+        "error": "Hata",
+        "everyone": "Herkes",
+        "info": "Bilgi",
+        "warning": "Uyarı"
+      },
+      "select": {
+        "placeholder": "Banner türü seçin"
+      },
+      "start": {
+        "description": "Banner, bu tarih ve saatten itibaren gösterilecektir.",
+        "label": "Başlama zamanı:"
+      },
+      "title": "Banner'ı yapılandır",
+      "variant": {
+        "label": "Değişken"
+      },
+      "visibility": {
+        "label": "Görünürlük"
+      }
+    },
+    "preview": {
+      "message": {
+        "default": "Bu ön izlemeyi, mesaj alanını değiştirerek güncelleyin."
+      },
+      "title": "Ön izleme"
+    }
+  },
+  "caching": {
+    "alert": {
+      "readonly": {
+        "message": "Bu veri kaynağı yapılandırma ile eklendi ve önbellekleme, arabirim üzerinden değiştirilemez. Bu veri kaynağını güncellemek için lütfen sunucu yöneticinizle iletişime geçin.",
+        "title": "Sağlanan veri kaynağı"
+      }
+    },
+    "cache-clean": {
+      "body-clear-cache": "Uyarı: Bu işlem, önbelleğin etkin olduğu tüm veri kaynaklarını etkiler. Memcached kullanıyorsanız sistem Memcached örneğindeki tüm verileri temizler. Devam etmek istiyor musunuz?",
+      "clear-cache": "Önbelleği temizle",
+      "confirm-text-clear-cache": "Önbelleği temizle",
+      "title-clear-cache": "Önbelleği temizle"
+    },
+    "cache-cta": {
+      "enable-button-title": "Etkinleştir",
+      "enable-button-tittle": "Etkinleştir",
+      "protip-caching-cannot-enabled-source": "Bu veri kaynağının yapılandırması önbelleklemenin etkinleştirilmesine izin vermiyor.",
+      "protip-caching-not-enabled": "Önbelleklemenin etkinleştirilmesi, veri kaynağına gönderilen gereksiz isteklerin sayısını azaltabilir.",
+      "protip-link-caching-not-enabled": "Daha fazla bilgi edinin",
+      "title-caching-cannot-enabled-source": "Bu veri kaynağı için önbellekleme etkinleştirilemez.",
+      "title-caching-not-enabled": "Bu veri kaynağı için önbellekleme etkinleştirilmedi."
+    },
+    "cache-settings-disable": {
+      "disable": "Devre dışı bırak"
+    },
+    "cache-settings-form": {
+      "description-query-ttl": "Sorgu önbellek ögesi için milisaniye cinsinden yaşam süresi. Örnek: 5000",
+      "description-resource-ttl": "Kaynaklar, Grafana veri kaynağı eklentilerinin sorgu düzenleyicisinde kullanılmak üzere veri kaynaklarından aldığı dinamik değerlerdir. Örnekler: Splunk ad alanları, Prometheus etiketleri ve CloudWatch metrik adları. Bu değerler daha seyrek güncellendiğinden Kaynaklar için sorgulardan daha uzun bir önbellek TTL tercih edebilirsiniz. Daha fazla bilgi için <2>belgelere</2> bakın.",
+      "description-timetolive-resources-cache-items-milliseconds-example": "Kaynak önbellek ögeleri için milisaniye cinsinden yaşam süresi. Örnek: 5000",
+      "description-use-default-ttl": "Grafana yapılandırmasında ayarlanmış varsayılan TTL'yi kullanmak için bunu etkinleştirin ({{defaultTTLMs}} ms)",
+      "label-query-ttl": "Sorgu TTL'si",
+      "label-use-default-ttl": "Varsayılan TTL kullan",
+      "resource-ttl": "Kaynak TTL'si",
+      "save": "Kaydet"
+    },
+    "caching": {
+      "content": {
+        "text": {
+          "enable-caching": "Ön belleğe alma özelliğini etkinleştir"
+        }
+      }
+    },
+    "data-source-cache": {
+      "caching-heading": "Önbellekleme",
+      "query-catching": "Grafana Pro deneme süreniz boyunca ücretsiz sorgu önbelleklemeyi etkinleştirin.",
+      "upgrade-content-author-dashboards": "ServiceNow'daki alanlar veya Datadog'dan alınan metrikler gibi sorguları oluşturmak için kullanılan verileri önbelleğe alarak panoları daha sorunsuz oluşturun",
+      "upgrade-content-description": "Sorgu önbellekleme ile panoları daha hızlı yükleyebilir ve sorgu sonuçlarını geçici olarak bellek, Redis veya Memcached'de saklayarak veri kaynaklarına yönelik maliyetli sorguları azaltabilirsiniz.",
+      "upgrade-content-load-dashboards": "Büyük sorgular içerse ve aynı anda çok sayıda kullanıcı baksa bile panoları önbellekten bir saniyeden kısa sürede yükleyin",
+      "upgrade-content-save-money": "Splunk, CloudWatch ve Github gibi veri kaynaklarına yapılan API çağrılarının sayısını azaltarak para tasarrufu yapın ve hız sınırlamalarından kaçının"
+    }
+  },
+  "common": {
+    "cancel": "İptal"
+  },
+  "dashboard": {
+    "errors": {
+      "failed-to-load": "Pano yüklenemedi"
+    }
+  },
+  "enricher": {
+    "asserts": {
+      "description": "Uyarı bildirimlerine RCA Workbench'e giden bir bağlantı ekleyin",
+      "label": "RCA Workbench"
+    },
+    "assign": {
+      "description": "Uyarılara ek açıklamalar ekle",
+      "label": "Ata"
+    },
+    "assistant": {
+      "description": "Uyarılar için Asistan Araştırmasını Başlat",
+      "label": "Asistan Araştırmaları"
+    },
+    "dsquery": {
+      "description": "Ek bağlam için veri kaynaklarını sorgulayın",
+      "label": "Veri Kaynağı Sorgusu"
+    },
+    "explain": {
+      "description": "Uyarılar için yapay zekâ destekli açıklamalar oluşturun",
+      "label": "Açıkla"
+    },
+    "external": {
+      "description": "Zenginleştirme için haricî web kancası çağırın",
+      "label": "Haricî"
+    },
+    "sift": {
+      "description": "Sift araştırmasını çalıştırın",
+      "label": "Sift"
+    }
+  },
+  "explore": {
+    "query-library": {
+      "cancel": "İptal",
+      "default-title": "Yeni sorgu",
+      "discard": "Vazgeç",
+      "editing-title": "Kaydedilen sorgulardan düzenleme",
+      "explore": "Keşfet'te düzenle",
+      "query-template-added": "Bu sorgu başarıyla kütüphaneye kaydedildi",
+      "save": "Kaydet",
+      "save-and-close": "Kaydet ve kapat",
+      "save-return": "Kaydet ve kaydedilen sorgulara dön",
+      "saving": "Kaydediliyor…"
+    }
+  },
+  "export": {
+    "pdf": {
+      "cancel-button": "İptal",
+      "download-button": "PDF oluştur",
+      "image-alt": "PDF ön izlemesi",
+      "info-text": "Panoyu PDF belgesi olarak dışa aktarın",
+      "layout-label": "Düzen",
+      "orientation-label": "Yön",
+      "title": "Panoyu PDF olarak dışa aktar",
+      "zoom-description": "Metni büyütmek için yakınlaştırın veya her panelde daha fazla veri (örneğin tablo sütunları) görmek için uzaklaştırın.",
+      "zoom-label": "Yakınlaştır"
+    }
+  },
+  "groupsync": {
+    "empty-state": {
+      "pro-tip": "Grafana erişimini Kimlik Sağlayıcınızdaki gruplar aracılığıyla yönetmek mi istiyorsunuz? Grafana RBAC rollerine grup eşlemeleri oluşturun. <2>Daha fazla bilgi edinin</2>",
+      "title": "Henüz bir grup eşleme oluşturmadınız"
+    },
+    "group-sync-editor": {
+      "body-delete-group-mappings": "Bu grup için tüm eşlemeleri silmek istediğinizden emin misiniz?",
+      "close-button-drawer": "Kapat",
+      "confirm-text-delete-group-mappings": "Sil",
+      "delete-group-mapping": "Grup eşlemesini sil",
+      "new-button-drawer": "Yeni",
+      "new-group-mapping": "Yeni grup eşlemesi",
+      "placeholder-search-by-group-id": "Grup kimliğine göre ara",
+      "text-deprecated-feature": "Bu özellik kullanım dışıdır ve kurallarınızın çalışması Haziran 2025'te durdurulacaktır. Lütfen istediğiniz ekibin ayarlarından haricî grup senkronizasyonuna geçin ve rolleri ekiplere atayın.",
+      "title-delete-group-mappings": "Grup eşlemelerini sil",
+      "title-deprecated-feature": "Kullanımdan kaldırılan özellik"
+    },
+    "new-mapping-form": {
+      "label-group-id": "Grup kimliği",
+      "label-roles": "Roller",
+      "save": "Kaydet"
+    }
+  },
+  "licensing": {
+    "customer-support-button": {
+      "contact-customer-support": "Müşteri desteğiyle iletişime geçin"
+    },
+    "expires-soon": {
+      "title-grafana-enterprise-license-expire": "Grafana Enterprise lisansınızın süresi yakında dolacak",
+      "sub-title-license-expiration_one": "{{count}} gün kaldı, ardından <3>Enterprise özellikleri devre dışı bırakılacaktır.</3>",
+      "sub-title-license-expiration_other": "{{count}} gün kaldı, ardından <3>Enterprise özellikleri devre dışı bırakılacaktır.</3>"
+    },
+    "get-token-status": {
+      "title": {
+        "token-expired": "Belirteç süresi doldu",
+        "token-expires-soon": "Belirteç yakında sona erecek"
+      }
+    },
+    "get-trial-status": {
+      "title": {
+        "trial-active": "Deneme etkin",
+        "trial-expired": "Ücretsiz deneme süresi doldu"
+      }
+    },
+    "has-expired": {
+      "sub-title-licensing-reader": "<0>Bazı özellikler</0> devre dışı bırakıldı.",
+      "title-your-grafana-enterprise-license-has-expired": "Grafana Enterprise lisansınızın süresi doldu"
+    },
+    "is-invalid": {
+      "sub-title-licensing-reader": "<0>Bazı özellikler</0> devre dışı bırakıldı.",
+      "title-your-grafana-enterprise-license-is-invalid": "Grafana Enterprise lisansınız geçersiz"
+    },
+    "license-info": {
+      "aria-label-details-about-license-grafana-cloud": "Grafana Cloud'da lisansınızla ilgili ayrıntıları görüntüleyin",
+      "card-content-account": "AWS Hesabı",
+      "card-content-active-licensed-users": "Aktif lisanslı kullanıcılar",
+      "card-content-anonymous-users": "Adsız kullanıcılar",
+      "card-content-authenticated-users": "Kimliği doğrulanmış kullanıcılar",
+      "card-content-company": "Şirket",
+      "card-content-license-expires": "Lisansın son kullanma tarihi",
+      "card-content-license-expires-tooltip": "Lisansın son kullanma tarihi, geçerli lisansın artık aktif olmayacağı tarihtir. Lisansın son kullanma tarihi yaklaştıkça Grafana Enterprise bir banner görüntüler.",
+      "card-content-lid": "Lisans kimliği",
+      "card-content-none": "Yok",
+      "card-content-product": "Ürün",
+      "card-content-products": "Ürünler",
+      "card-content-purchase-date": "Satın alma tarihi",
+      "card-content-token-auto-update": "Grafana, belirteci süresi dolmadan önce otomatik olarak günceller. Belirteciniz güncellenmiyorsa destek ekibiyle iletişime geçin.",
+      "card-content-token-expires": "Belirteç son kullanma tarihi",
+      "card-content-token-id": "Belirteç kimliği",
+      "card-content-token-issued": "Belirteç verildi",
+      "card-content-token-usage-billing-off": "Kapalı",
+      "card-content-url-name": "URL",
+      "card-content-url-tooltip": "Lisans URL'si, Grafana örneğinizin kök URL'sidir. Lisans, farklı bir kök URL'si olan bir Grafana örneğinde çalışmaz.",
+      "card-content-usage-billing": "Kullanım faturalandırması",
+      "card-content-usage-billing-on": "Açık",
+      "card-content-usage-billing-tooltip": "Sınırsız sayıda aktif kullanıcıya izin vermek için Grafana Labs'tan kullanım faturalandırmasını açmasını isteyebilirsiniz. Kullanım faturalandırması etkinleştirildiğinde, Grafana aktif kullanıcı sınırlarını uygulamaz veya uyarı banner'ları göstermez. Bunun yerine, sınırı aşan aktif kullanıcılar için müşteri sözleşmenize göre sizden ücret alınır.",
+      "edition-notice-licensing-info": "Grafana Enterprise'ı lisanssız çalıştırıyorsunuz. Enterprise özellikleri devre dışı bırakıldı.",
+      "edition-notice-problem-licensing-info": "Enterprise lisans belirtecinizle ilgili bir sorun var. Enterprise özellikleri devre dışı bırakıldı.",
+      "license-alert": "Lisans belirteci yüklendi. Değişikliklerin geçerli olması için Grafana'yı yeniden başlatın.",
+      "license-details": "Lisans ayrıntıları",
+      "license-token-info": "<2>Lisans süresinin sona ermesi</2> ve <6>lisansı etkinleştirme</6> hakkında bilgi edinin.",
+      "renew-token": "Belirteci yenile",
+      "renewing": " (Yenileniyor...)",
+      "text-loading-licensing-info": "Lisans bilgileri yükleniyor...",
+      "title-contact-support-renew-token-visit-cloud": "Belirtecinizi yenilemek için destek ekibiyle iletişime geçin veya daha fazla bilgi edinmek için Cloud portalını ziyaret edin.",
+      "title-have-a-license": "Lisansınız var mı?",
+      "title-license": "Lisans",
+      "title-license-token-renewed": "Lisans belirteci yenilendi.",
+      "title-token": "Belirteç",
+      "title-utilization": "Kullanım",
+      "utilization-footer": "Lisanslı kullanıcıların kullanımı, son 30 günde oturum açmış kullanıcıların etkinliğine göre belirlenir.",
+      "utilization-info": "<2>Aktif kullanıcı sınırları</2> ve <6>eş zamanlı oturum sınırları</6> hakkında bilgi edinin.",
+      "card-content-anonymous-users-tooltip_one": "Grafana, her {{count}} anonim cihazı 1 kullanıcı sayar.",
+      "card-content-anonymous-users-tooltip_other": "Grafana, her {{count}} anonim cihazı 1 kullanıcı sayar."
+    },
+    "license-token-upload": {
+      "instance-url": "Örnek URL'si: <1>{{licensedUrl}}</1>",
+      "upload-a-new-token": "Yeni bir belirteç yükleyin",
+      "uploading": "Yükleniyor…"
+    },
+    "max-users-reached": {
+      "title-exceeded-included-number-active-users": "Dâhil edilebilecek aktif kullanıcı sayısını aştınız",
+      "upgrade-your-license-link": "Lütfen <2>lisansınızı yükseltin.</2>",
+      "upgrade-your-license-no-link": "Lütfen lisansınızı yükseltin.",
+      "upgrade-your-license-subtitle_one": "Grafana Enterprise lisansınız {{maxUsers}} aktif kullanıcı içerebilir; şu anda {{count}} aktif kullanıcınız var.",
+      "upgrade-your-license-subtitle_other": "Grafana Enterprise lisansınız {{maxUsers}} aktif kullanıcı içerebilir; şu anda {{count}} aktif kullanıcınız var."
+    },
+    "page-alert": {
+      "learn-about-enterprise-licenses": "Enterprise lisansları hakkında bilgi edinin"
+    },
+    "token-expires-soon": {
+      "title-grafana-enterprise-token-needs-renewed": "Grafana Enterprise belirtecinizin yenilenmesi gerekiyor",
+      "sub-title-token-expiration_one": "Lisans belirtecinizin süresinin dolmasına {{count}} gün kaldı, ardından <4>Enterprise özellikleri devre dışı bırakılacaktır.</4>",
+      "sub-title-token-expiration_other": "Lisans belirtecinizin süresinin dolmasına {{count}} gün kaldı, ardından <4>Enterprise özellikleri devre dışı bırakılacaktır.</4>"
+    }
+  },
+  "meta-analytics": {
+    "analytics-drawer": {
+      "shared-dashboards-tab-label": "Paylaşılan panolar",
+      "stats-tab-label": "İstatistikler",
+      "text-access-usage-insights-during-trial-grafana": "Grafana Pro deneme süreniz boyunca kullanım bilgilerine ücretsiz olarak tam erişim elde edin.",
+      "title-dashboard-insights": "{{dashboardTitle}} - analiz",
+      "users-activity-tab-label": "Kullanıcılar ve etkinlik"
+    },
+    "analytics-public-dashboards-tab": {
+      "daily-query-count-cached-queries-label": "önbelleğe alınmış sorgular",
+      "daily-query-count-title": "Günlük sorgu sayısı",
+      "errors-last-month-title": "Son 30 gündeki hatalar",
+      "no-data": "Veri yok.",
+      "views-last-month-title": "Son 30 gündeki görüntülemeler"
+    },
+    "analytics-stats-tab": {
+      "daily-query-count-cached-queries-label": "önbelleğe alınmış sorgular",
+      "daily-query-count-title": "Günlük sorgu sayısı",
+      "errors-last-month-title": "Son 30 gündeki hatalar",
+      "no-data": "Veri yok."
+    },
+    "analytics-toolbar-button": {
+      "tooltip-dashboard-insights": "Pano analizleri"
+    },
+    "analytics-upgrade-drawer": {
+      "description-usage-insights-provide-detailed-information-about": "Kullanım Analizi, pano kullanımı hakkında görüntüleme sayısı, sorgular ve kullanıcıların karşılaştığı hatalar gibi ayrıntılı bilgiler sağlar. Bunu, kullanıcı deneyimini iyileştirmek ve sorunları gidermek için kullanabilirsiniz.",
+      "title-dashboard-insights": "{{dashboardTitle}} - analiz"
+    },
+    "analytics-users-tab": {
+      "aria-label-recent-users-table": "Son 30 pano görüntüleyicisi: kullanıcıların ve panoyu son görüntüledikleri zamanın tablo listesi",
+      "aria-label-version-history-button": "Tam sürüm geçmişine git",
+      "created-user-box": "Oluşturuldu",
+      "dashboard-version-history": "Pano sürüm geçmişi",
+      "format-date-currently-viewing": "Şu anda görüntülenen",
+      "format-date-last-hour": "Son 1 saat",
+      "format-date-today": "Bugün",
+      "format-date-yesterday": "Dün",
+      "last-dashboard-viewers": "Son 30 pano görüntüleyicisi",
+      "last-edited-user-box": "Son düzenlenme",
+      "last-viewed-user-box": "Son görüntüleme",
+      "recent-activity-aria-label": "Son etkinlik",
+      "user-views-data-frame-user-field": "Kullanıcı",
+      "user-views-data-frame-when-field": "Ne zaman",
+      "users-activity-content-aria-label": "Kullanıcılar ve etkinlik sekmesi içeriği",
+      "views-last-month-aria-label": "Son 30 gündeki pano görüntülemelerinin eğilimini gösteren çizgi grafik",
+      "views-last-month-title": "Son 30 gündeki görüntülemeler"
+    },
+    "data-source-insights": {
+      "available-source": "Bu veri kaynağı için kullanılabilir veri yok.",
+      "average-load-duration-last-month-title": "Son 30 gündeki ortalama yükleme süresi (ms)",
+      "errors-last-month-title": "Son 30 gündeki hatalar",
+      "queries-last-month-title": "Son 30 gündeki sorgular",
+      "text-enable-source-usage-insights-during-trial": "Grafana Pro denemeniz sırasında veri kaynağı kullanım analizini ücretsiz etkinleştirin.",
+      "text-feature-not-available-expired-license": "Veri kaynağı analizleri, süresi dolmuş bir lisansla kullanılamaz. Veriler toplanmaya devam edecek ancak bu sayfayı görmek için lisansınızı güncellemeniz gerekiyor.",
+      "title-feature-available-expired-license": "Bu özellik, süresi dolmuş bir lisansla kullanılamaz",
+      "title-read-more-license-expiration": "Lisans süresi hakkında daha fazla bilgi edinin"
+    },
+    "data-source-insights-upgrade": {
+      "clean-instance-list-item": "Kullanılmayan veri kaynaklarını bulup kaldırarak örneğinizi temizleyin",
+      "demonstrate-and-improve-list-item": "Kullanıcı etkileşimini takip ederek gözlemlenebilirlik hizmetinizin değerini gösterin ve iyileştirin",
+      "description-usage-insights-provide-detailed-information-about": "Kullanım Analizi, veri kaynağı kullanımı hakkında görüntüleme sayısı, sorgular ve kullanıcıların karşılaştığı hatalar gibi ayrıntılı bilgiler sağlar. Bunu, kullanıcı deneyimini iyileştirmek ve sorunları gidermek için kullanabilirsiniz",
+      "keep-performant-list-item": "Yavaş ve hata eğilimli veri kaynaklarını tanımlayıp düzelterek Grafana'nın performansını koruyun",
+      "review-insights-list-item": "Kullanıcı arayüzünde her veri kaynağının kullanım analizini tek bakışta inceleyin, arama sonuçlarını kullanım ve hatalara göre sıralayın veya ayrıntılı kullanım günlüklerine göz atın"
+    }
+  },
+  "permissions": {
+    "data-source-permissions": {
+      "text-enable-source-permissions-during-trial-grafana": "Grafana Pro denemeniz sırasında veri kaynağı izinlerini ücretsiz olarak etkinleştirin."
+    },
+    "permissions-upgrade-content": {
+      "description-source-permissions-protect-sensitive-limiting-access": "Veri kaynağı izinleriyle, bu veri kaynağına erişimi belirli kullanıcılar, ekipler ve rollerle sınırlandırarak hassas verileri koruyabilirsiniz.",
+      "source-permissions-protect-clean-experience-list-item": "Kullanmaları gerekmeyen veri kaynaklarını gizleyerek kullanıcı deneyimini sadeleştirin",
+      "source-permissions-protect-sensitive-data-list-item": "Güvenlik günlükleri, üretim veri tabanları ve kişisel veriler gibi hassas verileri koruyun",
+      "source-permissions-protect-share-access-list-item": "Kullanıcıların hassas verileri farkında olmadan görme riskini ortadan kaldırarak Grafana erişimini daha özgürce paylaşın"
+    }
+  },
+  "plugins": {
+    "sandbox": {
+      "enable-sandbox-label": "Ön Uç Korumalı Alanı",
+      "enable-sandbox-tooltip": "Ön uç korumalı alanı, ön uç kodunu izole bir ortamda çalıştırarak küresel tarayıcı kapsamına erişimi kısıtlar ve arabirim değişikliklerini yalnızca eklenti alanıyla sınırlar.",
+      "enable-sandbox-tooltip-link": "Daha fazlasını okuyun"
+    }
+  },
+  "public-dashboard": {
+    "email-sharing": {
+      "success-confirm-access": "Erişim onaylandı!",
+      "success-resend-recipient-invitation": "E-posta daveti yeniden gönderildi.",
+      "success-revoke-access-description": "{{recipientEmail}} için erişimi başarıyla iptal ettiniz.",
+      "success-revoke-access-title": "Erişim İptal Edildi",
+      "success-revoke-all-accesses-description": "{{email}} için tüm genel panolara erişim başarıyla kaldırıldı.",
+      "success-revoke-all-accesses-title": "Erişim İptal Edildi",
+      "success-send-recipient-invitation": "E-posta daveti gönderildi."
+    }
+  },
+  "public-dashboards": {
+    "confirm-access-page": {
+      "confirm-access": "Erişimi onayla",
+      "login-subtitle": "Panoya 30 gün boyunca erişim elde edin. 30 gün sonra, panoyu görüntülemeye devam etmek için tekrar erişim isteyebilirsiniz.",
+      "login-title": "Pano erişimi"
+    },
+    "request-view-access-page": {
+      "access-requested": "Erişim isteği gönderildi",
+      "label-email": "E-posta",
+      "placeholder-email": "e-posta",
+      "register-pattern-invalid-email": "Geçersiz e-posta",
+      "register-required-email": "E-posta gereklidir",
+      "request-access": "Erişim isteği gönder"
+    }
+  },
+  "query-library": {
+    "actions": {
+      "delete-query-button": "Sorguyu sil",
+      "duplicate-query-button": "Sorguyu çoğalt",
+      "lock-query-button": "Sorguyu kilitle",
+      "save-history-query-button": "Sorguyu kaydet",
+      "select-query-button": "Sorgu seç",
+      "unlock-query-button": "Sorguyu aç"
+    },
+    "delete-modal": {
+      "body-text": "Bu kaydedilmiş sorguyu kaldırmak üzeresiniz. Bu işlem geri alınamaz. Devam etmek istiyor musunuz?",
+      "confirm-button": "Sorguyu silme",
+      "title": "Sorguyu silme"
+    },
+    "discard-changes": {
+      "discard-button": "Vazgeç",
+      "text": "Bu sorguda kaydedilmemiş değişiklikleriniz var. Bunları silmek istediğinizden emin misiniz?",
+      "title": "Sorgudaki değişiklikler silinsin mi?"
+    },
+    "drawer": {
+      "title": "Kaydedilen sorgular"
+    },
+    "empty-state": {
+      "message": "Bunları Keşfet'ten veya bir panoyu düzenlerken eklemeye başlayın",
+      "no-favorites": "Henüz bir sorguyu favorilerinize eklemediniz",
+      "no-favorites-description": "Tümü sekmesinden favorilere eklemeye başlayın",
+      "no-history": "Tüm sorgularınıza tek bir yerden erişin",
+      "no-history-description": "Panolarda çalıştırdığınız sorgular burada görüntülenir; böylece kolayca erişebilir ve yeniden kullanabilirsiniz",
+      "title": "Henüz bir sorgu kaydetmediniz"
+    },
+    "error-state": {
+      "title": "Bir şeyler ters gitti!"
+    },
+    "explore-modal": {
+      "cancel-button": "İptal et",
+      "confirm-button": "Sorguları değiştir",
+      "title": "Mevcut sorgular değiştirilsin mi?",
+      "warning": "Keşfet bölümünde birden fazla sorgunuz var. Bu kayıtlı sorguyu düzenlerseniz mevcut tüm sorgularınızın üzerine yazılacaktır. Devam etmek istiyor musunuz?"
+    },
+    "filters": {
+      "datasource-placeholder": "Veri kaynağına göre filtrele",
+      "datasource-user": "Ada göre filtrele",
+      "search-placeholder": "Veri kaynağı, sorgu içeriği, başlık veya açıklamaya göre ara",
+      "sort": {
+        "asc": "Alfabetik (A-Z)",
+        "desc": "Alfabetik (Z-A)",
+        "newest": "Yeniden eskiye",
+        "oldest": "Eskiden yeniye"
+      },
+      "sort-placeholder": "Sırala"
+    },
+    "item": {
+      "add-to-library": "Sorguyu kaydet",
+      "favorite": "Favori",
+      "new": "Yeni",
+      "unfavorite": "Favorilerden çıkar"
+    },
+    "not-found": {
+      "message": "Arama veya filtre ölçütlerinizi ayarlamayı deneyin",
+      "title": "Sonuç bulunamadı"
+    },
+    "notifications": {
+      "query-deleted": "Sorgu silindi"
+    },
+    "query-details": {
+      "author": "Yazar",
+      "datasource": "Veri kaynağı",
+      "date-added": "Ekleme Tarihi",
+      "description": "Açıklama",
+      "edit-button": "Sorguyu düzenle",
+      "edit-button-short": "Düzenle",
+      "make-query-visible": "Sorguyu tüm kullanıcılarla paylaş",
+      "tags": "Etiketler",
+      "title": "Başlık"
+    },
+    "query-template": {
+      "error": "Sorgu şablonu meta verileri yüklenirken hata oluştu: {{error}}"
+    },
+    "tabs": {
+      "all": "Tümü",
+      "favorites": "Favoriler",
+      "feedback": "Geri bildirim gönder",
+      "recent": "Son"
+    },
+    "user-info": {
+      "error": "Kütüphaneden kullanıcı bilgileri alınırken hata oluştu: {{error}}"
+    },
+    "variable-adjust-alert": {
+      "combobox": {
+        "custom": "Özel değer",
+        "placeholder": "Değer seçin"
+      },
+      "custom": {
+        "ariaLabel": "{{variable}} yerine kullanılacak özel değer",
+        "placeholder": "Özel değer girin"
+      },
+      "description": "Sorgunuzda aşağıdaki şablon değişkenlerini algıladık. Bu, mevcut verilerinizle eşlenebilir. (Not: Kaydedilen sorgu değiştirilmeyecektir.)",
+      "title": "Şablon değişkenlerinizi değiştirin"
+    }
+  },
+  "query-operation": {
+    "header": {
+      "replace-query-from-library": "Sorguyu değiştir",
+      "replace-query-from-library-button": "Değiştir",
+      "save-to-query-library": "Sorguyu kaydet",
+      "save-to-query-library-button": "Kaydet",
+      "saved-queries": "Kaydedilen sorgular"
+    }
+  },
+  "recorded-queries": {
+    "create-recorded-query-unconnected": {
+      "alert-severity-succesful": "Başarılı",
+      "alert-severity-test": "Bu kayıtlı sorguyu test edin",
+      "aria-label-start-recording-query-button": "Sorgu kaydını başlat düğmesi",
+      "contact-support": "Grafana Labs destek talebi göndermek için <2>Grafana Labs ile İletişime Geçin</2> formunu doldurun",
+      "count-rows-returned": "Bu sorgudan dönen satır sayısını say",
+      "description-decide-often-record-query": "Bu sorguyu ne sıklıkta kaydedeceğinize karar verin",
+      "description-give-this-query-a-name": "Bu sorguya bir ad verin",
+      "description-provide-a-description-for-this-query": "Bu sorgu için bir açıklama girin",
+      "description-select-value-template-variable": "Her şablon değişkeni için bir değer seçin",
+      "done-button": {
+        "aria-label-cancel-recording-query-button": "Sorgu kaydını iptal et düğmesi",
+        "aria-label-close-recording-query-button": "Sorgu kaydını kapat düğmesi",
+        "cancel": "İptal et",
+        "close": "Kapat"
+      },
+      "label": {
+        "relative-time-range": "Göreli Zaman Aralığı"
+      },
+      "label-count-query-results": "Sorgu sonuçlarını say",
+      "label-description": "Açıklama",
+      "label-interval": "Aralık",
+      "label-name": "Ad",
+      "label-template-variables": "Şablon değişkenleri",
+      "message": {
+        "name-is-required": "Ad gereklidir"
+      },
+      "query-relative-time-range": "Bu sorgunun göreli zaman aralığını seçin",
+      "results-alert-message": "Sonuçlar: ",
+      "start-recording-query": "Sorgu kaydını başlat",
+      "success-alert-message": "Yeni kayıtlı sorgunuz başarıyla kaydediliyor!",
+      "sync-button": {
+        "aria-label-test-the-recorded-query": "Kayıtlı sorguyu test edin"
+      },
+      "title-create-recorded-query": "Kayıtlı sorgu oluştur"
+    },
+    "data-source-filter": {
+      "button-clear-filter": "Veri kaynağı filtresini temizle",
+      "filter-by-data-source": "Veri kaynağına göre filtrele",
+      "placeholder-select-a-data-source": "Bir veri kaynağı seçin"
+    },
+    "empty-recorded-query-list": {
+      "message": "Tanımlanmış kayıtlı sorgu yok",
+      "pro-tip": "İpucu: Sorgu düzenleyicisinden sorgu kaydedebilirsiniz."
+    },
+    "query-card": {
+      "interval-content": "Aralık: {{interval}}",
+      "interval-range": "Aralık: Son {{range}}",
+      "query-expression": "Sorgu ifadesi:"
+    },
+    "recorded-queries-config-unconnected": {
+      "body-delete": "{{name}} adlı sorgu yapılandırmasını silmek istediğinizden emin misiniz?",
+      "confirm-text-delete": "Sil",
+      "edit-remote-write-target": "Uzak yazma hedefini düzenle",
+      "queries-to-display": {
+        "buttons": {
+          "aria-label-delete-recorded-query": "Kayıtlı sorguyu sil",
+          "aria-label-pause-recorded-query": "Kaydı duraklat",
+          "aria-label-resume-recorded-query": "Kaydı devam ettir",
+          "delete": "Sil"
+        }
+      },
+      "title-delete": "Sil"
+    },
+    "recorded-queries-deprecation-notice": {
+      "description": "Kayıtlı sorgular kullanımdan kaldırıldı. Lütfen bunun yerine yeni <2>Grafana Yönetilen Kayıt Kuralları</2> kullanın.",
+      "title-deprecation-notice": "Kullanımdan Kaldırma Bildirimi"
+    },
+    "recorded-query-add-modal-unconnected": {
+      "add": "Ekle",
+      "cancel": "İptal et",
+      "new-recorded-query-alert": "Yeni bir Kayıtlı Sorgu oluşturmak için sorgu düzenleyiciye dönün ve seri çubuğundaki <2></2> simgesini kullanın.",
+      "no-queries-available": "{{datasourceName}} için mevcut kayıtlı sorgu yok",
+      "recorded-query": "Kayıtlı sorgu",
+      "title-add-recorded-query": "Kayıtlı sorgu ekle"
+    },
+    "write-target-config-unconnected": {
+      "label-remote-write-path": "Uzak yazma yolu",
+      "placeholder-select-a-data-source": "Bir veri kaynağı seçin",
+      "save": "Kaydet",
+      "select-data-source-label": "Metriklerin yazılacağı veri kaynağını seçin"
+    }
+  },
+  "report": {
+    "report-header": {
+      "time-range": "Veri zaman aralığı:",
+      "title": "{{reportTitle}} - Oluşturulma tarihi: {{generatedOnDate}}"
+    }
+  },
+  "reporting": {
+    "button-row": {
+      "next-step": "Sonraki: {{nextName}}",
+      "previous-step": "Önceki: {{prevName}}"
+    },
+    "create-report": {
+      "alert-title": "Rapor yüklenirken hata oluştu",
+      "loading-report": "Rapor yükleniyor...",
+      "title": "Yeni rapor oluştur"
+    },
+    "errors": {
+      "action-message": "Lütfen eklentiyi yüklemek için Grafana yöneticinizle iletişime geçin.",
+      "no-renderer-description": "PDF raporları oluşturmak için <2>Grafana Görüntü İşleme</2> eklentisini yüklemeniz gerekir.",
+      "no-renderer-title": "Görüntü işleme eklentisi yüklü değil",
+      "old-renderer-description": "CSV dosyaları oluşturmak için <2>Grafana Görüntü İşleme</2> eklentisini güncellemeniz gerekir.",
+      "old-renderer-title": "Görüntü işleme eklentisinin eski bir sürümünü kullanıyorsunuz"
+    },
+    "image-preview": {
+      "invalid-image": "Geçersiz görüntü"
+    },
+    "page": {
+      "empty-button": "Rapor oluştur",
+      "empty-pro-tip": "Mevcut panolardan bir rapor oluşturun. <2>Daha fazla bilgi edinin</2>",
+      "empty-title": "Henüz bir rapor oluşturulmadı",
+      "settings-button": "Rapor ayarları"
+    },
+    "page-actions": {
+      "discard-button": "Vazgeç",
+      "save-as-draft-button": "Taslak olarak kaydet",
+      "update-button": "Raporu güncelle"
+    },
+    "pdf-tables": {
+      "appendix": "",
+      "truncation-notice": ""
+    },
+    "report-footer": {
+      "logo-alt": "Rapor logosu",
+      "page-pagination": "Sayfa {{currentPage}}/{{totalPageCount}}"
+    },
+    "report-form": {
+      "edit-step": "5. Onaylayın"
+    },
+    "report-list": {
+      "confirmText-delete": "Sil",
+      "content-pause-report": "Raporu duraklat",
+      "content-resume-report": "Raporu devam ettir",
+      "delete-report": "{{name}} adlı raporu sil"
+    },
+    "schedule": {
+      "frecuency-custom-input-label": "Tekrarlama sıklığı:",
+      "frecuency-custom-select-label": "Özel sıklık",
+      "frecuency-custom-select-placeholder": "saat",
+      "frecuency-date-picker-label": "Rapor planı başlangıç tarihi",
+      "frecuency-date-picker-placeholder": "Tarih seçin",
+      "frecuency-end-date-label": "Bitiş tarihi",
+      "frecuency-end-time-label": "Bitiş zamanı",
+      "frecuency-last-day-label": "Her ayın son günü gönder",
+      "frecuency-last-day-warning": "Not: Bazı aylarda {{warningDateText}} günü bulunmaz ve bu aylarda rapor gönderilmeyecektir. Ay sonunda rapor göndermek için daha erken bir tarih seçin ya da <strong>\"Her ayın son günü gönder\"</strong> seçeneğini işaretleyin.",
+      "frecuency-send-later": "Sonra gönder",
+      "frecuency-send-now": "Şimdi gönder",
+      "frecuency-start-time-label": "Başlangıç zamanı",
+      "frecuency-time-zone-label": "Zaman dilimi",
+      "frecuency-workdays-label": "Yalnızca pazartesiden cumaya gönder",
+      "report-schedule-end-date-label": "Rapor planı bitiş tarihi",
+      "report-schedule-end-date-placeholder": "Sona ermiyor"
+    },
+    "settings": {
+      "attachment-settings-fieldset-label": "Ek ayarları",
+      "drawer-title": "Rapor şablonu ayarları",
+      "email-branding-fieldset-label": "E-posta markalama",
+      "email-footer-field-label": "E-posta alt bilgisi",
+      "email-logo-image-preview-altText": "Şirket logosu ön izlemesi",
+      "email-logo-url-field-description": "Logo, e-posta başlığında görüntülenecektir. Desteklenen biçimler: png, jpg, gif.",
+      "email-logo-url-field-label": "Şirket logosu URL'si",
+      "embedded-image-header": "Eklenmiş görsel",
+      "embedded-image-theme-picker-description": "Tema, e-postaya eklenmiş pano görseline uygulanacaktır.",
+      "error": "Ayarlar yüklenemedi",
+      "footer-add-item": "+ Alt bilgi ögesi ekle",
+      "footer-add-item-aria": "Alt bilgi ögesi ekle",
+      "footer-fixed-text-placeholder": "Metin girin...",
+      "footer-font-color": "Renk",
+      "footer-font-color-placeholder": "#000000",
+      "footer-font-family-description": "Tüm alt bilgi metin ögeleri için varsayılan yazı tipi.",
+      "footer-font-family-label": "Yazı tipi ailesi",
+      "footer-font-inter": "Inter (Varsayılan)",
+      "footer-font-size": "Boyut",
+      "footer-font-size-default": "Varsayılan",
+      "footer-font-style": "Stil",
+      "footer-font-style-default": "Normal",
+      "footer-font-weight": "Kalınlık",
+      "footer-font-weight-default": "Normal",
+      "footer-link-field-label": "Alt bilgi bağlantı metni",
+      "footer-link-url-field-label": "Alt bilgi bağlantı URL'si",
+      "footer-logo-large": "Büyük (48 piksel)",
+      "footer-logo-medium": "Orta (36 piksel)",
+      "footer-logo-small": "Küçük (24 piksel)",
+      "footer-logo-xlarge": "Çok büyük (64 piksel)",
+      "footer-max-items-reached": "Maksimum öge sayısına ulaşıldı",
+      "footer-move-item-down-label": "{{label}} ögesini aşağı taşı",
+      "footer-move-item-up-label": "{{label}} ögesini yukarı taşı",
+      "footer-remove-item-label": "{{label}} ögesini kaldır",
+      "footer-style-italic": "İtalik",
+      "footer-style-normal": "Normal",
+      "footer-style-toggle-label": "{{label}} stil seçeneklerini aç/kapat",
+      "footer-type-date": "Tarih",
+      "footer-type-fixed-text": "Sabit metin",
+      "footer-type-flex-spacer": "Esnek boşluk bırakıcı",
+      "footer-type-logo": "Logo",
+      "footer-type-page-number": "Sayfa numarası",
+      "footer-unsupported-type": "Desteklenmiyor: {{type}}",
+      "footer-weight-bold": "Kalın",
+      "footer-weight-normal": "Normal",
+      "none-footer-label": "Yok",
+      "pdf-dashboard-title-enabled-description": "Pano başlığını PDF üst bilgisinde görüntüleyin.",
+      "pdf-dashboard-title-enabled-label": "Pano başlığını göster",
+      "pdf-footer-description": "PDF alt bilgisinde görüntülenen ögeleri yapılandırın. Yeniden sıralamak için okları kullanın.",
+      "pdf-footer-empty-state": "Özel bir alt bilgi ögesi yapılandırılmadı. Varsayılan alt bilgi kullanılacak. Özelleştirmek için aşağıdan ögeler ekleyin.",
+      "pdf-footer-header": "Alt bilgi",
+      "pdf-header": "PDF",
+      "pdf-header-enabled-description": "Rapor başlığını ve oluşturulma tarihini PDF üst bilgisinde görüntüleyin.",
+      "pdf-header-enabled-label": "Başlığı göster",
+      "pdf-theme-picker-description": "Tema, rapora eklenen PDF belgesine uygulanacaktır.",
+      "pdf-time-range-enabled-description": "Veri zaman aralığını PDF üst bilgisinde görüntüleyin.",
+      "pdf-time-range-enabled-label": "Veri zaman aralığını göster",
+      "report-logo-image-preview-altText": "Şirket logosu ön izlemesi",
+      "report-logo-url-field-description": "Logo, belge alt bilgisinde görüntülenecektir. Desteklenen biçimler: png, jpg, gif.",
+      "report-logo-url-field-label": "Şirket logosu URL'si",
+      "save-button": "Kaydet",
+      "saving-button": "Kaydediliyor…",
+      "sent-by-footer-label": "Gönderen",
+      "settings-subtitle": "Rapor şablonu ayarlarını yönetin."
+    },
+    "update-report": {
+      "title": "Raporu güncelle"
+    }
+  },
+  "reports": {
+    "all-template-alert": {
+      "description-not-supported": "Şablon değişkenlerinde kullanılan Tümü değeri, tekrar eden satırlar veya paneller için PDF'de desteklenmemektedir",
+      "title-not-supported": "Desteklemiyor"
+    },
+    "confirm": {
+      "edit": "Düzenle",
+      "report-data": {
+        "title": {
+          "combine-all-pdfs-in-one-file": "Tüm PDF'leri tek bir dosyada birleştir",
+          "dashboard-link": "Pano bağlantısı",
+          "email-subject": "E-posta konusu",
+          "end-date": "Bitiş tarihi",
+          "end-time": "Bitiş zamanı",
+          "format-report": "Raporu biçimlendir",
+          "message": "Mesaj",
+          "pdf-layout": "PDF düzeni",
+          "pdf-orientation": "PDF oryantasyonu",
+          "pdf-show-template-variables": "PDF şablon değişkenlerini göster",
+          "preferred-format": "Tercih edilen biçim*",
+          "recipients": "Alıcılar*",
+          "recurrence": "Yinelenme",
+          "repeat-every": "Tekrarlama sıklığı",
+          "replytoemail": "E-postaya cevap ver",
+          "report-name": "Rapor adı*",
+          "scale-factor": "Ölçek faktörü",
+          "schedule": "Zamanlama",
+          "select-dashboard": "Pano seçin",
+          "send-monday-to-friday-only": "Yalnızca pazartesiden cumaya gönder",
+          "share": "Paylaş",
+          "start-date": "Başlangıç tarihi",
+          "start-time": "Başlangıç zamanı",
+          "template-variables": "Şablon değişkenleri",
+          "time-range": "Zaman aralığı",
+          "time-zone": "Saat dilimi"
+        }
+      }
+    },
+    "create-report-tab": {
+      "create-report-using-this-dashboard": "Bu panoyu kullanarak rapor oluştur",
+      "description-reporting-allows-automatically-generate-dashboards-grafana": "Raporlama, herhangi bir panonuzdan otomatik olarak PDF oluşturmanıza ve Grafana'nın bu dosyaları belirli bir takvime göre ilgililere e-posta ile göndermesine olanak tanır.",
+      "get-started-with-reporting": "Raporlamayı kullanmaya başlayın",
+      "learn-more": "Daha fazla bilgi edinin",
+      "text-create-unlimited-reports-during-trial-grafana": "Grafana Pro deneme süreniz boyunca sınırsız sayıda rapor oluşturun."
+    },
+    "dashbord-report-renderer": {
+      "title-unsupported-dashboard-layout": "Desteklenmeyen pano düzeni"
+    },
+    "edit-actions": {
+      "aria-label-delete-report": "Raporu sil",
+      "body-are-you-sure": "Bu raporu silmek istediğinizden emin misiniz?",
+      "confirmText-delete": "Sil",
+      "edit-report": "Raporu düzenle",
+      "pause-button": "Duraklat",
+      "resume-button": "Devam et",
+      "title-delete-report": "Raporu sil",
+      "tooltip-delete": "Sil"
+    },
+    "format-report": {
+      "aria-label-zoom": "Yakınlaştır",
+      "description-csv-encoding": "CSV dosyaları için kodlama biçimini seçin",
+      "description-enlarge-table-columns-panel": "Metni büyütmek için yakınlaştırın veya her panelde daha fazla veri (örneğin tablo sütunları) görmek için uzaklaştırın.",
+      "label-combine-dashboard": "Tüm pano PDF'lerini tek bir dosyada birleştir",
+      "label-configure-multiple-pdfs": "Birden fazla PDF'yi yapılandır",
+      "label-configure-report-header": "Rapor başlığını yapılandır",
+      "label-csv-encoding": "CSV kodlaması",
+      "label-format-report": "2. Raporu biçimlendirin",
+      "label-layout": "Düzen",
+      "label-orientation": "Yönlendirme",
+      "label-show-template-variables": "Şablon değişkenlerini göster",
+      "label-style-the-pdf": "PDF'yi biçimlendir",
+      "label-zoom": "Yakınlaştır",
+      "preview-pdf": "PDF'yi ön izle",
+      "tooltip-download-table-panel": "Tablo paneli verilerini ZIP dosyası içinde CSV olarak indir"
+    },
+    "highlight-trial-report": {
+      "get-started-with-reporting": "Raporlamayı kullanmaya başlayın",
+      "get-started-with-reporting-text": "Raporlama, herhangi bir panonuzdan otomatik olarak PDF oluşturmanıza ve Grafana'nın bu dosyaları belirli bir takvime göre ilgililere e-posta ile göndermesine olanak tanır.",
+      "learn-more": "Daha fazla bilgi edinin",
+      "text-create-unlimited-reports-during-trial-grafana": "Grafana Pro deneme süreniz boyunca sınırsız sayıda rapor oluşturun."
+    },
+    "report-upgrade-content": {
+      "description-reporting-allows-automatically-generate-dashboards-grafana": "Raporlama, herhangi bir panonuzdan otomatik olarak PDF oluşturmanıza ve Grafana'nın bu dosyaları belirli bir takvime göre ilgililere e-posta ile göndermesine olanak tanır."
+    },
+    "reports-list-page": {
+      "render-list": {
+        "create-a-new-report": "Yeni rapor oluştur",
+        "placeholder-search-reports-report-dashboard-recipients": "Rapor adına, pano adına veya alıcılara göre ara",
+        "text": {
+          "create-report": "Rapor oluştur"
+        },
+        "text-create-unlimited-reports-during-trial-grafana": "Grafana Pro deneme süreniz boyunca sınırsız sayıda rapor oluşturun."
+      }
+    },
+    "schedule": {
+      "label-frequency": "Sıklık",
+      "label-schedule": "3. Planlayın",
+      "label-start-date": "Başlangıç tarihi",
+      "label-time": "Zaman"
+    },
+    "select-dashboard": {
+      "aria-label-source-dashboard": "Kaynak pano",
+      "description-time-range": "Belirtilen zaman aralığındaki verilerle rapor oluşturun. Özel zaman aralığı boşsa raporun kontrol panelindeki zaman aralığı kullanılır.",
+      "label-source-dashboard": "Kaynak pano",
+      "label-template-variables": "Şablon değişkenleri",
+      "label-time-range": "Zaman aralığı"
+    },
+    "select-dashboards": {
+      "add-another-dashboard": "Başka bir pano ekle",
+      "label-select-dashboard": "1. Pano seçin",
+      "remove-dashboard": "Panoyu kaldır"
+    },
+    "send-test-email-modal": {
+      "cancel": "İptal et",
+      "label-email": "E-posta",
+      "label-use-emails-from-report": "Rapordaki e-postaları kullan",
+      "send": "Gönder",
+      "title-send-test-email": "Test e-postası gönder"
+    },
+    "share": {
+      "description-address-appear-reply-field-email": "E-postadaki Yanıt alanında görünecek adres",
+      "description-separate-multiple-emails-comma-semicolon": "Birden fazla e-posta adresini virgül veya noktalı virgül ile ayırın.",
+      "email-info-button": "Bu alan boş bırakılırsa rapor adı e-posta konusu olarak kullanılacaktır",
+      "email-subject": "E-posta konusu",
+      "invalid-email": "Geçersiz e-posta: {{email}}",
+      "invalid-emails": "Geçersiz e-postalar: {{emails}}",
+      "label-include-a-dashboard-link": "Pano bağlantısını ekle",
+      "label-message": "Mesaj",
+      "label-recipients": "Alıcılar",
+      "label-replyto-email-address": "Yanıt e-posta adresi",
+      "label-report-name": "Rapor adı",
+      "label-share": "4. Paylaşın",
+      "name-placeholder-system-status-report": "Sistem durumu raporu",
+      "recipients-placeholder-recipients-email-addresses-press-enter": "Alıcının e-posta adreslerini yazın ve Enter tuşuna basın",
+      "send-test-email": "Test e-postası gönder",
+      "subject-placeholder-email-subject": "E-posta konusu",
+      "title-sending-test-email": "Test e-postası gönderiliyor..."
+    },
+    "unavailable-feature-info-box": {
+      "title-feature-available-expired-license": "Bu özellik, süresi dolmuş bir lisansla kullanılamaz"
+    },
+    "upgrade-report": {
+      "description-reporting-allows-automatically-generate-dashboards-grafana": "Raporlama, herhangi bir panonuzdan otomatik olarak PDF oluşturmanıza ve Grafana'nın bu dosyaları belirli bir takvime göre ilgililere e-posta ile göndermesine olanak tanır."
+    },
+    "variables-preview": {
+      "none": "yok"
+    }
+  },
+  "saml-connect-to-idp": {
+    "validate-idp-metadata": {
+      "require-one": "Bir meta veri türü tanımlanmalıdır"
+    }
+  },
+  "saved-queries": {
+    "card": {
+      "aria-label": "{{title}}, {{datasource}}, {{author}} tarafından",
+      "star": "Yıldız ekle",
+      "unknown-author": "Bilinmeyen yazar",
+      "unknown-datasource": "Bilinmeyen veri kaynağı",
+      "unstar": "Yıldızı kaldır",
+      "untitled": "Başlıksız"
+    },
+    "close-guard": {
+      "body": "Bu sorguda kaydedilmemiş değişiklikleriniz var. Bunları silmek istediğinizden emin misiniz?",
+      "confirm-button": "Vazgeç",
+      "title": "Sorgudaki değişiklikler silinsin mi?"
+    },
+    "details": {
+      "author": "Yazar",
+      "cancel": "İptal et",
+      "create-error": "Sorgu kaydedilemedi",
+      "datasource": "Veri kaynağı",
+      "date-added": "Ekleme tarihi",
+      "default-title": "Yeni sorgu",
+      "delete": "Sil",
+      "delete-error": "Sorgu silinemedi",
+      "delete-modal": {
+        "body-text": "Bu kaydedilmiş sorguyu kaldırmak üzeresiniz. Bu işlem geri alınamaz. Devam etmek istiyor musunuz?",
+        "confirm-button": "Sorguyu sil",
+        "title": "Sorguyu sil"
+      },
+      "delete-success": "Sorgu silindi",
+      "description": "Açıklama",
+      "duplicate": "Çoğalt",
+      "edit": "Düzenle",
+      "edit-in-explore": "Keşfet'te düzenle",
+      "editing-mode": "Sorgu düzenleniyor",
+      "panel-aria-label": "Sorgu ayrıntıları: {{title}}",
+      "save": "Kaydet",
+      "save-and-close": "Kaydet ve kapat",
+      "save-success": "Bu sorgu başarıyla kütüphaneye kaydedildi",
+      "select": "Sorgu seç",
+      "tags": "Etiketler",
+      "update-error": "Sorgu güncellenemedi",
+      "update-success": "Sorgu başarıyla güncellendi"
+    },
+    "error-state": {
+      "title": "Bir şeyler ters gitti!"
+    },
+    "feedback": {
+      "alert-text": "Yakın zamanda Kaydedilmiş sorgular bölümünü yeniden tasarladık ve düşüncelerinizi duymak isteriz!",
+      "button": "Geri bildirim gönder"
+    },
+    "filters": {
+      "all-queries": "Tüm sorgular",
+      "author-label": "Yazar",
+      "author-placeholder": "Yazar seçin",
+      "datasource-label": "Veri kaynağı",
+      "datasource-placeholder": "Veri kaynağı seçin",
+      "panel-label": "Filtreler",
+      "remember-filters-label": "Filtreleri hatırla",
+      "remember-filters-subtext": "Ayarlarınız bir sonraki ziyaretinizde geri yüklenir",
+      "search-label": "Ara",
+      "search-placeholder": "Arama ölçütü...",
+      "sort-label": "Sırala",
+      "sort-placeholder": "Sırala",
+      "starred": "Yıldızlı sorgular",
+      "starred-label": "Yıldızlı sorgular",
+      "tags-label": "Etiketler"
+    },
+    "library": {
+      "region-label": "Sorgu kitaplığı"
+    },
+    "list": {
+      "empty": "Kaydedilmiş sorgu bulunamadı",
+      "radiogroup-label": "Kaydedilen sorgular"
+    },
+    "modal": {
+      "aria-label": "Kaydedilen sorgular",
+      "title": "Kaydedilen sorgular"
+    },
+    "variable-adjuster": {
+      "combobox": {
+        "custom": "Özel değer",
+        "placeholder": "Değer seçin"
+      },
+      "custom": {
+        "aria-label": "{{variable}} yerine kullanılacak özel değer",
+        "placeholder": "Özel değer girin"
+      },
+      "description": "Sorgunuzda aşağıdaki şablon değişkenlerini algıladık. Bu, mevcut verilerinizle eşlenebilir. (Not: Kaydedilen sorgu değiştirilmeyecektir.)",
+      "group-aria-label": "Şablon değişkenlerinizi değiştirin",
+      "title": "Şablon değişkenlerinizi değiştirin"
+    }
+  },
+  "scim": {
+    "config": {
+      "addServiceAccount": "\"Hizmet hesabı ekle\"ye tıklayın",
+      "addToken": "\"Belirteç ekle\"ye tıklayın",
+      "confirmReset": "Yapılandırmayı Sıfırla",
+      "copied": "Kopyalandı!",
+      "copy": "Kopyala",
+      "copy-domain": "Alan adını panoya kopyala",
+      "copy-stack-id": "Yığın kimliğini panoya kopyala",
+      "copyToken": "Kimlik sağlayıcınızın belirtecini kopyalayın",
+      "createWithNone": "Rolü \"Hiçbiri\" olarak ayarlanmış bir hizmet hesabı oluşturun",
+      "deleteScimSettingsUnknownError": "Bilinmeyen hata",
+      "domain": "Alan adı",
+      "fetchScimUsersUnknownError": "Bilinmeyen hata",
+      "goToPermissionsTab": "Hizmet hesabı İzinler sekmesinde şu izinleri ekleyin:",
+      "goToServiceAccounts": "<2>Hizmet hesapları</2> bölümüne gidin",
+      "groupSyncEnabled": "Grup Senkronizasyonunu Etkinleştir",
+      "groupSyncEnabledDescription": "Kimlik sağlayıcınızın SCIM aracılığıyla Grafana Cloud yığınınızdaki ekipleri oluşturmasına, güncellemesine ve silmesine izin verin. Ekip Senkronizasyonu etkinse bu seçenek etkinleştirilemez.",
+      "groupSyncPermissions": "Hizmet hesabının grupları senkronize etmesine izin verin:",
+      "loadBaseUrlUnknownError": "Bilinmeyen hata",
+      "loadScimSettingsUnknownError": "Bilinmeyen hata",
+      "loadStackIdUnknownError": "Bilinmeyen hata",
+      "permission1": "org.users:read",
+      "permission2": "org.users:write",
+      "permission3": "org.users:add",
+      "permission4": "org.users:remove",
+      "permission5": "teams:read",
+      "permission6": "teams:create",
+      "permission7": "teams:write",
+      "permission8": "teams:delete",
+      "readMoreLink": "SCIM sağlama hakkında daha fazla bilgi edinin",
+      "rejectNonProvisionedUsers": "Sağlanmamış Kullanıcıları Reddet",
+      "rejectNonProvisionedUsersDescription": "Etkinleştirildiğinde, SCIM ile sağlanmamış kullanıcıların oturum açmasını engeller. Cloud Portal kullanıcıları bu ayardan bağımsız olarak her zaman oturum açabilir.",
+      "resetConfiguration": "SCIM Yapılandırmasını Sıfırla",
+      "resetConfirmation": "SCIM yapılandırmasını sıfırlamak istediğinizden emin misiniz? Bu işlem tüm dinamik SCIM ayarlarını silecek ve yapılandırma dosyası ayarlarına geri dönecektir.",
+      "resetScimSettingsUnknownError": "Bilinmeyen hata",
+      "resetting": "Sıfırlanıyor...",
+      "resetToIniSettings": "Yapılandırma dosyası ayarlarını kullanmaya geri dön",
+      "resetWarning": "Bu işlem geri alınamaz. Sıfırlama işleminden sonra Grafana, config.ini dosyanızdaki SCIM ayarlarını kullanacaktır.",
+      "scimSettingsDescription": "Yapılandırma dosyanız SCIM ayarlarını içeriyor. Bunları bu sayfada güncelleyebilir veya yapılandırma dosyanızdaki ayarları kullanmak için geri dönebilirsiniz.",
+      "scimSettingsInfo": "Yapılandırma Dosyası SCIM Ayarlarını İçeriyor",
+      "serviceAccountToken": "SCIM için hizmet hesabı ve belirteci oluşturma",
+      "serviceAccountTokenDescription": "Bu hizmet hesabı belirteci, Kimlik Sağlayıcınız tarafından Grafana Cloud yığınınızdaki kullanıcıları ve grupları sağlamak için kullanılacaktır.",
+      "settingsUpdated": "SCIM ayarları başarıyla güncellendi.",
+      "settingsUpdatedTitle": "Ayarlar Güncellendi",
+      "stackId": "Yığın Kimliği",
+      "step1": "1. Hizmet Hesabı Oluşturun",
+      "step2": "2. İzinleri Ekleyin",
+      "step3": "3. Belirteç Oluşturun",
+      "tenantUrl": "Kiracı URL'si",
+      "tenantUrlDescription": "Kimlik sağlayıcısı yapılandırmanızın kiracı URL'si. Bu, Kimlik Sağlayıcınızın Grafana Cloud yığınınızın SCIM API'sine bağlanmak için kullanacağı temel URL'dir.",
+      "updateScimSettingsUnknownError": "Bilinmeyen hata",
+      "userSyncEnabled": "Kullanıcı Senkronizasyonunu Etkinleştir",
+      "userSyncEnabledDescription": "Kimlik sağlayıcınızın SCIM aracılığıyla Grafana Cloud yığınınızdaki kullanıcıları oluşturmasına, güncellemesine ve silmesine izin verin.",
+      "userSyncPermissions": "Hizmet hesabının kullanıcıları senkronize etmesine izin verin:"
+    },
+    "featureDisabled": {
+      "message": "SCIM özelliği etkin değil. SCIM işlevini kullanmak için yapılandırmanızda <1>enableSCIM</1> özelliğini etkinleştirin.",
+      "title": "SCIM Özelliği Devre Dışı"
+    }
+  },
+  "secrets": {
+    "actions": {
+      "create-secret": "Güvenli değer oluştur"
+    },
+    "edit-modal": {
+      "form": {
+        "button-create": "Oluştur",
+        "button-update": "Güncelle"
+      },
+      "title": {
+        "create": "Gizli anahtar oluştur",
+        "edit": "{{name}} gizli anahtarını düzenle"
+      }
+    },
+    "empty-state": {
+      "description": "Parolalar, API anahtarları ve diğer hassas veriler gibi özel bilgileri saklamak için gizli anahtarlar kullanabilirsiniz.",
+      "description-no-create": "Güvenli değerler oluşturma izniniz yok. Yeni bir güvenli değer oluşturmak için lütfen yöneticinizle iletişime geçin.",
+      "title": "Henüz herhangi bir gizli anahtarınız yok."
+    },
+    "error-state": {
+      "body": "<p>Bu durum, zayıf ağ koşullarından veya istekleri engelleyen olası bir eklentiden kaynaklanabilir. Yeniden deneyin ve sorun devam ederse destek ekibiyle iletişime geçin.</p><1><0>Ayrıntılar: {{details}}</0></1>",
+      "details": "<0>Ayrıntılar: {{message}}</0>",
+      "message": "Bir hata oluştu",
+      "retry": "<0>Yeniden dene</0>",
+      "unknown-error": "Bilinmeyen hata"
+    },
+    "form": {
+      "btn-cancel": "İptal et",
+      "decrypters": {
+        "description": "Gizli anahtar değerinin şifresini çözebilen hizmetler",
+        "label": "Şifre çözücüler",
+        "placeholder": "Şifre çözücüleri seçin"
+      },
+      "description": {
+        "description": "Bu gizli anahtarın amacıyla ilgili kısa açıklama",
+        "error": {
+          "required": "Açıklama zorunludur",
+          "too-long": "Açıklama {{maxLength}} karakterden kısa olmalıdır"
+        },
+        "label": "Açıklama"
+      },
+      "label-name": {
+        "error": {
+          "invalid": "Etiket adı harf veya rakamla başlamalı ve bitmelidir. Yalnızca harf, rakam, tire, alt çizgi ve nokta içerebilir.",
+          "required": "Etiket adı zorunludur",
+          "too-long": "Etiket adı {{maxLength}} karakterden kısa olmalıdır",
+          "unique": "Etiket adı benzersiz olmalıdır"
+        },
+        "placeholder": "ad"
+      },
+      "label-value": {
+        "error": {
+          "invalid": "Etiket değeri harf veya rakamla başlamalı ve bitmelidir. Yalnızca harf, rakam, tire, alt çizgi ve nokta içerebilir.",
+          "required": "Etiket değeri zorunludur",
+          "too-long": "Etiket değeri {{maxLength}} karakterden kısa olmalıdır"
+        },
+        "placeholder": "değer"
+      },
+      "labels": {
+        "actions": {
+          "add": "Etiket ekle",
+          "aria-label-remove": "Etiketi kaldır"
+        },
+        "description": "Gizli anahtarı kategorize etmeye yarayan etiketler",
+        "error": {
+          "too-many": "Maksimum etiket sayısına ulaşıldı (Maks.: {{maxLabels}})"
+        },
+        "label": "Etiketler"
+      },
+      "name": {
+        "description": "Bu ad, gizli anahtara referans vermek için kullanılacaktır",
+        "error": {
+          "invalid": "Ad, harf veya rakamla başlamalı ve bitmelidir. Yalnızca harf, rakam, tire ve nokta içerebilir.",
+          "required": "Ad gereklidir",
+          "too-long": "Ad {{maxLength}} karakterden kısa olmalıdır",
+          "unique": "Bu ada sahip bir gizli anahtar zaten var"
+        },
+        "label": "Ad"
+      },
+      "value": {
+        "description": "Gizli anahtar değeri",
+        "error": {
+          "required": "Değer gereklidir",
+          "too-long": "Değer {{maxLength}} karakterden kısa olmalıdır"
+        },
+        "label": "Değer"
+      }
+    },
+    "item": {
+      "copy-value-aria-label": "\"{{value}}\" değerini kopyala",
+      "delete-item-aria-label": "{{name}} ögesini sil",
+      "delete-modal": {
+        "body": "<1>{{name}}</1> ögesini silmek istediğinizden emin misiniz?",
+        "confirm-text": "sil",
+        "delete-button": "Sil",
+        "description": "Bir gizli anahtarın silinmesi geri alınamaz ve gizli anahtar Grafana'dan kaldırılır. Bu gizli anahtara yapılan tüm referanslar geçersiz hâle gelecektir.",
+        "title": "Gizli anahtarı sil"
+      },
+      "edit-item": "Düzenle",
+      "edit-item-aria-label": "{{name}} ögesini düzenle",
+      "label-created": "Oluşturuldu:",
+      "label-decrypters": "Şifre çözücüler:",
+      "label-description": "Açıklama:",
+      "label-keeper": "<strong>Saklayıcı</strong> (Keeper):<1{{keeper}} ></1>",
+      "label-modified": "Değiştirildi:"
+    },
+    "mutation-error": {
+      "create": "Gizli anahtar oluşturulamadı. Lütfen yeniden deneyin, sorun devam ederse destekle iletişime geçin.",
+      "title": "İstek hatası",
+      "update": "Gizli anahtar güncellenemedi. Lütfen yeniden deneyin, sorun devam ederse destekle iletişime geçin."
+    },
+    "mutation-success": {
+      "create": "\"{{name}}\" adlı gizli anahtar başarıyla oluşturuldu",
+      "update": "\"{{name}}\" adlı gizli anahtar başarıyla güncellendi"
+    },
+    "page-title": "Gizli anahtarlar",
+    "search-placeholder": "Güvenli değeri ada göre ara",
+    "search-result": {
+      "clear-filters": "Tüm gizli bilgileri görmek için etkin filtreyi temizleyin.",
+      "no-results": "Gizli anahtar bulunamadı"
+    },
+    "secret-value-input": {
+      "configured-value": "yapılandırılmış",
+      "reset-button": "<0>Sıfırla</0>"
+    },
+    "sub-title": "Grafana'da kullanılacak gizli anahtarları yönetin. Daha fazla bilgi için <2>belgelerimize</2> bakın.",
+    "tabs": {
+      "keepers": "Saklayıcılar",
+      "values": "Değerler"
+    }
+  },
+  "secrets-keeper": {
+    "create": {
+      "btn-create": "Oluştur",
+      "error": {
+        "title": "Saklayıcı oluşturulamadı"
+      },
+      "subtitle": "Gizli anahtarlarınızı depolamak ve yönetmek için bir saklayıcı türü seçin.",
+      "subtitle-typed": "",
+      "success": "\"{{name}}\" adlı saklayıcı başarıyla oluşturuldu",
+      "title": "Yeni saklayıcı",
+      "title-typed": ""
+    },
+    "edit": {
+      "active-badge": "",
+      "back-to-keepers": "",
+      "btn-save": "",
+      "error": {
+        "fetch-title": "",
+        "no-keeper": "",
+        "submit-title": "",
+        "unsupported-body": "",
+        "unsupported-title": ""
+      },
+      "hide-instructions": "",
+      "inactive-badge": "",
+      "show-instructions": "",
+      "subtitle": "",
+      "success": ""
+    },
+    "form": {
+      "active": {
+        "description": "",
+        "label": ""
+      },
+      "aws-arn": {
+        "description": "Erişim için üstlenilecek IAM rolü ARN'si",
+        "error": {
+          "invalid": ""
+        },
+        "label": ""
+      },
+      "aws-region": {
+        "description": "AWS bölgesi (ör. us-east-1)",
+        "error": {
+          "invalid": ""
+        },
+        "label": "Bölge"
+      },
+      "btn-cancel": "İptal et",
+      "description": {
+        "description": "Bu saklayıcının amacına dair kısa açıklama",
+        "error": {
+          "required": "Açıklama zorunludur",
+          "too-long": "Açıklama en fazla {{maxLength}} karakter olmalıdır"
+        },
+        "label": "Açıklama"
+      },
+      "error": {
+        "required": "Bu alan zorunludur"
+      },
+      "name": {
+        "description": "Bu saklayıcı için benzersiz ad",
+        "error": {
+          "invalid": "Ad, harf veya rakamla başlamalı ve bitmelidir. Yalnızca harf, rakam, tire ve nokta içerebilir.",
+          "required": "Ad gereklidir",
+          "too-long": "Ad en fazla {{maxLength}} karakter olmalıdır"
+        },
+        "label": "Ad"
+      },
+      "required-note": ""
+    },
+    "home": {
+      "activate": "",
+      "activate-aria": "",
+      "activate-modal": {
+        "body": "",
+        "confirm-button": "",
+        "description": "",
+        "error-title": "",
+        "success": "",
+        "title": ""
+      },
+      "active-badge": "Etkin",
+      "active-keeper": "Etkin saklayıcı: {{name}} ({{type}})",
+      "active-keeper-default": "",
+      "add-first-keeper": "İlk saklayıcınızı ekleyin",
+      "add-keeper": "Saklayıcı ekle",
+      "deactivate-modal": {
+        "body": "",
+        "confirm-button": "",
+        "description": "",
+        "error-title": "",
+        "success": "",
+        "title": ""
+      },
+      "delete-aria": "",
+      "delete-error": "",
+      "delete-modal": {
+        "body": "",
+        "confirm-button": "",
+        "confirm-text": "",
+        "description": "",
+        "dismiss-button": "",
+        "title": ""
+      },
+      "delete-success": "",
+      "empty-state": "Gizli anahtar saklayıcıları, Grafana gizli anahtarlarını AWS Secrets Manager gibi haricî hizmetlerde depolamanıza olanak tanır.",
+      "empty-title": "Yapılandırılmış saklayıcı yok",
+      "error-title": "Saklayıcılar yüklenirken hata oluştu",
+      "modal": {
+        "dismiss-button": ""
+      },
+      "revert-to-system": "",
+      "subtitle": "Grafana için haricî gizli anahtar depolamayı yönetin",
+      "view-details": "Ayrıntıları görüntüleyin",
+      "view-details-aria": "{{name}} ayrıntılarını görüntüleyin"
+    },
+    "instructions": {
+      "continue": "",
+      "copy": "",
+      "s1": {
+        "complete": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "title": ""
+        },
+        "info-body": "",
+        "info-title": "",
+        "kms-drawer": {
+          "intro": "",
+          "label": ""
+        },
+        "navigate": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "title": ""
+        },
+        "permissions": {
+          "intro": "",
+          "title": ""
+        },
+        "title": "",
+        "view-policy-json": ""
+      },
+      "s2": {
+        "attach": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "step5": "",
+          "title": ""
+        },
+        "create": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "step5": "",
+          "step6": "",
+          "step7": "",
+          "title": ""
+        },
+        "intro": "",
+        "title": ""
+      },
+      "s3": {
+        "arn": {
+          "step1": "",
+          "step2": "",
+          "title": ""
+        },
+        "info-body": "",
+        "info-title": "",
+        "intro": "",
+        "navigate": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "title": ""
+        },
+        "title": "",
+        "verify": {
+          "intro": "",
+          "title": ""
+        },
+        "view-trust-policy": ""
+      },
+      "s4": {
+        "title": ""
+      },
+      "section-complete": ""
+    },
+    "provider": {
+      "aws": {
+        "description": "IAM rol tabanlı kimlik doğrulama ile Amazon Web Services Secrets Manager kullanarak gizli anahtarları depolayın ve yönetin.",
+        "name": "AWS Secrets Manager"
+      }
+    },
+    "type": {
+      "aws": "AWS Secrets Manager",
+      "system": "Sistem (Grafana)",
+      "unknown": "Bilinmeyen"
+    }
+  },
+  "share-dashboard": {
+    "menu": {
+      "export-pdf-title": "PDF olarak dışa aktar",
+      "schedule-report-title": "Rapor zamanla"
+    }
+  },
+  "share-report": {
+    "actions": {
+      "aria-label-open-menu": "İşlemler menüsünü aç",
+      "download-csv-label": "CSV olarak indir",
+      "downloading-label": "İndiriliyor...",
+      "preview-pdf-label": "PDF'yi ön izle",
+      "report-settings-label": "Rapor ayarları"
+    },
+    "attachments": {
+      "combine-one-file": "Tüm pano PDF'lerini tek bir dosyada birleştir",
+      "csv-tables": "Tablo paneli verilerinin bir CSV dosyasını ekleyin",
+      "layout": "Düzen",
+      "orientation": "Yönlendirme",
+      "orientation-tooltip": "Seçilen yönlendirme pano PDF'ine, tablo verilerine ve PDF ekine uygulanacaktır",
+      "pdf-format": "PDF biçimi",
+      "pdf-report": "Raporu PDF olarak ekleyin",
+      "pdf-tables": "Tablo verilerinin ayrı bir PDF dosyasını ekleyin",
+      "pdf-tables-appendix": "Tablo verilerini PDF eki olarak dahil et",
+      "section-title": "Ekler",
+      "show-template-variables": "Üst bilgide şablon değişkenlerini göster",
+      "zoom": "Yakınlaştırma ölçeği"
+    },
+    "back-button-text": "Rapor listesine geri dön",
+    "confirm-delete": {
+      "button": "Raporu sil",
+      "description": "Bu raporu silmek istediğinizden emin misiniz?",
+      "title": "Raporu sil"
+    },
+    "create-report": "Yeni rapor oluştur",
+    "csvOptions": {
+      "csv-encoding": "CSV kodlaması"
+    },
+    "dashboard": {
+      "add-dashboard": "Pano ekle",
+      "dashboard-required": "Pano seçilmesi zorunludur",
+      "delete-dashboard-tooltip": "Bu panoyu sil",
+      "repeated-template-variables-description": "Bir raporda aynı panoyu birden fazla kez eklerken, ilk seçtiğiniz şablon değişkenleri rapordaki o panonun tüm örneklerine uygulanır.",
+      "section-title": "Panolar",
+      "source-dashboard-label": "Kaynak pano",
+      "template-variables-title": "Şablon değişkenlerini özelleştir",
+      "time-range-description": "Boş zaman aralığı, raporun panosundaki zaman aralığına geri döner. Mutlak zaman aralığı, tarayıcınızın saat diliminde gösterilir.",
+      "time-range-label": "Zaman aralığı",
+      "view-dashboard-tooltip": "Panoyu görüntüle"
+    },
+    "discard-changes": {
+      "discard-button": "Vazgeç",
+      "text": "Bu pano raporunda kaydedilmemiş değişiklikleriniz var. Bu değişiklikleri silmek istediğinizden emin misiniz?",
+      "title": "Rapordaki değişiklikler silinsin mi?"
+    },
+    "email-configuration": {
+      "add-dashboard-image-label": "Pano görseli ekle",
+      "add-dashboard-url-label": "Pano bağlantısını ekle",
+      "dashboard-image-settings-description": "Pano görsel ayarları genel <1>rapor ayarlarından</1> yapılabilir.",
+      "invalid-email": "Geçersiz e-posta",
+      "message-label": "Mesaj",
+      "message-placeholder": "Mesaj girin",
+      "reply-to-label": "Yanıt e-posta adresi",
+      "section-title": "E-posta ayarları",
+      "subject-description": "Bu alan boş bırakılırsa rapor adı e-posta konusu olarak kullanılacaktır",
+      "subject-label": "E-posta konusu"
+    },
+    "empty-list": {
+      "description": "Bu panodan bir rapor oluşturun. <2>Daha fazla bilgi edinin</2>",
+      "title": "Bu pano için rapor yok"
+    },
+    "error-form": {
+      "title": "Rapor yüklenirken hata oluştu"
+    },
+    "error-list": {
+      "title": "Raporlar yüklenirken hata oluştu"
+    },
+    "loading-form": "Form yükleniyor...",
+    "loading-report": "Rapor yükleniyor...",
+    "loading-report-form": "Rapor formu yükleniyor...",
+    "loading-reports": "Raporlar yükleniyor...",
+    "recipient-input": {
+      "add": "Ekle",
+      "placeholder": "Alıcının e-posta adreslerini yazın ve Enter tuşuna basın",
+      "remove": "Alıcıyı kaldır: {{name}}"
+    },
+    "recipients": {
+      "field-label": "Alıcılar",
+      "invalid-email": "Geçersiz e-posta: {{email}}",
+      "invalid-emails": "Geçersiz e-postalar: {{emails}}",
+      "placeholder": "Alıcının e-posta adreslerini yazın ve Enter tuşuna basın",
+      "recipients-required": "Alıcılar belirtilmelidir",
+      "section-title": "Alıcılar",
+      "tooltip": "Farklı e-posta adreslerini virgülle veya noktalı virgülle birbirinden ayırın"
+    },
+    "report-name": {
+      "label": "Rapor adı",
+      "required": "Rapor adı gereklidir"
+    },
+    "save-draft": {
+      "button": "Taslağı kaydet",
+      "saving-button": "Taslak kaydediliyor..."
+    },
+    "schedule": {
+      "end-date": "Bitiş tarihi",
+      "end-date-invalid": "Bitiş tarihi, başlangıç tarihi ile aynı veya ondan sonra olmalıdır",
+      "end-date-placeholder": "Sona ermiyor",
+      "end-time": "Bitiş zamanı",
+      "frequency": "Sıklık",
+      "interval-amount-min": "Aralık adedi en az 2 olmalıdır",
+      "interval-amount-required": "Aralık adedi gereklidir",
+      "last-day-of-month": "Her ayın son günü gönder",
+      "monthly-schedule-alert-title": "Not: Seçilen {{ dayNumber }} günü olmayan aylarda rapor gönderilmeyecektir. Daha erken bir tarih seçin veya her ayın sonunda rapor göndermek için \"Her ayın son günü gönder\" seçeneğini işaretleyin.",
+      "repeat-every": "Tekrarlama sıklığı:",
+      "repeat-every-placeholder": "Örn. 2",
+      "repeat-interval-frequency-placeholder": "örn. saatler",
+      "section-title": "Zamanlama",
+      "send-time": "Zamanlama",
+      "start-date": "Başlangıç tarihi",
+      "start-date-placeholder": "Tarih seçin",
+      "start-date-required": "Başlangıç tarihi belirtilmelidir",
+      "start-time": "Başlangıç zamanı",
+      "time-zone": "Zaman dilimi",
+      "workdays-only": "Yalnızca pazartesiden cumaya gönder"
+    },
+    "schedule-report": {
+      "button": "Rapor zamanla",
+      "scheduling-button": "Rapor planlanıyor..."
+    },
+    "see-all-reports": "Tüm raporları görüntüle",
+    "send-preview": {
+      "button": "Ön izleme gönder",
+      "cancel": "İptal",
+      "email": "E-posta",
+      "email-description": "Farklı e-posta adreslerini virgülle veya noktalı virgülle birbirinden ayırın",
+      "email-required": "E-posta gereklidir",
+      "send": "Gönder",
+      "sending": "Gönderiliyor...",
+      "use-report-emails": "Rapordaki e-postaları kullan"
+    },
+    "settings": {
+      "loading": "Ayarlar yükleniyor..."
+    },
+    "state": "Durum:",
+    "unavailable-feature-info-box": {
+      "message": "Süresi dolmuş bir lisansla yeni rapor oluşturulamaz. Mevcut raporlar işlenmeye devam eder ancak yeni bir rapor oluşturmak için lisansınızı güncellemeniz gerekir."
+    },
+    "update-report": {
+      "button": "Raporu güncelle",
+      "delete-button": "Sil",
+      "pause-button": "Duraklat",
+      "pausing-button": "Rapor duraklatılıyor...",
+      "resume-button": "Devam et",
+      "resuming-button": "Rapor devam ettiriliyor...",
+      "updating-button": "Rapor güncelleniyor..."
+    }
+  },
+  "shared": {
+    "resource-picker": {
+      "placeholder-select-color": "Renk seçin"
+    }
+  },
+  "team-lbac": {
+    "create-team-lbacform": {
+      "label-rule": "Kural",
+      "label-team": "Ekip",
+      "new-lbac-rule": "Yeni LBAC Kuralı",
+      "new-lbac-rule-example": "Örnek:",
+      "save": "Kaydet"
+    },
+    "editable-cell": {
+      "empty-rule": "Boş kural"
+    },
+    "team-label": {
+      "placeholder": "{{teamId}} kimliğine sahip ekip bulunamadı"
+    },
+    "team-lbaceditor-unconnected": {
+      "add-a-lbac-rule": "LBAC kuralı ekle",
+      "add-query-permissions": "<strong>Sorgu İzinleri Ekle:</strong> Aşağıdaki ekiplerin veri kaynağı için sorgu izni yoktur; bu nedenle yapılandırılmış LBAC kurallarıyla günlük sorgulayamazlar.",
+      "add-team-lbac-rules": "<strong>Ekip LBAC Kuralları Ekle:</strong> Aşağıdaki ekipler tüm günlükleri sorgulayabilir. Lütfen bu ekipler için LBAC kuralları ekleyin:",
+      "clear-filter": "Temizle",
+      "clear-filter-aria-label": "Filtreyi temizle",
+      "content-found-recommendation": "Bulunan öneriler",
+      "description-data-access": "Burada LogQL etiket seçicileri kullanarak veri kaynağındaki belirli verilere erişimi yapılandırabilirsiniz.",
+      "ensure-proper-access-control-please-follow": "Uygun erişim kontrolünü sağlamak için lütfen bu önerileri takip edin:",
+      "filter-results-single": "1 sonuç gösteriliyor",
+      "filter-teams-aria-label": "LBAC kurallarını ekip adına göre filtrele",
+      "filter-teams-placeholder": "Ekipleri filtrele",
+      "hide-access-control-recommendations": "Erişim Kontrolü Önerilerini Gizle",
+      "hide-lbac-rule": "LBAC kuralını gizle",
+      "label-selector": "Etiket seçici",
+      "lbac-description-loki": "Belirli günlük kayıtları için erişimi kısıtlamak üzere LBAC kurallarını yapılandırın.",
+      "lbac-description-prometheus": "Belirli metrikler için erişimi kısıtlamak üzere LBAC kurallarını yapılandırın.",
+      "lbac-description-tempo": "Belirli izler için erişimi sınırlamak üzere LBAC kurallarını yapılandırın.",
+      "lbac-labelbased-access-control": "LBAC (Etiket tabanlı erişim kontrolü)",
+      "lbac-rules-note": "Not:<br/>- Kimliği doğrulanmış Cloud Access Policy belirteci Grafana Cloud'da yapılandırılmış herhangi bir etiket seçiciye sahipse LBAC kuralları sorguya UYGULANMAZ.<br/>-LBAC kurallarındaki değişikliklerin yansıması, sorgu yolu önbelleğe alması nedeniyle 5 dakikayı bulabilir.",
+      "lbac-size-warning-details": "Mevcut boyut: {{sizeInKB}} KB",
+      "lbac-size-warning-title": "LBAC Kuralı Boyutu Uyarısı",
+      "learn-more-about-lbac-rules": "LBAC kuralları hakkında daha fazla bilgi edinin",
+      "remove-unrestricted-access": "<strong>Sınırsız Erişimi Kaldır:</strong> Aşağıdaki rollerin şu anda günlük kayıtlarına sınırsız erişimi vardır.",
+      "role-warning-list": "Rol: {{role}}",
+      "show-access-control-recommendations": "Erişim Kontrolü Önerilerini Göster",
+      "sort-teams-ascending": "Ekipleri A'dan Z'ye sırala",
+      "sort-teams-descending": "Ekipleri Z'den A'ya sırala",
+      "team": "Ekip",
+      "title-access-control-recommendations": "Erişim Kontrolü Önerileri",
+      "title-data-access": "Veri erişimi",
+      "filter-results-multiple_one": "{{count}} sonuç gösteriliyor",
+      "filter-results-multiple_other": "{{count}} sonuç gösteriliyor"
+    },
+    "team-rules-row": {
+      "aria-label-add-team-rule": "ekip kuralı ekle",
+      "aria-label-delete-rule": "Kuralı sil",
+      "aria-label-edit-team-rule": "ekip kuralını düzenle",
+      "cancel": "İptal et",
+      "or": "VEYA",
+      "save": "Kaydet",
+      "tooltip-add-new-rule": "Yeni kural ekle",
+      "tooltip-provisioned-rule": "Sağlanan kural"
+    }
+  },
+  "teamLBAC": {
+    "create-team-lbacform": {
+      "message": {
+        "required": "Gerekli"
+      }
+    }
+  }
+}

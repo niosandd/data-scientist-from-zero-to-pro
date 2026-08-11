@@ -1,0 +1,2161 @@
+{
+  "access-control": {
+    "permissions": {
+      "lbac-warning-basic-role": "",
+      "lbac-warning-rule": "Varning: Detta team kanske inte har behörighet att skicka frågor till datakällan.",
+      "lbac-warning-team": "Varning: Detta team har full dataåtkomst om inga LBAC-regler är inställda."
+    }
+  },
+  "admin": {
+    "role-filter": {
+      "admin-editor-option": "Administratör/redigerare",
+      "multiselect-placeholder": "Filtrera efter licensierad roll",
+      "server-admin-option": "Serveradministratör",
+      "viewer-option": "Visare"
+    }
+  },
+  "alert-enrichment": {
+    "error": "Det gick inte att skapa larmberikning",
+    "metadata-error": "",
+    "success": "Larmberikning skapades!",
+    "update-error": "Det gick inte att uppdatera larmberikning",
+    "update-success": "Larmberikning uppdaterades!"
+  },
+  "alert-enrichment-form": {
+    "actions": {
+      "cancel": "Avbryt",
+      "save": "Spara berikning"
+    },
+    "assign-enricher": {
+      "add-annotation": "Lägg till kommentarstilldelning",
+      "add-another-annotation": "Lägg till ytterligare en kommentarstilldelning",
+      "annotation-name": "Nyckel",
+      "annotation-name-placeholder": "nyckel",
+      "annotation-value": "Värde",
+      "annotation-value-placeholder": "värde",
+      "remove-annotation-aria-label": "Ta bort anteckning",
+      "remove-annotation-tooltip": "Ta bort anteckning"
+    },
+    "basic-info": {
+      "description": "Beskrivning (valfritt)",
+      "name": "Berikningsnamn",
+      "name-placeholder": "my-enrichment",
+      "name-required": "Namn är obligatoriskt",
+      "timeout": "Timeout",
+      "timeout-description": "Maximal tid tillåten för denna berikning (t.ex. 30 s, 1 m)",
+      "timeout-placeholder": "30 s"
+    },
+    "ds-type": {
+      "logs": "Loggar",
+      "raw": "Rå"
+    },
+    "dsquery-enricher": {
+      "add-first-query": "Lägg till din första fråga",
+      "add-query": "Lägg till fråga",
+      "no-datasource": "Datakälla saknas",
+      "no-datasource-description": "Vi kunde inte hitta en datakälla för den här frågan. Datakällan har tagits bort eller är inte tillgänglig",
+      "no-queries": "Inga frågor definierade ännu",
+      "raw-queries-description": "Definiera frågor som kommer att köras för att berika dina varningar. Resultaten kommer att finnas tillgängliga i berikningssammanhanget.",
+      "remove-query": "Ta bort fråga"
+    },
+    "enricher-config": {
+      "llm-disabled": "LLM är inaktiverat",
+      "llm-disabled-description": "Förklaringsberikare kräver att Grafanas LLM-tillägg är aktiverat",
+      "type": "Berikartyp",
+      "type-placeholder": "Välj berikartyp",
+      "type-required": "Berikartyp krävs"
+    },
+    "explain-enricher": {
+      "annotation-label": "Kommentarsnyckel",
+      "annotation-placeholder": "förklaring",
+      "annotation-required": "Kommentarsnyckel krävs för att förklara berikare",
+      "annotation-tooltip": "Kommentarsnyckeln där den LLM-genererade förklaringen kommer att lagras",
+      "description": "Förklaringsberikare använder LLM för att generera förklaringar för larm. Konfigurera kommentarsnyckeln där förklaringen kommer att lagras."
+    },
+    "external-enricher": {
+      "url-label": "Webbadress för extern tjänst",
+      "url-placeholder": "https://api.example.com/enrich",
+      "url-required": "URL krävs för extern berikare"
+    },
+    "matcher": {
+      "add-button": "Lägg till",
+      "name-label": "Namn",
+      "name-placeholder": "Namn",
+      "remove-aria-label": "Ta bort matcharen",
+      "remove-tooltip": "Ta bort matcharen",
+      "type-label": "Typ",
+      "type-placeholder": "Typ",
+      "value-label": "Värde",
+      "value-placeholder": "Värde"
+    },
+    "matcher-type": {
+      "equals": "Lika med (=)",
+      "not-equals": "Inte lika (!=)",
+      "regex-match": "Reguljärt uttryck matchar (=~)",
+      "regex-not-match": "Reguljärt uttryck matchar inte (!~)"
+    },
+    "scope": {
+      "annotation-scoped": "Omfång för kommentar",
+      "description": "Definiera vilka larm som ska berikas",
+      "global-scoped": "Omfång för globalt",
+      "label-scoped": "Omfång för etikett",
+      "rule-not-found": "Regeln hittades inte ({{ruleUid}})",
+      "rule-scoped-description": "Denna berikning kommer att tillämpas på följande regel:",
+      "rules-scoped-description": "Denna berikning kommer att tillämpas på följande regler:",
+      "title": "Omfattning"
+    }
+  },
+  "alerting": {
+    "ai-feedback": {
+      "comment-description": "Hjälp oss att förbättra genom att dela med dig av vad som fungerade bra eller vad som kan bli bättre",
+      "comment-label": "Ytterligare feedback (valfritt)",
+      "comment-placeholder": "Dela dina tankar om AI-svaret …",
+      "comment-prompt": "Vill du berätta mer om din upplevelse?",
+      "helpful": "Ja, det var till hjälp",
+      "not-helpful": "Nej, det var inte till hjälp",
+      "question": "Var detta AI-svar till hjälp?",
+      "skip": "Hoppa över",
+      "submit": "Skicka in feedback",
+      "thank-you": "Tack för din feedback!"
+    },
+    "common": {
+      "cancel": "Avbryt"
+    },
+    "enrichment": {
+      "appliesTo": "Gäller alla larm",
+      "create-drawer": {
+        "change-type": "Ändra berikningstyp",
+        "create": "Skapa",
+        "creating": "Skapar …",
+        "select-type-description": "Välj en berikningstyp för att komma igång.",
+        "step1-subtitle": "Välj en berikningstyp",
+        "step2-title": "Ny berikning för {{type}}",
+        "title": "Skapa berikning"
+      },
+      "delete": {
+        "body": "Är du säker på att du vill radera larmberikningen <strong>{{name}}</strong>?",
+        "confirm": "Radera",
+        "dismiss": "Avbryt",
+        "title": "Radera larmberikning"
+      },
+      "delete-button": "Radera",
+      "delete-enrichment": "Radera berikning {{name}}",
+      "drawer": {
+        "close": "Stäng",
+        "delete-aria-label": "Radera berikning",
+        "delete-button": "Radera",
+        "edit-aria-label": "Redigera berikning",
+        "edit-button": "Redigera",
+        "edit-section": "Redigera berikning",
+        "enrichments-title": "Berikningar",
+        "global-empty-state": "Inga globala berikningar tillgängliga.\nGlobala berikningar hanteras separat och tillämpas på alla larmregler.",
+        "global-enrichments": "Globala berikningar",
+        "global-enrichments-title": "Globala berikningar",
+        "rule-empty-state": "Inga berikningar har konfigurerats ännu.\nAnvänd knappen ovan för att lägga till din första berikning.",
+        "rule-enrichments": "Regelberikningar",
+        "rule-enrichments-title": "Regelberikningar",
+        "save": "Spara",
+        "saving": "Sparar …",
+        "title": "Larmberikning",
+        "view-aria-label": "Visa berikning",
+        "view-button": "Visa",
+        "view-section": "Visa berikning"
+      },
+      "edit-button": "Redigera",
+      "edit-enrichment": "Redigera berikning {{name}}",
+      "edit-title": "Redigera berikning",
+      "enrichments": "Berikningar",
+      "expanded-row": {
+        "annotationMatchers": "<strong>Kommentarsmatchare:</strong> <2></2>",
+        "asserts": "<strong>RCA Workbench</strong>-berikning konfigurerad",
+        "assignments": "<strong>Tilldelningar:</strong> <2></2>",
+        "datasource": "<strong>Datakälla:</strong> <2></2>",
+        "externalUrl": "<strong>URL:</strong> <2></2>",
+        "labelMatchers": "<strong>Etikettmatchare:</strong> <2></2>",
+        "sift": "<strong>Sift</strong>-berikning konfigurerad",
+        "type": "Typ:"
+      },
+      "filter": {
+        "clear": "Rensa filter",
+        "filtered-subtitle": "Filtrerade berikningar. Rensa filter för att se regelavsnitt och globala avsnitt separat.",
+        "no-matches": "Inga berikningar matchar de aktuella filtren.",
+        "no-matching-enrichments": "Inga matchande berikningar hittades.",
+        "scope": {
+          "all": "Alla",
+          "annotation": "Kommentar",
+          "global": "Globalt",
+          "label": "Etikett",
+          "rule": "Regel"
+        },
+        "scope-dropdown-label": "Filtrera efter omfång",
+        "scope-label": "Omfattning",
+        "type": {
+          "all": "Alla"
+        },
+        "type-label": "Filtrera efter typ"
+      },
+      "form": {
+        "more-options": "Fler alternativ"
+      },
+      "global-enrichment-subtitle": "Globala berikningar tillämpas på alla larmregler. Andra berikningar som begränsas av etiketter eller annoteringar kan också tillämpas. Se den fullständiga listan under Larm > Inställningar.",
+      "load-error": "Det gick inte att ladda berikning",
+      "loading": "Laddar berikningar …",
+      "loadMore": "Ladda mer",
+      "new-alert": "Ny larmberikning",
+      "new-title": "Ny berikning",
+      "noEnrichments": "Inga larmberikningar har konfigurerats",
+      "preview": {
+        "error-500": "Serverfel (500). Försök igen senare.",
+        "error-details": "Detaljer",
+        "error-loading-unavailable": "Förhandsgranskning är inte tillgänglig. Aviseringshistoriken kunde inte laddas.",
+        "error-title": "Förhandsgranskningen misslyckades",
+        "loading-alerts": "Läser in larmets nyttolast …",
+        "loading-notifications": "Läser in aviseringar …",
+        "no-matching-alerts": "Inga matchande larm hittades för den här regeln.",
+        "no-matching-alerts-title": "Inga matchande larm",
+        "no-notifications": "Ingen aviseringshistorik för den här regeln. Förhandsgranskning kommer att finnas tillgänglig när regeln utlöses.",
+        "result-label": "Förhandsgranska resultat",
+        "run": "Förhandsgranska berikning"
+      },
+      "rule-enrichment-subtitle": "Lägg till ytterligare berikningar som är specifika för den här larmregeln.",
+      "search": {
+        "label": "Sök",
+        "placeholder": "Sök efter berikningsnamn …"
+      },
+      "tab": {
+        "description": "Gör dina larmmeddelanden mer handlingsbara genom att köra preliminär analys och lägga till ytterligare sammanhang."
+      },
+      "table": {
+        "actions": "Åtgärder",
+        "annotationMatchers": "Kommentarer",
+        "annotationMatchers-scoped": "Omfattas av ",
+        "enrichment": "Berikning",
+        "labelMatchers": "Etiketter"
+      },
+      "tooltip": {
+        "asserts": "Lägger till en länk till RCA Workbench i larmmeddelanden",
+        "assign": {
+          "assignments": "Kommentarer:",
+          "default": "Tilldelar kommentarer till larm",
+          "emptyValue": "(tomt)",
+          "title": "Tilldelar kommentarer till larm"
+        },
+        "assistant": "Startar assistentundersökning för larm",
+        "default": "Larmberikning konfigurerad",
+        "dsquery": {
+          "datasourceType": "Datakälla:",
+          "maxLines": "Max rader:",
+          "queries": "Frågor:",
+          "query": "Fråga:",
+          "rawRequest": "Anpassad datakällförfrågan konfigurerad",
+          "refId": "Hänv.-ID:",
+          "title": "Datakällfrågor för berikning",
+          "type": "Typ:"
+        },
+        "explain": {
+          "annotation": "Sparar i:",
+          "default": "Använder LLM för att generera larmförklaringar",
+          "title": "Använder LLM för att generera larmförklaringar"
+        },
+        "external": {
+          "default": "Anropar extern tjänst för berikning",
+          "title": "Anropar extern tjänst för berikning",
+          "url": "URL:"
+        },
+        "sift": "Använder sift för att berika larm"
+      },
+      "unified": {
+        "description": "Förbättra dina larmmeddelanden genom att köra preliminär analys och lägga till mer sammanhang."
+      },
+      "view-button": "Visa",
+      "view-enrichment": "Visa berikning {{name}}"
+    },
+    "generate-ai-rule": {
+      "button": "Generera med AI",
+      "modal": {
+        "error": "<0></0>",
+        "error-title": "Fel vid generering av varningsregel",
+        "generate": "Skapa regel",
+        "generating": "Genererar …",
+        "preview-contact-point": "Kontaktpunkt:",
+        "preview-description": "Beskrivning:",
+        "preview-name": "Namn:",
+        "preview-queries": "Frågor:",
+        "preview-title": "Genererad varningsregel",
+        "prompt-description": "Beskriv vad du vill övervaka och när du vill bli larmad. Till exempel: ”Larma när CPU-användningen är över 80 % i mer än 5 minuter”. Du kan även fråga om tillgängliga kontaktpunkter eller datakällor.",
+        "prompt-label": "Beskriv den larmregel du vill skapa",
+        "prompt-placeholder": "Larma när diskanvändningen är över 90 % i mer än 5 minuter och skicka till Slack-kontaktpunkten …",
+        "title": "Generera larmregel med AI",
+        "use-rule": "Använd denna regel"
+      }
+    },
+    "improve-ai-annotations": {
+      "button": "Förbättra kommentarer med AI",
+      "modal": {
+        "apply-improvements": "Tillämpa kommentarförbättringar",
+        "error": "<0></0>",
+        "error-title": "Fel",
+        "generate": "Förbättra kommentarer",
+        "generating": "Genererar …",
+        "preview-annotations": "Förbättrade kommentarer:",
+        "preview-title": "Förhandsgranskning av AI-kommentarsförbättringar",
+        "prompt-description": "Beskriv vad du vill förbättra med larmreglernas annoteringar. Till exempel: ”Gör sammanfattningen mer beskrivande”, ”Lägg till felsökningssteg i beskrivningen” eller ”Lägg till runbook-länkar”.",
+        "prompt-label": "Hur vill du förbättra kommentarerna?",
+        "prompt-placeholder": "Gör sammanfattningen mer beskrivande och lägg till felsökningssteg i beskrivningen …",
+        "title": "Förbättra larmregelkommentarer med AI"
+      }
+    },
+    "improve-ai-labels": {
+      "button": "Förbättra etiketter med AI",
+      "modal": {
+        "cancel": "Avbryt",
+        "error": "<0></0>",
+        "error-title": "Fel",
+        "generate": "Skapa förbättringar",
+        "generating": "Genererar …",
+        "prompt-description": "Beskriv vad du vill förbättra med larmreglernas etiketter. Till exempel: ”Lägg till dynamiska allvarlighetsetiketter”, ”Inkludera teamägarskap” eller ”Lägg till miljöetiketter”.",
+        "prompt-label": "Hur vill du förbättra etiketterna?",
+        "prompt-placeholder": "Lägg till dynamiska allvarlighetsetiketter baserat på tröskelvärdena och inkludera teamägarskap …",
+        "title": "Förbättra larmregletiketter med AI"
+      },
+      "preview": {
+        "apply": "Tillämpa förbättringar",
+        "cancel": "Avbryt",
+        "no-improvements": "Inga förbättringar hittades",
+        "no-improvements-message": "AI föreslog inga etikettförbättringar för denna begäran.",
+        "title": "AI föreslog etikettförbättringar:"
+      }
+    },
+    "settings": {
+      "tabs": {
+        "enrichment": {
+          "title": "Larmberikning"
+        }
+      }
+    },
+    "template-form": {
+      "genai": {
+        "examples": {
+          "advanced-prompts": {
+            "category": "Avancerade/kombinerade uppmaningar",
+            "example1": "Skapa en mall för e-postmeddelanden. Om larm har utlösts, lista varje larm med namn och en kort beskrivning baserad på annoteringarna. Om det inte finns några utlösta larm, visa meddelandet ”Inga nya larm”.",
+            "example2": "Skapa ett anpassat meddelande för en webhook. Meddelandet ska ha en titel som säger ”[Status] – Larm: larmnamn” och sedan en text som listar alla vanliga etiketter och kommentarer."
+          },
+          "basic-alert-info": {
+            "category": "Grundläggande larminformation",
+            "example1": "Slack-avisering med larmetiketter och kommentarer. Inkludera en direktlänk till Grafana-instrumentpanelen för undersökning.",
+            "example2": "Ett Slack-meddelande som visar ”🔥 LARM: [AlertName] aktiveras” med en sammanfattning och länk för att visa detaljer",
+            "example3": "Mall som producerar ett meddelande som detta:\n🔴 Larm: Hög CPU-användning\nStatus: utlöser 🚨\nInstans: web-server-01\nMiljö: Produktion\nUtlöst kl.: 2025-09-16 14:22 UTC\n\n"
+          },
+          "firing-resolved": {
+            "category": "Hantering av aktiverade och åtgärdade larm",
+            "example1": "Skriv ett e-postmeddelande som visar en grön bock-emoji för ett åtgärdat larm och ett rött kryss för ett utlöst larm.",
+            "example2": "Skapa en mall som listar alla utlösta larm och alla åtgärdade larm i separata avsnitt."
+          },
+          "helper-templates": {
+            "category": "Använda hjälpmallar",
+            "example1": "Jag behöver en mall som får ett allvarlighetsvärde från en etikett som kallas ”allvarlighetsgrad” och sedan använder en hjälpmall för att visa korrekt emoji för den allvarlighetsgraden."
+          },
+          "labels-annotations": {
+            "category": "Hantering av etiketter och kommentarer",
+            "example1": "Skapa en mall som visar alla etiketter som är gemensamma för alla larm i aviseringen.",
+            "example2": "Skapa ett meddelande som visar kommentarerna och deras värden."
+          },
+          "multiple-alerts": {
+            "category": "Lista flera larm",
+            "example1": "Skapa ett anpassat aviseringsmeddelande som listar sammanfattningen för varje larm i aviseringen.",
+            "example2": "Skapa ett Slack-meddelande som listar larmnamnet och värdet för varje utlöst larm."
+          }
+        },
+        "modal": {
+          "error": "<0></0>",
+          "error-title": "Fel",
+          "examples": {
+            "title": "Exempel på uppmaningar (klicka för att kopiera)"
+          },
+          "generate": "Skapa mall",
+          "generating": "Genererar …",
+          "prompt-description": {
+            "tip": "💡 Tips: Ju mer explicit och detaljerad din uppmaning är, desto bättre resultat får du."
+          },
+          "prompt-label": "Beskriv hur du vill att ditt meddelande ska se ut",
+          "prompt-placeholder": "Ett Slack-meddelande som visar ”🔥LARM: [AlertName] aktiveras” med en sammanfattning och länk för att visa detaljer …",
+          "title": "Skapa mall med AI"
+        }
+      }
+    },
+    "templates": {
+      "editor": {
+        "generate-with-ai": "Generera med AI"
+      }
+    },
+    "triage-ai": {
+      "button": "Analysera med assistenten"
+    }
+  },
+  "auth-config": {
+    "action-bar": {
+      "content-disable-button": "Om det inaktiveras kommer Grafana inte att kunna använda SAML-autentisering.",
+      "delete": "Radera",
+      "disable-button": "Inaktivera",
+      "enabled-badge": "Aktiverad",
+      "more-actions-button": "Fler åtgärder",
+      "not-enabled-badge": "Ej aktiverat",
+      "protocol": "Protokoll",
+      "save-and-apply-button": "Spara och tillämpa",
+      "save-and-enable-button": "Spara och aktivera",
+      "save-button": "Spara",
+      "status": "Status"
+    },
+    "assertion-mapping-unconnected": {
+      "aria-label-name-id-format": "nameIdFormat",
+      "assertionAttributeEmail-label-email-attribute": "E-postattribut",
+      "assertionAttributeEmail-placeholder-mail": "e-post",
+      "assertionAttributeExternalUid-label-external-uid": "Externt UID-attribut",
+      "assertionAttributeExternalUid-tooltip-external-uid": "Extern UID-mappning är en säkerhetsmekanism som förhindrar imitation och det krävs endast när SCIM-provisionering har aktiverats. Det tillhandahållna externa användar-ID:t (det användar-ID som genererats av identitetsleverantören) måste finnas med i SAML-intyget när användaren loggar in. Standardvärdet för detta fält är userUID.",
+      "assertionAttributeGroups-label-groups-attribute": "Gruppattribut",
+      "assertionAttributeLogin-label-login-attribute": "Inloggningsattribut",
+      "assertionAttributeLogin-placeholder-mail": "e-post",
+      "assertionAttributeName-label-name-attribute": "Namnattribut",
+      "assertionAttributeName-placeholder-display-name": "displayName",
+      "assertionAttributeOrg-label-org-attribute": "Organisationsattribut",
+      "assertionAttributeRole-label-role-attribute": "Rollattribut",
+      "azure-ad-service-account-configuration": "Konfiguration av tjänstekonto för Azure AD",
+      "clientId-label-client-id": "Kund-ID",
+      "clientSecret-label-client-secret": "Kundhemlighet",
+      "description-allowed-organizations": "Lista över kommaseparerade eller mellanslagsavgränsade SAML-organisationsnamn. Användaren bör vara medlem i minst en organisation för att logga in.",
+      "description-assertion-attributes-mapping": "Mappa SAML-intygattribut till Grafana-användarattribut. Intygsattribut stöder mallmappningar. Teamsynkronisering är tillgänglig om gruppattributet har konfigurerats.",
+      "description-azure-ad-service-account-configuration": "Om du har användare som tillhör fler än 150 grupper i din Azure AD-organisation måste du konfigurera ett servicekonto i Azure AD för att få alla grupper via Graph API. Detta servicekonto kommer att användas för att hämta alla grupper för användaren. Läs mer om konfiguration av tjänstekonton för Azure AD i <1>dokumentationen</1>.",
+      "description-force-use-graph-api": "Tvinga användningen av Graph API för att hämta alla grupper för användaren.",
+      "description-name-identifier-format": "Format för namnidentifierare styr hur användare hos identitetsleverantören mappas till användare i Grafana",
+      "description-prevent-synchronizing-users-organization-roles": "Förhindra synkronisering av SAML-användarnas organisationsroller från din IdP.",
+      "label-allowed-organizations": "Tillåtna organisationer",
+      "label-assertion-attributes-mapping": "Mappningar av intygsattribut",
+      "label-force-use-graph-api": "Tvinga användning av Graph API",
+      "label-name-identifier-format": "Format för namnidentifierare",
+      "label-org-mapping": "Organisationsmappning",
+      "label-role-mapping": "Rollmappning",
+      "label-skip-organization-role-sync": "Hoppa över synkronisering av organisationsroller",
+      "label-user-mapping": "Användarmappning",
+      "orgMapping-label-org-mapping": "Organisationsmappning",
+      "roleValuesAdmin-label-admin": "Administratör",
+      "roleValuesEditor-label-editor": "Redaktör",
+      "roleValuesGrafanaAdmin-label-grafana-admin": "Grafana Admin",
+      "roleValuesNone-label-none": "Inget",
+      "roleValuesViewer-label-viewer": "Visare",
+      "tokenUrl-label-access-token-url": "Webbadress för åtkomsttoken",
+      "tooltip-assertion-attributes-mapping": "Intygsattributmappning i Grafana tar användarinformation från ett SAML-svar och använder den för att skapa eller uppdatera en användare i databasen. Grafana läser attribut – nyckel-/värdepar – inom intyget, till exempel namn, inloggningsnamn och e-postadress. Konfigurationer möjliggör ändring av nyckelval.",
+      "tooltip-org-mapping": "Genom organisationsmappning kan du tilldela användare till en viss organisation i Grafana beroende på attributvärden som erhållits från identitetsleverantören. Använd denna konfiguration för att tilldela användare från din organisation till Grafana-organisationen.",
+      "tooltip-role-mapping": "Rollmappning synkroniserar användarroller från din identitetsleverantör till Grafana genom att konfigurera rollattribut för rollerna None, Viewer, Editor, Admin och Grafana Admin. Om det inte finns någon matchning anges som standard rollen Viewer i Grafana."
+    },
+    "config-action": {
+      "confirm-modal-body": "Är du säker på att du vill radera den här SAML-konfigurationen? Alla ändringar som görs i användargränssnittet kommer att tas bort.",
+      "confirm-modal-confirm-text": "Ta bort konfiguration",
+      "confirm-modal-confirmation-text": "radera",
+      "confirm-modal-dismiss-text": "Tillbaka till redigering",
+      "confirm-modal-title": "Radera SAML-konfiguration"
+    },
+    "connect-to-idp-unconnected": {
+      "configure-assertions-group-mappings": "Konfigurera intyg, grupp, grupp- och organisationsmappningar i nästa steg.",
+      "configure-idp-using-grafana-metadata": "Konfigurera IdP med Grafana-metadata",
+      "copy": "Kopiera",
+      "description-assertion-consumer-service-url": "Webbadress för mottagartjänstens POST-bindning",
+      "description-idp-metadata": "Måste vara samma som konfigurerats eller krävs av IdP.",
+      "description-metadata-url": "Webbadress för IdP-metadata",
+      "description-setup-idp": "För att konfigurera din identitetsleverantör (IdP) behöver du Grafanas metadata-webbadress. Alla nedanstående slutpunkter måste kunna nås av din identitetsleverantör (IdP).",
+      "description-setup-required": "Gå till identitetslevarantörens konfigurationspanel, lägg till en ny app och använd metadata från steg ett för anslutning till Grafana. Du måste kopiera identitetslevarantörens metadata och ange dem nedan. Testa anslutningen och kopiera intygsfält/-värden.",
+      "description-slo-url": "Webbadress för omdirigeringsbindning av utloggningstjänst / Webbadress för POST-bindning av utloggningstjänst",
+      "description-sp-metadata-url-entity-id": "SP metadata-webbadress/SP Entitets-ID",
+      "description-test-connection": "Om du vill testa anslutningen från din IdP:s panel ska du se till att tillåta IdP-initierad inloggning och ange informationen för relay state.",
+      "finish-configuring-grafana-using-idp-data": "Slutför konfigurationen av Grafana med IdP-data",
+      "label-assertion-consumer-service-url": "Webbadress för mottagartjänst",
+      "label-baseencoded-idp-metadata": "Base64-kodade IdP-metadata",
+      "label-connect-grafana-with-identity-provider": "Anslut Grafana med identitetsleverantör",
+      "label-idp-metadata": "Metadata för IdP ",
+      "label-metadata-url": "Webbadress för metadata",
+      "label-path-to-idp-metadata-file": "Sökväg till IdP-metadatafil",
+      "label-slo-url": "Webbadress för SLO",
+      "label-sp-metadata-url-entity-id": "Webbadress för metadata",
+      "step-number-1": "1",
+      "step-number-2": "2",
+      "step-number-3": "3"
+    },
+    "general-unconnected": {
+      "description-allow-signup": "Om du vill tillåta skapande av ny Grafana-användare via SAML-inloggning. Om det inte är aktiverat kan endast befintliga Grafana-användare logga in med SAML.",
+      "description-auto-login": "Försöker att logga in med SAML automatiskt och hoppa över inloggningsskärmen.",
+      "description-display-name-for-this-saml-integration": "Användbart vid användning av flera SSO IdP-leverantörer eller protokoll.",
+      "description-duration-grafana-metadata-valid": "Varaktighet, hur länge Grafana-metadata är giltiga.",
+      "description-entity-id": "Enhets-ID är en globalt unik identifierare för tjänsteleverantören. Det används för att identifiera tjänsteleverantören för identitetsleverantören. Använder som standard webbadressen till Grafana-instansen.",
+      "description-identity-provider-initiated-login": "Tillåter användare att logga in på Grafana direkt från identitetsleverantören.",
+      "description-max-issue-delay": "Varaktighet, räknat från att identitetsleverantören (IdP) utfärdade ett svar till dess att Grafana tillåts bearbeta det.",
+      "description-relay-state": "Krävs. Ska matcha det relay state som konfigurerats i IdP och ett avslutande mellanslag krävs.",
+      "description-single-logout": "Tillåter användare att logga ut från IdP-sessionen och applikationer som är associerade med den aktuella IdP-sessionen som upprättats via SAML.",
+      "displayName-placeholder-saml": "SAML",
+      "label-allow-signup": "Tillåt registrering",
+      "label-auto-login": "Automatisk inloggning",
+      "label-display-name-for-this-saml-integration": "Visningsnamn för denna SAML 2.0-integration",
+      "label-entity-id": "Enhets-ID",
+      "label-general-settings": "Allmänna inställningar",
+      "label-identity-provider-initiated-login": "Identitetsleverantören initierade inloggning",
+      "label-max-issue-delay": "Maximal fördröjning för utfärdande",
+      "label-metadata-valid-duration": "Giltig varaktighet för metadata",
+      "label-relay-state": "Relay state",
+      "label-single-logout": "Enkel utloggning"
+    },
+    "input-with-reset": {
+      "reset": "Återställ"
+    },
+    "key-cert-drawer-unconnected": {
+      "close": "Stäng",
+      "description-number-generated-certificate-valid": "Antal dagar som det genererade certifikatet är giltigt.",
+      "generate": "Skapa",
+      "label-city": "Ort",
+      "label-country-code": "Landskod",
+      "label-state": "Tillstånd",
+      "label-validity-days": "Giltighetsdagar",
+      "label-your-organization": "Din organisation",
+      "subtitle-saml-key-and-certificate": "Följande data kommer att inkluderas i det genererade certifikatet",
+      "title-saml-key-and-certificate": "SAML-nyckel och certifikat",
+      "tooltip-generate-the-certificate-and-private-key": "Generera certifikatet och den privata nyckeln"
+    },
+    "key-cert-unconnected": {
+      "description-baseencoded-grafana-x-certificate": "Base64-kodat Grafana X.509-certifikat",
+      "description-baseencoded-private-key": "Base64-kodad privat nyckel",
+      "description-path-to-the-grafana-private-key": "Sökväg till Grafanas privata nyckel",
+      "description-path-to-the-grafana-x-certificate": "Sökväg till Grafana X.509-certifikatet",
+      "description-sign-outgoing-requests-to-id-p": "Signera utgående förfrågningar till IdP",
+      "description-signature-algorithm": "Signaturalgoritm som används för att signera förfrågningar till IdP. Måste vara samma som konfigurerats eller krävs av IdP.",
+      "description-signing-and-encryption-key-certificate": "Certifikat och privat nyckel för utbyte av information mellan Grafana och IdP. Den privata nyckeln måste utfärdas i ett PKCS#8-format. Certifikatet ska vara ett giltigt X.509-certifikat.",
+      "generate-key-and-certificate": "Generera nyckel och certifikat",
+      "label-certificate": "Certifikat",
+      "label-private-key": "Privat nyckel",
+      "label-sign-requests": "Signeringsförfrågningar",
+      "label-signature-algorithm": "Signaturalgoritm",
+      "label-signing-and-encryption-key-certificate": "Signerings- och krypteringsnyckel och certifikat"
+    },
+    "page-banner": {
+      "aria-label-close-banner": "Stäng banner",
+      "tooltip-close": "Stäng"
+    },
+    "SAML": {
+      "button-row-next": "Nästa: {{name}}",
+      "button-row-previous": "Föregående: {{name}}"
+    },
+    "samlform": {
+      "text-saved": "Sparad"
+    },
+    "save-and-test-unconnected": {
+      "button-save-and-enable": "Spara och aktivera",
+      "label-test-and-enable": "Testa och aktivera",
+      "text-save-and-enable": "Om du är redo att tillämpa din SAML-konfiguration använder du knappen ”Spara och aktivera”. Du kommer att kunna inaktivera konfigurationen."
+    },
+    "save-samlsettings": {
+      "message": {
+        "cannot-save-settings": "Kan inte spara inställningarna"
+      }
+    },
+    "text-input-with-reset": {
+      "reset": "Återställ"
+    }
+  },
+  "banner": {
+    "api": {
+      "result": {
+        "saved": "Inställningar för banner har sparats"
+      }
+    },
+    "form": {
+      "button-save": "Spara",
+      "button-saving": "Sparar ...",
+      "enabled": {
+        "label": "Aktiverad"
+      },
+      "end": {
+        "description": "Om inget slutdatum väljs visas bannern på obestämd tid.",
+        "error": "Sluttid måste vara efter starttid",
+        "label": "Slutar"
+      },
+      "message": {
+        "description": "Textinnehåll för bannern. Har stöd för Markdown.",
+        "label": "Meddelande"
+      },
+      "options": {
+        "authenticated": "Autentiserade användare",
+        "error": "Fel",
+        "everyone": "Alla",
+        "info": "Information",
+        "warning": "Varning"
+      },
+      "select": {
+        "placeholder": "Välj bannertyp"
+      },
+      "start": {
+        "description": "Bannern kommer att visas från och med detta datum/tid.",
+        "label": "Börjar"
+      },
+      "title": "Konfigurera banner",
+      "variant": {
+        "label": "Variant"
+      },
+      "visibility": {
+        "label": "Synlighet"
+      }
+    },
+    "preview": {
+      "message": {
+        "default": "Uppdatera denna förhandsgranskning genom att ändra meddelandefältet."
+      },
+      "title": "Förhandsgranska"
+    }
+  },
+  "caching": {
+    "alert": {
+      "readonly": {
+        "message": "Den här datakällan lades till genom konfigurationen och cachelagringen kan inte ändras med användargränssnittet. Kontakta serveradministratören om du vill uppdatera den här datakällan.",
+        "title": "Tillhandahållen datakälla"
+      }
+    },
+    "cache-clean": {
+      "body-clear-cache": "Varning: Denna åtgärd påverkar alla cache-aktiverade datakällor. Om du använder Memcached rensar systemet alla data från Memcached-instansen. Vill du fortsätta?",
+      "clear-cache": "Rensa cache",
+      "confirm-text-clear-cache": "Rensa cache",
+      "title-clear-cache": "Rensa cache"
+    },
+    "cache-cta": {
+      "enable-button-title": "Aktivera",
+      "enable-button-tittle": "Aktivera",
+      "protip-caching-cannot-enabled-source": "Den här datakällans konfiguration tillåter inte att cachelagring är aktiverat.",
+      "protip-caching-not-enabled": "Aktivering av cachelagring kan minska antalet redundanta förfrågningar som skickas till datakällan.",
+      "protip-link-caching-not-enabled": "Läs mer",
+      "title-caching-cannot-enabled-source": "Cachelagring kan inte aktiveras för den här datakällan.",
+      "title-caching-not-enabled": "Cachelagring är inte aktiverad för den här datakällan."
+    },
+    "cache-settings-disable": {
+      "disable": "Inaktivera"
+    },
+    "cache-settings-form": {
+      "description-query-ttl": "Livslängden i millisekunder för ett objekt i frågecachen. Exempel: 5000",
+      "description-resource-ttl": "Resurser är dynamiska värden som Grafanas datakälltillägg hämtar från datakällor för användning i frågeredigeraren. Exempel är Splunk-namnrymder, Prometheus-etiketter och namn på CloudWatch-mått. Eftersom dessa värden uppdateras mindre ofta kan du föredra en längre cachelivslängd för resurser än för frågor. Se <2>dokumentationen</2> för mer information.",
+      "description-timetolive-resources-cache-items-milliseconds-example": "Cachelivslängden för resursers cacheobjekt, i millisekunder. Exempel: 5000",
+      "description-use-default-ttl": "Aktivera detta för att använda den standardlivslängd som anges i Grafanas konfiguration ({{defaultTTLMs}} ms)",
+      "label-query-ttl": "Frågelivslängd",
+      "label-use-default-ttl": "Använd standardlivslängd",
+      "resource-ttl": "Resurslivslängd",
+      "save": "Spara"
+    },
+    "caching": {
+      "content": {
+        "text": {
+          "enable-caching": "Aktivera cachelagring"
+        }
+      }
+    },
+    "data-source-cache": {
+      "caching-heading": "Cachning",
+      "query-catching": "Aktivera frågecache kostnadsfritt under din provperiod av Grafana Pro.",
+      "upgrade-content-author-dashboards": "Skapa dashboards smidigare genom att cacha data som används för att konstruera frågor, som till exempel fält i ServiceNow eller mått tillgängliga från Datadog",
+      "upgrade-content-description": "Med cachelagring av frågor kan du ladda instrumentpaneler snabbare och minska kostsamma frågor till datakällor genom att temporärt lagra frågeresultat i minnet, Redis eller Memcached.",
+      "upgrade-content-load-dashboards": "Ladda instrumentpaneler på mindre än en sekund från cachen, även när de innehåller stora frågor och många användare tittar samtidigt",
+      "upgrade-content-save-money": "Spara pengar och undvik hastighetsbegränsning genom att genom att minska antalet API-anrop som görs till datakällor som Splunk, CloudWatch och Github"
+    }
+  },
+  "common": {
+    "cancel": "Avbryt"
+  },
+  "dashboard": {
+    "errors": {
+      "failed-to-load": "Det gick inte att ladda instrumentpanelen"
+    }
+  },
+  "enricher": {
+    "asserts": {
+      "description": "Lägg till en länk till RCA Workbench i larmmeddelanden",
+      "label": "RCA Workbench"
+    },
+    "assign": {
+      "description": "Lägg till kommentarer till larm",
+      "label": "Tilldela"
+    },
+    "assistant": {
+      "description": "Starta assistentundersökning för larm",
+      "label": "Assistentundersökningar"
+    },
+    "dsquery": {
+      "description": "Hämta data från datakällor för ytterligare sammanhang",
+      "label": "Datakällfråga"
+    },
+    "explain": {
+      "description": "Generera AI-drivna förklaringar för larm",
+      "label": "Förklara"
+    },
+    "external": {
+      "description": "Anropa extern webhook för berikning",
+      "label": "Externt"
+    },
+    "sift": {
+      "description": "Kör Sift-undersökning",
+      "label": "Sift"
+    }
+  },
+  "explore": {
+    "query-library": {
+      "cancel": "Avbryt",
+      "default-title": "Ny fråga",
+      "discard": "Kassera",
+      "editing-title": "Redigera från sparade frågor",
+      "explore": "Redigera i Utforska",
+      "query-template-added": "Förfrågan har sparats i biblioteket",
+      "save": "Spara",
+      "save-and-close": "",
+      "save-return": "Spara och återgå till sparade frågor",
+      "saving": "Sparar …"
+    }
+  },
+  "export": {
+    "pdf": {
+      "cancel-button": "Avbryt",
+      "download-button": "Skapa PDF",
+      "image-alt": "PDF-förhandsvisning",
+      "info-text": "Exportera instrumentpanelen som ett PDF-dokument",
+      "layout-label": "Layout",
+      "orientation-label": "Orientering",
+      "title": "Exportera PDF för instrumentpanelen",
+      "zoom-description": "Zooma in för att förstora text eller zooma ut om du vill se mer data (t.ex. tabellkolumner) per panel.",
+      "zoom-label": "Zooma"
+    }
+  },
+  "groupsync": {
+    "empty-state": {
+      "pro-tip": "Vill du hantera Grafana-åtkomst via grupper i din identitetsleverantör? Skapa gruppmappningar till Grafana RBAC-roller. <2>Läs mer</2>",
+      "title": "Du har inte skapat några gruppmappningar ännu"
+    },
+    "group-sync-editor": {
+      "body-delete-group-mappings": "Är du säker på att du vill radera alla mappningar för denna grupp?",
+      "close-button-drawer": "Stäng",
+      "confirm-text-delete-group-mappings": "Radera",
+      "delete-group-mapping": "Radera gruppmappning",
+      "new-button-drawer": "Nyhet",
+      "new-group-mapping": "Ny gruppmappning",
+      "placeholder-search-by-group-id": "Sök efter grupp-ID",
+      "text-deprecated-feature": "Den här funktionen är föråldrad och dina regler kommer att sluta fungera i juni 2025. Migrera till extern gruppsynkronisering i det önskade teamets inställningar och tilldela roller till teamen.",
+      "title-delete-group-mappings": "Radera gruppmappningar",
+      "title-deprecated-feature": "Föråldrad funktion"
+    },
+    "new-mapping-form": {
+      "label-group-id": "Grupp-ID",
+      "label-roles": "Roller",
+      "save": "Spara"
+    }
+  },
+  "licensing": {
+    "customer-support-button": {
+      "contact-customer-support": "Kontakta kundsupporten"
+    },
+    "expires-soon": {
+      "title-grafana-enterprise-license-expire": "Din Grafana Enterprise-licens upphör snart att gälla",
+      "sub-title-license-expiration_one": "{{count}} dagar kvar, varefter <3>Enterprise-funktioner kommer att inaktiveras.</3>",
+      "sub-title-license-expiration_other": "{{count}} dagar kvar, varefter <3>Enterprise-funktioner kommer att inaktiveras.</3>"
+    },
+    "get-token-status": {
+      "title": {
+        "token-expired": "Token utgången",
+        "token-expires-soon": "Token upphör snart att gälla"
+      }
+    },
+    "get-trial-status": {
+      "title": {
+        "trial-active": "Provperiod aktiverad",
+        "trial-expired": "Testperiod utgången"
+      }
+    },
+    "has-expired": {
+      "sub-title-licensing-reader": "<0>Vissa funktioner</0> har inaktiverats.",
+      "title-your-grafana-enterprise-license-has-expired": "Din Grafana Enterprise-licens har löpt ut"
+    },
+    "is-invalid": {
+      "sub-title-licensing-reader": "<0>Vissa funktioner</0> har inaktiverats.",
+      "title-your-grafana-enterprise-license-is-invalid": "Din Grafana Enterprise-licens är ogiltig"
+    },
+    "license-info": {
+      "aria-label-details-about-license-grafana-cloud": "Visa information om din licens i Grafana Cloud",
+      "card-content-account": "AWS-konto",
+      "card-content-active-licensed-users": "Aktiva licensierade användare",
+      "card-content-anonymous-users": "Anonyma användare",
+      "card-content-authenticated-users": "Autentiserade användare",
+      "card-content-company": "Bolag",
+      "card-content-license-expires": "Licensen löper ut",
+      "card-content-license-expires-tooltip": "Licensens utgångsdatum är det datum då den aktuella licensen inte längre är aktiv. När licensens utgångsdatum närmar sig visar Grafana Enterprise en banner.",
+      "card-content-lid": "Licens-ID",
+      "card-content-none": "Inget",
+      "card-content-product": "Produkt",
+      "card-content-products": "Produkter",
+      "card-content-purchase-date": "Anskaffningsdag",
+      "card-content-token-auto-update": "Grafana uppdaterar automatiskt denna token innan den upphör att gälla. Kontakta supporten om din token inte uppdateras.",
+      "card-content-token-expires": "Token upphör att gälla",
+      "card-content-token-id": "Token-ID",
+      "card-content-token-issued": "Token utfärdad",
+      "card-content-token-usage-billing-off": "Av",
+      "card-content-url-name": "URL",
+      "card-content-url-tooltip": "Licenswebbadress är rotwebbadressen för din Grafana-instans. Licensen fungerar inte på en Grafana-instans med en annan rotwebbadress.",
+      "card-content-usage-billing": "Användningsfakturering",
+      "card-content-usage-billing-on": "På",
+      "card-content-usage-billing-tooltip": "Du kan begära att Grafana Labs aktiverar användningsfakturering för att tillåta ett obegränsat antal aktiva användare. När användningsbaserad fakturering är aktiverad tillämpar Grafana inga gränser för aktiva användare och visar inga varningsbanderoller. Istället debiteras du för aktiva användare över gränsen, i enlighet med kundavtalet.",
+      "edition-notice-licensing-info": "Du använder Grafana Enterprise utan licens. Enterprise-funktionerna är inaktiverade.",
+      "edition-notice-problem-licensing-info": "Det finns ett problem med din Enterprise-licenstoken. Enterprise-funktionerna är inaktiverade.",
+      "license-alert": "Licenstoken uppladdad. Starta om Grafana för att ändringarna ska träda i kraft.",
+      "license-details": "Licensuppgifter",
+      "license-token-info": "Läs om <2>licensens utgångsdatum</2> och <6>licensaktivering</6>.",
+      "renew-token": "Förnya token",
+      "renewing": " (Förnyar …)",
+      "text-loading-licensing-info": "Laddar licensinformation …",
+      "title-contact-support-renew-token-visit-cloud": "Kontakta supporten för att förnya din token, eller gå till molnportalen för att lära dig mer.",
+      "title-have-a-license": "Har du en licens?",
+      "title-license": "Licens",
+      "title-license-token-renewed": "Licenstoken förnyad.",
+      "title-token": "Token",
+      "title-utilization": "Användning",
+      "utilization-footer": "Användningen bland licensierade användare bestäms baserat på inloggade användares aktivitet under de senaste 30 dagarna.",
+      "utilization-info": "Läs om <2>gränser för aktiva användare</2> och <6>gränser för samtidiga sessioner</6>.",
+      "card-content-anonymous-users-tooltip_one": "För varje {{count}} anonym enhet räknar Grafana 1 användare.",
+      "card-content-anonymous-users-tooltip_other": "För varje {{count}} anonym enhet räknar Grafana 1 användare."
+    },
+    "license-token-upload": {
+      "instance-url": "Instanswebbadress: <1>{{licensedUrl}}</1>",
+      "upload-a-new-token": "Ladda upp en ny token",
+      "uploading": "Laddar upp …"
+    },
+    "max-users-reached": {
+      "title-exceeded-included-number-active-users": "Du har överskridit det antal aktiva användare som inkluderas",
+      "upgrade-your-license-link": "<2>Uppgradera din licens.</2>",
+      "upgrade-your-license-no-link": "Uppgradera din licens.",
+      "upgrade-your-license-subtitle_one": "Din Grafana Enterprise-licens gäller för {{maxUsers}} aktiva användare. För närvarande finns {{count}} aktiva användare.",
+      "upgrade-your-license-subtitle_other": "Din Grafana Enterprise-licens gäller för {{maxUsers}} aktiva användare. För närvarande finns {{count}} aktiva användare."
+    },
+    "page-alert": {
+      "learn-about-enterprise-licenses": "Läs mer om Enterprise-licenser"
+    },
+    "token-expires-soon": {
+      "title-grafana-enterprise-token-needs-renewed": "Din Grafana Enterprise-token måste förnyas",
+      "sub-title-token-expiration_one": "Din licenstoken har {{count}} dagar kvar. Därefter kommer <4>Enterprise-funktioner att inaktiveras.</4>",
+      "sub-title-token-expiration_other": "Din licenstoken har {{count}} dagar kvar. Därefter kommer <4>Enterprise-funktioner att inaktiveras.</4>"
+    }
+  },
+  "meta-analytics": {
+    "analytics-drawer": {
+      "shared-dashboards-tab-label": "Delade instrumentpaneler",
+      "stats-tab-label": "Statistik",
+      "text-access-usage-insights-during-trial-grafana": "Få full tillgång till användningsinsikter gratis under din provperiod av Grafana Pro.",
+      "title-dashboard-insights": "{{dashboardTitle}} – analys",
+      "users-activity-tab-label": "Användare och aktivitet"
+    },
+    "analytics-public-dashboards-tab": {
+      "daily-query-count-cached-queries-label": "cachefrågor",
+      "daily-query-count-title": "Dagligt antal frågor",
+      "errors-last-month-title": "Fel senaste 30 dagarna",
+      "no-data": "Inga data.",
+      "views-last-month-title": "Visningar senaste 30 dagarna"
+    },
+    "analytics-stats-tab": {
+      "daily-query-count-cached-queries-label": "cachefrågor",
+      "daily-query-count-title": "Dagligt antal frågor",
+      "errors-last-month-title": "Fel senaste 30 dagarna",
+      "no-data": "Inga data."
+    },
+    "analytics-toolbar-button": {
+      "tooltip-dashboard-insights": "Instrumentpanelinsikter"
+    },
+    "analytics-upgrade-drawer": {
+      "description-usage-insights-provide-detailed-information-about": "Användningsinsikter ger detaljerad information om hur kontrollpaneler används, som till exempel antal visningar, frågor och fel som användare har upplevt. Du kan använda denna information för att förbättra användarnas upplevelse och felsöka problem.",
+      "title-dashboard-insights": "{{dashboardTitle}} – analys"
+    },
+    "analytics-users-tab": {
+      "aria-label-recent-users-table": "Senaste 30 instrumentpanelvisningarna: tabellista över användare och när de senast visade instrumentpanelen",
+      "aria-label-version-history-button": "Gå till fullständig versionshistorik",
+      "created-user-box": "Skapad",
+      "dashboard-version-history": "Versionshistorik för instrumentpanel",
+      "format-date-currently-viewing": "Visas för närvarande",
+      "format-date-last-hour": "Sista timmen",
+      "format-date-today": "Idag",
+      "format-date-yesterday": "Igår",
+      "last-dashboard-viewers": "Senaste 30 instrumentpanelvisningarna",
+      "last-edited-user-box": "Senast ändrad",
+      "last-viewed-user-box": "Senast visad",
+      "recent-activity-aria-label": "Senaste aktiviteten",
+      "user-views-data-frame-user-field": "Användare",
+      "user-views-data-frame-when-field": "När",
+      "users-activity-content-aria-label": "Innehåll på fliken för användare och aktivitet",
+      "views-last-month-aria-label": "Linjediagram som visar trenden för instrumentpanelsvisningar under de senaste 30 dagarna",
+      "views-last-month-title": "Visningar senaste 30 dagarna"
+    },
+    "data-source-insights": {
+      "available-source": "Inga tillgängliga data för den här datakällan.",
+      "average-load-duration-last-month-title": "Genomsnittlig laddningstid senaste 30 dagarna (ms)",
+      "errors-last-month-title": "Fel senaste 30 dagarna",
+      "queries-last-month-title": "Frågor senaste 30 dagarna",
+      "text-enable-source-usage-insights-during-trial": "Aktivera insikter om användning av datakälla kostnadsfritt under din provperiod av Grafana Pro.",
+      "text-feature-not-available-expired-license": "Insikter om datakällor är inte tillgängliga med en utgången licens. Data kommer att fortsätta att samlas in, men du måste uppdatera din licens för att se den här sidan.",
+      "title-feature-available-expired-license": "Funktionen är inte tillgänglig med en utgången licens",
+      "title-read-more-license-expiration": "Läs mer om licensens utgångsdatum"
+    },
+    "data-source-insights-upgrade": {
+      "clean-instance-list-item": "Rensa din instans genom att hitta och ta bort oanvända datakällor",
+      "demonstrate-and-improve-list-item": "Visa och förbättra värdet av din observerbarhetstjänst genom att följa användarnas engagemang",
+      "description-usage-insights-provide-detailed-information-about": "Användningsinsikter ger detaljerad information om hur datakällor används, som till exempel antal visningar, frågor och fel som användare har upplevt. Du kan använda denna information för att förbättra användarnas upplevelse och felsöka problem",
+      "keep-performant-list-item": "Bibehåll Grafanas prestation genom att identifiera och åtgärda långsamma, felbenägna datakällor",
+      "review-insights-list-item": "Granska insikter om enskilda datakällors användning direkt i användargränssnittet, sortera sökresultat efter användning och fel eller fördjupa dig i detaljerade användningsloggar"
+    }
+  },
+  "permissions": {
+    "data-source-permissions": {
+      "text-enable-source-permissions-during-trial-grafana": "Aktivera datakällbehörigheter kostnadsfritt under din provperiod av Grafana Pro."
+    },
+    "permissions-upgrade-content": {
+      "description-source-permissions-protect-sensitive-limiting-access": "Med datakällbehörigheter kan du skydda känsliga data genom att begränsa åtkomsten till denna datakälla till specifika användare, team och roller.",
+      "source-permissions-protect-clean-experience-list-item": "Förbättra användarupplevelsen genom att dölja datakällor som användarna inte behöver använda",
+      "source-permissions-protect-sensitive-data-list-item": "Skydda känsliga data, som till exempel säkerhetsloggar, produktionsdatabaser och personuppgifter",
+      "source-permissions-protect-share-access-list-item": "Dela Grafana-åtkomst mer fritt eftersom du vet att användare inte omedvetet kommer att kunna se känsliga data"
+    }
+  },
+  "plugins": {
+    "sandbox": {
+      "enable-sandbox-label": "Frontend Sandbox",
+      "enable-sandbox-tooltip": "Frontend Sandbox kör frontend-kod isolerat, vilket begränsar åtkomsten till den globala webbläsarmiljön och begränsar UI-ändringar till tilläggsområdet.",
+      "enable-sandbox-tooltip-link": "Läs mer"
+    }
+  },
+  "public-dashboard": {
+    "email-sharing": {
+      "success-confirm-access": "Åtkomst bekräftad!",
+      "success-resend-recipient-invitation": "E-postinbjudan har skickats på nytt.",
+      "success-revoke-access-description": "Du har återkallat åtkomst för {{recipientEmail}}.",
+      "success-revoke-access-title": "Åtkomst indragen",
+      "success-revoke-all-accesses-description": "Åtkomsten för {{email}} till alla offentliga instrumentpaneler har tagits bort.",
+      "success-revoke-all-accesses-title": "Åtkomst indragen",
+      "success-send-recipient-invitation": "E-postinbjudan har skickats."
+    }
+  },
+  "public-dashboards": {
+    "confirm-access-page": {
+      "confirm-access": "Bekräfta åtkomst",
+      "login-subtitle": "Få tillgång till instrumentpanelen i 30 dagar. Efter 30 dagar kan du begära åtkomst på nytt för fortsatt visning av instrumentpanelen.",
+      "login-title": "Åtkomst till instrumentpanel"
+    },
+    "request-view-access-page": {
+      "access-requested": "Åtkomst begärd",
+      "label-email": "E-post",
+      "placeholder-email": "e-post",
+      "register-pattern-invalid-email": "Ogiltig e-postadress",
+      "register-required-email": "E-post är obligatoriskt",
+      "request-access": "Begär åtkomst"
+    }
+  },
+  "query-library": {
+    "actions": {
+      "delete-query-button": "Radera fråga",
+      "duplicate-query-button": "Duplicera fråga",
+      "lock-query-button": "Lås fråga",
+      "save-history-query-button": "",
+      "select-query-button": "Välj fråga",
+      "unlock-query-button": "Lås upp fråga"
+    },
+    "delete-modal": {
+      "body-text": "Du är på väg att ta bort denna sparade fråga. Den här åtgärden kan inte ångras. Vill du fortsätta?",
+      "confirm-button": "Radera fråga",
+      "title": "Radera fråga"
+    },
+    "discard-changes": {
+      "discard-button": "Kassera",
+      "text": "Du har osparade ändringar i denna fråga. Är du säker på att du vill kassera dem?",
+      "title": "Kassera ändringar i frågan?"
+    },
+    "drawer": {
+      "title": "Sparade frågor"
+    },
+    "empty-state": {
+      "message": "Börja lägga till dem från Utforska eller när du redigerar en instrumentpanel",
+      "no-favorites": "",
+      "no-favorites-description": "",
+      "no-history": "",
+      "no-history-description": "",
+      "title": ""
+    },
+    "error-state": {
+      "title": "Något gick fel!"
+    },
+    "explore-modal": {
+      "cancel-button": "",
+      "confirm-button": "",
+      "title": "",
+      "warning": ""
+    },
+    "filters": {
+      "datasource-placeholder": "Filtrera efter datakälla",
+      "datasource-user": "Filtrera efter användarnamn",
+      "search-placeholder": "Sök efter datakälla, frågeinnehåll, titel eller beskrivning",
+      "sort": {
+        "asc": "Alfabetiskt (A–Ö)",
+        "desc": "Alfabetiskt (Ö–A)",
+        "newest": "Nyaste först",
+        "oldest": "Äldsta först"
+      },
+      "sort-placeholder": "Sortera"
+    },
+    "item": {
+      "add-to-library": "",
+      "favorite": "Favorit",
+      "new": "Nyhet",
+      "unfavorite": "Avmarkera som favorit"
+    },
+    "not-found": {
+      "message": "Prova att justera dina sök- eller filterkriterier",
+      "title": "Inga resultat hittades"
+    },
+    "notifications": {
+      "query-deleted": "Frågan raderad"
+    },
+    "query-details": {
+      "author": "Författare",
+      "datasource": "Datakälla",
+      "date-added": "Datum tillagt",
+      "description": "Beskrivning",
+      "edit-button": "Redigera fråga",
+      "edit-button-short": "Redigera",
+      "make-query-visible": "Dela fråga med alla användare",
+      "tags": "Taggar",
+      "title": "Titel"
+    },
+    "query-template": {
+      "error": "Fel vid försök att ladda metadata för frågemall: {{error}}"
+    },
+    "tabs": {
+      "all": "Alla",
+      "favorites": "Favoritsaker",
+      "feedback": "Ge feedback",
+      "recent": ""
+    },
+    "user-info": {
+      "error": "Fel vid försök att hämta användarinformation från biblioteket: {{error}}"
+    },
+    "variable-adjust-alert": {
+      "combobox": {
+        "custom": "Anpassat värde",
+        "placeholder": "Välj värde"
+      },
+      "custom": {
+        "ariaLabel": "Anpassat värde att ersätta med {{variable}}",
+        "placeholder": "Ange anpassat värde"
+      },
+      "description": "Vi har upptäckt följande mallvariabler i din fråga. Dessa kan mappas till dina befintliga data. (Obs! Den sparade frågan kommer inte att ändras.)",
+      "title": "Ersätt dina mallvariabler"
+    }
+  },
+  "query-operation": {
+    "header": {
+      "replace-query-from-library": "Ersätt fråga",
+      "replace-query-from-library-button": "Byt ut",
+      "save-to-query-library": "Spara fråga",
+      "save-to-query-library-button": "Spara",
+      "saved-queries": "Sparade frågor"
+    }
+  },
+  "recorded-queries": {
+    "create-recorded-query-unconnected": {
+      "alert-severity-succesful": "Framgångsrika",
+      "alert-severity-test": "Testa denna registrerade fråga",
+      "aria-label-start-recording-query-button": "Knapp för att börja registrera fråga",
+      "contact-support": "Om du behöver skicka in ett supportärende till Grafana Labs kan du använda formuläret på <2>Kontakta Grafana Labs</2>",
+      "count-rows-returned": "Räkna raderna som returneras från denna fråga",
+      "description-decide-often-record-query": "Bestäm hur ofta du vill registrera denna fråga",
+      "description-give-this-query-a-name": "Ge denna fråga ett namn",
+      "description-provide-a-description-for-this-query": "Ange en beskrivning för denna fråga",
+      "description-select-value-template-variable": "Välj ett värde för varje mallvariabel",
+      "done-button": {
+        "aria-label-cancel-recording-query-button": "Knapp för att avbryta registrering av fråga",
+        "aria-label-close-recording-query-button": "Knapp för att stänga registrering av fråga",
+        "cancel": "Avbryt",
+        "close": "Stäng"
+      },
+      "label": {
+        "relative-time-range": "Relativt tidsintervall"
+      },
+      "label-count-query-results": "Räkna frågeresultat",
+      "label-description": "Beskrivning",
+      "label-interval": "Intervall",
+      "label-name": "Namn",
+      "label-template-variables": "Mallvariabler",
+      "message": {
+        "name-is-required": "Namn är obligatoriskt"
+      },
+      "query-relative-time-range": "Välj denna frågas relativa tidsintervall",
+      "results-alert-message": "Resultat: ",
+      "start-recording-query": "Börja registrera fråga",
+      "success-alert-message": "Din nya registrerade fråga registreras korrekt!",
+      "sync-button": {
+        "aria-label-test-the-recorded-query": "Testa den registrerade frågan"
+      },
+      "title-create-recorded-query": "Skapa registrerad fråga"
+    },
+    "data-source-filter": {
+      "button-clear-filter": "Rensa datakällfilter",
+      "filter-by-data-source": "Filtrera efter datakälla",
+      "placeholder-select-a-data-source": "Välj en datakälla"
+    },
+    "empty-recorded-query-list": {
+      "message": "Inga registrerade frågor definierade",
+      "pro-tip": "Tips: Du kan registrera frågor från frågeredigeraren."
+    },
+    "query-card": {
+      "interval-content": "Intervall: {{interval}}",
+      "interval-range": "Omfattning: Senaste {{range}}",
+      "query-expression": "Frågeuttryck:"
+    },
+    "recorded-queries-config-unconnected": {
+      "body-delete": "Är du säker på att du vill radera ”{{name}}”?",
+      "confirm-text-delete": "Radera",
+      "edit-remote-write-target": "Redigera fjärrskrivningsmål",
+      "queries-to-display": {
+        "buttons": {
+          "aria-label-delete-recorded-query": "Radera registrerad fråga",
+          "aria-label-pause-recorded-query": "Pausa registrering",
+          "aria-label-resume-recorded-query": "Återuppta registrering",
+          "delete": "Radera"
+        }
+      },
+      "title-delete": "Radera"
+    },
+    "recorded-queries-deprecation-notice": {
+      "description": "Registrerade frågor är föråldrade. Använd istället de nya <2>Grafana-hanterade registreringsreglerna</2>.",
+      "title-deprecation-notice": "Meddelande om föråldrad funktion"
+    },
+    "recorded-query-add-modal-unconnected": {
+      "add": "Lägg till",
+      "cancel": "Avbryt",
+      "new-recorded-query-alert": "Om du vill skapa en ny registrerad fråga ska du återgå till frågeredigeraren och använda ikonen <2></2> i seriefältet.",
+      "no-queries-available": "Inga registrerade frågor tillgängliga för {{datasourceName}}",
+      "recorded-query": "Registrerad fråga",
+      "title-add-recorded-query": "Lägg till registrerad fråga"
+    },
+    "write-target-config-unconnected": {
+      "label-remote-write-path": "Fjärrskrivningssökväg",
+      "placeholder-select-a-data-source": "Välj en datakälla",
+      "save": "Spara",
+      "select-data-source-label": "Välj den datakälla där mätvärden kommer att skrivas"
+    }
+  },
+  "report": {
+    "report-header": {
+      "time-range": "Tidsintervall för data:",
+      "title": "{{reportTitle}} – genererad {{generatedOnDate}}"
+    }
+  },
+  "reporting": {
+    "button-row": {
+      "next-step": "Nästa: {{nextName}}",
+      "previous-step": "Föregående: {{prevName}}"
+    },
+    "create-report": {
+      "alert-title": "Fel vid laddning av rapport",
+      "loading-report": "Laddar rapport …",
+      "title": "Skapa ny rapport"
+    },
+    "errors": {
+      "action-message": "Kontakta din Grafana-administratör för installation av tillägget.",
+      "no-renderer-description": "För att generera PDF-rapporter måste du installera tillägget <2>Grafana Image Renderer</2>.",
+      "no-renderer-title": "Tilläggsprogram för bildrendering inte installerat",
+      "old-renderer-description": "För att generera CSV-filer måste du uppdatera tillägget <2>Grafana Image Renderer</2>.",
+      "old-renderer-title": "Du använder en gammal version av tilläggsprogrammet för bildrenderisering"
+    },
+    "image-preview": {
+      "invalid-image": "Ogiltig bild"
+    },
+    "page": {
+      "empty-button": "Skapa rapport",
+      "empty-pro-tip": "Skapa en rapport från befintliga instrumentpaneler. <2>Läs mer</2>",
+      "empty-title": "Det finns inga rapporter skapade än",
+      "settings-button": "Rapportinställningar"
+    },
+    "page-actions": {
+      "discard-button": "Kassera",
+      "save-as-draft-button": "Spara som utkast",
+      "update-button": "Uppdatera rapport"
+    },
+    "pdf-tables": {
+      "appendix": "",
+      "truncation-notice": ""
+    },
+    "report-footer": {
+      "logo-alt": "Rapportlogotyp",
+      "page-pagination": "Sida {{currentPage}}/{{totalPageCount}}"
+    },
+    "report-form": {
+      "edit-step": "5. Bekräfta"
+    },
+    "report-list": {
+      "confirmText-delete": "Radera",
+      "content-pause-report": "Pausa rapport",
+      "content-resume-report": "Återuppta rapport",
+      "delete-report": "Radera rapport {{name}}"
+    },
+    "schedule": {
+      "frecuency-custom-input-label": "Upprepa varje",
+      "frecuency-custom-select-label": "Anpassad frekvens",
+      "frecuency-custom-select-placeholder": "timmar",
+      "frecuency-date-picker-label": "Startdatum för rapportschema",
+      "frecuency-date-picker-placeholder": "Välj datum",
+      "frecuency-end-date-label": "Slutdatum",
+      "frecuency-end-time-label": "Sluttid",
+      "frecuency-last-day-label": "Skicka på den sista dagen i månaden",
+      "frecuency-last-day-warning": "Obs! Vissa månader har ingen dag {{warningDateText}} och rapporter kommer inte att skickas under dessa månader. Välj ett tidigare datum eller <strong>”Skicka på den sista dagen i månaden”</strong> om du vill skicka en rapport i slutet av varje månad.",
+      "frecuency-send-later": "Skicka senare",
+      "frecuency-send-now": "Skicka nu",
+      "frecuency-start-time-label": "Starttid",
+      "frecuency-time-zone-label": "Tidszon",
+      "frecuency-workdays-label": "Skicka endast måndag till fredag",
+      "report-schedule-end-date-label": "Slutdatum för rapportschema",
+      "report-schedule-end-date-placeholder": "Slutar inte"
+    },
+    "settings": {
+      "attachment-settings-fieldset-label": "Inställningar för bilagor",
+      "drawer-title": "Inställningar för rapportmallar",
+      "email-branding-fieldset-label": "E-postvarumärke",
+      "email-footer-field-label": "Sidfot för e-post",
+      "email-logo-image-preview-altText": "Förhandsgranskning av företagslogotyp",
+      "email-logo-url-field-description": "Logotypen kommer att visas i e-postrubriken. Format som stöds: png, jpg, gif.",
+      "email-logo-url-field-label": "Webbadress för företagslogotyp",
+      "embedded-image-header": "Inbäddad bild",
+      "embedded-image-theme-picker-description": "Temat kommer att tillämpas på den instrumentpanelbild som är inbäddad i e-postmeddelandet.",
+      "error": "Det gick inte att ladda inställningar",
+      "footer-add-item": "+ Lägg till sidfotsobjekt",
+      "footer-add-item-aria": "Lägg till sidfotsobjekt",
+      "footer-fixed-text-placeholder": "Ange text …",
+      "footer-font-color": "Färg",
+      "footer-font-color-placeholder": "#000000",
+      "footer-font-family-description": "Standardtypsnitt för alla sidfotstextobjekt.",
+      "footer-font-family-label": "Typsnittsfamilj",
+      "footer-font-inter": "Inter (standard)",
+      "footer-font-size": "Storlek",
+      "footer-font-size-default": "Standard",
+      "footer-font-style": "Stil",
+      "footer-font-style-default": "Normal",
+      "footer-font-weight": "Vikt",
+      "footer-font-weight-default": "Normal",
+      "footer-link-field-label": "Länktext för sidfot",
+      "footer-link-url-field-label": "Webbadress för sidfotslänk",
+      "footer-logo-large": "Stor (48 px)",
+      "footer-logo-medium": "Medium (36 px)",
+      "footer-logo-small": "Litet (24 px)",
+      "footer-logo-xlarge": "Extra stort (64 px)",
+      "footer-max-items-reached": "Maximalt antal objekt har uppnåtts",
+      "footer-move-item-down-label": "Flytta {{label}} ner",
+      "footer-move-item-up-label": "Flytta {{label}} upp",
+      "footer-remove-item-label": "Ta bort {{label}}",
+      "footer-style-italic": "Kursiv",
+      "footer-style-normal": "Normal",
+      "footer-style-toggle-label": "Växla {{label}}-stilalternativ",
+      "footer-type-date": "Datum",
+      "footer-type-fixed-text": "Fast text",
+      "footer-type-flex-spacer": "Flexibelt mellanrum",
+      "footer-type-logo": "Logotyp",
+      "footer-type-page-number": "Sidnummer",
+      "footer-unsupported-type": "Stöds inte: {{type}}",
+      "footer-weight-bold": "Fet",
+      "footer-weight-normal": "Normal",
+      "none-footer-label": "Inget",
+      "pdf-dashboard-title-enabled-description": "Visa instrumentpanelens titel i PDF-filens rubrik.",
+      "pdf-dashboard-title-enabled-label": "Visa instrumentpanelrubrik",
+      "pdf-footer-description": "Konfigurera de objekt som visas i PDF-filens sidfot. Använd pilarna för att ändra ordning.",
+      "pdf-footer-empty-state": "Inga anpassade sidfotsobjekt har konfigurerats. Standardsidfoten kommer att användas. Lägg till objekt nedan för att anpassa den.",
+      "pdf-footer-header": "Sidfot",
+      "pdf-header": "PDF",
+      "pdf-header-enabled-description": "Visa rapportens titel och datumet då den genererades i PDF-filens rubrik.",
+      "pdf-header-enabled-label": "Visa rubrik",
+      "pdf-theme-picker-description": "Temat kommer att tillämpas på den PDF som är bifogad i rapporten.",
+      "pdf-time-range-enabled-description": "Visa datatidsintervallet i PDF-filens rubrik.",
+      "pdf-time-range-enabled-label": "Visa datatidsintervall",
+      "report-logo-image-preview-altText": "Förhandsgranskning av företagslogotyp",
+      "report-logo-url-field-description": "Logotypen kommer att visas i dokumentets sidfot. Format som stöds: png, jpg, gif.",
+      "report-logo-url-field-label": "Webbadress för företagslogotyp",
+      "save-button": "Spara",
+      "saving-button": "Sparar …",
+      "sent-by-footer-label": "Skickat av",
+      "settings-subtitle": "Hantera inställningar för rapportmallar."
+    },
+    "update-report": {
+      "title": "Uppdatera rapport"
+    }
+  },
+  "reports": {
+    "all-template-alert": {
+      "description-not-supported": "Värdet Alla i mallvariabler som används i upprepade rader eller paneler stöds inte i PDF",
+      "title-not-supported": "Stöds inte"
+    },
+    "confirm": {
+      "edit": "Redigera",
+      "report-data": {
+        "title": {
+          "combine-all-pdfs-in-one-file": "Kombinera alla PDF-filer till en enda fil",
+          "dashboard-link": "Länk till kontrollpanel",
+          "email-subject": "E-postmeddelandets ämne",
+          "end-date": "Slutdatum",
+          "end-time": "Sluttid",
+          "format-report": "Formatera rapport",
+          "message": "Meddelande",
+          "pdf-layout": "PDF-layout",
+          "pdf-orientation": "PDF-orientering",
+          "pdf-show-template-variables": "Visa PDF-mallvariabler",
+          "preferred-format": "Önskat format*",
+          "recipients": "Mottagare*",
+          "recurrence": "Återkommande",
+          "repeat-every": "Upprepa varje",
+          "replytoemail": "Svara på e-post",
+          "report-name": "Rapportnamn*",
+          "scale-factor": "Skalfaktor",
+          "schedule": "Schema",
+          "select-dashboard": "Välj kontrollpanel",
+          "send-monday-to-friday-only": "Skicka endast måndag till fredag",
+          "share": "Dela",
+          "start-date": "Startdatum",
+          "start-time": "Starttid",
+          "template-variables": "Mallvariabler",
+          "time-range": "Tidsintervall",
+          "time-zone": "Tidszon"
+        }
+      }
+    },
+    "create-report-tab": {
+      "create-report-using-this-dashboard": "Skapa rapport med denna instrumentpanel",
+      "description-reporting-allows-automatically-generate-dashboards-grafana": "Rapportering låter dig automatiskt generera PDF-filer från någon av dina instrumentpaneler och låta Grafana skicka dem via e-post till intresserade parter enligt ett schema.",
+      "get-started-with-reporting": "Kom igång med rapportering",
+      "learn-more": "Läs mer",
+      "text-create-unlimited-reports-during-trial-grafana": "Skapa obegränsade rapporter under din provperiod av Grafana Pro."
+    },
+    "dashbord-report-renderer": {
+      "title-unsupported-dashboard-layout": "Instrumentpanelslayout som inte stöds"
+    },
+    "edit-actions": {
+      "aria-label-delete-report": "Ta bort rapport",
+      "body-are-you-sure": "Är du säker på att du vill radera denna rapport?",
+      "confirmText-delete": "Radera",
+      "edit-report": "Redigera rapport",
+      "pause-button": "Pausa",
+      "resume-button": "Återuppta",
+      "title-delete-report": "Ta bort rapport",
+      "tooltip-delete": "Radera"
+    },
+    "format-report": {
+      "aria-label-zoom": "Zooma",
+      "description-csv-encoding": "Välj kodningsformat för CSV-filer",
+      "description-enlarge-table-columns-panel": "Zooma in för att förstora text eller zooma ut om du vill se mer data (t.ex. tabellkolumner) per panel.",
+      "label-combine-dashboard": "Kombinera alla instrumentpanelers PDF-filer till en enda fil",
+      "label-configure-multiple-pdfs": "Konfigurera flera PDF-filer",
+      "label-configure-report-header": "Konfigurera rapportrubrik",
+      "label-csv-encoding": "CSV-kodning",
+      "label-format-report": "2. Formatera rapport",
+      "label-layout": "Layout",
+      "label-orientation": "Orientering",
+      "label-show-template-variables": "Visa mallvariabler",
+      "label-style-the-pdf": "Styla PDF-filen",
+      "label-zoom": "Zooma",
+      "preview-pdf": "Förhandsgranska PDF",
+      "tooltip-download-table-panel": "Ladda ner tabellpaneldata som CSV-filer i en ZIP-fil"
+    },
+    "highlight-trial-report": {
+      "get-started-with-reporting": "Kom igång med rapportering",
+      "get-started-with-reporting-text": "Rapportering låter dig automatiskt generera PDF-filer från någon av dina instrumentpaneler och låta Grafana skicka dem via e-post till intresserade parter enligt ett schema.",
+      "learn-more": "Läs mer",
+      "text-create-unlimited-reports-during-trial-grafana": "Skapa obegränsade rapporter under din provperiod av Grafana Pro."
+    },
+    "report-upgrade-content": {
+      "description-reporting-allows-automatically-generate-dashboards-grafana": "Rapportering låter dig automatiskt generera PDF-filer från någon av dina instrumentpaneler och låta Grafana skicka dem via e-post till intresserade parter enligt ett schema."
+    },
+    "reports-list-page": {
+      "render-list": {
+        "create-a-new-report": "Skapa en ny rapport",
+        "placeholder-search-reports-report-dashboard-recipients": "Sök rapporter efter rapportnamn, instrumentpanelnamn eller mottagare",
+        "text": {
+          "create-report": "Skapa rapport"
+        },
+        "text-create-unlimited-reports-during-trial-grafana": "Skapa obegränsade rapporter under din provperiod av Grafana Pro."
+      }
+    },
+    "schedule": {
+      "label-frequency": "Frekvens",
+      "label-schedule": "3. Schema",
+      "label-start-date": "Startdatum",
+      "label-time": "Tid"
+    },
+    "select-dashboard": {
+      "aria-label-source-dashboard": "Källinstrumentpanel",
+      "description-time-range": "Generera rapport med data från angivet tidsintervall. Om det anpassade tidsintervallet är tomt används tidsintervallet från rapportens instrumentpanel.",
+      "label-source-dashboard": "Källinstrumentpanel",
+      "label-template-variables": "Mallvariabler",
+      "label-time-range": "Tidsintervall"
+    },
+    "select-dashboards": {
+      "add-another-dashboard": "Lägg till ytterligare en instrumentpanel",
+      "label-select-dashboard": "1. Välj instrumentpanel",
+      "remove-dashboard": "Ta bort instrumentpanel"
+    },
+    "send-test-email-modal": {
+      "cancel": "Avbryt",
+      "label-email": "E-post",
+      "label-use-emails-from-report": "Använd e-postadresser från rapport",
+      "send": "Skicka",
+      "title-send-test-email": "Skicka testmeddelande"
+    },
+    "share": {
+      "description-address-appear-reply-field-email": "Den adress som kommer att visas i fältet Svara till i e-postmeddelandet",
+      "description-separate-multiple-emails-comma-semicolon": "Åtskilj flera e-postadresser med ett kommatecken eller ett semikolon.",
+      "email-info-button": "Rapportnamnet kommer att användas som ämnesrad för e-post om detta fält lämnas tomt",
+      "email-subject": "E-postmeddelandets ämne",
+      "invalid-email": "Ogiltig e-postadress: {{email}}",
+      "invalid-emails": "Ogiltiga e-postadresser: {{emails}}",
+      "label-include-a-dashboard-link": "Inkludera en länk till instrumentpanelen",
+      "label-message": "Meddelande",
+      "label-recipients": "Mottagare",
+      "label-replyto-email-address": "E-postadress att använda som svarsadress",
+      "label-report-name": "Rapportnamn",
+      "label-share": "4. Dela",
+      "name-placeholder-system-status-report": "Systemstatusrapport",
+      "recipients-placeholder-recipients-email-addresses-press-enter": "Ange mottagarnas e-postadresser och tryck på Enter",
+      "send-test-email": "Skicka testmeddelande",
+      "subject-placeholder-email-subject": "E-postmeddelandets ämne",
+      "title-sending-test-email": "Skicka testmeddelande …"
+    },
+    "unavailable-feature-info-box": {
+      "title-feature-available-expired-license": "Funktionen är inte tillgänglig med en utgången licens"
+    },
+    "upgrade-report": {
+      "description-reporting-allows-automatically-generate-dashboards-grafana": "Rapportering låter dig automatiskt generera PDF-filer från någon av dina instrumentpaneler och låta Grafana skicka dem via e-post till intresserade parter enligt ett schema."
+    },
+    "variables-preview": {
+      "none": "inget"
+    }
+  },
+  "saml-connect-to-idp": {
+    "validate-idp-metadata": {
+      "require-one": "En metadatatyp bör definieras"
+    }
+  },
+  "saved-queries": {
+    "card": {
+      "aria-label": "{{title}}, {{datasource}}, av {{author}}",
+      "star": "Stjärnmärk",
+      "unknown-author": "Okänd författare",
+      "unknown-datasource": "Okänd datakälla",
+      "unstar": "Ta bort stjärnmärkning",
+      "untitled": "Namnlös"
+    },
+    "close-guard": {
+      "body": "Du har osparade ändringar i denna fråga. Är du säker på att du vill kassera dem?",
+      "confirm-button": "Kassera",
+      "title": "Kassera ändringar i frågan?"
+    },
+    "details": {
+      "author": "Författare",
+      "cancel": "Avbryt",
+      "create-error": "Det gick inte att spara frågan",
+      "datasource": "Datakälla",
+      "date-added": "Datum tillagt",
+      "default-title": "Ny fråga",
+      "delete": "Radera",
+      "delete-error": "Det gick inte att radera frågan",
+      "delete-modal": {
+        "body-text": "Du är på väg att ta bort denna sparade fråga. Den här åtgärden kan inte ångras. Vill du fortsätta?",
+        "confirm-button": "Radera fråga",
+        "title": "Radera fråga"
+      },
+      "delete-success": "Frågan raderad",
+      "description": "Beskrivning",
+      "duplicate": "Dubblett",
+      "edit": "Redigera",
+      "edit-in-explore": "Redigera i Utforska",
+      "editing-mode": "Redigerar fråga",
+      "panel-aria-label": "Information om fråga: {{title}}",
+      "save": "Spara",
+      "save-and-close": "Spara och stäng",
+      "save-success": "Förfrågan har sparats i biblioteket",
+      "select": "Välj fråga",
+      "tags": "Taggar",
+      "update-error": "Det gick inte att uppdatera frågan",
+      "update-success": "Frågan har uppdaterats"
+    },
+    "error-state": {
+      "title": "Något gick fel!"
+    },
+    "feedback": {
+      "alert-text": "Vi har nyligen gjort om Sparade frågor och skulle gärna vilja höra vad du tycker!",
+      "button": "Ge feedback"
+    },
+    "filters": {
+      "all-queries": "Alla frågor",
+      "author-label": "Författare",
+      "author-placeholder": "Välj författare",
+      "datasource-label": "Datakälla",
+      "datasource-placeholder": "Välj datakälla",
+      "panel-label": "Filter",
+      "remember-filters-label": "Kom ihåg filter",
+      "remember-filters-subtext": "Dina inställningar återställs vid nästa besök",
+      "search-label": "Sök",
+      "search-placeholder": "Sök efter …",
+      "sort-label": "Sortera",
+      "sort-placeholder": "Sortera",
+      "starred": "Stjärnmärkta frågor",
+      "starred-label": "Stjärnmärkta frågor",
+      "tags-label": "Taggar"
+    },
+    "library": {
+      "region-label": "Frågebibliotek"
+    },
+    "list": {
+      "empty": "Inga sparade frågor hittades",
+      "radiogroup-label": "Sparade frågor"
+    },
+    "modal": {
+      "aria-label": "Sparade frågor",
+      "title": "Sparade frågor"
+    },
+    "variable-adjuster": {
+      "combobox": {
+        "custom": "Anpassat värde",
+        "placeholder": "Välj värde"
+      },
+      "custom": {
+        "aria-label": "Anpassat värde att ersätta med {{variable}}",
+        "placeholder": "Ange anpassat värde"
+      },
+      "description": "Vi har upptäckt följande mallvariabler i din fråga. Dessa kan mappas till dina befintliga data. (Obs! Den sparade frågan kommer inte att ändras.)",
+      "group-aria-label": "Ersätt dina mallvariabler",
+      "title": "Ersätt dina mallvariabler"
+    }
+  },
+  "scim": {
+    "config": {
+      "addServiceAccount": "Klicka på ”Lägg till servicekonto”",
+      "addToken": "Klicka på ”Lägg till token”",
+      "confirmReset": "Återställ konfiguration",
+      "copied": "Kopierad!",
+      "copy": "Kopiera",
+      "copy-domain": "Kopiera domän till urklipp",
+      "copy-stack-id": "Kopiera stack-ID till urklipp",
+      "copyToken": "Kopiera token för din identitetsleverantör",
+      "createWithNone": "Skapa ett servicekonto med rollen: ”Ingen”",
+      "deleteScimSettingsUnknownError": "Okänt fel",
+      "domain": "Domän",
+      "fetchScimUsersUnknownError": "Okänt fel",
+      "goToPermissionsTab": "På fliken Behörigheter för servicekonto lägger du till dessa behörigheter:",
+      "goToServiceAccounts": "Gå till <2>Servicekonton</2>",
+      "groupSyncEnabled": "Aktivera gruppsynkronisering",
+      "groupSyncEnabledDescription": "Tillåt din identitetsleverantör att skapa, uppdatera och ta bort team i din Grafana Cloud-stack via SCIM. Kan inte aktiveras om Teamsynkronisering är aktiverad.",
+      "groupSyncPermissions": "Tillåt servicekontot att synkronisera grupper:",
+      "loadBaseUrlUnknownError": "Okänt fel",
+      "loadScimSettingsUnknownError": "Okänt fel",
+      "loadStackIdUnknownError": "Okänt fel",
+      "permission1": "org.users:read",
+      "permission2": "org.users:write",
+      "permission3": "org.users:add",
+      "permission4": "org.users:remove",
+      "permission5": "teams:read",
+      "permission6": "teams:create",
+      "permission7": "teams:write",
+      "permission8": "teams:delete",
+      "readMoreLink": "Läs mer om SCIM-tilldelning",
+      "rejectNonProvisionedUsers": "Avvisa icke-tilldelade användare",
+      "rejectNonProvisionedUsersDescription": "När det är aktiverat förhindras icke-SCIM-tilldelade användare från att logga in. Molnportal-användare kan alltid logga in oavsett denna inställning.",
+      "resetConfiguration": "Återställ SCIM-konfiguration",
+      "resetConfirmation": "Är du säker på att du vill återställa SCIM-konfigurationen? Det kommer att radera alla dynamiska SCIM-inställningar och återgå till konfigurationsfilens inställningar.",
+      "resetScimSettingsUnknownError": "Okänt fel",
+      "resetting": "Återställer …",
+      "resetToIniSettings": "Återställ för att använda inställningarna från konfigurationsfilen",
+      "resetWarning": "Den här åtgärden kan inte ångras. Efter återställning kommer Grafana att använda SCIM-inställningarna från din config.ini-fil.",
+      "scimSettingsDescription": "Din konfigurationsfil innehåller SCIM-inställningar. Du kan uppdatera dem på den här sidan eller återställa om du vill använda inställningarna från konfigurationsfilen.",
+      "scimSettingsInfo": "Konfigurationsfilen innehåller SCIM-inställningar",
+      "serviceAccountToken": "Så här skapar du ett servicekonto och en token för SCIM",
+      "serviceAccountTokenDescription": "Denna tjänstekontotoken kommer att användas av din identitetsleverantör för att tilldela användare och grupper i din Grafana Cloud-stack.",
+      "settingsUpdated": "SCIM-inställningarna har uppdaterats.",
+      "settingsUpdatedTitle": "Inställningar uppdaterade",
+      "stackId": "Stack-ID",
+      "step1": "1. Skapa servicekonto",
+      "step2": "2. Lägg till behörigheter",
+      "step3": "3. Generera token",
+      "tenantUrl": "Webbadress för kund",
+      "tenantUrlDescription": "Kundens webbadress för din identitetsleverantörskonfiguration. Detta är den grundläggande webbadress som din IdP kommer att använda för att ansluta till din Grafana Cloud-stacks SCIM-API.",
+      "updateScimSettingsUnknownError": "Okänt fel",
+      "userSyncEnabled": "Aktivera användarsynkronisering",
+      "userSyncEnabledDescription": "Tillåt din identitetsleverantör att skapa, uppdatera och ta bort användare i din Grafana Cloud-stack via SCIM.",
+      "userSyncPermissions": "Tillåt servicekontot att synkronisera användare:"
+    },
+    "featureDisabled": {
+      "message": "SCIM-funktionen är inte aktiverad. Aktivera funktionsväxlaren <1>enableSCIM</1> i din konfiguration för att använda SCIM-funktionalitet.",
+      "title": "SCIM-funktion inaktiverad"
+    }
+  },
+  "secrets": {
+    "actions": {
+      "create-secret": "Skapa säkert värde"
+    },
+    "edit-modal": {
+      "form": {
+        "button-create": "Skapa",
+        "button-update": "Uppdatera"
+      },
+      "title": {
+        "create": "Skapa hemlighet",
+        "edit": "Redigera hemlighet {{name}}"
+      }
+    },
+    "empty-state": {
+      "description": "Du kan använda hemligheter för att lagra privat information som till exempel lösenord, API-nycklar och andra känsliga data.",
+      "description-no-create": "Du har inte behörighet att skapa säkra värden. Kontakta administratören för att skapa ett nytt säkert värde.",
+      "title": "Du har inga hemligheter ännu."
+    },
+    "error-state": {
+      "body": "<p>Det kan bero på dåliga nätverksförhållanden eller ett potentiellt tillägg som blockerar förfrågningar. Försök igen och kontakta supporten om problemet kvarstår.</p><1><0>Detaljer: {{details}}</0></1>",
+      "details": "<0>Detaljer: {{message}}</0>",
+      "message": "Något gick fel",
+      "retry": "<0>Försök igen</0>",
+      "unknown-error": "Okänt fel"
+    },
+    "form": {
+      "btn-cancel": "Avbryt",
+      "decrypters": {
+        "description": "Tjänster som kan dekryptera hemligt värde",
+        "label": "Dekrypterare",
+        "placeholder": "Välj dekrypterare"
+      },
+      "description": {
+        "description": "Kort beskrivning av syftet med denna hemlighet",
+        "error": {
+          "required": "Beskrivning krävs",
+          "too-long": "Beskrivningen måste ha färre än {{maxLength}} tecken"
+        },
+        "label": "Beskrivning"
+      },
+      "label-name": {
+        "error": {
+          "invalid": "Etikettnamnet måste börja och sluta med en bokstav eller siffra och kan endast innehålla bokstäver, siffror, bindestreck, understreck och punkter",
+          "required": "Etikettnamn krävs",
+          "too-long": "Etikettnamnet måste ha färre än {{maxLength}} tecken",
+          "unique": "Etikettnamnet måste vara unikt"
+        },
+        "placeholder": "namn"
+      },
+      "label-value": {
+        "error": {
+          "invalid": "Etikettvärdet måste börja och sluta med en bokstav eller siffra och kan endast innehålla bokstäver, siffror, bindestreck, understreck och punkter",
+          "required": "Etikettvärde krävs",
+          "too-long": "Etikettvärdet måste ha färre än {{maxLength}} tecken"
+        },
+        "placeholder": "värde"
+      },
+      "labels": {
+        "actions": {
+          "add": "Lägg till etikett",
+          "aria-label-remove": "Ta bort etikett"
+        },
+        "description": "Etiketter för att kategorisera hemligheten",
+        "error": {
+          "too-many": "Maximalt antal etiketter har uppnåtts (max: {{maxLabels}})"
+        },
+        "label": "Etiketter"
+      },
+      "name": {
+        "description": "Namnet kommer att användas för att referera till hemligheten",
+        "error": {
+          "invalid": "Namnet måste börja och sluta med en bokstav eller siffra och kan endast innehålla bokstäver, siffror, bindestreck och punkter",
+          "required": "Namn är obligatoriskt",
+          "too-long": "Namnet måste ha färre än {{maxLength}} tecken",
+          "unique": "En hemlighet med detta namn finns redan"
+        },
+        "label": "Namn"
+      },
+      "value": {
+        "description": "Hemligt värde",
+        "error": {
+          "required": "Värde krävs",
+          "too-long": "Värdet måste ha färre än {{maxLength}} tecken"
+        },
+        "label": "Värde"
+      }
+    },
+    "item": {
+      "copy-value-aria-label": "Kopiera ”{{value}}”",
+      "delete-item-aria-label": "Radera {{name}}",
+      "delete-modal": {
+        "body": "Är du säker på att du vill radera <1>{{name}}</1>?",
+        "confirm-text": "radera",
+        "delete-button": "Radera",
+        "description": "Att radera en hemlighet är oåterkalleligt och kommer att ta bort hemligheten från Grafana. Alla referenser till denna hemlighet kommer att brytas.",
+        "title": "Radera hemlighet"
+      },
+      "edit-item": "Redigera",
+      "edit-item-aria-label": "Redigera {{name}}",
+      "label-created": "Skapad:",
+      "label-decrypters": "Dekrypterare:",
+      "label-description": "Beskrivning:",
+      "label-keeper": "<strong>Ansvarig:</strong><1>{{keeper}}</1>",
+      "label-modified": "Ändrat:"
+    },
+    "mutation-error": {
+      "create": "Det gick inte att skapa hemlighet. Försök igen och kontakta supporten om problemet kvarstår",
+      "title": "Fel vid begäran",
+      "update": "Det gick inte att uppdatera hemlighet. Försök igen och kontakta supporten om problemet kvarstår"
+    },
+    "mutation-success": {
+      "create": "Hemligheten ”{{name}}” skapades",
+      "update": "Hemligheten ”{{name}}” uppdaterades"
+    },
+    "page-title": "Hemligheter",
+    "search-placeholder": "Sök säkert värde efter namn",
+    "search-result": {
+      "clear-filters": "Rensa aktivt filter för att se alla hemligheter.",
+      "no-results": "Inga hemligheter hittades"
+    },
+    "secret-value-input": {
+      "configured-value": "konfigurerad",
+      "reset-button": "<0>Återställ</0>"
+    },
+    "sub-title": "Hantera hemligheter för användning i Grafana. Läs mer i vår <2>dokumentation</2>",
+    "tabs": {
+      "keepers": "Ansvariga",
+      "values": "Värden"
+    }
+  },
+  "secrets-keeper": {
+    "create": {
+      "btn-create": "Skapa",
+      "error": {
+        "title": "Det gick inte att skapa ansvarig"
+      },
+      "subtitle": "Välj en typ av ansvarig för att lagra och hantera dina hemligheter.",
+      "subtitle-typed": "",
+      "success": "Den ansvarige ”{{name}}” skapades",
+      "title": "Ny ansvarig",
+      "title-typed": ""
+    },
+    "edit": {
+      "active-badge": "",
+      "back-to-keepers": "",
+      "btn-save": "",
+      "error": {
+        "fetch-title": "",
+        "no-keeper": "",
+        "submit-title": "",
+        "unsupported-body": "",
+        "unsupported-title": ""
+      },
+      "hide-instructions": "",
+      "inactive-badge": "",
+      "show-instructions": "",
+      "subtitle": "",
+      "success": ""
+    },
+    "form": {
+      "active": {
+        "description": "",
+        "label": ""
+      },
+      "aws-arn": {
+        "description": "ARN för IAM-roll som ska antas för åtkomst",
+        "error": {
+          "invalid": ""
+        },
+        "label": ""
+      },
+      "aws-region": {
+        "description": "AWS-region (t.ex. us-east-1)",
+        "error": {
+          "invalid": ""
+        },
+        "label": "Region"
+      },
+      "btn-cancel": "Avbryt",
+      "description": {
+        "description": "Kort beskrivning av syftet med denna ansvarig",
+        "error": {
+          "required": "Beskrivning krävs",
+          "too-long": "Beskrivningen får ha högst {{maxLength}} tecken"
+        },
+        "label": "Beskrivning"
+      },
+      "error": {
+        "required": "Det här fältet är obligatoriskt"
+      },
+      "name": {
+        "description": "Ett unikt namn för denna ansvarig",
+        "error": {
+          "invalid": "Namnet måste börja och sluta med en bokstav eller siffra och kan endast innehålla bokstäver, siffror, bindestreck och punkter",
+          "required": "Namn är obligatoriskt",
+          "too-long": "Namnet får ha högst {{maxLength}} tecken"
+        },
+        "label": "Namn"
+      },
+      "required-note": ""
+    },
+    "home": {
+      "activate": "",
+      "activate-aria": "",
+      "activate-modal": {
+        "body": "",
+        "confirm-button": "",
+        "description": "",
+        "error-title": "",
+        "success": "",
+        "title": ""
+      },
+      "active-badge": "Aktiv",
+      "active-keeper": "Aktiv ansvarig: {{name}} ({{type}})",
+      "active-keeper-default": "",
+      "add-first-keeper": "Lägg till din första ansvariga",
+      "add-keeper": "Lägg till ansvarig",
+      "deactivate-modal": {
+        "body": "",
+        "confirm-button": "",
+        "description": "",
+        "error-title": "",
+        "success": "",
+        "title": ""
+      },
+      "delete-aria": "",
+      "delete-error": "",
+      "delete-modal": {
+        "body": "",
+        "confirm-button": "",
+        "confirm-text": "",
+        "description": "",
+        "dismiss-button": "",
+        "title": ""
+      },
+      "delete-success": "",
+      "empty-state": "Med hemlighetsansvariga kan du spara Grafana-hemligheter i externa tjänster, t.ex. AWS Secrets Manager.",
+      "empty-title": "Inga ansvariga har konfigurerats",
+      "error-title": "Fel vid laddning av ansvariga",
+      "modal": {
+        "dismiss-button": ""
+      },
+      "revert-to-system": "",
+      "subtitle": "Hantera extern lagring av hemligheter för Grafana",
+      "view-details": "Visa detaljer",
+      "view-details-aria": "Visa detaljer för {{name}}"
+    },
+    "instructions": {
+      "continue": "",
+      "copy": "",
+      "s1": {
+        "complete": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "title": ""
+        },
+        "info-body": "",
+        "info-title": "",
+        "kms-drawer": {
+          "intro": "",
+          "label": ""
+        },
+        "navigate": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "title": ""
+        },
+        "permissions": {
+          "intro": "",
+          "title": ""
+        },
+        "title": "",
+        "view-policy-json": ""
+      },
+      "s2": {
+        "attach": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "step5": "",
+          "title": ""
+        },
+        "create": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "step5": "",
+          "step6": "",
+          "step7": "",
+          "title": ""
+        },
+        "intro": "",
+        "title": ""
+      },
+      "s3": {
+        "arn": {
+          "step1": "",
+          "step2": "",
+          "title": ""
+        },
+        "info-body": "",
+        "info-title": "",
+        "intro": "",
+        "navigate": {
+          "step1": "",
+          "step2": "",
+          "step3": "",
+          "step4": "",
+          "title": ""
+        },
+        "title": "",
+        "verify": {
+          "intro": "",
+          "title": ""
+        },
+        "view-trust-policy": ""
+      },
+      "s4": {
+        "title": ""
+      },
+      "section-complete": ""
+    },
+    "provider": {
+      "aws": {
+        "description": "Lagra och hantera hemligheter med Amazon Web Services Secrets Manager med rollbaserad IAM-autentisering.",
+        "name": "AWS Secrets Manager"
+      }
+    },
+    "type": {
+      "aws": "AWS Secrets Manager",
+      "system": "System (Grafana)",
+      "unknown": "Okänt"
+    }
+  },
+  "share-dashboard": {
+    "menu": {
+      "export-pdf-title": "Exportera som PDF",
+      "schedule-report-title": "Schemalägg rapport"
+    }
+  },
+  "share-report": {
+    "actions": {
+      "aria-label-open-menu": "Öppna åtgärdsmenyn",
+      "download-csv-label": "Ladda ner CSV",
+      "downloading-label": "Hämtar …",
+      "preview-pdf-label": "Förhandsgranska PDF",
+      "report-settings-label": "Rapportinställningar"
+    },
+    "attachments": {
+      "combine-one-file": "Kombinera alla instrumentpanelers PDF-filer i en fil",
+      "csv-tables": "Bifoga en CSV-fil av tabellpaneldata",
+      "layout": "Layout",
+      "orientation": "Orientering",
+      "orientation-tooltip": "Orienteringsvalet kommer att tillämpas på instrumentpanelens PDF, tabelldata och PDF-bilagan",
+      "pdf-format": "PDF-format",
+      "pdf-report": "Bifoga rapporten som PDF",
+      "pdf-tables": "Bifoga en separat PDF av tabelldata",
+      "pdf-tables-appendix": "Inkludera tabelldata som PDF-bilaga",
+      "section-title": "Bilagor",
+      "show-template-variables": "Visa mallvariabler i rubriken",
+      "zoom": "Zoomskala"
+    },
+    "back-button-text": "Tillbaka till rapportlistan",
+    "confirm-delete": {
+      "button": "Ta bort rapport",
+      "description": "Är du säker på att du vill radera denna rapport?",
+      "title": "Ta bort rapport"
+    },
+    "create-report": "Skapa en ny rapport",
+    "csvOptions": {
+      "csv-encoding": "CSV-kodning"
+    },
+    "dashboard": {
+      "add-dashboard": "Lägg till instrumentpanel",
+      "dashboard-required": "Instrumentpanel är obligatoriskt",
+      "delete-dashboard-tooltip": "Radera denna instrumentpanel",
+      "repeated-template-variables-description": "När du lägger till samma instrumentpanel flera gånger i en rapport tillämpas de mallvariabler som du valde först på alla instanser av den instrumentpanelen i rapporten.",
+      "section-title": "Instrumentpaneler",
+      "source-dashboard-label": "Källinstrumentpanel",
+      "template-variables-title": "Anpassa mallvariabler",
+      "time-range-description": "Tomt tidsintervall kommer att använda tidsintervallet från rapportens kontrollpanel. Absolut tidsintervall representeras i din webbläsares tidszon.",
+      "time-range-label": "Tidsintervall",
+      "view-dashboard-tooltip": "Visa instrumentpanel"
+    },
+    "discard-changes": {
+      "discard-button": "Kassera",
+      "text": "Det finns ändringar i denna instrumentpanelrapport som inte sparats. Är du säker på att du vill kassera dem?",
+      "title": "Kassera ändringar i rapporten?"
+    },
+    "email-configuration": {
+      "add-dashboard-image-label": "Bädda in instrumentpanelbild",
+      "add-dashboard-url-label": "Inkludera en länk till instrumentpanelen",
+      "dashboard-image-settings-description": "Instrumentpanelens bildinställningar kan justeras i de allmänna <1>rapportinställningarna</1>",
+      "invalid-email": "Ogiltig e-postadress",
+      "message-label": "Meddelande",
+      "message-placeholder": "Ange ett meddelande",
+      "reply-to-label": "E-postadress att använda som svarsadress",
+      "section-title": "E-postinställningar",
+      "subject-description": "Rapportnamnet kommer att användas som ämnesrad för e-post om detta fält lämnas tomt",
+      "subject-label": "E-postmeddelandets ämne"
+    },
+    "empty-list": {
+      "description": "Skapa en rapport från denna instrumentpanel. <2>Läs mer</2>",
+      "title": "Det finns inga rapporter för denna instrumentpanel"
+    },
+    "error-form": {
+      "title": "Fel vid laddning av rapport"
+    },
+    "error-list": {
+      "title": "Fel vid laddning av rapporter"
+    },
+    "loading-form": "Laddar formulär …",
+    "loading-report": "Laddar rapport …",
+    "loading-report-form": "Laddar rapportformulär …",
+    "loading-reports": "Laddar rapporter …",
+    "recipient-input": {
+      "add": "Lägg till",
+      "placeholder": "Ange mottagarnas e-postadresser och tryck på Enter",
+      "remove": "Ta bort mottagare: {{name}}"
+    },
+    "recipients": {
+      "field-label": "Mottagare",
+      "invalid-email": "Ogiltig e-postadress: {{email}}",
+      "invalid-emails": "Ogiltiga e-postadresser: {{emails}}",
+      "placeholder": "Ange mottagarnas e-postadresser och tryck på Enter",
+      "recipients-required": "Mottagare krävs",
+      "section-title": "Mottagare",
+      "tooltip": "Åtskilj flera e-postadresser med ett kommatecken eller ett semikolon"
+    },
+    "report-name": {
+      "label": "Rapportnamn",
+      "required": "Rapportnamn är obligatoriskt"
+    },
+    "save-draft": {
+      "button": "Spara utkast",
+      "saving-button": "Sparar utkast …"
+    },
+    "schedule": {
+      "end-date": "Slutdatum",
+      "end-date-invalid": "Slutdatumet måste vara större än eller lika med startdatumet",
+      "end-date-placeholder": "Slutar inte",
+      "end-time": "Sluttid",
+      "frequency": "Frekvens",
+      "interval-amount-min": "Intervallmängden måste vara minst 2",
+      "interval-amount-required": "Intervallmängd krävs",
+      "last-day-of-month": "Skicka på den sista dagen i månaden",
+      "monthly-schedule-alert-title": "Obs! Rapporter skickas inte på månader som inte har en dag {{ dayNumber }}. Välj ett tidigare datum eller välj ”Skicka på den sista dagen i månaden” om du vill skicka en rapport i slutet av varje månad.",
+      "repeat-every": "Upprepa varje",
+      "repeat-every-placeholder": "t.ex. 2",
+      "repeat-interval-frequency-placeholder": "t.ex. timmar",
+      "section-title": "Schema",
+      "send-time": "Schema",
+      "start-date": "Startdatum",
+      "start-date-placeholder": "Välj datum",
+      "start-date-required": "Startdatum krävs",
+      "start-time": "Starttid",
+      "time-zone": "Tidszon",
+      "workdays-only": "Skicka endast måndag till fredag"
+    },
+    "schedule-report": {
+      "button": "Schemalägg rapport",
+      "scheduling-button": "Schemalägger rapport …"
+    },
+    "see-all-reports": "Se alla rapporter",
+    "send-preview": {
+      "button": "Skicka förhandsvisning",
+      "cancel": "Avbryt",
+      "email": "E-post",
+      "email-description": "Åtskilj flera e-postadresser med ett kommatecken eller ett semikolon",
+      "email-required": "E-post är obligatoriskt",
+      "send": "Skicka",
+      "sending": "Skickar …",
+      "use-report-emails": "Använd e-postadresser från rapport"
+    },
+    "settings": {
+      "loading": "Laddar inställningar …"
+    },
+    "state": "Tillstånd:",
+    "unavailable-feature-info-box": {
+      "message": "Att skapa nya rapporter är inte tillgängligt med en utgången licens. Befintliga rapporter fortsätter att behandlas, men du måste uppdatera din licens om du vill skapa en ny."
+    },
+    "update-report": {
+      "button": "Uppdatera rapport",
+      "delete-button": "Radera",
+      "pause-button": "Pausa",
+      "pausing-button": "Pausar rapport …",
+      "resume-button": "Återuppta",
+      "resuming-button": "Återupptar rapport …",
+      "updating-button": "Uppdaterar rapport …"
+    }
+  },
+  "shared": {
+    "resource-picker": {
+      "placeholder-select-color": "Välj färg"
+    }
+  },
+  "team-lbac": {
+    "create-team-lbacform": {
+      "label-rule": "Regel",
+      "label-team": "Team",
+      "new-lbac-rule": "Ny LBAC-regel",
+      "new-lbac-rule-example": "Exempel:",
+      "save": "Spara"
+    },
+    "editable-cell": {
+      "empty-rule": "Tom regel"
+    },
+    "team-label": {
+      "placeholder": "Team med ID {{teamId}} hittades inte"
+    },
+    "team-lbaceditor-unconnected": {
+      "add-a-lbac-rule": "Lägg till en LBAC-regel",
+      "add-query-permissions": "<strong>Lägg till frågebehörigheter:</strong> Följande team har inte frågebehörigheter för datakällan och kan därför inte fråga loggar med de konfigurerade LBAC-reglerna.",
+      "add-team-lbac-rules": "<strong>Lägg till LBAC-regler för team:</strong> Följande team kan köra frågor mot alla loggar. Lägg till LBAC-regler för team för dem:",
+      "clear-filter": "Rensa",
+      "clear-filter-aria-label": "Rensa filter",
+      "content-found-recommendation": "Hittade rekommendationer",
+      "description-data-access": "Här kan du konfigurera åtkomst till specifika data inom datakällan med hjälp av LogQL-etikettväljare.",
+      "ensure-proper-access-control-please-follow": "Följ dessa rekommendationer för att säkerställa korrekt åtkomstkontroll:",
+      "filter-results-single": "Visar 1 resultat",
+      "filter-teams-aria-label": "Filtrera LBAC-regler efter teamnamn",
+      "filter-teams-placeholder": "Filtrera team",
+      "hide-access-control-recommendations": "Dölj rekommendationer för åtkomstkontroll",
+      "hide-lbac-rule": "Dölj LBAC-regel",
+      "label-selector": "Etikettväljare",
+      "lbac-description-loki": "Konfigurera LBAC-regler för att begränsa åtkomsten för specifika loggar.",
+      "lbac-description-prometheus": "Konfigurera LBAC-regler för att begränsa åtkomsten för specifika mätvärden.",
+      "lbac-description-tempo": "Konfigurera LBAC-regler för att begränsa åtkomsten för specifika spår.",
+      "lbac-labelbased-access-control": "LBAC (etikettbaserad åtkomstkontroll)",
+      "lbac-rules-note": "Obs!<br/>– LBAC-regler tillämpas INTE på frågan om den autentiserade Cloud Access Policy-token har konfigurerade etikettväljare i Grafana Cloud.<br/>– Det kan ta upp till fem minuter innan ändringar i LBAC-regler slår igenom på grund av cachning i frågevägen.",
+      "lbac-size-warning-details": "Befintlig storlek: {{sizeInKB}}KB",
+      "lbac-size-warning-title": "Varning om storlek för LBAC-regler",
+      "learn-more-about-lbac-rules": "Läs mer om LBAC-regler",
+      "remove-unrestricted-access": "<strong>Ta bort obegränsad åtkomst:</strong> Följande roller har för närvarande obegränsad åtkomst till loggar.",
+      "role-warning-list": "Roll: {{role}}",
+      "show-access-control-recommendations": "Visa rekommendationer för åtkomstkontroll",
+      "sort-teams-ascending": "Sortera team A–Ö",
+      "sort-teams-descending": "Sortera team Ö–A",
+      "team": "Team",
+      "title-access-control-recommendations": "Rekommendationer för åtkomstkontroll",
+      "title-data-access": "Dataåtkomst",
+      "filter-results-multiple_one": "Visar {{count}} resultat",
+      "filter-results-multiple_other": "Visar {{count}} resultat"
+    },
+    "team-rules-row": {
+      "aria-label-add-team-rule": "lägg till teamregel",
+      "aria-label-delete-rule": "Radera regel",
+      "aria-label-edit-team-rule": "redigera teamregel",
+      "cancel": "Avbryt",
+      "or": "ELLER",
+      "save": "Spara",
+      "tooltip-add-new-rule": "Lägg till ny regel",
+      "tooltip-provisioned-rule": "Tilldelad regel"
+    }
+  },
+  "teamLBAC": {
+    "create-team-lbacform": {
+      "message": {
+        "required": "Krävs"
+      }
+    }
+  }
+}

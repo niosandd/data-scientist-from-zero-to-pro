@@ -1,0 +1,32 @@
+{
+    "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+    "type": "panel",
+    "name": "Assistant",
+    "id": "grafana-assistant-panel",
+    "skipDataQuery": true,
+    "info": {
+        "keywords": [
+            "panel",
+            "assistant",
+            "investigations",
+            "slo"
+        ],
+        "description": "Grafana Assistant panel — view and trigger investigations from dashboards",
+        "author": {
+            "name": "Grafana"
+        },
+        "logos": {
+            "small": "img/logo.svg",
+            "large": "img/logo.svg"
+        },
+        "links": [],
+        "screenshots": [],
+        "version": "%VERSION%",
+        "updated": "%TODAY%"
+    },
+    "dependencies": {
+        "grafanaDependency": ">=12.0.0-0",
+        "plugins": []
+    },
+    "buildMode": "production"
+}

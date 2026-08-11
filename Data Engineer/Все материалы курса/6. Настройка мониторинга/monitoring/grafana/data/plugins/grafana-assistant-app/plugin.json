@@ -1,0 +1,952 @@
+{
+    "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
+    "type": "app",
+    "name": "Grafana Assistant",
+    "id": "grafana-assistant-app",
+    "autoEnabled": true,
+    "backend": true,
+    "executable": "gpx_dash",
+    "info": {
+        "keywords": [
+            "app",
+            "assistant",
+            "ai",
+            "copilot",
+            "natural language",
+            "llm",
+            "claude",
+            "chatgpt",
+            "openai",
+            "codex",
+            "dashboard",
+            "PromQL",
+            "LogQL",
+            "SQL",
+            "troubleshooting",
+            "root cause analysis",
+            "rca"
+        ],
+        "description": "AI assistant for Grafana that helps teams troubleshoot issues, query telemetry, manage dashboards, and navigate Grafana in Cloud or connected self-managed deployments.",
+        "author": {
+            "name": "Grafana"
+        },
+        "logos": {
+            "small": "img/logo.svg",
+            "large": "img/logo.svg"
+        },
+        "screenshots": [],
+        "version": "2.0.46",
+        "updated": "2026-08-05",
+        "links": [
+            {
+                "name": "documentation",
+                "url": "https://grafana.com/docs/grafana-cloud/machine-learning/assistant/get-started/"
+            },
+            {
+                "name": "repository",
+                "url": "https://github.com/grafana/grafana"
+            }
+        ]
+    },
+    "dependencies": {
+        "grafanaDependency": ">=13.0.0-0",
+        "plugins": [],
+        "extensions": {
+            "exposedComponents": [
+                "grafana-exploretraces-app/embedded-trace-exploration/v1",
+                "grafana-metricsdrilldown-app/mini-breakdown-component/v1"
+            ]
+        }
+    },
+    "includes": [
+        {
+            "type": "page",
+            "name": "Grafana Assistant",
+            "path": "/a/grafana-assistant-app",
+            "addToNav": true,
+            "defaultNav": true
+        },
+        {
+            "type": "page",
+            "name": "Workspace",
+            "path": "/a/grafana-assistant-app/workspace",
+            "addToNav": true,
+            "defaultNav": false
+        },
+        {
+            "type": "page",
+            "name": "Investigations",
+            "path": "/a/grafana-assistant-app/investigations",
+            "addToNav": true,
+            "defaultNav": false,
+            "action": "grafana-assistant-app.investigations:read"
+        },
+        {
+            "type": "page",
+            "name": "Automations",
+            "path": "/a/grafana-assistant-app/automations",
+            "addToNav": true,
+            "defaultNav": false,
+            "action": "grafana-assistant-app.automations.user:read"
+        },
+        {
+            "type": "page",
+            "name": "Watchers",
+            "path": "/a/grafana-assistant-app/watchers",
+            "addToNav": true,
+            "defaultNav": false,
+            "action": "grafana-assistant-app.watcher-agents:read"
+        },
+        {
+            "type": "page",
+            "name": "Search",
+            "path": "/a/grafana-assistant-app/assistant-search",
+            "addToNav": true,
+            "defaultNav": false
+        },
+        {
+            "type": "page",
+            "name": "Usage",
+            "path": "/a/grafana-assistant-app/usage",
+            "addToNav": true,
+            "defaultNav": false,
+            "action": "grafana-assistant-app.usage:read"
+        },
+        {
+            "type": "page",
+            "name": "Settings",
+            "path": "/a/grafana-assistant-app/settings",
+            "addToNav": true,
+            "defaultNav": false
+        },
+        {
+            "type": "panel",
+            "name": "Grafana Assistant panel",
+            "path": "features/assistant-panel/plugin.json"
+        }
+    ],
+    "extensions": {
+        "addedComponents": [
+            {
+                "targets": [
+                    "grafana/homepage/assistant/v1"
+                ],
+                "description": "Opens Grafana Assistant",
+                "title": "Grafana Assistant"
+            },
+            {
+                "targets": [
+                    "grafana-setupguide-app/home-assistant/v1"
+                ],
+                "description": "Opens Grafana Assistant",
+                "title": "Grafana Assistant"
+            },
+            {
+                "targets": [
+                    "grafana-setupguide-app/getting-started-assistant/v1"
+                ],
+                "description": "Opens Grafana Assistant",
+                "title": "Grafana Assistant"
+            },
+            {
+                "targets": [
+                    "grafana-setupguide-app/onboarding-flow-assistant/v1"
+                ],
+                "description": "Exposes Grafana Assistant terms auto-accept method",
+                "title": "Grafana Assistant"
+            },
+            {
+                "targets": [
+                    "grafana/extension-sidebar/v0-alpha"
+                ],
+                "description": "Opens Grafana Assistant",
+                "title": "Grafana Assistant"
+            },
+            {
+                "targets": [
+                    "grafana/datasources/config/status"
+                ],
+                "description": "Explain in Assistant",
+                "title": "Explain in Assistant"
+            },
+            {
+                "targets": [
+                    "grafana/traceview/header/actions"
+                ],
+                "description": "AI Trace Analysis",
+                "title": "Analyze trace with AI assistant"
+            }
+        ],
+        "addedLinks": [
+            {
+                "targets": [
+                    "grafana/extension-sidebar/v0-alpha"
+                ],
+                "description": "Opens Grafana Assistant",
+                "title": "Grafana Assistant"
+            },
+            {
+                "targets": [
+                    "grafana/dashboard/panel/menu"
+                ],
+                "description": "Explain what this panel shows",
+                "title": "Explain in Assistant"
+            },
+            {
+                "targets": [
+                    "grafana/dashboard/panel/menu"
+                ],
+                "description": "Diagnose why this panel may not be working correctly",
+                "title": "Troubleshoot panel"
+            },
+            {
+                "targets": [
+                    "grafana/dashboard/panel/menu"
+                ],
+                "description": "Analyze the data shown in this panel",
+                "title": "Analyze data"
+            },
+            {
+                "targets": [
+                    "grafana/dashboard/panel/menu"
+                ],
+                "description": "Suggest visualization and query improvements for this panel",
+                "title": "Suggest improvements"
+            },
+            {
+                "targets": [
+                    "grafana/commandpalette/action"
+                ],
+                "description": "✨ Open Assistant",
+                "title": "✨ Open Assistant"
+            },
+            {
+                "targets": [
+                    "grafana/commandpalette/action"
+                ],
+                "description": "Assistant Skills",
+                "title": "Assistant Skills"
+            },
+            {
+                "targets": [
+                    "grafana/commandpalette/action"
+                ],
+                "description": "Assistant Automations",
+                "title": "Assistant Automations"
+            },
+            {
+                "targets": [
+                    "grafana/commandpalette/action"
+                ],
+                "description": "Assistant Watchers",
+                "title": "Assistant Watchers"
+            }
+        ],
+        "extensionPoints": [
+            {
+                "id": "grafana-assistant-app/extension/v1",
+                "title": "Grafana Assistant extension",
+                "description": "App plugins register a manifest function here to contribute tool cards, widget detectors, starters, artifact kinds, and prompt contributions to the Grafana Assistant."
+            }
+        ],
+        "exposedComponents": [
+            {
+                "id": "grafana-assistant-app/connect/v1",
+                "title": "Connect to Grafana Cloud",
+                "description": "Starts the Grafana Cloud connection flow for self-hosted Grafana"
+            },
+            {
+                "id": "grafana-assistant-app/view-report/v1",
+                "title": "Investigation Findings",
+                "description": "Displays minimal investigation key findings"
+            },
+            {
+                "id": "grafana-assistant-app/investigation-status/v1",
+                "title": "Investigation Status",
+                "description": "Displays investigation status with animated progress indicator, summary, and duration"
+            },
+            {
+                "id": "grafana-assistant-app/view-report/v2",
+                "title": "Investigation Report (v2)",
+                "description": "Renders the v2 Lodestone investigation report for the given investigationId"
+            },
+            {
+                "id": "grafana-assistant-app/workspace-link/v1",
+                "title": "Open in Workspace",
+                "description": "Button that opens the Grafana Assistant workspace for the given investigation"
+            },
+            {
+                "id": "grafana-assistant-app/fullscreen-workspace/v1",
+                "title": "Fullscreen Workspace",
+                "description": "Fullscreen workspace (chat + canvas + Platform tab) rendered inside Grafana fullscreen workspace"
+            }
+        ]
+    },
+    "iam": {
+        "permissions": [
+            {
+                "action": "datasources:read",
+                "scope": "datasources:*"
+            },
+            {
+                "action": "datasources:query",
+                "scope": "datasources:*"
+            },
+            {
+                "action": "datasources:explore",
+                "scope": "datasources:*"
+            },
+            {
+                "action": "datasources:create"
+            },
+            {
+                "action": "datasources:write",
+                "scope": "datasources:*"
+            },
+            {
+                "action": "users.permissions:read",
+                "scope": "users:*"
+            },
+            {
+                "action": "plugins.app:access",
+                "scope": "plugins:id:grafana-irm-app"
+            },
+            {
+                "action": "plugins.app:access",
+                "scope": "plugins:id:grafana-slo-app"
+            },
+            {
+                "action": "plugins.app:access",
+                "scope": "plugins:id:grafana-asserts-app"
+            },
+            {
+                "action": "plugins.app:access",
+                "scope": "plugins:id:grafana-assistant-app"
+            },
+            {
+                "action": "plugins:install",
+                "scope": "plugins:*"
+            },
+            {
+                "action": "grafana-slo-app.slo:read"
+            },
+            {
+                "action": "grafana-irm-app.outgoing-webhooks:read"
+            },
+            {
+                "action": "grafana-irm-app.outgoing-webhooks:write"
+            },
+            {
+                "action": "grafana-irm-app.integrations:read"
+            },
+            {
+                "action": "grafana-irm-app.alert-groups:read"
+            },
+            {
+                "action": "grafana-irm-app.alert-groups:write"
+            },
+            {
+                "action": "grafana-irm-app.schedules:read"
+            },
+            {
+                "action": "grafana-irm-app.schedules-swaps:write"
+            },
+            {
+                "action": "grafana-irm-app.user-settings:read"
+            },
+            {
+                "action": "alert.rules:read",
+                "scope": "folders:*"
+            },
+            {
+                "action": "alert.rules:list",
+                "scope": "folders:*"
+            },
+            {
+                "action": "alert.instances:read"
+            },
+            {
+                "action": "folders:read",
+                "scope": "folders:*"
+            },
+            {
+                "action": "alert.silences:read"
+            },
+            {
+                "action": "alert.silences:write"
+            },
+            {
+                "action": "alert.enrichments:read"
+            },
+            {
+                "action": "alert.enrichments:write"
+            },
+            {
+                "action": "alert.notifications:read"
+            },
+            {
+                "action": "alert.provisioning:read"
+            },
+            {
+                "action": "dashboards:read",
+                "scope": "dashboards:*"
+            },
+            {
+                "action": "users:read",
+                "scope": "global.users:*"
+            },
+            {
+                "action": "teams:read",
+                "scope": "teams:*"
+            },
+            {
+                "action": "plugins:write",
+                "scope": "plugins:id:grafana-assistant-app"
+            }
+        ]
+    },
+    "roles": [
+        {
+            "grants": [
+                "Viewer"
+            ],
+            "role": {
+                "name": "Assistant User",
+                "description": "Basic access to Grafana Assistant with read-only capabilities",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.chats:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.personal-memories:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.personal-memories:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.personal-memories:delete"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Editor"
+            ],
+            "role": {
+                "name": "Assistant MCP User",
+                "description": "Can use Grafana Assistant and add personal MCP servers",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.chats:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.github:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cursor:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.tenant:read"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Editor"
+            ],
+            "role": {
+                "name": "Assistant CLI User",
+                "description": "Can authenticate and manage CLI tokens for Grafana Assistant",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.chats:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.tokens:access"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Viewer"
+            ],
+            "role": {
+                "name": "gcx User",
+                "description": "Can authorize gcx CLI connections to Grafana.",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.tokens.gcx:access"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Editor"
+            ],
+            "role": {
+                "name": "Assistant Cloud MCP User",
+                "description": "Can authorize and manage external MCP client connections to Grafana",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.chats:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp:write"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Admin"
+            ],
+            "role": {
+                "name": "Assistant Admin",
+                "description": "Can manage both user and tenant-wide Assistant resources and settings",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.chats:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.tenant:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.tenant:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.rules.tenant:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.tenant:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.tenant:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.mcps.tenant:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.github:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.github:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cursor:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cursor:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.tokens:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp.scope:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.cloud-mcp.grant-write:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.tenant:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.tenant:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.quickstarts.tenant:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.tenant:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.tenant:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.skills.tenant:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.usage:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.usage:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.terms:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.sql-discovery:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.sql-discovery:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.analyst:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.analyst:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.investigations:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.investigations:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.chat-retention:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.chat-retention:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.infra-memory:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.settings.infra-memory:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.personal-memories:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.personal-memories:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.personal-memories:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.user:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.tenant:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.tenant:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.tenant:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations.tenant:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.automations:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:write"
+                    },
+                    {
+                        "action": "grafana-assistant-app.watcher-agents:delete"
+                    },
+                    {
+                        "action": "grafana-assistant-app.investigations:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.investigations:create"
+                    },
+                    {
+                        "action": "grafana-assistant-app.investigations.system:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.sandbox:write"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Admin"
+            ],
+            "role": {
+                "name": "Assistant Sandbox Admin",
+                "description": "Can manage Python sandbox settings",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.sandbox:write"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Editor",
+                "Admin"
+            ],
+            "role": {
+                "name": "Assistant Investigation User",
+                "description": "Can use Assistant Backend Investigations",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.chats:access"
+                    },
+                    {
+                        "action": "grafana-assistant-app.investigations:read"
+                    },
+                    {
+                        "action": "grafana-assistant-app.investigations:create"
+                    }
+                ]
+            }
+        },
+        {
+            "grants": [
+                "Admin"
+            ],
+            "role": {
+                "name": "Assistant System Investigation Viewer",
+                "description": "Can view system-created investigations (from webhooks, alerts, and incidents)",
+                "permissions": [
+                    {
+                        "action": "plugins.app:access",
+                        "scope": "plugins:id:grafana-assistant-app"
+                    },
+                    {
+                        "action": "grafana-assistant-app.investigations.system:read"
+                    }
+                ]
+            }
+        }
+    ],
+    "buildMode": "production"
+}

@@ -1,0 +1,51 @@
+@"
+# Environment
+.env
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+airflow/airflow.cfg
+
+# Storage (данные не коммитим)
+storage/bronze/**
+storage/silver/**
+storage/gold/**
+storage/logs/**
+!storage/bronze/.gitkeep
+!storage/silver/.gitkeep
+!storage/gold/.gitkeep
+!storage/logs/.gitkeep
+
+# NiFi
+nifi/flows/*.xml
+nifi/flows/*.json
+
+# Logs & temp
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+"@ | Out-File -FilePath .gitignore -Encoding utf8

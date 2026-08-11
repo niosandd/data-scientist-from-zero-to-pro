@@ -1,0 +1,161 @@
+Демонстрация OrbitData Platform
+
+Шаг 1. Передача источников данных в Kafka
+
+docker compose start iss-producer banking-producer industrial-producer
+
+docker compose logs iss-producer banking-producer industrial-producer --tail=8
+
+![](docs/screenshots/Передача источников данных в Kafka.png)
+
+Шаг 2. Проверка топиков лежащих в Kafka
+
+docker compose exec kafka kafka-topics --bootstrap-server kafka:9092 --list
+
+docker compose exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic banking.transactions --from-beginning --max-messages 3
+
+![](docs/screenshots/Проверка топиков лежащих в Kafka.png)
+
+Шаг 3. Bronze-слой
+
+Write-Host "`n=== SPACE ===" -ForegroundColor Cyan
+Get-ChildItem storage\bronze\space\*.parquet | Select-Object -First 1 | Format-List FullName, Length, LastWriteTime
+
+Write-Host "=== BANKING ===" -ForegroundColor Cyan
+Get-ChildItem storage\bronze\banking\*.parquet | Select-Object -First 1 | Format-List FullName, Length, LastWriteTime
+
+Write-Host "=== INDUSTRIAL ===" -ForegroundColor Cyan
+Get-ChildItem storage\bronze\industrial\*.parquet | Select-Object -First 1 | Format-List FullName, Length, LastWriteTime
+
+![](docs/screenshots/Bronze-слой.png)
+
+Шаг 4. Наличие Silver, Gold-витрин, Data Vault (hub/sat/link), CSV и Avro.
+
+Write-Host "`n=== SILVER ===" -ForegroundColor Green
+Get-ChildItem storage\silver -Directory | ForEach-Object { "$($_.Name) → $((Get-ChildItem $_.FullName -Filter *.parquet).Count) parquet file(s)" }
+
+Write-Host "`n=== GOLD ===" -ForegroundColor Green
+Get-ChildItem storage\gold -Directory | ForEach-Object { "$($_.Name)" }
+
+Write-Host "`n=== DATA VAULT ===" -ForegroundColor Green
+Get-ChildItem storage\gold\data_vault -Directory -ErrorAction SilentlyContinue | ForEach-Object { $_.Name }
+
+Write-Host "`n=== EXPORTS (CSV / Avro) ===" -ForegroundColor Green
+Get-ChildItem storage\gold\exports -Recurse -File -ErrorAction SilentlyContinue | Select-Object Name, Length
+
+![](docs/screenshots/Наличие Silver, Gold-витрин, Data Vault (hub sat link), CSV и Avro.png)
+
+Шаг 5. Spark SQL
+
+docker compose exec spark-master /opt/spark/bin/spark-submit --master spark://spark-master:7077 --deploy-mode client /opt/spark/work-dir/jobs/register_hive_tables.py
+
+![](docs/screenshots/Spark SQL.png)
+
+Шаг 6. ClickHouse (Real-time OLAP)
+
+docker compose exec clickhouse clickhouse-client --user orbit --password orbit_secret -q "SHOW TABLES FROM orbitdata"
+
+docker compose exec clickhouse clickhouse-client --user orbit --password orbit_secret -q "SELECT count() FROM orbitdata.transactions"
+
+docker compose exec clickhouse clickhouse-client --user orbit --password orbit_secret -q "SELECT client_id, count() as tx, round(sum(amount),2) as total FROM orbitdata.transactions GROUP BY client_id ORDER BY total DESC LIMIT 5"
+
+![](docs/screenshots/ClickHouse (Real-time OLAP).png)
+
+Шаг 7. Airflow (оркестрация)
+
+http://localhost:8082
+Логин: admin / admin
+
+![](docs/screenshots/Airflow (оркестрация).png)
+
+Шаг 8. Мониторинг
+
+8.1. Prometheus
+
+http://localhost:9091
+
+Expression
+- up
+![](docs/screenshots/pr-up.png)
+- container_memory_usage_bytes
+![](docs/screenshots/pr-container_memory_usage_bytes.png)
+- kafka_brokers
+![](docs/screenshots/pr-kafka_brokers.png)
+
+8.2. Grafana Prometheus
+
+http://localhost:3001
+admin / admin
+
+![](docs/screenshots/grafana_container_memory_usage_bytes.png)
+
+8.3. Grafana Loki
+
+{container=~".+"}
+
+![](docs/screenshots/grafana_loki.png)
+
+Шаг 9. cAdvisor
+
+http://localhost:8081
+
+![](docs/screenshots/cpu.png)
+![](docs/screenshots/memory.png)
+![](docs/screenshots/network.png)
+
+Шаг 10. Kibana — ELK UI
+
+![](docs/screenshots/Kibana.png)
+
+Шаг 11. HDFS / YARN (Hadoop)
+
+# HDFS
+docker compose exec namenode hdfs dfs -ls /orbitdata
+
+![](docs/screenshots/HDFS.png)
+
+NameNode UI Hadoop
+
+http://localhost:9870
+
+![](docs/screenshots/NameNode UI.png)
+
+YARN ResourceManager Hadoop
+
+http://localhost:18088
+
+![](docs/screenshots/hadoop men.png)
+
+History Server
+
+http://localhost:8188
+
+![](docs/screenshots/history hadoop.png)
+
+Шаг 12. NiFi
+
+http://localhost:8080/
+
+![](docs/screenshots/nifi.png)
+
+12.1 Nifi flow
+
+![](docs/screenshots/nifi-process-group.png)
+![](docs/screenshots/nifi-flow.png)
+![](docs/screenshots/nifi-file-save.png)
+
+13. PyTest
+
+docker compose run --rm --no-deps `
+  -v ${PWD}/tests:/tests `
+  -v ${PWD}/airflow/dags:/opt/airflow/dags `
+  iss-producer pytest /tests/test_airflow_dag.py -v
+
+![](docs/screenshots/pytest.png)
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgrafana_assistant_app=self.webpackChunkgrafana_assistant_app||[]).push([[93560],{93560(a,s,e){e.d(s,{createTreemapServices:()=>p.d});var p=e(45447);e(60104)}}]);

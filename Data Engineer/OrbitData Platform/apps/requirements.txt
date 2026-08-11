@@ -1,0 +1,9 @@
+﻿confluent-kafka==2.5.0
+requests==2.32.3
+python-dotenv==1.0.1
+pyarrow==17.0.0
+clickhouse-driver==0.2.9
+great-expectations==0.18.19
+pandas==2.2.2
+pytest==8.3.2
+fastavro==1.9.5
