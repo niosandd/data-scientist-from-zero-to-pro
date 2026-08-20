@@ -1,0 +1,322 @@
+\documentclass[11pt,a4paper]{article}
+
+% === Русский язык (pdfLaTeX) ===
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% === Математика ===
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% === Оформление ===
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\geometry{
+  left=2.3cm,
+  right=2.3cm,
+  top=2.0cm,
+  bottom=2.1cm
+}
+
+% Жёстко единый плотный стиль
+\setstretch{1.03}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0pt,
+  label={}
+}
+\setlist[enumerate]{
+  leftmargin=1.6em,
+  itemsep=0.18em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.38em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.75em}{0.28em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Основы математики для Data Science}
+\fancyhead[R]{\small\texttt{github.com/niosandd}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\begin{document}
+
+% ======================== ТИТУЛЬНЫЙ БЛОК ========================
+\begin{center}
+{\LARGE\bfseries Основы математики для Data Science}\\[0.28em]
+{\large Этап 1. Абсолютный фундамент}\\[0.12em]
+{\large 1.2 Действия с натуральными числами}\\[0.32em]
+{\Large\bfseries Единицы измерения. Делимость и признаки делимости}
+\end{center}
+
+% ======================== СОДЕРЖАНИЕ ========================
+
+\section{Единицы измерения}
+
+Основной способ обозначения новой величины --- добавление приставки к старой.  
+Положительный показатель означает, что величина становится в \(10^{n}\) раз больше,  
+отрицательный --- в \(10^{n}\) раз меньше.
+
+\textbf{Основные приставки}
+\begin{enumerate}
+\item \(10^{3}\) --- кило- (к)
+\item \(10^{6}\) --- мега- (М)
+\item \(10^{9}\) --- гига- (Г)
+\item \(10^{-2}\) --- санти- (с)
+\item \(10^{-3}\) --- милли- (м)
+\item \(10^{-6}\) --- микро- (мк)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(1\text{ км}=10^{3}\text{ м}=1000\text{ м}\)
+\item \(1\text{ мм}=10^{-3}\text{ м}\), следовательно \(1\text{ м}=1000\text{ мм}\)
+\item \(1\text{ мг}=10^{-3}\text{ г}\), следовательно \(1\text{ г}=1000\text{ мг}\)
+\end{enumerate}
+
+\section{Площадь}
+
+Площадь измеряется в квадратных единицах.  
+Чтобы перевести одну единицу площади в другую, нужно возвести соотношение между ними в квадрат.
+
+\begin{enumerate}
+\item \(1\text{ см}^{2}=100\text{ мм}^{2}\)
+\item \(1\text{ м}^{2}=10000\text{ см}^{2}=10^{6}\text{ мм}^{2}\)
+\item \(1\text{ га}=10000\text{ м}^{2}=10^{8}\text{ см}^{2}\)
+\item \(1\text{ км}^{2}=100\text{ га}=10^{6}\text{ м}^{2}\)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(3\text{ м}^{2}=3\cdot10000=30000\text{ см}^{2}\)
+\item \(2\text{ км}^{2}=2\cdot100=200\text{ га}\)
+\end{enumerate}
+
+\section{Объём}
+
+Объём измеряется в кубических единицах.  
+Вместо кубических сантиметров используют миллилитры,  
+вместо кубических дециметров --- литры.
+
+\begin{enumerate}
+\item \(1\text{ мл}=1\text{ см}^{3}\)
+\item \(1\text{ л}=1\text{ дм}^{3}=1000\text{ мл}\)
+\item \(1\text{ м}^{3}=1000\text{ л}=1000000\text{ мл}\)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(5\text{ л}=5\cdot1000=5000\text{ мл}\)
+\item \(2\text{ м}^{3}=2\cdot1000=2000\text{ л}\)
+\end{enumerate}
+
+\section{Количество информации}
+
+\begin{enumerate}
+\item \(1\text{ байт}=2^{3}\text{ бит}=8\text{ бит}\)
+\item \(1\text{ Кбайт}=2^{10}\text{ байт}=1024\text{ байт}\)
+\item \(1\text{ Мбайт}=2^{10}\text{ Кбайт}=2^{20}\text{ байт}\)
+\item \(1\text{ Гбайт}=2^{10}\text{ Мбайт}=2^{30}\text{ байт}\)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(3\text{ Кбайт}=3\cdot1024=3072\text{ байт}\)
+\item \(2\text{ Мбайт}=2\cdot2^{20}=2^{21}\text{ байт}\)
+\end{enumerate}
+
+\section{Время}
+
+\begin{enumerate}
+\item \(1\text{ ч}=60\text{ мин}=3600\text{ с}\)
+\end{enumerate}
+
+В сутках \(24\) часа, в неделе \(7\) дней.
+
+\section{Скорость}
+
+Скорость измеряют в км/ч и м/с.
+
+\textbf{Правило перевода}
+\begin{enumerate}
+\item \(\text{км/ч}\to\text{м/с}:\quad\times\dfrac{5}{18}\)
+\item \(\text{м/с}\to\text{км/ч}:\quad\times\dfrac{18}{5}\)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(72\text{ км/ч}=72\cdot\dfrac{5}{18}=20\text{ м/с}\)
+\item \(15\text{ м/с}=15\cdot\dfrac{18}{5}=54\text{ км/ч}\)
+\end{enumerate}
+
+\section{Масса}
+
+\begin{enumerate}
+\item \(1\text{ г}=1000\text{ мг}\)
+\item \(1\text{ кг}=1000\text{ г}\)
+\item \(1\text{ ц}=100\text{ кг}\)
+\item \(1\text{ т}=1000\text{ кг}\)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(3\text{ кг}=3\cdot1000=3000\text{ г}\)
+\item \(2{,}5\text{ т}=2{,}5\cdot1000=2500\text{ кг}\)
+\end{enumerate}
+
+\section{Делимость}
+
+Если при делении натурального числа \(m\) на натуральное число \(n\) получается  
+натуральное число \(k\), говорят, что \(m\) делится нацело на \(n\)  
+или что \(m\) кратно \(n\).
+
+Число \(n\) называют делителем числа \(m\),  
+число \(m\) --- кратным числа \(n\).
+
+Обозначения: \(n\mid m\) или \(m\vdots n\).
+
+Количество делителей любого числа конечно.  
+Количество кратных любого числа бесконечно.
+
+\subsection*{Свойства делимости}
+\begin{enumerate}
+\item Если \(a\vdots b\) и \(b\vdots a\), то \(a=b\).
+\item Если \(m\vdots n\) и \(n\vdots k\), то \(m\vdots k\).
+\item Если \(n\mid m\), но \(n\) не делит \(f\), то \(m\) не делит \(f\).
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(15\vdots3\), потому что \(15=3\cdot5\)
+\item \(7\vdots7\), потому что \(7=7\cdot1\)
+\item \(4\) не делит \(15\)
+\end{enumerate}
+
+\section{Признаки делимости}
+
+\begin{enumerate}
+\item На \(10\): последняя цифра равна \(0\).
+\item На \(2\): последняя цифра \(0,\ 2,\ 4,\ 6\) или \(8\).
+\item На \(5\): последняя цифра \(0\) или \(5\).
+\item На \(4\): две последние цифры образуют число, делящееся на \(4\).
+\item На \(25\): две последние цифры --- \(00,\ 25,\ 50\) или \(75\).
+\item На \(100\): две последние цифры --- нули.
+\item На \(3\): сумма цифр делится на \(3\).
+\item На \(9\): сумма цифр делится на \(9\).
+\item На \(11\): разность суммы цифр на нечётных и чётных позициях делится на \(11\).
+\item На \(8\): три последние цифры образуют число, делящееся на \(8\).
+\item На \(125\): три последние цифры --- \(000,\ 125,\ 250,\ 375,\ 500,\ 625,\ 750\) или \(875\).
+\item На \(1000\): три последние цифры --- нули.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(258\): сумма цифр \(2+5+8=15\) делится на \(3\Rightarrow3\mid258\).  
+\(15\) не делится на \(9\Rightarrow9\) не делит \(258\).
+\item \(1416\): две последние цифры \(16\) делятся на \(4\Rightarrow4\mid1416\).
+\item \(3784\): три последние цифры \(784:8=98\Rightarrow8\mid3784\).
+\item \(121\): \((1+1)-2=0\) делится на \(11\Rightarrow11\mid121\).
+\end{enumerate}
+
+\newpage
+
+% ======================== ЗАДАЧИ ========================
+
+\section{Задачи}
+
+\subsection*{Единицы измерения и перевод}
+\begin{enumerate}
+\item Переведите \(4\text{ км}\) в метры.
+\item Переведите \(2{,}5\text{ м}\) в сантиметры.
+\item Переведите \(3\text{ м}^{2}\) в квадратные сантиметры.
+\item Переведите \(2\text{ л}\) в миллилитры.
+\item Переведите \(5\text{ Кбайт}\) в байты.
+\item Переведите \(90\text{ км/ч}\) в м/с.
+\item Переведите \(3\text{ кг}\) в граммы.
+\item Переведите \(2\text{ т}\) в килограммы.
+\end{enumerate}
+
+\subsection*{Делимость}
+\begin{enumerate}
+\item Делится ли \(72\) на \(8\)? Найдите \(k\).
+\item Найдите все натуральные делители числа \(18\).
+\item Верно ли: если \(4\mid12\) и \(4\mid20\), то \(4\mid(12+20)\)?
+\item Верно ли: если \(6\mid30\), то \(6\mid30\cdot5\)?
+\item Найдите наименьшее общее кратное чисел \(6\) и \(8\).
+\end{enumerate}
+
+\subsection*{Признаки делимости}
+\begin{enumerate}
+\item Делится ли \(456\) на \(3\)? На \(9\)?
+\item Делится ли \(1728\) на \(8\)?
+\item Делится ли \(1573\) на \(11\)?
+\item Делится ли \(2500\) на \(25\)? На \(100\)?
+\item Найдите наименьшую цифру \(x\), чтобы число \(3x6\) делилось на \(9\).
+\item Найдите наименьшую цифру \(x\), чтобы число \(4x8\) делилось на \(3\).
+\item Делится ли \(3125\) на \(125\)?
+\end{enumerate}
+
+\newpage
+
+% ======================== РАЗБОР ЗАДАЧ ========================
+
+\section{Разбор задач}
+
+\subsection*{Единицы измерения и перевод}
+\begin{enumerate}
+\item \(4\text{ км}=4\cdot1000=4000\text{ м}\)
+\item \(2{,}5\text{ м}=2{,}5\cdot100=250\text{ см}\)
+\item \(3\text{ м}^{2}=3\cdot10000=30000\text{ см}^{2}\)
+\item \(2\text{ л}=2\cdot1000=2000\text{ мл}\)
+\item \(5\text{ Кбайт}=5\cdot1024=5120\text{ байт}\)
+\item \(90\text{ км/ч}=90\cdot\dfrac{5}{18}=25\text{ м/с}\)
+\item \(3\text{ кг}=3\cdot1000=3000\text{ г}\)
+\item \(2\text{ т}=2\cdot1000=2000\text{ кг}\)
+\end{enumerate}
+
+\subsection*{Делимость}
+\begin{enumerate}
+\item Да, \(72=8\cdot9\), \(k=9\)
+\item \(1,\ 2,\ 3,\ 6,\ 9,\ 18\)
+\item Да. \(12+20=32\), \(32:4=8\)
+\item Да. \(30\cdot5=150\), \(150:6=25\)
+\item НОК\((6,8)=24\)
+\end{enumerate}
+
+\subsection*{Признаки делимости}
+\begin{enumerate}
+\item Сумма цифр \(4+5+6=15\) делится на \(3\Rightarrow\) да.  
+\(15\) не делится на \(9\Rightarrow\) нет.
+\item Три последние цифры \(728:8=91\Rightarrow\) да.
+\item \((1+7)-(5+3)=8-8=0\) делится на \(11\Rightarrow\) да.
+\item Две последние цифры \(00\Rightarrow\) делится и на \(25\), и на \(100\).
+\item Сумма \(3+x+6=9+x\) должна делиться на \(9\). Наименьшая \(x=0\).
+\item Сумма \(4+x+8=12+x\) должна делиться на \(3\). Наименьшая \(x=0\).
+\item Три последние цифры \(125\Rightarrow\) да.
+\end{enumerate}
+
+\end{document}

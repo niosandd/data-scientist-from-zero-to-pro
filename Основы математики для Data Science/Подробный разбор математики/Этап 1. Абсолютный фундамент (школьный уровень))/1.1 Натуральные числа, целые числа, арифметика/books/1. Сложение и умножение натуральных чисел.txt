@@ -1,0 +1,485 @@
+\documentclass[11pt,a4paper]{article}
+
+% === Русский язык (pdfLaTeX) ===
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% === Математика ===
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% === Оформление ===
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\geometry{
+  left=2.3cm,
+  right=2.3cm,
+  top=2.0cm,
+  bottom=2.1cm
+}
+
+% Жёстко единый плотный стиль
+\setstretch{1.03}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0pt,
+  label={}
+}
+\setlist[enumerate]{
+  leftmargin=1.6em,
+  itemsep=0.18em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.38em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.75em}{0.28em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Основы математики для Data Science}
+\fancyhead[R]{\small\texttt{github.com/niosandd}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\begin{document}
+
+% ======================== ТИТУЛЬНЫЙ БЛОК ========================
+\begin{center}
+{\LARGE\bfseries Основы математики для Data Science}\\[0.28em]
+{\large Этап 1. Абсолютный фундамент}\\[0.12em]
+{\large 1.1 Натуральные числа, целые числа, арифметика}\\[0.32em]
+{\Large\bfseries Сложение и умножение натуральных чисел}
+\end{center}
+
+% ======================== СОДЕРЖАНИЕ ========================
+
+\section{Натуральные числа}
+
+Натуральные числа --- числа, которые используют при счёте объектов:
+\[
+1,\ 2,\ 3,\ 4,\ 5,\ \dots
+\]
+Самое маленькое натуральное число --- \(1\).
+
+Множество натуральных чисел обозначается:
+\[
+\mathbb{N} = \{1,\ 2,\ 3,\ 4,\ \dots\}
+\]
+
+Ноль не является натуральным числом.  
+Ноль принадлежит множеству целых чисел \(\mathbb{Z}\):
+\[
+\mathbb{Z} = \{\dots,\ -2,\ -1,\ 0,\ 1,\ 2,\ \dots\}
+\]
+
+Место цифры в записи числа называется \textbf{разрядом}.  
+Разряды объединяются в \textbf{классы} по три (единицы, тысячи, миллионы, миллиарды и т.\,д.).
+
+\section{Сложение}
+
+Числа, которые складывают, называются \textbf{слагаемыми}.  
+Результат сложения --- \textbf{сумма}.
+
+\subsection*{Свойства сложения}
+\begin{itemize}
+\item \textbf{Коммутативность} (переместительное свойство):
+\[
+m + n = n + m
+\]
+\item \textbf{Ассоциативность} (сочетательное свойство):
+\[
+(m + n) + k = m + (n + k)
+\]
+\item Сложение с нулём:
+\[
+k + 0 = k
+\]
+\end{itemize}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(5 + 8 = 8 + 5 = 13\)
+\item \((8 + 15) + 45 = 8 + (15 + 45) = 68\)
+\item \(17 + 0 = 17\)
+\end{enumerate}
+
+\Needspace{9\baselineskip}
+\section{Вычитание}
+
+Число, из которого вычитают, --- \textbf{уменьшаемое}.  
+Число, которое вычитают, --- \textbf{вычитаемое}.  
+Результат вычитания --- \textbf{разность}.
+
+\subsection*{Свойства вычитания}
+\begin{itemize}
+\item Вычитание не обладает коммутативностью:
+\[
+m - n \neq n - m \qquad (m \neq n)
+\]
+\item Вычитание нуля:
+\[
+k - 0 = k
+\]
+\item Сложение и вычитание --- обратные операции:
+\[
+m + n = k \quad \Longleftrightarrow \quad k - n = m
+\]
+\end{itemize}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(13 - 5 = 8\)
+\item \(13 - 8 = 5\)
+\item \(25 - 0 = 25\)
+\end{enumerate}
+
+\section{Умножение}
+
+Умножение --- повторное сложение одинаковых слагаемых:
+\[
+n \cdot k = \underbrace{n + n + \dots + n}_{k \text{ раз}}
+\]
+
+\subsection*{Свойства умножения}
+\begin{itemize}
+\item \textbf{Коммутативность}:
+\[
+m \cdot n = n \cdot m
+\]
+\item \textbf{Ассоциативность}:
+\[
+(m \cdot n) \cdot k = m \cdot (n \cdot k)
+\]
+\item Умножение на единицу:
+\[
+k \cdot 1 = 1 \cdot k = k
+\]
+\item Умножение на ноль:
+\[
+m \cdot 0 = 0 \cdot m = 0
+\]
+\end{itemize}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(4 \cdot 3 = 3 + 3 + 3 + 3 = 12\)
+\item \(7 \cdot 5 = 5 \cdot 7 = 35\)
+\item \((2 \cdot 3) \cdot 4 = 2 \cdot (3 \cdot 4) = 24\)
+\item \(9 \cdot 1 = 9\)
+\item \(15 \cdot 0 = 0\)
+\end{enumerate}
+
+\section{Деление}
+
+Деление --- операция, обратная умножению.
+
+\subsection*{Свойства деления}
+\begin{itemize}
+\item Деление не обладает коммутативностью и ассоциативностью.
+\item Особые случаи:
+\begin{enumerate}
+\item \(k : 1 = k\)
+\item \(n : n = 1\) \quad (\(n \neq 0\))
+\item \(0 : k = 0\) \quad (\(k \neq 0\))
+\item \(k : 0\) --- не определено
+\end{enumerate}
+\end{itemize}
+
+\textbf{Пример}
+\begin{enumerate}
+\item \(35 : 7 = 5\) \quad (так как \(7 \cdot 5 = 35\))
+\end{enumerate}
+
+\section{Порядок действий}
+
+Действия в выражениях выполняются в следующем порядке:
+\begin{enumerate}
+\item Действия в скобках (внутри скобок действует тот же порядок).
+\item Возведение в степень.
+\item Умножение и деление слева направо.
+\item Сложение и вычитание слева направо.
+\end{enumerate}
+
+\textbf{Пример}
+\begin{enumerate}
+\item \(2 + 3 \cdot 4^{2} - (8 : 2) = 2 + 3 \cdot 16 - 4 = 46\)
+\end{enumerate}
+
+\section{Возведение в степень}
+
+Возведение в степень определяется как:
+\[
+n^{k} = \underbrace{n \cdot n \cdot \ldots \cdot n}_{k \text{ множителей}}
+\]
+\(n\) --- \textbf{основание} степени, \(k\) --- \textbf{показатель} степени.
+
+\subsection*{Особые случаи}
+\begin{enumerate}
+\item \(n^{1} = n\)
+\item \(a^{0} = 1\) \quad (\(a \neq 0\))
+\item \(0^{0}\) --- не определено
+\end{enumerate}
+
+\subsection*{Свойства степени}
+\begin{enumerate}
+\item \(a^{m} \cdot a^{n} = a^{m+n}\)
+\item \(a^{m} : a^{n} = a^{m-n}\) \quad (при \(a \neq 0\))
+\item \((a^{m})^{n} = a^{m \cdot n}\)
+\item \(a^{n} \cdot b^{n} = (a \cdot b)^{n}\)
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(3^{4} = 3 \cdot 3 \cdot 3 \cdot 3 = 81\)
+\item \(2^{5} \cdot 2^{3} = 2^{8} = 256\)
+\item \(5^{7} : 5^{4} = 5^{3} = 125\)
+\item \((4^{2})^{3} = 4^{6} = 4096\)
+\item \(3^{4} \cdot 5^{4} = (3 \cdot 5)^{4} = 15^{4}\)
+\item \(7^{0} = 1\)
+\end{enumerate}
+
+\newpage
+
+% ======================== ЗАДАЧИ ========================
+
+\section{Задачи}
+
+\subsection*{Натуральные числа}
+\begin{enumerate}
+\item Какие из чисел \(0\), \(1\), \(17\), \(-3\), \(100\) являются натуральными?
+\item Запишите множество натуральных чисел с помощью символа \(\mathbb{N}\).
+\item Определите, в каком классе и разряде стоит цифра \(7\) в числе \(7\,405\,823\).
+\item Запишите число, в котором \(3\) миллиарда, \(15\) миллионов, \(204\) тысячи и \(67\) единиц.
+\item Сколько всего разрядов в числе \(58\,003\,917\)?
+\item Верно ли утверждение: «Ноль --- самое маленькое натуральное число»? Обоснуйте.
+\item Принадлежит ли число \(0\) множеству \(\mathbb{Z}\)? А множеству \(\mathbb{N}\)?
+\end{enumerate}
+
+\subsection*{Сложение}
+\begin{enumerate}
+\item Вычислите \(47 + 0\).
+\item Пользуясь коммутативностью, перепишите сумму \(23 + 89\) в другом порядке.
+\item Вычислите удобным способом: \((36 + 78) + 22\).
+\item Найдите сумму \(125 + 375 + 500\), группируя слагаемые.
+\item Верно ли равенство \(a + b = b + a\) для любых натуральных \(a\) и \(b\)?
+\item Вычислите \(999 + 1 + 0\).
+\item Найдите значение выражения \(x + 15\), если \(x = 48\).
+\end{enumerate}
+
+\subsection*{Вычитание}
+\begin{enumerate}
+\item Вычислите \(90 - 0\).
+\item Найдите разность \(84 - 37\).
+\item Верно ли, что \(50 - 20 = 20 - 50\)? Почему?
+\item Найдите неизвестное уменьшаемое: \(\square - 28 = 45\).
+\item Найдите неизвестное вычитаемое: \(73 - \square = 29\).
+\item Вычислите \(1000 - 1\).
+\item Проверьте равенство \(a - b = c\) и \(a = b + c\) на числах \(a=50\), \(b=18\), \(c=32\).
+\end{enumerate}
+
+\subsection*{Умножение}
+\begin{enumerate}
+\item Вычислите \(9 \cdot 1\) и \(1 \cdot 9\).
+\item Вычислите \(15 \cdot 0\).
+\item Представьте \(7 \cdot 4\) в виде суммы.
+\item Вычислите удобным способом: \((5 \cdot 8) \cdot 125\).
+\item Найдите произведение \(25 \cdot 4 \cdot 7\).
+\item Верно ли, что \(a \cdot b = b \cdot a\) всегда?
+\item Вычислите \(12 \cdot 11\).
+\end{enumerate}
+
+\subsection*{Деление}
+\begin{enumerate}
+\item Вычислите \(48 : 1\).
+\item Вычислите \(0 : 15\).
+\item Можно ли выполнить деление \(17 : 0\)? Почему?
+\item Найдите частное \(56 : 7\).
+\item Проверьте: \(72 : 8 = 9\), умножив результат на делитель.
+\item Найдите неизвестное делимое: \(\square : 6 = 14\).
+\item Найдите неизвестный делитель: \(45 : \square = 9\).
+\end{enumerate}
+
+\subsection*{Порядок действий}
+\begin{enumerate}
+\item Вычислите \(10 + 6 \cdot 3\).
+\item Вычислите \((10 + 6) \cdot 3\).
+\item Вычислите \(20 - 8 : 2 + 5\).
+\item Вычислите \(4^{2} + 3 \cdot 5\).
+\item Вычислите \(2 \cdot 3^{2} - 10 : 2\).
+\item Вычислите \(100 : (4 + 1)^{2}\).
+\item Вычислите \(5 + 3 \cdot (8 - 2^{2})\).
+\item Вычислите \(18 : 3 + 2^{3} \cdot 4 - 5\).
+\end{enumerate}
+
+\subsection*{Возведение в степень}
+\begin{enumerate}
+\item Вычислите \(2^{5}\).
+\item Вычислите \(10^{0}\) и \(7^{1}\).
+\item Упростите \(3^{4} \cdot 3^{2}\).
+\item Упростите \(5^{7} : 5^{3}\).
+\item Упростите \((2^{3})^{2}\).
+\item Упростите \(4^{3} \cdot 5^{3}\).
+\item Вычислите \(2^{3} \cdot 2^{0} \cdot 2^{1}\).
+\item Верно ли, что \(0^{0}\) определено?
+\end{enumerate}
+
+\newpage
+
+% ======================== РАЗБОР ЗАДАЧ ========================
+
+\section{Разбор задач}
+
+\subsection*{Натуральные числа}
+
+\begin{enumerate}
+\item Натуральные числа: \(1\), \(17\), \(100\).  
+Числа \(0\) и \(-3\) натуральными не являются (\(0 \in \mathbb{Z}\), но \(0 \notin \mathbb{N}\); отрицательные числа не принадлежат \(\mathbb{N}\)).
+
+\item \(\mathbb{N} = \{1,\ 2,\ 3,\ 4,\ \dots\}\).
+
+\item Цифра \(7\) стоит в классе миллионов, в разряде миллионов.
+
+\item \(3\,015\,204\,067\).
+
+\item Число \(58\,003\,917\) содержит \(8\) разрядов.
+
+\item Нет. Самое маленькое натуральное число --- \(1\). Ноль не является натуральным.
+
+\item Да, \(0 \in \mathbb{Z}\). Нет, \(0 \notin \mathbb{N}\).
+\end{enumerate}
+
+\subsection*{Сложение}
+
+\begin{enumerate}
+\item \(47 + 0 = 47\) (свойство сложения с нулём).
+
+\item \(89 + 23\) (коммутативность).
+
+\item \((36 + 78) + 22 = 36 + (78 + 22) = 36 + 100 = 136\) (ассоциативность + удобная группировка).
+
+\item \(125 + 375 + 500 = (125 + 375) + 500 = 500 + 500 = 1000\).
+
+\item Да, коммутативность выполняется для любых натуральных чисел.
+
+\item \(999 + 1 + 0 = 1000 + 0 = 1000\).
+
+\item \(x + 15 = 48 + 15 = 63\).
+\end{enumerate}
+
+\subsection*{Вычитание}
+
+\begin{enumerate}
+\item \(90 - 0 = 90\).
+
+\item \(84 - 37 = 47\).
+
+\item Нет. Вычитание не коммутативно: \(50 - 20 = 30\), а \(20 - 50\) не является натуральным числом (и не равно \(30\)).
+
+\item \(\square = 45 + 28 = 73\).
+
+\item \(\square = 73 - 29 = 44\).
+
+\item \(1000 - 1 = 999\).
+
+\item \(50 = 18 + 32\) --- верно. Следовательно, \(50 - 18 = 32\) тоже верно.
+\end{enumerate}
+
+\subsection*{Умножение}
+
+\begin{enumerate}
+\item \(9 \cdot 1 = 9\), \(1 \cdot 9 = 9\).
+
+\item \(15 \cdot 0 = 0\).
+
+\item \(7 \cdot 4 = 7 + 7 + 7 + 7 = 28\).
+
+\item \((5 \cdot 8) \cdot 125 = 5 \cdot (8 \cdot 125) = 5 \cdot 1000 = 5000\).
+
+\item \(25 \cdot 4 \cdot 7 = (25 \cdot 4) \cdot 7 = 100 \cdot 7 = 700\).
+
+\item Да, коммутативность умножения выполняется всегда.
+
+\item \(12 \cdot 11 = 132\).
+\end{enumerate}
+
+\subsection*{Деление}
+
+\begin{enumerate}
+\item \(48 : 1 = 48\).
+
+\item \(0 : 15 = 0\).
+
+\item Нет. Деление на ноль не определено.
+
+\item \(56 : 7 = 8\).
+
+\item \(9 \cdot 8 = 72\) --- верно.
+
+\item \(\square = 14 \cdot 6 = 84\).
+
+\item \(\square = 45 : 9 = 5\).
+\end{enumerate}
+
+\subsection*{Порядок действий}
+
+\begin{enumerate}
+\item \(10 + 6 \cdot 3 = 10 + 18 = 28\).
+
+\item \((10 + 6) \cdot 3 = 16 \cdot 3 = 48\).
+
+\item \(20 - 8 : 2 + 5 = 20 - 4 + 5 = 21\).
+
+\item \(4^{2} + 3 \cdot 5 = 16 + 15 = 31\).
+
+\item \(2 \cdot 3^{2} - 10 : 2 = 2 \cdot 9 - 5 = 18 - 5 = 13\).
+
+\item \(100 : (4 + 1)^{2} = 100 : 5^{2} = 100 : 25 = 4\).
+
+\item \(5 + 3 \cdot (8 - 2^{2}) = 5 + 3 \cdot (8 - 4) = 5 + 3 \cdot 4 = 5 + 12 = 17\).
+
+\item \(18 : 3 + 2^{3} \cdot 4 - 5 = 6 + 8 \cdot 4 - 5 = 6 + 32 - 5 = 33\).
+\end{enumerate}
+
+\subsection*{Возведение в степень}
+
+\begin{enumerate}
+\item \(2^{5} = 32\).
+
+\item \(10^{0} = 1\), \(7^{1} = 7\).
+
+\item \(3^{4} \cdot 3^{2} = 3^{4+2} = 3^{6} = 729\).
+
+\item \(5^{7} : 5^{3} = 5^{7-3} = 5^{4} = 625\).
+
+\item \((2^{3})^{2} = 2^{3\cdot2} = 2^{6} = 64\).
+
+\item \(4^{3} \cdot 5^{3} = (4 \cdot 5)^{3} = 20^{3} = 8000\).
+
+\item \(2^{3} \cdot 2^{0} \cdot 2^{1} = 2^{3+0+1} = 2^{4} = 16\).
+
+\item Нет, выражение \(0^{0}\) не определено.
+\end{enumerate}
+
+\end{document}
