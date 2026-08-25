@@ -1,0 +1,510 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\geometry{
+  left=2.3cm,
+  right=2.3cm,
+  top=2.0cm,
+  bottom=2.1cm
+}
+
+\setstretch{1.03}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0pt,
+  label={}
+}
+\setlist[enumerate]{
+  leftmargin=1.6em,
+  itemsep=0.18em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.38em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.3em}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.25em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Основы математики для Data Science}
+\fancyhead[R]{\small\texttt{github.com/niosandd}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black},
+  framesep=3pt,
+  xleftmargin=0.4em,
+  xrightmargin=0.4em,
+  aboveskip=6pt,
+  belowskip=6pt,
+  columns=fullflexible,
+  keepspaces=true
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Основы математики для Data Science}\\[0.28em]
+{\large Этап 2. Степени, корни, логарифмы}\\[0.32em]
+{\Large\bfseries Свойства. Преобразования. SymPy}
+\end{center}
+
+\vspace{0.45em}
+
+\noindent\textit{Источники.} Практика: <<Степени и их свойства>>, <<Корни и их свойства>>, <<Логарифмы и их свойства>>.  
+Skillbox / SymPy: базовые объекты, упрощение выражений, проверка тождеств.
+
+\vspace{0.35em}
+
+Три темы --- один язык. Степень $a^{n}$ говорит, сколько раз основание умножили само на себя. Корень --- обратный ход: какую степень нужно <<снять>>. Логарифм --- ещё один обратный ход: какой показатель нужен, чтобы из основания получить данное число. Поэтому свойства одни и те же, только записаны в разных формах.
+
+\section{Степени}
+
+\subsection{Что такое степень}
+
+Для натурального показателя
+\[
+a^{n}=\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\text{ множителей}},\qquad a^{1}=a.
+\]
+Основание --- $a$, показатель --- $n$.
+
+Нулевой и отрицательный показатели уже встречались на этапе~1:
+\[
+a^{0}=1\quad(a\neq0),\qquad
+a^{-n}=\dfrac{1}{a^{n}}\quad(a\neq0).
+\]
+$0^{0}$ не определяют.
+
+Дробный показатель --- это корень. Его строго вводят в следующем разделе, но правило действий с показателями одно и то же, поэтому выражения вроде $a^{1{,}11}$ уже можно складывать в показателе.
+
+\subsection{Четыре рабочих свойства}
+
+При $a>0$ (для целых показателей достаточно $a\neq0$):
+\begin{flalign*}
+&a^{m}\cdot a^{n}=a^{m+n}&\\
+&a^{m}:a^{n}=a^{m-n}&\\
+&(a^{m})^{n}=a^{mn}&\\
+&a^{n}\cdot b^{n}=(ab)^{n},\qquad
+\dfrac{a^{n}}{b^{n}}=\Bigl(\dfrac{a}{b}\Bigr)^{n}&
+\end{flalign*}
+
+Смысл простой. При умножении одинаковых оснований показатели складывают. При делении --- вычитают. Степень степени --- произведение показателей. Общий показатель выносится за скобку произведения или частного.
+
+Отсюда сразу рабочие следствия:
+\[
+a^{n}\cdot b^{-n}=\Bigl(\dfrac{a}{b}\Bigr)^{n},\qquad
+\dfrac{a^{m}}{a^{n}}=a^{m-n}=a^{m}\cdot a^{-n}.
+\]
+
+Показатели можно складывать и вычитать, только если основания одинаковые. $2^{3}\cdot5^{3}$ сворачивается в $10^{3}$, а $2^{3}\cdot5^{4}$ --- нет.
+
+\subsection{Как упрощают <<в одну степень>>}
+
+\begin{enumerate}
+\item Привести минусы в показателях к дроби или наоборот --- как удобнее.
+\item Сложить или вычесть показатели при одном основании.
+\item Степень степени заменить произведением.
+\item Если в числителе и знаменателе одно и то же произведение оснований --- свернуть в одно основание.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item $a^{2}a^{5}=a^{7}$
+\item $\dfrac{a^{10}}{a^{5}}=a^{5}$
+\item $(a^{2})^{3}=a^{6}$
+\item $a^{7}b^{7}=(ab)^{7}$
+\item $a^{5}b^{-5}=\bigl(\dfrac{a}{b}\bigr)^{5}$
+\end{enumerate}
+
+\section{Корни}
+
+\subsection{Определение и связь со степенью}
+
+Корень степени $n$ из $a$ --- такое число $b$, что $b^{n}=a$:
+\[
+\sqrt[n]{a}=b \iff b^{n}=a.
+\]
+Квадратный корень пишут без показателя: $\sqrt{a}=\sqrt[2]{a}$.
+
+Связь со степенью:
+\[
+\sqrt[n]{a}=a^{1/n},\qquad
+\sqrt[n]{a^{m}}=a^{m/n}=\bigl(\sqrt[n]{a}\bigr)^{m}.
+\]
+Поэтому корень --- не отдельная вселенная, а степень с дробным показателем. Все свойства степеней переносятся.
+
+Для чётного $n$ и действительных чисел берут $a\geqslant0$. Для нечётного $n$ основание может быть отрицательным: $\sqrt[3]{-8}=-2$.
+
+\subsection{Свойства корней}
+
+При допустимых значениях:
+\begin{flalign*}
+&\sqrt[n]{ab}=\sqrt[n]{a}\cdot\sqrt[n]{b}&\\
+&\sqrt[n]{\dfrac{a}{b}}=\dfrac{\sqrt[n]{a}}{\sqrt[n]{b}}&\\
+&\sqrt[n]{\sqrt[m]{a}}=\sqrt[nm]{a}&\\
+&\bigl(\sqrt[n]{a}\bigr)^{k}=\sqrt[n]{a^{k}}&
+\end{flalign*}
+
+Вынести из-под корня можно полный $n$-й степень множитель:
+\[
+\sqrt{12}=\sqrt{4\cdot3}=2\sqrt{3},\qquad
+\sqrt[3]{54}=\sqrt[3]{27\cdot2}=3\sqrt[3]{2}.
+\]
+
+Иногда выгоднее не трогать радикалы, а перейти к показателям:
+\[
+\dfrac{\sqrt{m}}{\sqrt[9]{m}\cdot\sqrt[18]{m}}
+=m^{1/2-1/9-1/18}=m^{1/3}=\sqrt[3]{m}.
+\]
+
+\subsection{Типовые приёмы}
+
+\begin{enumerate}
+\item Квадрат суммы или разности под корнем часто сворачивается в разность квадратов.
+\item Множитель вида $\sqrt{k}$ рядом со скобкой $\sqrt{a}-\sqrt{b}$ раскрывают как произведение.
+\item Дробь с корнем в знаменателе умножают на сопряжённое, если нужно рационализировать. На практике часто достаточно сократить одинаковые радикалы.
+\item Вложенный корень --- произведение показателей в знаменателе.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item $\dfrac{(2\sqrt{7})^{2}}{14}=\dfrac{4\cdot7}{14}=2$
+\item $\sqrt{65^{2}-56^{2}}=\sqrt{(65-56)(65+56)}=\sqrt{9\cdot121}=33$
+\item $(\sqrt{15}-\sqrt{60})\sqrt{15}=(\sqrt{15}-2\sqrt{15})\sqrt{15}=-15$
+\item $\sqrt{\sqrt{16}}=16^{1/4}=2$
+\end{enumerate}
+
+\section{Логарифмы}
+
+\subsection{Определение}
+
+Логарифм числа $b$ по основанию $a$ --- показатель, в который нужно возвести $a$, чтобы получить $b$:
+\[
+\log_{a}b=c \iff a^{c}=b,
+\]
+где $a>0$, $a\neq1$, $b>0$.
+
+Частные случаи:
+\begin{flalign*}
+&\log_{a}a=1,&\\
+&\log_{a}1=0,&\\
+&\log_{a}(a^{k})=k,&\\
+&a^{\log_{a}b}=b.&
+\end{flalign*}
+
+Десятичный логарифм: $\lg b=\log_{10}b$.  
+Натуральный: $\ln b=\log_{e}b$.
+
+Логарифм --- обратная функция к показательной. Поэтому свойства зеркальны свойствам степени.
+
+\subsection{Свойства}
+
+\begin{flalign*}
+&\log_{a}(xy)=\log_{a}x+\log_{a}y&\\
+&\log_{a}\dfrac{x}{y}=\log_{a}x-\log_{a}y&\\
+&\log_{a}(x^{k})=k\log_{a}x&\\
+&\log_{a}x=\dfrac{\log_{c}x}{\log_{c}a}&
+\end{flalign*}
+
+Последнее --- переход к другому основанию. Из него $\log_{a}b\cdot\log_{b}a=1$.
+
+Следствие, которое постоянно всплывает в практике и в коде:
+\[
+\log a+\log b+\ldots+\log n=\log(a\cdot b\cdot\ldots\cdot n).
+\]
+Сумма логарифмов есть логарифм произведения. Поэтому $\sum_{k=1}^{n}\ln k=\ln(n!)$.
+
+Ещё одно следствие для степеней с логарифмом в показателе:
+\[
+c^{\log_{a}b}=b^{\log_{a}c},\qquad
+\dfrac{c^{\log_{a}u}}{c^{\log_{a}v}}=c^{\log_{a}(u/v)}.
+\]
+
+\subsection{Как считают значение}
+
+\begin{enumerate}
+\item Записать аргумент как степень основания: $\log_{2}16=\log_{2}(2^{4})=4$.
+\item Сумму или разность свернуть в одно число, затем узнать степень.
+\item Если основания разные, перейти к одному или возвести определение в степень.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item $(\log_{2}16)\cdot(\log_{6}36)=4\cdot2=8$
+\item $\log_{4}8+\log_{4}2=\log_{4}16=2$
+\item $\log_{6}72-\log_{6}2=\log_{6}36=2$
+\item $\dfrac{9^{\log_{5}50}}{9^{\log_{5}2}}=9^{\log_{5}25}=9^{2}=81$
+\item $\sqrt{\log_{2}16}=\sqrt{4}=2$
+\end{enumerate}
+
+\section{Один язык вместо трёх}
+
+Одна и та же мысль тремя записями:
+\[
+b=a^{c}
+\iff
+c=\log_{a}b
+\iff
+a=\sqrt[c]{b}\quad\text{(если $c$ натуральное)}.
+\]
+
+Поэтому цепочка преобразований обычно такая:
+\begin{enumerate}
+\item корни $\to$ дробные показатели;
+\item отрицательные показатели $\to$ дроби или наоборот;
+\item логарифмы произведения и частного $\to$ сумма и разность;
+\item в конце --- одно основание или одно число.
+\end{enumerate}
+
+Если выражение буквенное, сначала упрощают, потом подставляют число. Иначе корень из $64$ спрячет общую степень $m^{1/3}$.
+
+\section{SymPy}
+
+\texttt{Symbol} заводит букву. Выражение хранится символически, а не как float. \texttt{simplify} сворачивает тождества: разность квадратов, сокращение, показатели.
+
+\begin{lstlisting}
+from sympy import *
+init_printing(use_unicode=False, wrap_line=False, no_global=True)
+
+x, y = symbols("x y")
+expression = (x**2 - y**2) / (x**2 + 2*x*y + y**2)
+expression
+simplify(expression)
+\end{lstlisting}
+
+Получается $\dfrac{x-y}{x+y}$. Знаменатель --- квадрат суммы, числитель --- разность квадратов.
+
+Корни --- \texttt{sqrt} и \texttt{root}, логарифмы --- \texttt{log} (по умолчанию натуральный) и \texttt{log(x, a)}.
+
+\begin{lstlisting}
+expr = (sqrt(13) + sqrt(7))**2 / (10 + sqrt(91))
+expr
+expr.simplify()
+\end{lstlisting}
+
+Ответ --- $2$. Без \texttt{simplify} выражение останется <<длинным>>.
+
+Сумма $\ln1+\ldots+\ln n$ и $\ln(1\cdot2\cdot\ldots\cdot n)$ совпадают из-за свойства логарифма произведения:
+
+\begin{lstlisting}
+def ln_sum(n):
+    return sum(log(i) for i in range(1, n + 1)).evalf()
+
+def product_ln(n):
+    expr = UnevaluatedExpr(1)
+    for i in range(2, n + 1):
+        expr *= UnevaluatedExpr(i)
+    return log(expr).simplify().evalf()
+\end{lstlisting}
+
+Для $n=10$ обе функции дают одно число $\approx15{,}104$.
+
+Буквенные степени тоже лучше гнать через \texttt{simplify}, а не через float-показатели вроде \texttt{1/28}, если нужен точный ответ. Если показатель уже записан как \texttt{S(1)/28}, SymPy держит дробь.
+
+\newpage
+
+\section{Задачи}
+
+\subsection*{Степени. Начальный уровень}
+
+Упростите, запишите в виде одной степени.
+\begin{enumerate}
+\item $a^{2}a^{5}$
+\item $\dfrac{a^{10}}{a^{5}}$
+\item $(a^{2})^{3}$
+\item $a^{7}b^{7}$
+\item $a^{5}b^{-5}$
+\end{enumerate}
+
+\subsection*{Степени. Средний уровень}
+
+Упростите, запишите в виде одной степени.
+\begin{enumerate}
+\item $\dfrac{(x^{3})^{-4}}{x^{-3}}$
+\item $\dfrac{x^{-4}}{x^{9}x^{-3}}$
+\item $\dfrac{a^{3{,}33}}{a^{1{,}11}a^{2{,}22}}$
+\item $\dfrac{6^{\sqrt{3}}\cdot7^{\sqrt{3}}}{42^{\sqrt{3}-1}}$
+\end{enumerate}
+
+\subsection*{Корни. Начальный уровень}
+
+Найдите значение.
+\begin{enumerate}
+\item $\dfrac{(2\sqrt{7})^{2}}{14}$
+\item $\sqrt{65^{2}-56^{2}}$
+\item $(\sqrt{15}-\sqrt{60})\cdot\sqrt{15}$
+\item $\sqrt{\sqrt{16}}$
+\end{enumerate}
+
+\subsection*{Корни. Средний уровень}
+
+Корни можно писать дробными степенями, отрицательные показатели --- дробями.
+\begin{enumerate}
+\item $\dfrac{5\sqrt{x}+2}{\sqrt{x}}-\dfrac{2\sqrt{x}}{x}$ при $x>0$
+\item $\dfrac{\sqrt{m}}{\sqrt[9]{m}\cdot\sqrt[18]{m}}$ при $m=64$
+\item $\bigl(\sqrt[4]{t}\bigr)^{12}$ при $t=5$
+\item Представьте в виде корня $n$-й степени: $\sqrt[12]{\sqrt[5]{m^{12}}}$
+\end{enumerate}
+
+\subsection*{Логарифмы. Начальный уровень}
+
+Найдите значение.
+\begin{enumerate}
+\item $(\log_{2}16)\cdot(\log_{6}36)$
+\item $\log_{4}8+\log_{4}2$
+\item $\log_{6}72-\log_{6}2$
+\end{enumerate}
+
+\subsection*{Логарифмы. Средний уровень}
+
+\begin{enumerate}
+\item $\dfrac{9^{\log_{5}50}}{9^{\log_{5}2}}$
+\item $\sqrt{\log_{2}16}$
+\end{enumerate}
+
+\subsection*{SymPy и смешанные преобразования}
+
+\begin{enumerate}
+\item Упростите $\dfrac{x^{2}-y^{2}}{x^{2}+2xy+y^{2}}$.
+\item Упростите $\dfrac{(\sqrt{13}+\sqrt{7})^{2}}{10+\sqrt{91}}$.
+\item Почему $\sum_{k=1}^{n}\ln k$ и $\ln(n!)$ совпадают? Проверьте на $n=10$.
+\item Упростите
+\[
+\dfrac{15\bigl(a^{1/28}\bigr)^{1/5}-7\bigl(a^{1/20}\bigr)^{1/7}}{2\bigl(a^{1/4}\bigr)^{1/35}}.
+\]
+\item Пусть $g(x)=\bigl(x(4-x)\bigr)^{1/3}$. Найдите $\dfrac{g(2-x)}{g(2+x)}$.
+\item Упростите $\dfrac{(2x^{3})^{4}-(x^{2})^{6}}{3x^{12}}$.
+\item Упростите $\dfrac{11a^{6}b^{3}-(3a^{2}b)^{3}}{4a^{6}b^{6}}$.
+\end{enumerate}
+
+\newpage
+
+\section{Разбор задач}
+
+\subsection*{Степени. Начальный уровень}
+\begin{enumerate}
+\item $a^{2}a^{5}=a^{7}$
+\item $\dfrac{a^{10}}{a^{5}}=a^{5}$
+\item $(a^{2})^{3}=a^{6}$
+\item $a^{7}b^{7}=(ab)^{7}$
+\item $a^{5}b^{-5}=\bigl(\dfrac{a}{b}\bigr)^{5}$
+\end{enumerate}
+
+\subsection*{Степени. Средний уровень}
+\begin{enumerate}
+\item $\dfrac{(x^{3})^{-4}}{x^{-3}}=\dfrac{x^{-12}}{x^{-3}}=x^{-9}$
+\item $\dfrac{x^{-4}}{x^{9}x^{-3}}=x^{-4-(9-3)}=x^{-10}$
+\item $\dfrac{a^{3{,}33}}{a^{1{,}11}a^{2{,}22}}=a^{3{,}33-1{,}11-2{,}22}=a^{0}=1$
+\item $\dfrac{6^{\sqrt{3}}7^{\sqrt{3}}}{42^{\sqrt{3}-1}}=\dfrac{(42)^{\sqrt{3}}}{42^{\sqrt{3}-1}}=42^{1}=42$
+\end{enumerate}
+
+\subsection*{Корни. Начальный уровень}
+\begin{enumerate}
+\item $\dfrac{(2\sqrt{7})^{2}}{14}=\dfrac{4\cdot7}{14}=2$
+\item $\sqrt{65^{2}-56^{2}}=\sqrt{(65-56)(65+56)}=\sqrt{9\cdot121}=33$
+\item $\sqrt{60}=2\sqrt{15}$, поэтому $(\sqrt{15}-2\sqrt{15})\sqrt{15}=-15$
+\item $\sqrt{\sqrt{16}}=16^{1/4}=2$
+\end{enumerate}
+
+\subsection*{Корни. Средний уровень}
+\begin{enumerate}
+\item $\dfrac{5\sqrt{x}}{\sqrt{x}}+\dfrac{2}{\sqrt{x}}-\dfrac{2}{\sqrt{x}}=5$
+\item Показатели: $\tfrac12-\tfrac19-\tfrac1{18}=\tfrac13$. При $m=64$ значение $4$.
+\item $\bigl(t^{1/4}\bigr)^{12}=t^{3}$. При $t=5$ получаем $125$.
+\item $\bigl(m^{12}\bigr)^{1/5\cdot1/12}=m^{1/5}=\sqrt[5]{m}$
+\end{enumerate}
+
+\subsection*{Логарифмы. Начальный уровень}
+\begin{enumerate}
+\item $4\cdot2=8$
+\item $\log_{4}16=2$
+\item $\log_{6}36=2$
+\end{enumerate}
+
+\subsection*{Логарифмы. Средний уровень}
+\begin{enumerate}
+\item $9^{\log_{5}(50/2)}=9^{\log_{5}25}=9^{2}=81$
+\item $\sqrt{4}=2$
+\end{enumerate}
+
+\subsection*{SymPy и смешанные преобразования}
+\begin{enumerate}
+\item Числитель $x^{2}-y^{2}=(x-y)(x+y)$, знаменатель $(x+y)^{2}$. После сокращения $\dfrac{x-y}{x+y}$ при $x\neq-y$.
+\item Числитель $13+2\sqrt{91}+7=20+2\sqrt{91}$. Деление на $10+\sqrt{91}$ даёт $2$.
+\item $\ln a+\ln b=\ln(ab)$, поэтому сумма $\ln1+\ldots+\ln n$ равна $\ln(n!)$. Для $n=10$ обе записи дают $\approx15{,}104$.
+\item Все показатели схлопываются в $a^{1/140}$:
+\[
+\bigl(a^{1/28}\bigr)^{1/5}=a^{1/140},\quad
+\bigl(a^{1/20}\bigr)^{1/7}=a^{1/140},\quad
+\bigl(a^{1/4}\bigr)^{1/35}=a^{1/140}.
+\]
+Дробь становится $\dfrac{15-7}{2}=4$.
+\item $g(2-x)=\bigl((2-x)(2+x)\bigr)^{1/3}=\bigl(4-x^{2}\bigr)^{1/3}$,  
+$g(2+x)=\bigl((2+x)(2-x)\bigr)^{1/3}=\bigl(4-x^{2}\bigr)^{1/3}$. Отношение равно $1$ там, где определено.
+\item $(2x^{3})^{4}=16x^{12}$, $(x^{2})^{6}=x^{12}$, поэтому $\dfrac{16x^{12}-x^{12}}{3x^{12}}=5$.
+\item $(3a^{2}b)^{3}=27a^{6}b^{3}$, числитель $11a^{6}b^{3}-27a^{6}b^{3}=-16a^{6}b^{3}$,  
+дробь $\dfrac{-16a^{6}b^{3}}{4a^{6}b^{6}}=-\dfrac{4}{b^{3}}$.
+\end{enumerate}
+
+\begin{lstlisting}
+from sympy import *
+
+x, y, a, b = symbols("x y a b", positive=True)
+simplify((x**2 - y**2) / (x**2 + 2*x*y + y**2))
+simplify((sqrt(13) + sqrt(7))**2 / (10 + sqrt(91)))
+
+expr = (15*(a**(S(1)/28))**(S(1)/5) - 7*(a**(S(1)/20))**(S(1)/7)) / (2*(a**(S(1)/4))**(S(1)/35))
+simplify(expr)
+
+g = lambda t: (t*(4 - t))**(S(1)/3)
+simplify(g(2 - x) / g(2 + x))
+
+simplify(((2*x**3)**4 - (x**2)**6) / (3*x**12))
+simplify((11*a**6*b**3 - (3*a**2*b)**3) / (4*a**6*b**6))
+\end{lstlisting}
+
+\end{document}

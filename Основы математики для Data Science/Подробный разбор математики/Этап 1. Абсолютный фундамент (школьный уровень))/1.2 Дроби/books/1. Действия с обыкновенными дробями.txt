@@ -1,0 +1,467 @@
+\documentclass[11pt,a4paper]{article}
+
+% === Русский язык (pdfLaTeX) ===
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% === Математика ===
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% === Оформление ===
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\geometry{
+  left=2.3cm,
+  right=2.3cm,
+  top=2.0cm,
+  bottom=2.1cm
+}
+
+% Жёстко единый плотный стиль
+\setstretch{1.03}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0pt,
+  label={}
+}
+\setlist[enumerate]{
+  leftmargin=1.6em,
+  itemsep=0.18em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.38em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.3em}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.25em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Основы математики для Data Science}
+\fancyhead[R]{\small\texttt{github.com/niosandd}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\begin{document}
+
+% ======================== ТИТУЛЬНЫЙ БЛОК ========================
+\begin{center}
+{\LARGE\bfseries Основы математики для Data Science}\\[0.28em]
+{\large Этап 1. Абсолютный фундамент}\\[0.12em]
+{\large 1.2 Действия с обыкновенными дробями}\\[0.32em]
+{\Large\bfseries Обыкновенные дроби. Сравнение. Арифметика дробей}
+\end{center}
+
+\vspace{0.6em}
+
+% ======================== СОДЕРЖАНИЕ ========================
+
+\section{Обыкновенная дробь}
+
+Деление на доли --- это деление целого на равные части.
+
+Запись вида \(\dfrac{m}{n}\) называют \textbf{обыкновенной дробью}.  
+Дробная черта заменяет знак деления:
+\[
+\dfrac{m}{n}=m:n=m/n.
+\]
+
+\(n\) --- \textbf{знаменатель} дроби. Он показывает, на сколько частей разделили целое.  
+\(n\in\mathbb{N}\).
+
+\(m\) --- \textbf{числитель} дроби. Он показывает, сколько частей целого взяли.  
+\(m\in\mathbb{Z}\).
+
+Запись \(\dfrac{m}{n}\) показывает:
+\begin{enumerate}
+\item что \(m\) целых разделили на \(n\) равных частей;
+\item какую часть число \(m\) составляет от числа \(n\).
+\end{enumerate}
+
+\subsection{Виды обыкновенных дробей}
+
+\[
+\dfrac{a}{b}=
+\begin{cases}
+\text{правильная дробь}, & \text{если }|a|<|b|,\\
+\text{неправильная дробь}, & \text{если }|a|\geqslant|b|.
+\end{cases}
+\]
+
+\(c\,\dfrac{a}{b}\) --- \textbf{смешанное число}, если \(c\) --- целое число и \(|a|<|b|\).
+
+Смешанные числа и неправильные дроби выражают одно и то же.
+
+\subsection{Перевод неправильной дроби в смешанное число}
+
+\begin{enumerate}
+\item Разделить числитель на знаменатель.
+\item Неполное частное станет целой частью смешанного числа, остаток --- числителем.
+\item Знаменатель останется прежним.
+\end{enumerate}
+
+\subsection{Перевод смешанного числа в неправильную дробь}
+
+\begin{enumerate}
+\item Умножить целую часть на знаменатель.
+\item Прибавить к произведению старый числитель: получится числитель неправильной дроби.
+\item Знаменатель останется прежним.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{17}{5}=3\dfrac{2}{5}\), потому что \(17=5\cdot3+2\)
+\item \(2\dfrac{3}{7}=\dfrac{2\cdot7+3}{7}=\dfrac{17}{7}\)
+\item \(\dfrac{8}{8}=1\), \(\dfrac{3}{8}\) --- правильная дробь
+\end{enumerate}
+
+\section{Основное свойство дроби}
+
+\[
+\dfrac{a}{b}=\dfrac{an}{bn}=\dfrac{a:n}{b:n},
+\]
+где \(n\) --- дополнительный множитель или общий делитель.
+
+Деление числителя и знаменателя на их общий делитель --- это \textbf{сокращение} дроби.  
+Дробь называют \textbf{несократимой}, если её числитель и знаменатель --- взаимно простые числа.
+
+\subsection{Способы сокращения}
+\begin{enumerate}
+\item Записать сокращение в виде произведения и вычёркивать равные множители в числителе и знаменателе.
+\item Зачёркивать множители, имеющие общие делители, и писать над ними результат деления.
+\item Записать числитель и знаменатель как произведения простых множителей и сократить.
+\end{enumerate}
+
+Если показатель степени был больше в числителе, результат сокращения останется в числителе.  
+Если в знаменателе --- результат останется в знаменателе. Из большего показателя вычитается меньший.
+
+\subsection{Правило знаков}
+\begin{enumerate}
+\item Нечётное количество минусов --- дробь отрицательная.
+\item Чётное количество минусов --- дробь положительная.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{12}{18}=\dfrac{2\cdot6}{3\cdot6}=\dfrac{2}{3}\)
+\item \(\dfrac{24}{36}=\dfrac{2^{3}\cdot3}{2^{2}\cdot3^{2}}=\dfrac{2}{3}\)
+\item \(\dfrac{-6}{-8}=\dfrac{3}{4}\)
+\item \(\dfrac{-9}{15}=-\dfrac{3}{5}\)
+\end{enumerate}
+
+\section{Расположение дробей на координатной прямой}
+
+Сначала делим единичный отрезок на количество частей, равное знаменателю.  
+Затем смотрим на числитель: он покажет, на сколько таких частей нужная точка удалена от нуля.
+
+Смешанные числа расположены между двумя целыми:
+\begin{enumerate}
+\item числом, которое равно целой части смешанного числа;
+\item числом, модуль которого на единицу больше первого.
+\end{enumerate}
+
+Целой частью будет то число, которое расположено ближе к нулю.
+
+\section{Сравнение дробей}
+
+\begin{enumerate}
+\item Отрицательная дробь всегда меньше положительной.
+\item Модуль правильной дроби меньше модуля неправильной или модуля смешанного числа.
+\item Любая правильная дробь находится в промежутке от \(-1\) до \(1\),  
+а модуль неправильной дроби всегда больше единицы или равен ей.
+\end{enumerate}
+
+\subsection{Равные знаменатели}
+
+Пусть \(a\) и \(b\) --- натуральные числа, \(a>b\). Тогда
+\[
+\dfrac{a}{c}>\dfrac{b}{c},\qquad
+-\dfrac{a}{c}<-\dfrac{b}{c}.
+\]
+
+\subsection{Равные числители}
+
+Пусть \(a\) и \(b\) --- натуральные числа, \(a>b\). Тогда
+\[
+\dfrac{c}{a}<\dfrac{c}{b},\qquad
+-\dfrac{c}{a}>-\dfrac{c}{b}.
+\]
+
+\subsection{Общий знаменатель}
+
+Если ничего не совпадает, нужно привести дроби к общему знаменателю  
+(общему кратному знаменателей) с помощью основного свойства дроби.
+
+В качестве общего знаменателя удобно брать НОК знаменателей.
+
+Как найти НОК:
+\begin{enumerate}
+\item Записать все знаменатели как произведения простых множителей.
+\item Взять все встречающиеся множители в наибольшей из имеющихся степеней.
+\end{enumerate}
+
+Если одно число делится на другое нацело, оно и будет наименьшим общим кратным.  
+Если общих множителей нет, наименьшим общим кратным будет их произведение.
+
+Чтобы сравнить смешанные числа, сначала сравните целые части.  
+Если они равны, сравните дробные части по правилам сравнения дробей.
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{5}{7}>\dfrac{3}{7}\)
+\item \(\dfrac{2}{9}<\dfrac{2}{5}\)
+\item \(\dfrac{3}{4}\) и \(\dfrac{5}{6}\): НОК\((4,6)=12\),  
+\(\dfrac{9}{12}<\dfrac{10}{12}\) \(\Rightarrow\) \(\dfrac{3}{4}<\dfrac{5}{6}\)
+\end{enumerate}
+
+\section{Сложение и вычитание дробей}
+
+\subsection{Одинаковые знаменатели}
+
+Пусть \(a\), \(b\), \(n\) --- натуральные числа, \(a>b\). Тогда
+\begin{flalign*}
+&\dfrac{a}{n}+\dfrac{b}{n}=\dfrac{a+b}{n}&\\
+&-\dfrac{a}{n}-\dfrac{b}{n}=-\dfrac{a+b}{n}&\\
+&-\dfrac{b}{n}+\dfrac{a}{n}=\dfrac{a-b}{n}&\\
+&-\dfrac{a}{n}+\dfrac{b}{n}=-\dfrac{a-b}{n}&
+\end{flalign*}
+
+При выполнении действий с дробями ответ обычно записывают в виде  
+правильной несократимой дроби или смешанного числа, дробная часть которого несократима.
+
+\subsection{Разные знаменатели}
+
+Алгоритм сложения дробей с разными знаменателями:
+\begin{enumerate}
+\item Привести к наименьшему общему знаменателю.
+\item Сложить по правилам сложения дробей с одинаковыми знаменателями.
+\item При необходимости сократить результат.
+\end{enumerate}
+
+Смешанные числа лучше сначала перевести в неправильные дроби.  
+Другой способ для дробей с одинаковыми знаками: сложить отдельно целые и дробные части, а потом найти их сумму.
+
+\subsection{Приёмы сложения}
+\begin{enumerate}
+\item Сначала складывайте дроби с одинаковыми знаменателями или пары дробей,  
+в которых знаменатель одной дроби нацело делится на знаменатель другой.
+\item Сначала сложите все положительные дроби, затем все отрицательные, затем найдите сумму.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{2}{7}+\dfrac{3}{7}=\dfrac{5}{7}\)
+\item \(\dfrac{5}{6}-\dfrac{1}{6}=\dfrac{4}{6}=\dfrac{2}{3}\)
+\item \(\dfrac{1}{4}+\dfrac{1}{6}=\dfrac{3}{12}+\dfrac{2}{12}=\dfrac{5}{12}\)
+\item \(2\dfrac{1}{3}+1\dfrac{1}{2}=\dfrac{7}{3}+\dfrac{3}{2}=\dfrac{14}{6}+\dfrac{9}{6}=\dfrac{23}{6}=3\dfrac{5}{6}\)
+\end{enumerate}
+
+\section{Умножение и возведение в степень}
+
+\begin{flalign*}
+&\dfrac{a}{b}\cdot n=\dfrac{an}{b}&\\
+&\dfrac{a}{b}\cdot\dfrac{c}{d}=\dfrac{ac}{bd}&\\
+&\left(\dfrac{a}{b}\right)^{n}=\dfrac{a^{n}}{b^{n}}&
+\end{flalign*}
+
+Предлог <<от>> --- маркер умножения: \(\dfrac{a}{b}\) от \(c\) равны \(\dfrac{ac}{b}\).
+
+Другой способ найти часть: разделить число на знаменатель дроби и умножить на её числитель.
+
+При умножении на правильную дробь модуль любого числа уменьшается.  
+При умножении на неправильную дробь больше \(1\) --- увеличивается.
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{3}{5}\cdot4=\dfrac{12}{5}=2\dfrac{2}{5}\)
+\item \(\dfrac{2}{3}\cdot\dfrac{5}{7}=\dfrac{10}{21}\)
+\item \(\left(\dfrac{2}{3}\right)^{3}=\dfrac{8}{27}\)
+\item \(\dfrac{2}{3}\) от \(48=\dfrac{2}{3}\cdot48=32\)
+\end{enumerate}
+
+\section{Деление дробей}
+
+Числа \(\dfrac{a}{b}\) и \(\dfrac{b}{a}\) --- \textbf{взаимно обратные}:
+\[
+\dfrac{a}{b}\cdot\dfrac{b}{a}=1.
+\]
+
+\begin{flalign*}
+&\dfrac{a}{b}:\dfrac{c}{d}=\dfrac{a}{b}\cdot\dfrac{d}{c}=\dfrac{ad}{bc}&\\
+&m:\dfrac{k}{n}=m\cdot\dfrac{n}{k}=\dfrac{mn}{k}&\\
+&\dfrac{m}{n}:k=\dfrac{m}{nk}&
+\end{flalign*}
+
+Число по части: если \(\dfrac{a}{b}\) от числа равны \(m\), то само число равно \(m:\dfrac{a}{b}\).
+
+Умножить на \(\dfrac{1}{n}\) --- это разделить на \(n\).  
+Разделить на \(\dfrac{1}{n}\) --- это умножить на \(n\).
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{3}{4}:\dfrac{2}{5}=\dfrac{3}{4}\cdot\dfrac{5}{2}=\dfrac{15}{8}=1\dfrac{7}{8}\)
+\item \(6:\dfrac{2}{3}=6\cdot\dfrac{3}{2}=9\)
+\item \(\dfrac{5}{8}:4=\dfrac{5}{32}\)
+\end{enumerate}
+
+\section{Порядок действий}
+
+Порядок действий с обыкновенными дробями такой же, как с целыми числами:
+\begin{enumerate}
+\item Действия в скобках.
+\item Степени и факториалы.
+\item Умножение и деление.
+\item Сложение и вычитание.
+\end{enumerate}
+
+\section{Часть от числа и число по части}
+
+Часть от числа: чтобы найти часть числа, выраженную дробью,  
+надо это число разделить на знаменатель и умножить на числитель дроби.
+
+Число по части: чтобы найти число, часть которого выражена дробью,  
+надо разделить число, соответствующее этой части, на данную дробь.
+
+Часть: чтобы найти, какую часть одно число составляет от другого,  
+нужно разделить первое число на второе.
+
+\textbf{Примеры}
+\begin{enumerate}
+\item Две трети от \(48\): \(\dfrac{2}{3}\cdot48=32\)
+\item Две трети целого равны \(48\). Целое равно \(48:\dfrac{2}{3}=72\)
+\item Какую часть \(\dfrac{5}{17}\) составляет от \(\dfrac{25}{34}\):  
+\(\dfrac{5}{17}:\dfrac{25}{34}=\dfrac{5}{17}\cdot\dfrac{34}{25}=\dfrac{2}{5}\)
+\end{enumerate}
+
+\newpage
+
+% ======================== ЗАДАЧИ ========================
+
+\section{Задачи}
+
+\subsection*{Виды дробей и перевод}
+\begin{enumerate}
+\item Является ли дробь \(\dfrac{5}{9}\) правильной?
+\item Переведите \(\dfrac{23}{6}\) в смешанное число.
+\item Переведите \(4\dfrac{2}{5}\) в неправильную дробь.
+\item Переведите \(\dfrac{15}{4}\) в смешанное число.
+\item Переведите \(3\dfrac{1}{8}\) в неправильную дробь.
+\end{enumerate}
+
+\subsection*{Сокращение и основное свойство}
+\begin{enumerate}
+\item Сократите дробь \(\dfrac{18}{24}\).
+\item Сократите дробь \(\dfrac{45}{60}\).
+\item Допишите: \(\dfrac{2}{5}=\dfrac{\square}{15}\).
+\item Определите знак дроби \(\dfrac{-8}{-12}\).
+\item Сократите \(\dfrac{36}{54}\).
+\end{enumerate}
+
+\subsection*{Сравнение дробей}
+\begin{enumerate}
+\item Сравните \(\dfrac{4}{9}\) и \(\dfrac{7}{9}\).
+\item Сравните \(\dfrac{3}{8}\) и \(\dfrac{3}{5}\).
+\item Сравните \(\dfrac{2}{3}\) и \(\dfrac{5}{8}\).
+\item Сравните \(-\dfrac{4}{7}\) и \(\dfrac{1}{5}\).
+\item Сравните \(2\dfrac{1}{4}\) и \(2\dfrac{1}{3}\).
+\end{enumerate}
+
+\subsection*{Сложение и вычитание}
+\begin{enumerate}
+\item Вычислите \(\dfrac{3}{11}+\dfrac{5}{11}\).
+\item Вычислите \(\dfrac{7}{8}-\dfrac{3}{8}\).
+\item Вычислите \(\dfrac{1}{6}+\dfrac{1}{4}\).
+\item Вычислите \(1\dfrac{2}{5}+2\dfrac{1}{3}\).
+\item Вычислите \(\dfrac{5}{6}-\dfrac{1}{4}\).
+\end{enumerate}
+
+\subsection*{Умножение, деление и часть числа}
+\begin{enumerate}
+\item Вычислите \(\dfrac{3}{7}\cdot14\).
+\item Вычислите \(\dfrac{2}{5}\cdot\dfrac{3}{4}\).
+\item Вычислите \(\left(\dfrac{3}{4}\right)^{2}\).
+\item Вычислите \(\dfrac{5}{6}:\dfrac{2}{3}\).
+\item Найдите \(\dfrac{3}{4}\) от \(36\).
+\item Число по части: \(\dfrac{2}{5}\) числа равны \(18\). Найдите число.
+\item Какую часть \(12\) составляет от \(30\)?
+\end{enumerate}
+
+\newpage
+
+% ======================== РАЗБОР ЗАДАЧ ========================
+
+\section{Разбор задач}
+
+\subsection*{Виды дробей и перевод}
+\begin{enumerate}
+\item Да. \(|5|<|9|\).
+\item \(\dfrac{23}{6}=3\dfrac{5}{6}\)
+\item \(4\dfrac{2}{5}=\dfrac{4\cdot5+2}{5}=\dfrac{22}{5}\)
+\item \(\dfrac{15}{4}=3\dfrac{3}{4}\)
+\item \(3\dfrac{1}{8}=\dfrac{25}{8}\)
+\end{enumerate}
+
+\subsection*{Сокращение и основное свойство}
+\begin{enumerate}
+\item \(\dfrac{18}{24}=\dfrac{3}{4}\)
+\item \(\dfrac{45}{60}=\dfrac{3}{4}\)
+\item \(\dfrac{2}{5}=\dfrac{6}{15}\)
+\item Положительная (два минуса).
+\item \(\dfrac{36}{54}=\dfrac{2}{3}\)
+\end{enumerate}
+
+\subsection*{Сравнение дробей}
+\begin{enumerate}
+\item \(\dfrac{4}{9}<\dfrac{7}{9}\)
+\item \(\dfrac{3}{8}<\dfrac{3}{5}\)
+\item НОК\((3,8)=24\): \(\dfrac{16}{24}>\dfrac{15}{24}\) \(\Rightarrow\) \(\dfrac{2}{3}>\dfrac{5}{8}\)
+\item \(-\dfrac{4}{7}<\dfrac{1}{5}\)
+\item \(2\dfrac{1}{4}<2\dfrac{1}{3}\), потому что \(\dfrac{1}{4}<\dfrac{1}{3}\)
+\end{enumerate}
+
+\subsection*{Сложение и вычитание}
+\begin{enumerate}
+\item \(\dfrac{8}{11}\)
+\item \(\dfrac{4}{8}=\dfrac{1}{2}\)
+\item \(\dfrac{2}{12}+\dfrac{3}{12}=\dfrac{5}{12}\)
+\item \(\dfrac{7}{5}+\dfrac{7}{3}=\dfrac{21}{15}+\dfrac{35}{15}=\dfrac{56}{15}=3\dfrac{11}{15}\)
+\item \(\dfrac{10}{12}-\dfrac{3}{12}=\dfrac{7}{12}\)
+\end{enumerate}
+
+\subsection*{Умножение, деление и часть числа}
+\begin{enumerate}
+\item \(\dfrac{42}{7}=6\)
+\item \(\dfrac{6}{20}=\dfrac{3}{10}\)
+\item \(\dfrac{9}{16}\)
+\item \(\dfrac{5}{6}\cdot\dfrac{3}{2}=\dfrac{15}{12}=\dfrac{5}{4}=1\dfrac{1}{4}\)
+\item \(\dfrac{3}{4}\cdot36=27\)
+\item \(18:\dfrac{2}{5}=18\cdot\dfrac{5}{2}=45\)
+\item \(\dfrac{12}{30}=\dfrac{2}{5}\)
+\end{enumerate}
+
+\end{document}

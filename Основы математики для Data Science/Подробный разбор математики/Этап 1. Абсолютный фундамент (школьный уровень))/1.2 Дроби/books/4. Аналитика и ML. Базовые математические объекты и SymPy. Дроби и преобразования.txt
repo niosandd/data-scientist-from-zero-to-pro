@@ -1,0 +1,544 @@
+\documentclass[11pt,a4paper]{article}
+
+% === Русский язык (pdfLaTeX) ===
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+% === Математика ===
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+% === Код ===
+\usepackage{listings}
+\usepackage{xcolor}
+
+% === Оформление ===
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\geometry{
+  left=2.3cm,
+  right=2.3cm,
+  top=2.0cm,
+  bottom=2.1cm
+}
+
+\setstretch{1.03}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0pt,
+  label={}
+}
+\setlist[enumerate]{
+  leftmargin=1.6em,
+  itemsep=0.18em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.38em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.3em}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.25em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Основы математики для Data Science}
+\fancyhead[R]{\small\texttt{github.com/niosandd}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{black},
+  framesep=3pt,
+  xleftmargin=0.4em,
+  xrightmargin=0.4em,
+  aboveskip=6pt,
+  belowskip=6pt,
+  columns=fullflexible,
+  keepspaces=true
+}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Основы математики для Data Science}\\[0.28em]
+{\large Этап 1. Абсолютный фундамент}\\[0.12em]
+{\large 1.5 Дроби: итоги, SymPy и алгебраические выражения}\\[0.32em]
+{\Large\bfseries Рациональные числа. Действия. Код. Упрощение}
+\end{center}
+
+\vspace{0.6em}
+
+\section{Рациональные числа}
+
+Дробь \(\dfrac{m}{n}\) есть частное \(m:n\).  
+Знаменатель \(n\) --- натуральное число: на сколько равных частей разрезали целое.  
+Числитель \(m\) --- целое число: сколько частей взяли.  
+Черта и есть деление, поэтому \(6:11=\dfrac{6}{11}\).
+
+Такие числа образуют множество рациональных чисел \(\mathbb{Q}\).  
+Целое входит туда как дробь со знаменателем \(1\): \(5=\dfrac{5}{1}\).
+
+\texttt{S} переводит число в тип SymPy, чтобы деление не стало float.
+
+\begin{lstlisting}
+from sympy import *
+
+S(6)/11
+S(-8)/8
+S(12)/1
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{6}{11}\)
+\item \(\dfrac{-8}{8}=-1\)
+\item \(\dfrac{12}{1}=12\)
+\end{enumerate}
+
+\section{Правильные, неправильные и смешанные}
+
+Если \(|m|<n\), дробь \textbf{правильная}.  
+Если \(|m|\geqslant n\) --- \textbf{неправильная}.  
+Смешанное число --- целое плюс правильная дробь:
+\[
+1\dfrac{20}{60}=1+\dfrac{20}{60}.
+\]
+
+Неправильная \(\to\) смешанная: деление с остатком.  
+\(80:60=1\), остаток \(20\), значит \(\dfrac{80}{60}=1\dfrac{20}{60}\).
+
+Смешанная \(\to\) неправильная: целую часть умножают на знаменатель и прибавляют числитель.
+\[
+1\dfrac{20}{60}=\dfrac{1\cdot60+20}{60}=\dfrac{80}{60}=\dfrac{4}{3}.
+\]
+
+\texttt{divmod} снимает частное и остаток. \texttt{Rational} сразу сокращает.
+
+\begin{lstlisting}
+Rational(40, 60)
+Rational(80, 60)
+divmod(80, 60)
+(1*60 + 20)/S(60)
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{40}{60}=\dfrac{2}{3}\)
+\item \(\dfrac{80}{60}=1\dfrac{1}{3}\)
+\item \(2\dfrac{1}{4}=\dfrac{9}{4}\)
+\end{enumerate}
+
+\section{Основное свойство и сокращение}
+
+Числитель и знаменатель можно умножить или разделить на одно и то же число, не равное нулю:
+\[
+\dfrac{a}{b}=\dfrac{an}{bn}=\dfrac{a:n}{b:n}.
+\]
+
+Сокращение --- деление на общий делитель. Самый большой такой делитель --- НОД.  
+Если он равен \(1\), дробь несократима.
+
+Для \(63\) и \(84\) алгоритм Евклида:
+\[
+84=63\cdot1+21,\qquad 63=21\cdot3+0 \implies \operatorname{НОД}(63,84)=21.
+\]
+
+Через простые множители берут общие простые в меньшей степени:
+\[
+63=3^{2}\cdot7,\qquad 84=2^{2}\cdot3\cdot7.
+\]
+Общие \(3\) и \(7\), произведение \(21\). Тогда
+\[
+\dfrac{63}{84}=\dfrac{63:21}{84:21}=\dfrac{3}{4}.
+\]
+
+Нечётное число минусов делает дробь отрицательной, чётное --- положительной.
+
+\texttt{gcd} считает Евклида. \texttt{factorint} раскладывает на простые.  
+\texttt{Rational(63, 84)} сам делит на этот НОД.
+
+\begin{lstlisting}
+gcd(63, 84)
+factorint(63)
+factorint(84)
+Rational(63, 84)
+Rational(-3, 5)
+Rational(-3, -5)
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\operatorname{НОД}(63,84)=21\)
+\item \(\dfrac{-3}{5}=-\dfrac{3}{5}\)
+\item \(\dfrac{-3}{-5}=\dfrac{3}{5}\)
+\end{enumerate}
+
+\section{Общий знаменатель, сравнение и сложение}
+
+Разные знаменатели приводят к общему. Берут НОК --- наименьшее число, которое делится на каждый знаменатель.
+
+Кратные \(3\): \(3,6,9,12,15,18,21,24,\ldots\)  
+Кратные \(8\): \(8,16,24,\ldots\)  
+Первое общее --- \(24\).
+
+Через множители: \(3=3\), \(8=2^{3}\). В НОК каждый простой в наибольшей степени: \(2^{3}\cdot3=24\).
+
+Через НОД:
+\[
+\operatorname{НОК}(a,b)=\dfrac{ab}{\operatorname{НОД}(a,b)}=\dfrac{3\cdot8}{1}=24.
+\]
+
+Дополнительный множитель --- частное общего знаменателя и старого: \(24:3=8\), \(24:8=3\). Поэтому
+\[
+\dfrac{2}{3}=\dfrac{16}{24},\qquad \dfrac{5}{8}=\dfrac{15}{24},\qquad 16>15\implies\dfrac{2}{3}>\dfrac{5}{8}.
+\]
+
+С одинаковыми знаменателями работают только с числителями:
+\[
+\dfrac{a}{n}\pm\dfrac{b}{n}=\dfrac{a\pm b}{n},\qquad
+\dfrac{1}{6}+\dfrac{3}{8}=\dfrac{4}{24}+\dfrac{9}{24}=\dfrac{13}{24}.
+\]
+
+\texttt{ilcm} даёт общий знаменатель. Операции \texttt{+} и \texttt{>} у \texttt{Rational} считают значение.
+
+\begin{lstlisting}
+ilcm(3, 8)
+3 * 8 // gcd(3, 8)
+Rational(2, 3) > Rational(5, 8)
+Rational(1, 6) + Rational(3, 8)
+Rational(9, 4) + Rational(5, 3)
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\operatorname{НОК}(3,8)=24\)
+\item \(\dfrac{2}{3}>\dfrac{5}{8}\)
+\item \(\dfrac{9}{4}+\dfrac{5}{3}=\dfrac{47}{12}\)
+\end{enumerate}
+
+\section{Умножение и деление}
+
+Произведение --- числитель на числитель, знаменатель на знаменатель, затем сокращают.  
+Предлог <<от>> означает умножение: \(\dfrac{2}{3}\) от \(48\) это \(\dfrac{2}{3}\cdot48=32\).
+
+Деление --- умножение на обратную. Дроби \(\dfrac{a}{b}\) и \(\dfrac{b}{a}\) в произведении дают \(1\).
+\[
+\dfrac{2}{3}:\dfrac{5}{7}=\dfrac{2}{3}\cdot\dfrac{7}{5}=\dfrac{14}{15}.
+\]
+
+Если \(\dfrac{2}{3}\) числа равны \(48\), само число равно \(48:\dfrac{2}{3}=72\).
+
+Оператор \texttt{/} у двух \texttt{Rational} сам умножает на обратную. Явно обратную показывает \texttt{1 / дробь}.
+
+\begin{lstlisting}
+Rational(6, 35) * Rational(14, 9)
+Rational(2, 3) * 48
+Rational(2, 3) / Rational(5, 7)
+1 / Rational(3, 8)
+48 / Rational(2, 3)
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(\dfrac{6}{35}\cdot\dfrac{14}{9}=\dfrac{4}{15}\)
+\item \(\dfrac{2}{3}\cdot48=32\)
+\item \(\dfrac{1}{\dfrac{3}{8}}=\dfrac{8}{3}\)
+\item \(48:\dfrac{2}{3}=72\)
+\end{enumerate}
+
+\section{Десятичные дроби}
+
+Десятичная дробь --- обыкновенная со знаменателем \(10^{n}\):
+\[
+0{,}25=\dfrac{25}{100}=\dfrac{1}{4}.
+\]
+
+Строку \texttt{"0.25"} передают в \texttt{Rational}, потому что голый float \(0.25\) в двоичной записи может дать не ту дробь.
+
+Умножение и деление на \(10^{n}\) сдвигает точку.  
+Делитель делают целым, умножив оба числа на одну и ту же степень десяти: \(12{,}5:0{,}5\) после умножения на \(10\) есть \(125:5=25\).
+
+\texttt{S(10)**n} держит степень десятки точной. Обычный \texttt{10**(-3)} в Python уже float.
+
+\begin{lstlisting}
+Rational("0.25")
+Rational("12.3") - Rational("4.075")
+Rational("3.14") * S(10)**2
+Rational("12.5") / Rational("0.5")
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(0{,}25=\dfrac{1}{4}\)
+\item \(12{,}3-4{,}075=8{,}225\)
+\item \(3{,}14\cdot10^{2}=314\)
+\item \(12{,}5:0{,}5=25\)
+\end{enumerate}
+
+\section{Периодические дроби}
+
+Конечная десятичная получается, когда после сокращения в знаменателе остаются только \(2\) и \(5\). Иначе период.
+
+Период переводят уравнением.
+
+Для \(0{,}(3)\): \(x=0{,}(3)\), \(10x=3{,}(3)\), вычитают, \(9x=3\), \(x=\dfrac{1}{3}\).
+
+Для \(0{,}1(6)\): \(10x=1{,}(6)\), \(100x=16{,}(6)\), \(90x=15\), \(x=\dfrac{1}{6}\).
+
+\texttt{symbols} заводит неизвестную. \texttt{Eq} оставляет равенство невычисленным: обычный \texttt{==} сразу дал бы True или False.  
+\texttt{solve} находит корень, \texttt{[0]} берёт его из списка. \texttt{N} только показывает десятичный вид.
+
+\begin{lstlisting}
+N(S(1)/7, 20)
+x = symbols("x")
+solve(Eq(10*x - x, 3), x)[0]
+solve(Eq(100*x - 10*x, 15), x)[0]
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(0{,}(3)=\dfrac{1}{3}\)
+\item \(0{,}1(6)=\dfrac{1}{6}\)
+\end{enumerate}
+
+\section{Отрицательная степень и стандартный вид}
+
+Отрицательная степень: \(a^{-n}=\dfrac{1}{a^{n}}\).  
+Показатели при одном основании складывают при умножении и вычитают при делении.
+\[
+\dfrac{2^{-3}\cdot5^{2}}{2^{4}\cdot5^{-1}}=2^{-3-4}\cdot5^{2-(-1)}=2^{-7}\cdot5^{3}=\dfrac{125}{128}.
+\]
+
+Стандартный вид: \(a\cdot10^{n}\) при \(1\leqslant|a|<10\).  
+Слагаемые с разными порядками приводят к одной степени десятки.  
+м/с в км/ч умножают на \(3{,}6\).
+
+\texttt{simplify} собирает степени одного основания в короткий ответ.
+
+\begin{lstlisting}
+S(10)**(-3)
+simplify((S(2)**(-3)*S(5)**2) / (S(2)**4 * S(5)**(-1)))
+Rational("2.1")*S(10)**5 + Rational("3.4")*S(10)**4
+18 * Rational("3.6")
+72 / Rational("3.6")
+\end{lstlisting}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item \(10^{-3}=0{,}001\)
+\item \(2{,}1\cdot10^{5}+3{,}4\cdot10^{4}=2{,}44\cdot10^{5}\)
+\item \(18\cdot3{,}6=64{,}8\)
+\item \(72:3{,}6=20\)
+\end{enumerate}
+
+\section{Порядок действий}
+
+Порядок действий везде один:
+\begin{enumerate}
+\item скобки;
+\item степени;
+\item умножение и деление слева направо;
+\item сложение и вычитание слева направо.
+\end{enumerate}
+
+При упрощении буквенных выражений сначала раскрывают или приводят, затем упрощают.  
+Подстановка чисел --- после упрощения, так короче.
+
+\newpage
+
+\section{Задачи}
+
+\subsection*{Дроби и действия}
+\begin{enumerate}
+\item Переведите \(\dfrac{80}{60}\) в смешанное число и сократите.
+\item Сократите \(\dfrac{63}{84}\) через НОД.
+\item Сравните \(\dfrac{2}{3}\) и \(\dfrac{5}{8}\).
+\item Вычислите \(\dfrac{1}{6}+\dfrac{3}{8}\).
+\item Вычислите \(\dfrac{2}{3}:\dfrac{5}{7}\).
+\item Найдите число, если \(\dfrac{2}{3}\) его равны \(48\).
+\item Переведите \(0{,}(3)\) в обыкновенную дробь.
+\item Упростите \(\dfrac{2^{-3}\cdot5^{2}}{2^{4}\cdot5^{-1}}\).
+\end{enumerate}
+
+\subsection*{Алгебраические выражения}
+\begin{enumerate}
+\item Упростите \((2x+3y)^{2}-3x\Bigl(\dfrac{4x}{3}+4y\Bigr)\) и найдите значение при \(y=\sqrt{3}\).
+\item Упростите \(28ab+(2a-7b)^{2}\) и найдите значение при \(a=\sqrt{15}\), \(b=\sqrt{8}\).
+\item Упростите \(\Bigl(\dfrac{a}{2}+\dfrac{a}{5}\Bigr)\cdot\dfrac{1}{a^{2}}\) и найдите значение при \(a=0{,}7\).
+\item Упростите \(\dfrac{x-\dfrac{6x}{x+2}}{\dfrac{x-4}{x+2}}\) и найдите значение при \(x=5\).
+\item Упростите \(\Bigl(\dfrac{4}{a^{2}}+\dfrac{9}{b^{2}}\Bigr)(ab)^{2}\).
+\item Упростите \(\dfrac{5}{c k^{2}}\cdot k^{3}\cdot c-\dfrac{10k+1}{2}\).
+\item Упростите \(\dfrac{3x^{2}+4x}{x^{2}-2x}-\dfrac{2x+7}{x}-\dfrac{x+8}{x-2}\).
+\end{enumerate}
+
+\newpage
+
+\section{Разбор задач}
+
+\subsection*{Дроби и действия}
+\begin{enumerate}
+\item \(\dfrac{80}{60}=1\dfrac{20}{60}=1\dfrac{1}{3}\)
+\item \(\operatorname{НОД}(63,84)=21\), \(\dfrac{63}{84}=\dfrac{3}{4}\)
+\item НОК\((3,8)=24\), \(\dfrac{16}{24}>\dfrac{15}{24}\) \(\Rightarrow\) \(\dfrac{2}{3}>\dfrac{5}{8}\)
+\item \(\dfrac{4}{24}+\dfrac{9}{24}=\dfrac{13}{24}\)
+\item \(\dfrac{2}{3}\cdot\dfrac{7}{5}=\dfrac{14}{15}\)
+\item \(48:\dfrac{2}{3}=72\)
+\item \(x=0{,}(3)\), \(10x-x=3\), \(9x=3\), \(x=\dfrac{1}{3}\)
+\item \(2^{-7}\cdot5^{3}=\dfrac{125}{128}\)
+\end{enumerate}
+
+\subsection*{Алгебраические выражения}
+
+\subsubsection*{Задание 1}
+Квадрат суммы \((u+v)^{2}=u^{2}+2uv+v^{2}\). Скобку раскрывают распределительным законом:
+\[
+(2x+3y)^{2}-3x\Bigl(\dfrac{4x}{3}+4y\Bigr)
+=4x^{2}+12xy+9y^{2}-4x^{2}-12xy
+=9y^{2}.
+\]
+При \(y=\sqrt{3}\) получается \(9\cdot3=27\). Икс в ответ не входит, поэтому \(1{,}038\) его не меняет.
+
+\begin{lstlisting}
+x, y = symbols("x y")
+expr = (2*x + 3*y)**2 - 3*x * (4*x/3 + 4*y)
+expr
+simplify(expr)
+simplify(expr).subs({x: 1.038, y: sqrt(3)})
+\end{lstlisting}
+
+\subsubsection*{Задание 2}
+Квадрат разности \((u-v)^{2}=u^{2}-2uv+v^{2}\). Среднее слагаемое уничтожает \(28ab\):
+\[
+28ab+(2a-7b)^{2}=28ab+4a^{2}-28ab+49b^{2}=4a^{2}+49b^{2}.
+\]
+При \(a=\sqrt{15}\), \(b=\sqrt{8}\):
+\[
+4\cdot15+49\cdot8=60+392=452.
+\]
+
+\begin{lstlisting}
+a, b = symbols("a b")
+expr = 28*a*b + (2*a - 7*b)**2
+simplify(expr)
+simplify(expr).subs({a: sqrt(15), b: sqrt(8)})
+\end{lstlisting}
+
+\subsubsection*{Задание 3}
+Сначала доли с общим знаменателем \(10\), затем сокращают одну \(a\):
+\[
+\Bigl(\dfrac{a}{2}+\dfrac{a}{5}\Bigr)\cdot\dfrac{1}{a^{2}}
+=\dfrac{1}{a}\Bigl(\dfrac{5}{10}+\dfrac{2}{10}\Bigr)
+=\dfrac{7}{10a}.
+\]
+При \(a=0{,}7\):
+\[
+\dfrac{7}{10\cdot0{,}7}=1.
+\]
+Для подстановки берут \texttt{S("0.7")} или \texttt{Rational(7, 10)}, чтобы не получить хвост от двоичного \texttt{0.7}.
+
+\begin{lstlisting}
+a = symbols("a")
+expr = (a/2 + a/5) * 1/a**2
+simplify(expr)
+simplify(expr).subs({a: S("0.7")})
+\end{lstlisting}
+
+\subsubsection*{Задание 4}
+Дробь над дробью --- умножение на обратную. Сначала числитель к знаменателю \(x+2\):
+\[
+x-\dfrac{6x}{x+2}=\dfrac{x(x+2)-6x}{x+2}=\dfrac{x^{2}-4x}{x+2}.
+\]
+\[
+\dfrac{\dfrac{x^{2}-4x}{x+2}}{\dfrac{x-4}{x+2}}
+=\dfrac{x(x-4)}{x+2}\cdot\dfrac{x+2}{x-4}
+=x
+\]
+при \(x\neq-2\) и \(x\neq4\). В точке \(x=5\) значение \(5\).
+
+\begin{lstlisting}
+x = symbols("x")
+expr = (x - 6*x/(x+2)) / ((x-4)/(x+2))
+simplify(expr)
+simplify(expr).subs({x: 5})
+\end{lstlisting}
+
+\subsubsection*{Задание 5}
+Умножение суммы на \((ab)^{2}=a^{2}b^{2}\) разносит по слагаемым:
+\[
+\Bigl(\dfrac{4}{a^{2}}+\dfrac{9}{b^{2}}\Bigr)a^{2}b^{2}=4b^{2}+9a^{2}.
+\]
+
+\begin{lstlisting}
+a, b = symbols("a b")
+expr = (4/a**2 + 9/b**2) * (a*b)**2
+simplify(expr)
+\end{lstlisting}
+
+\subsubsection*{Задание 6}
+Запись \texttt{5/c/k**2} читается слева направо как \(\dfrac{5}{c k^{2}}\). Затем умножение на \(k^{3}\) и на \(c\) даёт \(5k\):
+\[
+5k-\dfrac{10k+1}{2}=\dfrac{10k-10k-1}{2}=-\dfrac{1}{2}.
+\]
+Буквы сокращаются полностью.
+
+\begin{lstlisting}
+k, c = symbols("k c")
+expr = 5/c/k**2 * k**3 * c - (10*k + 1)/2
+simplify(expr)
+\end{lstlisting}
+
+\subsubsection*{Сложная часть}
+Знаменатель первой дроби \(x^{2}-2x=x(x-2)\). Сокращают \(x\) при \(x\neq0\):
+\[
+\dfrac{3x^{2}+4x}{x(x-2)}=\dfrac{3x+4}{x-2}.
+\]
+Две дроби с знаменателем \(x-2\) объединяют:
+\[
+\dfrac{3x+4}{x-2}-\dfrac{x+8}{x-2}=\dfrac{2x-4}{x-2}=2.
+\]
+Остаётся
+\[
+2-\dfrac{2x+7}{x}=2-2-\dfrac{7}{x}=-\dfrac{7}{x}
+\]
+при \(x\neq0\) и \(x\neq2\). \texttt{simplify} проходит эту цепочку сам.
+
+\begin{lstlisting}
+x = symbols("x")
+expr = (3*x**2 + 4*x)/(x**2 - 2*x) - (2*x + 7)/x - (x + 8)/(x - 2)
+expr
+simplify(expr)
+\end{lstlisting}
+
+\end{document}
