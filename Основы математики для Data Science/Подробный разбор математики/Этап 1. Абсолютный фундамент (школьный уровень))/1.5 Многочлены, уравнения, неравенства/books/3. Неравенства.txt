@@ -1,0 +1,330 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\usepackage{needspace}
+\usepackage{array}
+\usepackage{booktabs}
+
+\geometry{
+  left=2.3cm,
+  right=2.3cm,
+  top=2.0cm,
+  bottom=2.1cm
+}
+
+\setstretch{1.03}
+\setlength{\parskip}{0.2mm}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\setlist[itemize]{
+  leftmargin=1.15em,
+  itemsep=0.12em,
+  topsep=0.18em,
+  parsep=0pt,
+  label={}
+}
+\setlist[enumerate]{
+  leftmargin=1.6em,
+  itemsep=0.18em,
+  topsep=0.25em,
+  parsep=0pt
+}
+
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{1em}{}
+\titlespacing*{\section}{0pt}{1.05em}{0.38em}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.3em}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.25em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Основы математики для Data Science}
+\fancyhead[R]{\small\texttt{github.com/niosandd}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\begin{document}
+
+\begin{center}
+{\LARGE\bfseries Основы математики для Data Science}\\[0.28em]
+{\large Этап 1. Абсолютный фундамент}\\[0.32em]
+{\Large\bfseries Неравенства}
+\end{center}
+
+\vspace{0.35em}
+
+\noindent\textit{Источник.} Яндекс Практикум: <<Неравенства>>
+(\texttt{start.practicum.yandex/math-foundations}).
+
+\vspace{0.25em}
+
+\section{Что такое неравенство}
+
+Неравенство --- запись вида $A\,\vee\,B$, где $A$ и $B$ --- выражения, а на месте $\vee$ стоит один из знаков $>$, $<$, $\geqslant$, $\leqslant$.
+
+Знаки $>$ и $<$ дают \textbf{строгие} неравенства.
+Знаки $\geqslant$ и $\leqslant$ дают \textbf{нестрогие}.
+Бывают и двойные неравенства.
+
+Решение --- один или несколько промежутков, удовлетворяющих условию.
+Ответом могут быть отдельные точки или пустое множество.
+Несколько промежутков пишут через объединение, например
+$x\in(0;\,0{,}8]\cup\{2\}\cup[4{,}3;\,+\infty)$.
+
+\section{Числовые промежутки}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Обозначение & Название & Аналитическая модель & Точки\\
+\midrule
+$(a;+\infty)$ & открытый луч & $x>a$ & $a$ выколота\\
+$[a;+\infty)$ & луч & $x\geqslant a$ & $a$ закрашена\\
+$(-\infty;b)$ & открытый луч & $x<b$ & $b$ выколота\\
+$(-\infty;b]$ & луч & $x\leqslant b$ & $b$ закрашена\\
+$(a;b)$ & интервал & $a<x<b$ & обе выколоты\\
+$[a;b]$ & отрезок & $a\leqslant x\leqslant b$ & обе закрашены\\
+$[a;b)$ & полуинтервал & $a\leqslant x<b$ & левая закрашена\\
+$(a;b]$ & полуинтервал & $a<x\leqslant b$ & правая закрашена\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Пустой кружок на прямой --- точка не входит, закрашенный --- входит.
+
+\section{Допустимые преобразования}
+
+В каждом пункте знаки могут быть и строгими, и нестрогими.
+
+\begin{enumerate}
+\item $a<b\iff a+c<b+c$ для любого $c$.
+Вычитать одно и то же число из обеих частей можно.
+Вычитать одно неравенство из другого нельзя.
+\item Переворот: $a\geqslant b\iff b\leqslant a$. Знак разворачивается.
+\item Почленное сложение однонаправленных: $a<b$, $c<d\iff a+c<b+d$.
+\item Умножение (деление) на положительное число знак не меняет:
+$a<b\mid\cdot 5\iff 5a<5b$.
+\item Умножение (деление) на отрицательное число знак меняет:
+$a<b\mid\cdot(-5)\iff -5a>-5b$.
+Делить одно неравенство на другое нельзя.
+\item Почленное умножение, если все части неотрицательны:
+$a\leqslant b$, $c\leqslant d\iff ac\leqslant bd$.
+Произведение строгого и нестрогого даёт строгое.
+\item Возведение в натуральную степень $n$ при неотрицательных частях:
+$a\geqslant b$, $n\in\mathbb{N}\iff a^{n}\geqslant b^{n}$.
+\item Переход к обратным при положительных частях:
+$a>b>0\iff\dfrac{1}{a}<\dfrac{1}{b}$.
+\end{enumerate}
+
+\section{Линейные неравенства}
+
+Линейное неравенство --- неизвестная в первой степени:
+$ax+b\,\vee\,0$, где $\vee$ --- любой из знаков $>$, $<$, $\geqslant$, $\leqslant$.
+
+Алгоритм:
+\begin{enumerate}
+\item Раскрыть скобки, если они есть.
+\item Члены с $x$ перенести влево, числа --- вправо, привести подобные.
+\item Разделить обе части на коэффициент при $x$:
+если коэффициент положительный --- знак не меняется;
+если отрицательный --- знак меняется на противоположный.
+\item Записать ответ как принадлежность промежутку через $\in$.
+\end{enumerate}
+
+\textbf{Примеры}
+\begin{enumerate}
+\item $2x-6>0$, $x>3$, $x\in(3;+\infty)$
+\item $-3x+9\leqslant 0$, $-3x\leqslant -9$, $x\geqslant 3$, $x\in[3;+\infty)$
+\end{enumerate}
+
+\section{Система линейных неравенств}
+
+Два и более линейных неравенства, которые должны выполняться одновременно, записывают фигурной скобкой.
+Ответ системы --- пересечение промежутков.
+На одной прямой их рисуют крышами разной высоты: в ответ идёт участок, над которым нависли все крыши.
+
+Частные случаи:
+\begin{enumerate}
+\item все знаки $>$ или $\geqslant$ --- промежуток <<правее правого>>;
+\item все знаки $<$ или $\leqslant$ --- промежуток <<левее левого>>.
+\end{enumerate}
+
+\textbf{Пример}
+\[
+\begin{cases}
+x>1,\\
+x\leqslant 4
+\end{cases}
+\qquad\Longrightarrow\qquad
+x\in(1;4].
+\]
+
+\section{Метод интервалов}
+
+Квадратные неравенства и неравенства более высоких степеней решают методом интервалов.
+
+Квадратное неравенство: $ax^{2}+bx+c\,\vee\,0$, $a\neq 0$.
+
+Алгоритм:
+\begin{enumerate}
+\item Привести к стандартному виду.
+\item Найти корни многочлена слева, разложить на множители.
+\item Нанести корни на прямую и определить знак многочлена на каждом промежутке.
+\item Выбрать промежутки, которые соответствуют знаку неравенства.
+\end{enumerate}
+
+Последовательность знаков для двух корней:
+\begin{enumerate}
+\item если $a>0$, то $+\ -+$ ;
+\item если $a<0$, то $-\ +-$ .
+\end{enumerate}
+
+Кратность корня --- сколько множителей обращаются в ноль при подстановке этого числа.
+
+Правило смены знака:
+\begin{enumerate}
+\item чётная кратность --- при переходе знак \emph{не} меняется;
+\item нечётная кратность --- при переходе знак меняется.
+\end{enumerate}
+
+В одном неравенстве корни могут иметь разную кратность.
+
+При нестрогом неравенстве отдельно стоящее решение (точка чётной кратности, если знак подходит) записывают в фигурных скобках.
+
+Пример: $(x+1)^{5}(x-4)(x+5)^{2}\leqslant 0$.
+Корни $-5$ (кратность $2$), $-1$ (кратность $5$), $4$ (кратность $1$).
+Знаки: $+$ на $(-\infty;-5)$, $+$ на $(-5;-1)$, $-$ на $(-1;4)$, $+$ на $(4;+\infty)$.
+Точка $-5$ входит, потому что неравенство нестрогое и в ней выражение равно нулю.
+Ответ: $x\in\{-5\}\cup[-1;4]$.
+
+\section{Дробно-рациональные неравенства}
+
+Неравенства вида $\dfrac{A}{B}\,\vee\,0$, где $A$ и $B$ --- многочлены, $B\neq 0$.
+
+Метод интервалов:
+\begin{enumerate}
+\item Перенести всё налево, справа ноль.
+\item Привести к общему знаменателю.
+\item Найти корни числителя и знаменателя, разложить на множители.
+\item Нанести корни на прямую, расставить знаки всего выражения.
+Корни числителя закрашивают, если неравенство нестрогое.
+Корни знаменателя всегда выколоты.
+Учитывать кратность.
+\item Выбрать нужные промежутки.
+\end{enumerate}
+
+Важно:
+\begin{enumerate}
+\item нельзя умножать неравенство на общий знаменатель с переменной;
+\item закрашенные точки всегда попадают в ответ: внутри промежутка или отдельно;
+\item корни знаменателя всегда выколоты;
+\item кратность суммируется по числителю и знаменателю.
+\end{enumerate}
+
+Разные на вид скобки могут давать один и тот же корень.
+Поэтому левую часть раскладывают до линейных скобок вида $(x-x_{n})$.
+
+\textbf{Пример.} $\dfrac{x-2}{x+1}>0$.
+Нули: $x=2$ (числитель, выколот) и $x=-1$ (знаменатель, выколот).
+Знаки: $+$ на $(-\infty;-1)$, $-$ на $(-1;2)$, $+$ на $(2;+\infty)$.
+Ответ: $x\in(-\infty;-1)\cup(2;+\infty)$.
+
+\newpage
+
+\section{Задачи}
+
+\subsection*{Промежутки и линейные}
+\begin{enumerate}
+\item Запишите $x\geqslant -2$ промежутком.
+\item Запишите аналитически $(0;5]$.
+\item Решите $4x-8<0$.
+\item Решите $-2x+6\geqslant 0$.
+\item Решите $3(x-1)>x+5$.
+\item Решите систему
+$\begin{cases}x\geqslant 0,\\ x<3.\end{cases}$
+\item Решите систему
+$\begin{cases}x>2,\\ x\geqslant 5.\end{cases}$
+\end{enumerate}
+
+\subsection*{Метод интервалов}
+\begin{enumerate}
+\item Решите $x^{2}-5x+6>0$.
+\item Решите $x^{2}-4x\leqslant 0$.
+\item Решите $(x-1)^{2}(x+2)>0$.
+\item Решите $(x+1)^{2}(x-3)\leqslant 0$.
+\end{enumerate}
+
+\subsection*{Дробно-рациональные}
+\begin{enumerate}
+\item Решите $\dfrac{x}{x-1}\geqslant 0$.
+\item Решите $\dfrac{x+3}{x-2}<0$.
+\item Решите $\dfrac{(x-1)^{2}}{x+4}\leqslant 0$.
+\end{enumerate}
+
+\newpage
+
+\section{Разбор задач}
+
+\subsection*{Промежутки и линейные}
+\begin{enumerate}
+\item $x\in[-2;+\infty)$
+\item $0<x\leqslant 5$
+\item $x<2$, $x\in(-\infty;2)$
+\item $-2x\geqslant -6$, $x\leqslant 3$, $x\in(-\infty;3]$
+\item $3x-3>x+5$, $2x>8$, $x>4$, $x\in(4;+\infty)$
+\item Пересечение: $x\in[0;3)$
+\item Правее правого: $x\in[5;+\infty)$
+\end{enumerate}
+
+\subsection*{Метод интервалов}
+\begin{enumerate}
+\item Корни $2$ и $3$, $a>0$, знаки $+-+$.
+Ответ $x\in(-\infty;2)\cup(3;+\infty)$.
+\item $x(x-4)\leqslant 0$, корни $0$ и $4$.
+Ответ $x\in[0;4]$.
+\item Корень $1$ чётной кратности, знак при переходе не меняет;
+корень $-2$ нечётный. Знаки: $-$ слева от $-2$, $+$ между $-2$ и $1$, $+$ справа от $1$.
+Точка $1$ не входит (строгое). Ответ $x\in(-2;1)\cup(1;+\infty)$.
+\item Корень $-1$ чётный, $3$ нечётный. Нестрогое: ноль входит.
+Знаки: $-$ на $(-\infty;-1)$, $-$ на $(-1;3)$, $+$ на $(3;+\infty)$.
+Ответ $x\in(-\infty;3]$. Точка $-1$ уже внутри этого луча.
+\end{enumerate}
+
+\subsection*{Дробно-рациональные}
+\begin{enumerate}
+\item Нули $0$ (числитель, закрашен) и $1$ (знаменатель, выколот).
+Знаки: $+$ слева от $0$, $-$ на $(0;1)$, $+$ справа от $1$.
+Ответ $x\in(-\infty;0]\cup(1;+\infty)$.
+\item Нули $-3$ (числитель, выколот) и $2$ (знаменатель, выколот).
+Знаки: $+$ , $-$ , $+$. Нужен минус: $x\in(-3;2)$.
+\item Числитель ноль при $x=1$ (кратность $2$, закрашен).
+Знаменатель ноль при $x=-4$ (выколот).
+Чётная кратность в $1$ знак не меняет.
+Знаки: $-$ слева от $-4$, $+$ на $(-4;1)$, $+$ справа от $1$.
+Нужны $\leqslant 0$: $x\in(-\infty;-4)\cup\{1\}$.
+\end{enumerate}
+
+\end{document}
